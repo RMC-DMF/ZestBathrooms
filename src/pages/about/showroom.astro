@@ -1,0 +1,14 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import { getEntry, render } from 'astro:content';
+import { site } from '../../data/site';
+const copy = await getEntry('pages', 'showroom');
+const { Content } = await render(copy!);
+const display = await getEntry('pages', 'siematic-display');
+const { Content: Display } = display ? await render(display) : { Content: null };
+---
+<Page title="The Showroom — Brookdale Place, Chester" description="Visit the Zest showroom in Chester: SieMatic kitchen displays, bathroom settings, working showers and the Gessi Haute Culture collection, two minutes from the city walls." accent="design" eyebrow="The showroom — Chester" heading="See it before you choose it." lead="[X] kitchen displays, [X] bathroom settings and working showers across [X,000] sq ft. Appointments recommended." hero={{ src: '/images/home/gessi-2.jpg', alt: 'Terrazzo basin wall and teal tiles, Zest showroom, Chester' }} cta={{ title: 'Plan a visit.', text: 'Drop in during opening hours, or book so a designer is free for you.', label: 'Book a design appointment', href: site.cta.href }}>
+  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div class="prose"><Content />{Display && <><h2>The SieMatic display</h2><Display /></>}</div><aside class="stack"><div class="z-person" style="display:block;max-width:none"><h3 style="margin-bottom:12px">Find us</h3><p class="small">{site.address.street}<br />{site.address.locality} {site.address.postcode}</p><p class="small" style="margin-top:12px">{site.hours.map((h) => <>{h.days}: {h.open}–{h.close}<br /></>)}Sunday closed</p><p class="small" style="margin-top:12px"><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p class="small" style="margin-top:12px"><a href="https://maps.google.com/?q=Zest+Bathrooms+%26+Kitchens+Chester" rel="noopener">Open in Google Maps</a> · [Parking note]</p></div><div><h3 style="margin-bottom:12px">On display</h3><ul class="small" style="padding-left:1.2em;color:var(--slate)"><li>[SieMatic SLX, Pure, Classic displays — count]</li><li>[Leicht Aluro display]</li><li>[Gessi Haute Culture — collections and date]</li><li>[Working showers and wellness]</li><li>[Tile and slab library]</li></ul></div></aside></div></section>
+  {copy!.data.gallery.length > 0 && <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{copy!.data.gallery.slice(0, 9).map((g) => <div class="fill" style="aspect-ratio:4/3"><Pic src={g.src} alt={g.alt || 'Zest showroom, Chester'} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div>)}</div></section>}
+</Page>

@@ -1,0 +1,25 @@
+{
+  "name": "zest-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "migrate": "node scripts/migrate.mjs",
+    "import-images": "node scripts/import-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^6.6.5",
+    "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/figtree": "^5.1.1",
+    "@fontsource-variable/fraunces": "^5.1.1",
+    "astro": "^5.1.1",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "csv-parse": "^5.6.0",
+    "turndown": "^7.2.0"
+  }
+}

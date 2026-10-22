@@ -1,0 +1,15 @@
+---
+import Study from '../../layouts/Study.astro';
+import { getCollection, render } from 'astro:content';
+import { site } from '../../data/site';
+export async function getStaticPaths() {
+  const all = await getCollection('projects', ({ data }) => !data.draft);
+  return all.map((e) => ({ params: { slug: e.id }, props: { entry: e, all } }));
+}
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const related = all.filter((e) => e.id !== entry.id && (e.data.sector === entry.data.sector || e.data.area === entry.data.area)).slice(0, 3).map((e) => ({ title: e.data.title, href: `/projects/${e.id}`, image: e.data.hero?.src, meta: [e.data.sector, e.data.units && `${e.data.units.toLocaleString()} units`].filter(Boolean).join(' · ') }));
+---
+<Study title={entry.data.title} description={entry.data.summary} accent="projects" eyebrow={`Project${entry.data.sector ? ' — ' + entry.data.sector : ''}`} hero={entry.data.hero} gallery={entry.data.gallery} facts={[{ label: 'Client', value: entry.data.client }, { label: 'Architect', value: entry.data.architect }, { label: 'Location', value: entry.data.location }, { label: 'Sector', value: entry.data.sector }, { label: 'Scale', value: entry.data.unitsLabel ?? (entry.data.units ? `${entry.data.units.toLocaleString()} units` : undefined) }, { label: 'Scope', value: entry.data.scope.join(', ') || undefined }]} quote={entry.data.quote} brands={entry.data.brands} related={related} cta={{ title: 'Planning a scheme?', text: 'Unit count, location and stage is enough to start a conversation with our projects team.', label: site.tradeCta.label, href: site.tradeCta.href }}>
+  <Content />
+</Study>

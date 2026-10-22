@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import FactStrip from '../../components/FactStrip.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import ProcessList from '../../components/ProcessList.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../../data/site';
+const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort((a, b) => (b.data.units ?? 0) - (a.data.units ?? 0) || b.data.date.valueOf() - a.data.date.valueOf());
+const units = projects.reduce((n, p) => n + (p.data.units ?? 0), 0);
+const clients = [...new Set(projects.map((p) => p.data.client).filter(Boolean))];
+const steps = [
+  { title: 'Register the project', text: 'Scheme, location, unit count, stage. We come back within one working day.' },
+  { title: 'Specification support', text: 'Product selection to budget and brief, samples, O&M-ready documentation.' },
+  { title: 'Sample room and sign-off', text: 'A full bathroom or kitchen set built to the specification for client approval.' },
+  { title: 'Programme-led supply', text: 'Call-off deliveries to site by floor or phase, with a named account contact.' },
+  { title: 'Aftercare', text: 'Spares, replacements and warranty handled by the same team.' },
+];
+---
+<Base title="Bathroom & Kitchen Supply for Developers and Hotels" description={`Specification and supply of bathrooms and kitchens for residential developments, hotels and student schemes across the UK. ${units.toLocaleString()} units supplied across ${projects.length} developments, from Chester.`} accent="projects" dark floatingHeader>
+  <Hero image="/images/home/project-deansgate.jpg" alt="Deansgate Square towers, Manchester" eyebrow="Projects — developers, architects, hospitality" title="The supplier behind the North West's biggest schemes." text="Bathroom and kitchen specification and supply for developments and hotels across the UK, from Chester." cta={site.tradeCta} link={{ label: 'How we work', href: '/projects/how-we-work' }} position="50% 30%" height="88vh" />
+  <section class="z-on-dark"><FactStrip dark facts={[{ value: units.toLocaleString(), label: 'Units supplied across the published projects' }, { value: String(projects.length), label: 'Developments and hotels' }, { value: String(clients.length), label: 'Developer and operator clients' }, { value: 'UK', label: 'Manchester, Liverpool, London, Birmingham, Bristol, Surrey' }]} /></section>
+  <section class="wrap section--loose z-on-dark">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">The work</span><h2>{projects.length} projects, by scale.</h2></div>
+    <div class="grid grid--3" style="gap:32px">{projects.map((p) => <CaseStudyCard bare ratio="4 / 5" title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} alt={p.data.hero?.alt} summary={p.data.summary} tags={[p.data.sector && { label: p.data.sector, accent: true }, p.data.location && { label: p.data.location.split(',')[0] }, (p.data.unitsLabel || p.data.units) && { label: p.data.unitsLabel ?? `${p.data.units!.toLocaleString()} units` }].filter(Boolean) as { label: string; accent?: boolean }[]} />)}</div>
+  </section>
+  <section class="section--loose stone light-section" data-theme="light"><div class="wrap grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">How we work with professionals</span><h2>Specification to handover.</h2></div><ProcessList steps={steps} /></div><div class="stack"><PersonCard name="Kieran Morris" role="Projects Director [confirm]" ask="developer and hotel specification" contactHref={site.phoneHref} contactLabel={site.phone} /><p class="small" style="color:var(--slate)">Clients include {clients.slice(0, 8).join(', ')}.</p><div><a class="z-btn z-btn--primary" href={site.tradeCta.href}>{site.tradeCta.label}</a></div></div></div></section>
+</Base>
+<style>.light-section { color: var(--ink); } .light-section h2 { color: var(--ink); }</style>

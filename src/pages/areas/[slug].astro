@@ -1,0 +1,17 @@
+---
+import Page from '../../layouts/Page.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const all = await getCollection('areas', ({ data }) => data.published);
+  return all.map((e) => ({ params: { slug: e.id }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const studies = await getCollection('caseStudies', ({ data }) => data.area === entry.id && !data.draft);
+const projects = await getCollection('projects', ({ data }) => data.area === entry.id && !data.draft);
+---
+<Page title={`Luxury Kitchens & Bathrooms in ${entry.data.title}`} description={entry.data.summary} eyebrow={`Areas — ${entry.data.county ?? ''}`} heading={`Kitchens and bathrooms in ${entry.data.title}.`} lead={`${entry.data.summary} ${entry.data.distance ? '· ' + entry.data.distance + '.' : ''}`} hero={entry.data.hero}>
+  <section class="wrap section" style="padding-top:0"><div class="prose"><Content /></div></section>
+  {(studies.length + projects.length) > 0 && <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Our work in {entry.data.title}</span><h2>{studies.length + projects.length} projects here.</h2></div><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/${s.data.room}/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} summary={s.data.summary} tags={[{ label: s.data.room === 'kitchens' ? 'Kitchen' : 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} />)}{projects.map((p) => <CaseStudyCard title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} summary={p.data.summary} tags={[{ label: p.data.sector ?? 'Project', accent: true }, ...(p.data.units ? [{ label: `${p.data.units.toLocaleString()} units` }] : [])]} />)}</div></div></section>}
+</Page>

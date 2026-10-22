@@ -1,0 +1,15 @@
+---
+import Pic from './Pic.astro';
+interface Props { name: string; role: string; photo?: string; ask?: string; contactHref?: string; contactLabel?: string }
+const { name, role, photo, ask, contactHref, contactLabel } = Astro.props;
+const first = name.split(' ')[0];
+---
+<div class="z-person">
+  <Pic src={photo} alt={name} class="z-person__photo" sizes="96px" widths={[96, 192, 288]} />
+  <div>
+    <p class="z-person__name">{name}</p>
+    <p class="z-person__role">{role}</p>
+    {ask && <p class="z-person__ask">Ask {first} about <strong>{ask}</strong></p>}
+    {contactHref && <a class="z-person__contact" href={contactHref}>{contactLabel ?? contactHref.replace(/^(mailto:|tel:)/, '')}</a>}
+  </div>
+</div>

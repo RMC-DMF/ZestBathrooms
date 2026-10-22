@@ -1,0 +1,17 @@
+---
+import Page from '../../layouts/Page.astro';
+---
+<Page title="Bathroom Brochures" description="Request the Gessi, Bette, Novello, AXOR and Effe brochures from Zest, Chester." accent="bathrooms" eyebrow="Bathrooms — brochures" heading="The bathroom brochures." lead="Tell us which you would like and we will send the digital editions straight away." cta={false}>
+  <section class="wrap section" style="padding-top:0">
+    <form class="stack" name="bathroom-brochures" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you" style="max-width:560px">
+      <input type="hidden" name="form-name" value="bathroom-brochures" />
+      <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+      <div class="field"><label for="b-name">Your name</label><input id="b-name" name="name" required autocomplete="name" /></div>
+      <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email" /></div>
+      <fieldset class="field" style="border:0;padding:0;margin:0"><legend style="font-weight:600;font-size:15px;margin-bottom:8px">Which brochures?</legend>{['Gessi', 'Gessi Haute Culture', 'Bette', 'Novello', 'AXOR', 'Effe'].map((b) => <label style="display:flex;gap:8px;font-weight:400"><input type="checkbox" name="brochures" value={b} /> {b}</label>)}</fieldset>
+      <label style="display:flex;gap:8px;font-size:15px"><input type="checkbox" name="newsletter" value="yes" /> Send me occasional news from the showroom</label>
+      <div><button class="z-btn z-btn--primary" type="submit">Send the brochures</button></div>
+      <p class="caption">We use your details only to send what you asked for. <a href="/privacy">Privacy</a>.</p>
+    </form>
+  </section>
+</Page>

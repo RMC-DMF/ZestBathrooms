@@ -1,0 +1,14 @@
+---
+import Study from '../../../layouts/Study.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  const all = await getCollection('caseStudies', ({ data }) => data.room === 'bathrooms' && !data.draft);
+  return all.map((e) => ({ params: { slug: e.id.split('/').pop() }, props: { entry: e, all } }));
+}
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const related = all.filter((e) => e.id !== entry.id).slice(0, 3).map((e) => ({ title: e.data.title, href: `/bathrooms/case-studies/${e.id.split('/').pop()}`, image: e.data.hero?.src, meta: e.data.location }));
+---
+<Study title={entry.data.title} description={entry.data.summary} accent="bathrooms" eyebrow={`Bathroom case study${entry.data.location ? ' — ' + entry.data.location : ''}`} hero={entry.data.hero} gallery={entry.data.gallery} facts={[{ label: 'Location', value: entry.data.location }, { label: 'Client', value: entry.data.client }, { label: 'Interior designer', value: entry.data.collaborators.join(', ') }, { label: 'Completed', value: entry.data.date.getFullYear() }]} quote={entry.data.quote} designer={entry.data.designer} brands={entry.data.brands} related={related}>
+  <Content />
+</Study>

@@ -1,0 +1,31 @@
+---
+import Pic from './Pic.astro';
+/** Image on one side, copy on the other. The homepage "door". */
+import type { Accent } from '../data/site';
+interface Props { image: string; alt: string; eyebrow: string; title: string; text: string; href: string; linkLabel?: string; flip?: boolean; accent?: Accent; position?: string; secondary?: { label: string; href: string } }
+const { image, alt, eyebrow, title, text, href, linkLabel = 'Explore', flip = false, accent = 'neutral', position = '50% 50%', secondary } = Astro.props;
+---
+<section class:list={['row', `z-accent--${accent}`, 'z-on-dark', { 'row--flip': flip }]}>
+  <a class="row__img" href={href} aria-label={title}><Pic src={image} alt={alt} position={position} sizes="(max-width: 900px) 100vw, 58vw" widths={[480, 768, 1024, 1440]} /></a>
+  <div class="row__txt">
+    <span class="z-eyebrow">{eyebrow}</span>
+    <h2 class="row__title">{title}</h2>
+    <p class="row__lead">{text}</p>
+    <div class="cluster" style="gap:28px">
+      {secondary && <a class="z-btn z-btn--secondary z-btn--on-dark" href={secondary.href}>{secondary.label}</a>}
+      <a class="z-btn z-btn--link z-btn--on-dark" href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
+    </div>
+  </div>
+</section>
+<style>
+  .row { display: grid; grid-template-columns: 7fr 5fr; min-height: 720px; background: var(--panel-dark); }
+  .row--flip { grid-template-columns: 5fr 7fr; }
+  .row--flip .row__img { order: 2; }
+  .row__img { position: relative; overflow: hidden; background: #1b1f26; display: block; }
+  .row__img img, .row__img :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .row__img:hover :global(img) { transform: scale(1.02); }
+  .row__txt { display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 96px 80px; }
+  .row__title { font-size: clamp(32px, 3.4vw, 48px); line-height: 1.02; font-weight: 300; letter-spacing: -0.01em; font-variation-settings: 'opsz' 144; color: var(--on-panel); max-width: 440px; }
+  .row__lead { font-size: 17px; line-height: 1.7; color: #cfd3d9; max-width: 400px; }
+  @media (max-width: 900px) { .row, .row--flip { grid-template-columns: 1fr; min-height: 0; } .row--flip .row__img { order: 0; } .row__img { aspect-ratio: 4 / 5; } .row__txt { padding: 64px var(--gutter); } }
+</style>

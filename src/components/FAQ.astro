@@ -1,0 +1,24 @@
+---
+interface Props { items: { q: string; a: string }[]; openFirst?: boolean; schema?: boolean }
+const { items, openFirst = false, schema = true } = Astro.props;
+const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a.replace(/<[^>]+>/g, '') } })) };
+---
+<div class="z-faq">
+  {items.map((it, i) => (
+    <details class="faq" open={openFirst && i === 0}>
+      <summary class="z-faq__q"><span>{it.q}</span><span class="z-faq__toggle" aria-hidden="true"><svg class="plus" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 1v10M1 6h10" /></svg><svg class="minus" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h10" /></svg></span></summary>
+      <div class="faq__a" set:html={/^\s*</.test(it.a) ? it.a : `<p>${it.a}</p>`} />
+    </details>
+  ))}
+</div>
+{schema && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
+<style>
+  .faq { border-bottom: var(--hairline) solid var(--line); }
+  .faq summary { list-style: none; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq .minus { display: none; }
+  .faq[open] .minus { display: block; }
+  .faq[open] .plus { display: none; }
+  .faq__a { padding: 0 var(--space-7) var(--space-5) 0; font-size: 17px; line-height: 1.6; }
+  .faq__a :global(p + p) { margin-top: var(--space-3); }
+</style>

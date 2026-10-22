@@ -1,0 +1,9 @@
+---
+import Page from '../../layouts/Page.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getCollection } from 'astro:content';
+const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+---
+<Page title="The Team" description="The designers and project team at Zest Bathrooms & Kitchens, Chester — who to ask about kitchens, bathrooms, Haute Culture and developments." eyebrow="About — the team" heading="The people you will deal with." lead="Named, reachable, and attached to the work they did. [Photos, roles and direct lines to come from Zest.]">
+  <section class="wrap section" style="padding-top:0"><div class="grid grid--2">{team.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.email ? `mailto:${t.data.email}` : undefined} contactLabel={t.data.email ? `Email ${t.data.name.split(' ')[0]}` : undefined} />)}</div></section>
+</Page>

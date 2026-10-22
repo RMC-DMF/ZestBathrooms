@@ -1,0 +1,16 @@
+---
+import Pic from './Pic.astro';
+interface Props { title: string; href: string; summary?: string; image?: string; alt?: string; tags?: { label: string; accent?: boolean }[]; designer?: string; ratio?: string; bare?: boolean }
+const { title, href, summary, image, alt, tags = [], designer, ratio = '4 / 3', bare = false } = Astro.props;
+---
+<a class="z-case" href={href} style={bare ? 'max-width:none;background:transparent;border:0' : 'max-width:none'}>
+  <div class="z-case__media" style={`aspect-ratio:${ratio}`}>
+    <Pic src={image} alt={alt ?? title} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} />
+  </div>
+  <div class="z-case__body" style={bare ? 'padding:24px 0 0' : undefined}>
+    {tags.length > 0 && <div class="z-case__meta">{tags.map((t) => <span class:list={['z-tag', { 'z-tag--accent': t.accent }]}>{t.label}</span>)}</div>}
+    <h3 class="z-case__title">{title}</h3>
+    {summary && <p class="z-case__summary">{summary}</p>}
+    {designer && <p class="z-case__credit">Designed by <strong>{designer}</strong></p>}
+  </div>
+</a>

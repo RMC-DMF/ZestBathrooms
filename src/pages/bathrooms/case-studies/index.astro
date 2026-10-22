@@ -1,0 +1,9 @@
+---
+import Page from '../../../layouts/Page.astro';
+import CaseStudyCard from '../../../components/CaseStudyCard.astro';
+import { getCollection } from 'astro:content';
+const studies = (await getCollection('caseStudies', ({ data }) => data.room === 'bathrooms' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Page title="Bathroom Case Studies" description="Gessi, Bette and Novello bathrooms designed and supplied by Zest across Cheshire, the Wirral and the North West." accent="bathrooms" eyebrow="Bathrooms — case studies" heading="Bathrooms we have designed." lead={`${studies.length} projects, each credited to the designer who planned it.`}>
+  <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/bathrooms/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} alt={s.data.hero?.alt} summary={s.data.summary} tags={[{ label: 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}</div></section>
+</Page>

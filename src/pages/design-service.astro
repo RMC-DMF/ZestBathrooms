@@ -1,0 +1,25 @@
+---
+import Page from '../layouts/Page.astro';
+import ProcessList from '../components/ProcessList.astro';
+import PersonCard from '../components/PersonCard.astro';
+import FAQ from '../components/FAQ.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { site } from '../data/site';
+const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+const copy = await getEntry('pages', 'design-service');
+const faq = await getEntry('pages', 'faq');
+const { Content } = await render(copy!);
+const { Content: FaqContent } = faq ? await render(faq) : { Content: null };
+const steps = [
+  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples. Bring a plan, photos or nothing at all.' },
+  { title: 'Survey and brief', text: 'We measure the room, look at services and light, and agree what the room has to do for you.' },
+  { title: 'Design and specification', text: 'Layouts, 3D visuals and a written specification with every product, finish and price named.' },
+  { title: 'Supply', text: 'We order, check and deliver everything to a programme agreed with your installer.' },
+  { title: 'Installation support and aftercare', text: 'Your installer or one of ours. We stay on the project until it is finished, and after.' },
+];
+---
+<Page title="Kitchen & Bathroom Design Service, Chester" description="How Zest designs a kitchen or bathroom: showroom appointment, survey, design and specification, supply and installation support. First appointment complimentary." accent="design" eyebrow="The design service" heading="One studio. Both rooms. Start to finish." lead="A first appointment in the showroom is complimentary; if you go ahead, the design fee is credited against your order [confirm terms]." hero={copy?.data.hero}>
+  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">How it works</span><h2>Five steps, one designer.</h2></div><ProcessList steps={steps} /><div style="margin-top:var(--space-6)"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></div></div><div class="prose"><h2>What you receive</h2><Content /></div></div></section>
+  <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">The designers</span><h2>Who you will work with.</h2></div><div class="grid grid--2">{team.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.email ? `mailto:${t.data.email}` : undefined} contactLabel={t.data.email ? `Email ${t.data.name.split(' ')[0]}` : undefined} />)}</div></div></section>
+  <section class="wrap section" id="faqs"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>Things people ask before booking.</h2></div><FAQ items={[{ q: 'Is the first appointment really free?', a: 'Yes. [Confirm.] It is an hour in the showroom with a designer, no obligation.' }, { q: 'Do I need to have an installer?', a: 'No. We work with a small group of installers we have used for years, or with yours.' }, { q: 'Can you design the kitchen and bathrooms together?', a: 'That is the point of one studio: one designer, one palette, one programme.' }, { q: 'Which areas do you cover?', a: 'Homeowners across Cheshire, the Wirral, North Wales and the North West. Developer and hotel projects anywhere in the UK.' }]} openFirst /></div>{FaqContent && <details style="margin-top:var(--space-7);max-width:720px"><summary class="caption">Legacy FAQ copy (to review)</summary><div class="prose"><FaqContent /></div></details>}</section>
+</Page>

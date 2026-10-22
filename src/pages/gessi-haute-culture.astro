@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Statement from '../components/Statement.astro';
+import FullBleed from '../components/FullBleed.astro';
+import PersonCard from '../components/PersonCard.astro';
+import FAQ from '../components/FAQ.astro';
+import { site } from '../data/site';
+const collections = ['Jacqueline', 'Perle', 'Ludovica', 'Pelle', 'Sensazioni', 'Immersiva', 'Riflessioni', 'Glass Connection'];
+---
+<Base title="Gessi Haute Culture Showroom — Chester" description="Zest is one of ten Gessi Haute Culture partner showrooms in the UK. See the eight couture collections in Chester by private appointment." accent="bathrooms" dark floatingHeader>
+  <Hero image="/images/home/gessi-onyx.jpg" alt="Gessi rain showers in copper against a book-matched onyx wall" eyebrow="Gessi Haute Culture · Chester" title="Couture, for the bathroom." text="One of ten Haute Culture showrooms in the UK, and [the first to launch]. By private appointment on Brookdale Place." cta={{ label: 'Book a private viewing', href: '/book-a-design-appointment?interest=haute-culture' }} position="60% 50%" />
+  <Statement>Haute Culture is Gessi's answer to couture: eight collections made by hand in Italy, where jewellery, fashion and design meet. It is specified into a room by a designer, never bought off a shelf — which is why Gessi chose ten showrooms, not two hundred.</Statement>
+  <section class="wrap section--loose z-on-dark" style="padding-top:0">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">The collections</span><h2>Eight ways of thinking about water.</h2></div>
+    <div class="grid grid--4" style="gap:32px">{collections.map((c) => <div><div style="aspect-ratio:3/4;background:#1b1f26;display:grid;place-items:center;color:#636973;font-size:13px">[{c} image — Gessi press]</div><h3 style="margin-top:16px;color:var(--on-panel)">{c}</h3><p class="caption">[One line on the collection.]</p></div>)}</div>
+  </section>
+  <FullBleed accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom" eyebrow="Why Zest" title="Chosen by Gessi. [First to launch.]" text="[The partner story: selected as Haute Culture Ambassadors, the launch at Casa Gessi London, what Zest brings — three decades of Gessi specification across homes and developments. Quote from Gessi UK if available.]" minHeight="70vh" />
+  <section class="wrap section--loose z-on-dark">
+    <div class="grid grid--2" style="gap:96px;align-items:start">
+      <div class="z-heading"><span class="z-eyebrow">In Chester</span><h2>What you can see, and when.</h2><p class="z-heading__lead">[Which collections are on display, from what date, and how a private viewing works. Two people to ask for.]</p></div>
+      <div class="stack"><PersonCard name="Sam Brown" role="Senior Designer, Bathrooms [confirm]" ask="Haute Culture and wellness rooms" contactHref={`mailto:${site.email}`} contactLabel="Email Sam" /><PersonCard name="Kieran Morris" role="[Role]" ask="Haute Culture for developments and hotels" contactHref={site.phoneHref} contactLabel={site.phone} /></div>
+    </div>
+  </section>
+  <section class="wrap section z-on-dark" style="padding-top:0"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>Haute Culture, practically.</h2></div><FAQ items={[{ q: 'Can I buy Haute Culture pieces individually?', a: '[Confirm with Gessi: typically specified as part of a designed scheme.]' }, { q: 'How long is the lead time?', a: '[Confirm.]' }, { q: 'Is it available for developments and hotels?', a: 'Yes — we specify Haute Culture for penthouse and hospitality schemes through our projects team.' }]} /></div></section>
+  <section class="section--loose z-on-dark" style="border-top:1px solid #343a44"><div class="wrap stack" style="align-items:center;text-align:center;gap:32px"><h2 style="max-width:720px;font-size:clamp(36px,4.2vw,56px);line-height:1">See it in Chester.</h2><a class="z-btn z-btn--primary z-btn--on-dark" href="/book-a-design-appointment?interest=haute-culture">Book a private viewing</a></div></section>
+</Base>
+<style>.dark .z-heading__lead { color: #cfd3d9; }</style>

@@ -1,0 +1,92 @@
+---
+import Pic from '../components/Pic.astro';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Statement from '../components/Statement.astro';
+import ImageRow from '../components/ImageRow.astro';
+import FullBleed from '../components/FullBleed.astro';
+import ProcessList from '../components/ProcessList.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+
+const projects = (await getCollection('projects', ({ data }) => data.featured && !data.draft)).sort((a, b) => (b.data.units ?? 0) - (a.data.units ?? 0)).slice(0, 3);
+const steps = [
+  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples.' },
+  { title: 'Survey and brief', text: 'We measure the room and agree what it has to do for you.' },
+  { title: 'Design and specification', text: 'Layouts, 3D visuals and a specification with every product named.' },
+  { title: 'Supply and installation support', text: 'Your installer or one of ours; we stay until it is finished.' },
+];
+---
+<Base title="Luxury Kitchens & Bathrooms, Chester | Zest Bathrooms & Kitchens" description={site.description} dark floatingHeader>
+  <Hero
+    image="/images/home/gessi-onyx.jpg"
+    alt="Gessi rain showers in copper against a book-matched onyx wall"
+    eyebrow="Chester · Luxury bathrooms and kitchens since 1992"
+    title="Rooms worth coming home to."
+    text="SieMatic kitchens, Gessi bathrooms and a design studio that plans both as one room."
+    link={{ label: 'Begin', href: '#doors' }}
+    position="60% 50%"
+  />
+
+  <div id="doors"><Statement>For thirty-four years we have designed and supplied the kitchens and bathrooms of the North West's best homes — and, from a showroom on Brookdale Place, some of its largest developments.</Statement></div>
+
+  <ImageRow accent="kitchens" image="/images/home/red-siematic.jpg" alt="Slate SieMatic kitchen against a terracotta wall, Zest showroom" eyebrow="Kitchens" title="SieMatic and Leicht, planned by our own studio." text="Handleless German precision, specified for the way your household actually cooks, eats and gathers. Displays on the floor in Chester." href="/kitchens" linkLabel="Explore kitchens" />
+  <ImageRow accent="bathrooms" flip image="/images/home/gessi-bamboo.jpg" alt="Gessi Haute Culture bamboo-form tap in brushed copper" eyebrow="Bathrooms" title="Gessi, Bette, Novello — and rooms built for wellness." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 40%" />
+  <ImageRow accent="projects" image="/images/home/project-deansgate.jpg" alt="Deansgate Square towers, Manchester" eyebrow="Projects" title="3,389 apartments. 19 developments. One supplier." text="Specification and supply for developers, architects and hotels across the UK — Renaker, Capital & Centric, Domis, Audley, Fragrance Group." href="/projects" linkLabel="See the work" secondary={site.tradeCta} position="50% 30%" />
+
+  <FullBleed id="haute" accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom in a mirrored, marble room" eyebrow="Now in Chester" title="Gessi Haute Culture. One of ten showrooms in the UK." text="Eight couture collections, made by hand in Italy and specified rather than bought. Zest is an official Haute Culture partner [and the first UK showroom to launch]. Seen in Chester by private appointment." cta={{ label: 'Book a private viewing', href: '/gessi-haute-culture' }} />
+
+  <section id="design" class="section--loose z-accent--design light-section" data-theme="light">
+    <div class="wrap grid design">
+      <div class="stack" style="gap:40px">
+        <div class="z-heading">
+          <span class="z-eyebrow">The design service</span>
+          <h2 class="design__title">One studio. Both rooms. Start to finish.</h2>
+          <p class="z-heading__lead">A first appointment in the showroom is complimentary; if you go ahead, the design fee is credited against your order [confirm].</p>
+        </div>
+        <ProcessList steps={steps} />
+        <div><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></div>
+      </div>
+      <div class="design__img"><Pic src="/images/home/green-tile.jpg" alt="Book-matched teal and copper marble shower, Zest showroom" sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div>
+    </div>
+  </section>
+
+  <section class="section--loose z-accent--projects z-on-dark">
+    <div class="wrap">
+      <div class="cluster" style="justify-content:space-between;align-items:flex-end;margin-bottom:64px">
+        <div class="z-heading" style="max-width:640px">
+          <span class="z-eyebrow">Recent work</span>
+          <h2>Behind the North West's biggest schemes.</h2>
+        </div>
+        <a class="z-btn z-btn--link z-btn--on-dark" href="/projects">All projects <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
+      </div>
+      <div class="grid grid--3" style="gap:32px">
+        {projects.map((p) => <CaseStudyCard bare ratio="4 / 5" title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} alt={p.data.hero?.alt} tags={[p.data.sector && { label: p.data.sector, accent: true }, p.data.location && { label: p.data.location.split(',')[0] }, p.data.units && { label: `${p.data.units.toLocaleString()} units` }].filter(Boolean) as { label: string; accent?: boolean }[]} />)}
+      </div>
+    </div>
+  </section>
+
+  <FullBleed id="showroom" accent="design" align="center" shade="left" minHeight="80vh" image="/images/home/gessi-2.jpg" alt="Terrazzo basin wall and teal tiles, Zest showroom, Chester" eyebrow="The showroom — Brookdale Place, Chester" title="See it before you choose it." text="[X] kitchen displays, [X] bathroom settings and working showers, two minutes from the city walls. Serving Chester, Cheshire, the Wirral, North Wales, Liverpool and Manchester." cta={{ label: 'Plan a visit', href: '/about/showroom' }} link={{ label: 'Request the brochures', href: '/kitchens/brochures' }} />
+
+  <section class="section--loose z-on-dark" style="border-top:1px solid #343a44">
+    <div class="wrap stack" style="align-items:center;text-align:center;gap:32px">
+      <h2 style="max-width:720px;font-size:clamp(36px,4.2vw,56px);line-height:1">Start with a conversation in the showroom.</h2>
+      <p style="max-width:520px;color:#cfd3d9;line-height:1.7">Bring a plan, a photo or just an idea. An hour with one of our designers is the quickest way to find out what your room could be.</p>
+      <div class="stack" style="align-items:center;gap:16px">
+        <a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a>
+        <a href={site.phoneHref} style="font-size:15px;color:#9aa0a9;text-decoration:none">or call {site.phone}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .light-section { background: var(--stone); color: var(--ink); }
+  .light-section h2, .light-section .z-heading__lead { color: var(--ink); }
+  .light-section .z-heading__lead { color: var(--slate); }
+  .design { grid-template-columns: 5fr 6fr; gap: 96px; align-items: center; }
+  .design__title { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.05; font-weight: 300; }
+  .design__img { aspect-ratio: 4 / 5; overflow: hidden; }
+  .design__img :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 900px) { .design { grid-template-columns: 1fr; gap: 48px; } }
+</style>

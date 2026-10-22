@@ -1,0 +1,19 @@
+---
+interface Props { items: { title: string; text: string }[]; eyebrow?: string; title?: string }
+const { items, eyebrow = 'Known for', title } = Astro.props;
+---
+{items.length > 0 && <section class="kf stone">
+  <div class="wrap">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">{eyebrow}</span>{title && <h2>{title}</h2>}</div>
+    <div class="kf__grid">{items.map((it, i) => <div class="kf__item"><span class="kf__n">{String(i + 1).padStart(2, '0')}</span><h3>{it.title}</h3><p>{it.text}</p></div>)}</div>
+  </div>
+</section>}
+<style>
+  .kf { padding-block: var(--space-8); }
+  @media (min-width: 900px) { .kf { padding-block: var(--space-9); } }
+  .kf__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-7) var(--space-6); }
+  .kf__item { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-4); border-top: var(--rule-brass) solid var(--accent); }
+  .kf__n { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--accent-text); }
+  .kf__item h3 { font-size: 22px; }
+  .kf__item p { font-size: 15px; line-height: 1.6; color: var(--slate); }
+</style>

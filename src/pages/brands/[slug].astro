@@ -1,0 +1,94 @@
+---
+import Pic from '../../components/Pic.astro';
+import Base from '../../layouts/Base.astro';
+import Feature from '../../components/Feature.astro';
+import Gallery from '../../components/Gallery.astro';
+import KnownFor from '../../components/KnownFor.astro';
+import OnlineBand from '../../components/OnlineBand.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection, render } from 'astro:content';
+import { site } from '../../data/site';
+export async function getStaticPaths() {
+  const all = await getCollection('brands');
+  return all.map((e) => ({ params: { slug: e.id }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+const b = entry.data;
+const { Content } = await render(entry);
+const isKitchen = b.category === 'Kitchens' || b.category === 'Appliances';
+const accent = isKitchen ? 'kitchens' : 'bathrooms';
+const studies = (await getCollection('caseStudies', ({ data }) => data.brands.includes(entry.id) && !data.draft)).sort((x, y) => y.data.date.valueOf() - x.data.date.valueOf()).slice(0, 3);
+const projects = (await getCollection('projects', ({ data }) => data.brands.includes(entry.id) && !data.draft)).sort((x, y) => (y.data.units ?? 0) - (x.data.units ?? 0)).slice(0, 3);
+const gallery = b.gallery;
+const topGallery = gallery.slice(0, 5);
+const restGallery = gallery.slice(5, 10);
+const universalFaqs = [
+  { q: `Can I buy ${b.title} from Zest without the design service?`, a: `Yes — if you know exactly what you want we'll quote it. Most people find the design appointment pays for itself, because it's where the mistakes get caught.` },
+  { q: `Do you price-match ${b.title} found online?`, a: `We'll always talk about price openly and we're competitive on the full specification, but we don't chase anonymous online listings — grey imports, discontinued stock and missing warranties are common. Bring the quote to the showroom and we'll show you the real comparison.` },
+  { q: `Can I see ${b.title} in Chester?`, a: b.onDisplay ?? `[Confirm what is on display.]` },
+];
+const faqs = [...b.faqs, ...universalFaqs];
+const schema = [{ '@context': 'https://schema.org', '@type': 'Brand', name: b.title, url: b.website, description: b.tagline ?? b.summary }];
+const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: 'Made in', v: b.hometown }, b.country && { k: 'Country', v: b.country }, { k: 'Category', v: b.category }].filter(Boolean) as { k: string; v: string }[];
+---
+<Base title={`${b.title} — ${b.category} at Zest, Chester`} description={b.tagline ? `${b.title}: ${b.tagline} Specified and supplied by Zest in Chester; see it in the showroom.` : b.summary} accent={accent} schema={schema}>
+  <header class="bh">
+    {b.hero && <Pic src={b.hero.src} alt={b.hero.alt || b.title} class="bh__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} />}
+    <div class="bh__shade head-shade" aria-hidden="true"></div>
+    <div class="wrap bh__copy z-on-dark">
+      <span class="z-eyebrow rise q1">Brands — {b.category}{b.country ? ` · ${b.country}` : ''}</span>
+      <h1 class="bh__title rise q2">{b.title}</h1>
+      {b.tagline && <p class="bh__lead rise q3">{b.tagline}</p>}
+      <div class="cluster rise q4" style="gap:28px;margin-top:8px"><a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link z-btn--on-dark" href="#gallery">See it in use <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+    </div>
+  </header>
+
+  <section class="wrap bf">
+    <dl class="bf__facts">{facts.map((f) => <div><dt>{f.k}</dt><dd>{f.v}</dd></div>)}</dl>
+    <div class="bf__intro prose">{b.heritage && <p class="bf__heritage">{b.heritage}</p>}<Content /></div>
+  </section>
+
+  <div id="gallery"><Gallery images={topGallery} max={5} /></div>
+
+  <KnownFor items={b.knownFor} title={`What ${b.title} is known for.`} />
+
+  {b.collections.length > 0 && <section class="wrap section"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Collections</span><h2>Where to start.</h2></div><div class="grid grid--3">{b.collections.map((c, i) => <div class="coll">{c.image ? <div class="coll__img fill"><Pic src={c.image} alt={c.name} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div> : <span class="coll__idx">{String(i + 1).padStart(2, '0')}</span>}<h3>{c.name}</h3>{c.text && <p class="small" style="color:var(--slate)">{c.text}</p>}</div>)}</div></section>}
+
+  {b.whyZest.length > 0 && <Feature image={restGallery[0]?.src ?? b.hero?.src} alt={restGallery[0]?.alt ?? ''} eyebrow={`Why ${b.title} from Zest`} title="The product is the same. The result isn't." flip>
+    {b.whyZest.map((p) => <p>{p}</p>)}
+    {b.onDisplay && <p><strong>In Chester:</strong> {b.onDisplay}</p>}
+    <div class="cluster"><a class="z-btn z-btn--secondary" href="/about/showroom">Plan a visit</a><a class="z-btn z-btn--link" href="/design-service">How the design service works <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+  </Feature>}
+
+  {(studies.length > 0 || projects.length > 0) && <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">In our work</span><h2>{b.title}, as we've used it.</h2></div><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/${s.data.room}/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} summary={s.data.summary} tags={[{ label: s.data.room === 'kitchens' ? 'Kitchen' : 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}{projects.map((p) => <CaseStudyCard title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} summary={p.data.summary} tags={[{ label: p.data.sector ?? 'Project', accent: true }, ...(p.data.units ? [{ label: `${p.data.units.toLocaleString()} units` }] : [])]} />)}</div></div></section>}
+
+  {restGallery.length > 1 && <Gallery images={restGallery.slice(1)} max={4} />}
+
+  <OnlineBand brand={b.title} />
+
+  <section class="wrap section"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>{b.title}, practically.</h2></div><FAQ items={faqs} openFirst /></div></section>
+
+  <CtaBand title={`See ${b.title} in Chester.`} text="An hour in the showroom with a designer — the displays, the samples, the finishes side by side, and an honest conversation about what your room needs." />
+</Base>
+<style>
+  .bh { position: relative; min-height: 92vh; display: flex; align-items: flex-end; background: var(--panel-dark); overflow: hidden; padding: 200px 0 var(--space-8); }
+  .bh__img, .bh :global(.pic img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bh__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,17,20,.85) 0%, rgba(15,17,20,.25) 60%, rgba(15,17,20,.15) 100%); }
+  .bh__copy { position: relative; width: 100%; display: flex; flex-direction: column; gap: var(--space-5); }
+  .bh__title { font-size: clamp(48px, 6vw, 88px); line-height: .95; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; color: var(--on-panel); }
+  .bh__lead { font-size: 20px; line-height: 1.5; color: var(--on-panel); opacity: .9; max-width: 560px; }
+  .bf { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-9); padding-block: var(--space-9); align-items: start; }
+  .bf__facts { margin: 0; border-top: var(--hairline) solid var(--line); }
+  .bf__facts > div { display: grid; grid-template-columns: 100px 1fr; gap: var(--space-3); padding: var(--space-3) 0; border-bottom: var(--hairline) solid var(--line); font-size: 15px; }
+  .bf__facts dt { color: var(--slate-muted); } .bf__facts dd { margin: 0; }
+  .bf__intro { font-size: 18px; line-height: 1.7; }
+  .bf__heritage { font-family: var(--font-display); font-size: 26px; line-height: 1.35; font-weight: 300; font-variation-settings: 'opsz' 48; color: var(--ink); margin-bottom: var(--space-6) !important; }
+  .bf__intro :global(h1), .bf__intro :global(h2) { font-size: 28px; margin-top: var(--space-6); }
+  .coll__img, .coll__ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--stone); display: block; margin-bottom: var(--space-4); }
+  .coll h3 { font-size: 22px; margin-bottom: var(--space-2); }
+  /* No press image yet: the collection reads as a numbered index entry rather than an empty frame */
+  .coll__idx { display: block; padding-top: var(--space-4); margin-bottom: var(--space-4); border-top: var(--rule-brass) solid var(--accent); font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--accent-text); }
+  @media (max-width: 900px) { .bf { grid-template-columns: 1fr; gap: var(--space-6); } }
+</style>

@@ -1,0 +1,17 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { site } from '../../data/site';
+export async function getStaticPaths() {
+  const all = await getCollection('journal', ({ data }) => !data.draft && data.decision !== 'drop');
+  return all.map((e) => ({ params: { slug: e.id }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const author = entry.data.author ? await getEntry('team', entry.data.author) : undefined;
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const schema = [{ '@context': 'https://schema.org', '@type': 'Article', headline: entry.data.title, description: entry.data.summary, datePublished: entry.data.date.toISOString(), dateModified: (entry.data.updated ?? entry.data.date).toISOString(), image: entry.data.hero ? new URL(entry.data.hero.src, site.url).href : undefined, author: { '@type': author ? 'Person' : 'Organization', name: author?.data.name ?? site.name, url: author ? `${site.url}/about/team` : site.url }, publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: `${site.url}/images/brand/zest-logo-slate.png` } }, mainEntityOfPage: new URL(Astro.url.pathname, site.url).href }];
+---
+<Page title={entry.data.title} description={entry.data.summary} eyebrow={`Journal — ${fmt(entry.data.date)}`} heading={entry.data.title} lead={entry.data.summary} hero={entry.data.hero} schema={schema}>
+  <article class="wrap section" style="padding-top:0"><div class="prose"><Content /></div>{author && <p class="caption" style="margin-top:var(--space-7)">Written by <a href="/about/team">{author.data.name}</a>, {author.data.role}.</p>}</article>
+</Page>

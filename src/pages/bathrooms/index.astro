@@ -1,0 +1,37 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import Feature from '../../components/Feature.astro';
+import Gallery from '../../components/Gallery.astro';
+import FullBleed from '../../components/FullBleed.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import { getCollection } from 'astro:content';
+import imgs from '../../data/page-images.json';
+import { site } from '../../data/site';
+const studies = (await getCollection('caseStudies', ({ data }) => data.room === 'bathrooms' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 6);
+const brands = (await getCollection('brands', ({ data }) => data.category !== 'Kitchens' && data.category !== 'Appliances')).sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
+---
+<Page title="Luxury Bathrooms Chester — Gessi, Bette, Novello" description="Luxury bathrooms designed in Chester: Gessi Haute Culture, Bette, Novello, AXOR and wellness rooms, for homes across Cheshire, the Wirral and the North West." accent="bathrooms" eyebrow="Bathrooms — Chester" heading="Bathrooms built for the way you want to start the day." lead="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades." hero={{ src: '/images/home/bathroom-edgeley.jpg', alt: 'Contemporary bathroom with brass fittings, Edgeley, Chester' }}>
+  <Feature image="/images/home/green-2.jpg" alt="Dark green bathroom with copper tap, Zest showroom" eyebrow="How we design a bathroom" title="Specified in the showroom, not assembled from a basket.">
+    <p>A bathroom is thirty decisions that have to agree: valve and trim, tray and fall, tile and grout line, where the light comes from. We make them with you, in an hour among real displays, then draw the room before anything is ordered.</p>
+    <p>One designer from survey to the day the installer leaves — yours or one of ours.</p>
+    <div class="cluster"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link" href="/design-service">How it works <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+  </Feature>
+  <FullBleed accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom" eyebrow="Now in Chester" title="Gessi Haute Culture. One of ten UK showrooms." text="Eight couture collections, specified rather than bought. Seen in Chester by private appointment." cta={{ label: 'Book a private viewing', href: '/gessi-haute-culture' }} minHeight="70vh" />
+  <section class="wrap section">
+    <div class="cluster" style="justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-6)"><div class="z-heading"><span class="z-eyebrow">Recent bathrooms</span><h2>Designed in Chester.</h2></div><a class="z-btn z-btn--link" href="/bathrooms/case-studies">All bathroom case studies <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+    <div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/bathrooms/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} alt={s.data.hero?.alt} summary={s.data.summary} tags={[{ label: 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}</div>
+  </section>
+  <section class="stone section"><div class="wrap">
+    <div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Brands</span><h2>The houses we work with.</h2><p class="z-heading__lead">Each has its own page: what they're known for, what's on display, and the questions people ask.</p></div>
+    <div class="grid grid--4">{brands.map((b) => <a href={`/brands/${b.id}`} class="brand-tile">{b.data.hero && <div class="fill" style="aspect-ratio:3/2"><Pic src={b.data.hero.src} alt="" sizes="(max-width: 900px) 100vw, 25vw" widths={[320, 480, 640]} /></div>}<span class="caption">{b.data.category}</span><h3>{b.data.title}</h3></a>)}</div>
+  </div></section>
+  <Gallery images={imgs.bathrooms.gallery.map((src: string) => ({ src }))} max={5} eyebrow="Details" title="Stone, brass, light." />
+  <Feature image="/images/home/green-tile.jpg" alt="Teal and copper marble shower, Zest showroom" eyebrow="Wellness and surfaces" title="Steam, sauna, slabs." flip tone="stone">
+    <p>Effe steam and sauna, Sunshower, Gessi Private Wellness — designed into the room rather than bolted on. And the slab and tile library in the showroom for the surfaces that make the difference.</p>
+    <div class="cluster"><a class="z-btn z-btn--secondary" href="/bathrooms/wellness">Wellness rooms</a><a class="z-btn z-btn--link" href="/bathrooms/tiles">Tiles and surfaces <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+  </Feature>
+  <section class="wrap section"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>Before you book</h2></div><FAQ items={[{ q: 'What does a luxury bathroom cost?', a: 'Most bathrooms we design fall between [£X] and [£X] supplied; our <a href="/bathrooms/cost-guide">cost guide</a> explains what moves the number.' }, { q: 'Do you install?', a: 'We supply and project-manage, and work with installers we have used for years. You can use your own too.' }, { q: 'Can I see Gessi Haute Culture?', a: 'Yes, by private appointment in Chester [from date].' }, { q: 'I found the same tap cheaper online.', a: 'You probably did. What the listing doesn\'t include is the specification, the survey, the installer who knows it, and someone to call. We talk about price openly in the showroom — bring the quote.' }]} openFirst /></div></section>
+</Page>
+<style>.brand-tile { display: block; background: var(--surface-raised); border: var(--hairline) solid var(--line); text-decoration: none; color: inherit; overflow: hidden; }  .brand-tile .caption, .brand-tile h3 { padding-inline: var(--space-4); } .brand-tile .caption { display: block; padding-top: var(--space-4); } .brand-tile h3 { font-size: 20px; padding-bottom: var(--space-4); margin-top: 4px; } .brand-tile:hover { border-color: var(--accent); }</style>

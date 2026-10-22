@@ -1,0 +1,48 @@
+{
+ "siematic": {
+  "collections": {
+   "pure": "/images/pages/siematic-kitchens-12.webp",
+   "urban": "/images/pages/siematic-kitchens-07.jpg",
+   "classic": "/images/pages/siematic-kitchens-09.jpg",
+   "mondial": "/images/pages/siematic-kitchens-28.jpg"
+  },
+  "gallery": [
+   "/images/pages/siematic-kitchens-08.webp",
+   "/images/journal/kitchen-design-trends-03.jpg",
+   "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-05.webp",
+   "/images/pages/our-story-06.jpg",
+   "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-07.webp",
+   "/images/journal/award-winning-design-from-siematic-meet-the-sg6-02.webp",
+   "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-01.webp",
+   "/images/pages/siematic-kitchens-67.jpg"
+  ],
+  "display": [
+   "/images/pages/introducing-our-new-siematic-display-05.webp",
+   "/images/pages/introducing-our-new-siematic-display-06.webp",
+   "/images/pages/introducing-our-new-siematic-display-07.webp",
+   "/images/pages/introducing-our-new-siematic-display-08.webp",
+   "/images/pages/our-showroom-04.jpg",
+   "/images/pages/siematic-kitchens-01.webp"
+  ],
+  "hero": "/images/pages/siematic-kitchens-31.webp"
+ },
+ "bathrooms": {
+  "gallery": [
+   "/images/pages/bathrooms-01.jpg",
+   "/images/pages/bathrooms-02.jpg",
+   "/images/pages/bathrooms-03.jpg",
+   "/images/pages/bathrooms-04.webp",
+   "/images/pages/bathrooms-05.webp",
+   "/images/pages/bathrooms-06.webp",
+   "/images/pages/bathrooms-07.jpg",
+   "/images/pages/bathrooms-08.webp"
+  ]
+ },
+ "kitchenLife": [
+  "/images/journal/the-siematic-difference-seven-essentials-of-lasting-luxury-kitchen-design-01.jpg",
+  "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp",
+  "/images/journal/kitchen-design-trends-01.jpg",
+  "/images/pages/the-siematic-difference-seven-essentials-of-lasting-luxury-02.jpg",
+  "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-06.webp"
+ ]
+}

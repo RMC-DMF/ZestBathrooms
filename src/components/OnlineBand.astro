@@ -1,0 +1,26 @@
+---
+/** "Found it cheaper online?" — the showroom argument, used on brand pages. */
+import { site } from '../data/site';
+interface Props { brand: string }
+const { brand } = Astro.props;
+---
+<section class="ob">
+  <div class="wrap ob__in">
+    <div class="z-heading">
+      <span class="z-eyebrow">Found {brand} cheaper online?</span>
+      <h2>You can buy the box anywhere. You can't buy the room.</h2>
+      <p class="z-heading__lead">A price on a screen doesn't include the person who checks the valve matches the trim, the survey that says where it goes, the installer who has fitted it fifty times, or the call you make when something's wrong. We don't claim to be the cheapest place to buy {brand}. We are the place where it turns into a bathroom that works — and we'll always talk about price openly, in the showroom.</p>
+    </div>
+    <div class="ob__acts">
+      <a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a>
+      <a class="z-btn z-btn--secondary" href="/about/showroom">Visit the showroom</a>
+      <a class="z-btn z-btn--link" href="/contact">Ask a question <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
+    </div>
+  </div>
+</section>
+<style>
+  .ob { padding-block: var(--space-9); border-top: var(--hairline) solid var(--line); border-bottom: var(--hairline) solid var(--line); }
+  .ob__in { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--space-8); align-items: center; }
+  .ob__acts { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+  @media (max-width: 900px) { .ob__in { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,19 @@
+---
+import Page from '../../layouts/Page.astro';
+---
+<Page title="Register Your Project" description="Tell Zest about your development or hotel scheme: location, unit count and stage. We respond within one working day." accent="projects" eyebrow="Projects — register" heading="Register your project." lead="Unit count, location and stage is enough. We come back within one working day with a named contact." cta={false}>
+  <section class="wrap section" style="padding-top:0">
+    <form class="stack" name="project-registration" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=project" style="max-width:640px">
+      <input type="hidden" name="form-name" value="project-registration" />
+      <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+      <div class="grid grid--2"><div class="field"><label for="r-name">Your name</label><input id="r-name" name="name" required autocomplete="name" /></div><div class="field"><label for="r-company">Company</label><input id="r-company" name="company" required autocomplete="organization" /></div></div>
+      <div class="grid grid--2"><div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" required autocomplete="email" /></div><div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" /></div></div>
+      <div class="field"><label for="r-role">Your role</label><select id="r-role" name="role"><option>Developer</option><option>Architect</option><option>Interior designer</option><option>Main contractor</option><option>Hotel operator</option><option>Other</option></select></div>
+      <div class="grid grid--2"><div class="field"><label for="r-project">Project name</label><input id="r-project" name="project" required /></div><div class="field"><label for="r-location">Location</label><input id="r-location" name="location" required /></div></div>
+      <div class="grid grid--2"><div class="field"><label for="r-units">Units or rooms</label><input id="r-units" name="units" inputmode="numeric" /></div><div class="field"><label for="r-stage">Stage</label><select id="r-stage" name="stage"><option>Feasibility</option><option>Planning</option><option>Tender</option><option>On site</option></select></div></div>
+      <div class="field"><label for="r-scope">What do you need?</label><textarea id="r-scope" name="scope" rows="4" placeholder="Bathrooms, kitchens or both; any brands already specified; programme dates"></textarea><p class="help">Drawings: after we reply you will get a secure link to share files — attachments here are capped at 8 MB.</p></div>
+      <div><button class="z-btn z-btn--primary" type="submit">Register the project</button></div>
+      <p class="caption">We use your details only to respond to this enquiry. <a href="/privacy">Privacy</a>.</p>
+    </form>
+  </section>
+</Page>

@@ -1,0 +1,10 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getEntry, render } from 'astro:content';
+import { site } from '../../data/site';
+const copy = await getEntry('pages', 'how-we-work');
+const { Content } = await render(copy!);
+---
+<Page title="How We Work With Developers, Architects & Hotels" description="Zest's specification and supply service for developments and hospitality: samples, documentation, programme-led supply and aftercare." accent="projects" eyebrow="Projects — how we work" heading="Specification to handover." lead="One account contact, samples and documentation built for approval, and deliveries phased to your programme." hero={copy?.data.hero} cta={{ title: 'Tell us about the scheme.', text: 'Unit count, location and stage is enough to start.', label: site.tradeCta.label, href: site.tradeCta.href }}>
+  <section class="wrap section"><div class="prose"><Content /></div></section>
+</Page>

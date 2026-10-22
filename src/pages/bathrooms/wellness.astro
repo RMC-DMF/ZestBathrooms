@@ -1,0 +1,11 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import { getEntry, render } from 'astro:content';
+const copy = await getEntry('pages', 'wellness');
+const { Content } = await render(copy!);
+---
+<Page title="Wellness Bathrooms Chester — Steam, Sauna & Spa" description="Steam rooms, saunas, spa showers and private wellness suites designed and supplied in Chester by Zest." accent="bathrooms" eyebrow="Bathrooms — wellness" heading="Rooms built for wellness." lead="Steam, sauna and shower systems from Effe, Sunshower and Gessi, designed as part of the bathroom rather than bolted on." hero={copy?.data.hero}>
+  <section class="wrap section"><div class="prose"><Content /></div></section>
+  {copy!.data.gallery.length > 0 && <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{copy!.data.gallery.slice(0, 6).map((g) => <div class="fill" style="aspect-ratio:4/3"><Pic src={g.src} alt={g.alt} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div>)}</div></section>}
+</Page>

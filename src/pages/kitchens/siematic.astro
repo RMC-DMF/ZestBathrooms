@@ -1,0 +1,35 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import Feature from '../../components/Feature.astro';
+import Gallery from '../../components/Gallery.astro';
+import KnownFor from '../../components/KnownFor.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import { getCollection, getEntry } from 'astro:content';
+import imgs from '../../data/page-images.json';
+import { site } from '../../data/site';
+const brand = await getEntry('brands', 'siematic');
+const studies = (await getCollection('caseStudies', ({ data }) => data.brands.includes('siematic') && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const collections = [
+  { name: 'SieMatic Pure', text: 'Minimal, handleless, monolithic. The kitchen as architecture — flush fronts, recessed grips, long unbroken runs.', image: imgs.siematic.collections.pure },
+  { name: 'SieMatic Urban', text: 'Open shelves, mixed materials, a looser plan. For houses where the kitchen is where everyone ends up.', image: imgs.siematic.collections.urban },
+  { name: 'SieMatic Classic', text: 'Framed fronts and proportion. Contemporary engineering with a traditional face, for period homes that want both.', image: imgs.siematic.collections.classic },
+  { name: 'SieMatic Mondial', text: 'The luxe end: bronze anodised fronts, rare veneers, grand scale.', image: imgs.siematic.collections.mondial },
+];
+---
+<Page title="SieMatic Kitchens Chester — Pure, Urban, Classic, Mondial" description="SieMatic kitchens designed and supplied by Zest in Chester: the Pure, Urban, Classic and Mondial collections, on display in the showroom, with a complimentary first design appointment." accent="kitchens" eyebrow="Kitchens — SieMatic" heading="SieMatic, in Chester." lead="The handleless original since 1960. Four design languages, one engineering platform, planned by our studio and on display on Brookdale Place." hero={{ src: imgs.siematic.hero, alt: "SieMatic Pure kitchen opening onto a terrace" }}>
+  <section class="wrap section">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">The collections</span><h2>Four ways to be a SieMatic.</h2><p class="z-heading__lead">Most people know which one is theirs within ten minutes in the showroom.</p></div>
+    <div class="grid grid--2" style="gap:var(--space-7) var(--space-6)">{collections.map((c) => <div><div style="aspect-ratio:3/2;overflow:hidden;margin-bottom:var(--space-4)" class="fill"><Pic src={c.image} alt={c.name} sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div><h3>{c.name}</h3><p class="small" style="color:var(--slate);margin-top:8px;max-width:480px">{c.text}</p></div>)}</div>
+  </section>
+  <KnownFor items={brand?.data.knownFor ?? []} title="What SieMatic is known for." />
+  <Feature image={imgs.siematic.display[0]} alt="SieMatic SLX display in the Zest showroom" eyebrow="SieMatic at Zest" title="On the floor in Chester.">
+    <p>{brand?.data.onDisplay}</p>
+    <p>SieMatic is sold only through appointed studios, so the question isn't online versus showroom — it's which studio. Ours plans the bathroom with the kitchen when a house has both, and the designer who draws it sees it through.</p>
+    <div class="cluster"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link" href="/about/showroom">Plan a visit <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+  </Feature>
+  <Gallery images={imgs.siematic.gallery.map((src: string) => ({ src }))} max={7} eyebrow="In detail" title="Interiors, surfaces, light." />
+  {studies.length > 0 && <section class="stone section"><div class="wrap"><div class="cluster" style="justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-6)"><div class="z-heading"><span class="z-eyebrow">Recent SieMatic kitchens</span><h2>Designed in Chester.</h2></div><a class="z-btn z-btn--link" href="/kitchens/case-studies">All kitchen case studies <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/kitchens/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} summary={s.data.summary} tags={[{ label: 'Kitchen', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}</div></div></section>}
+  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>SieMatic, practically.</h2></div><FAQ items={brand?.data.faqs ?? []} openFirst /></div><div class="stack" style="padding:var(--space-6);background:var(--surface-raised);border:1px solid var(--line)"><span class="z-eyebrow">Brochures</span><h3>Pure, Urban, Classic, Mondial and the lookbook.</h3><p class="small" style="color:var(--slate)">Digital editions, sent straight away.</p><div><a class="z-btn z-btn--secondary" href="/kitchens/brochures">Request the brochures</a></div></div></div></section>
+</Page>

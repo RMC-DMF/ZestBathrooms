@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site';
+interface Props { title?: string; text?: string; label?: string; href?: string; centered?: boolean }
+const { title = 'Start with a conversation in the showroom.', text = 'Bring a plan, a photo or just an idea. An hour with one of our designers is the quickest way to find out what your room could be.', label = site.cta.label, href = site.cta.href, centered = false } = Astro.props;
+---
+<section class="z-cta z-on-dark" id="book">
+  <div class="z-cta__inner" style={centered ? 'grid-template-columns:1fr;text-align:center;justify-items:center' : undefined}>
+    <div>
+      <h2 class="z-cta__title">{title}</h2>
+      <p class="z-cta__text">{text}</p>
+    </div>
+    <div class="z-cta__actions" style={centered ? 'align-items:center' : undefined}>
+      <a class="z-btn z-btn--primary z-btn--on-dark" href={href}>{label}</a>
+      <a class="z-cta__phone" href={site.phoneHref}>or call {site.phone}</a>
+    </div>
+  </div>
+</section>

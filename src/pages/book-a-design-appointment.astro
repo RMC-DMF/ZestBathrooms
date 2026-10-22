@@ -1,0 +1,22 @@
+---
+import Page from '../layouts/Page.astro';
+import { site } from '../data/site';
+---
+<Page title="Book a Design Appointment" description="Book a complimentary design appointment at the Zest showroom in Chester. Three fields and a preferred time; we confirm within one working day." accent="design" eyebrow="Book a design appointment" heading="An hour in the showroom." lead="Complimentary, no obligation, with a designer who will plan the room with you. We confirm within one working day." cta={false}>
+  <section class="wrap section" style="padding-top:0"><div class="grid grid--2" style="gap:96px;align-items:start">
+    <form class="stack" name="design-appointment" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=appointment">
+      <input type="hidden" name="form-name" value="design-appointment" />
+      <input type="hidden" name="interest" id="interest" value="" />
+      <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+      <div class="field"><label for="a-name">Your name</label><input id="a-name" name="name" required autocomplete="name" /></div>
+      <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" required autocomplete="email" /></div>
+      <div class="field"><label for="a-phone">Phone</label><input id="a-phone" name="phone" type="tel" required autocomplete="tel" /></div>
+      <div class="field"><label for="a-room">What are we designing?</label><select id="a-room" name="room"><option>A kitchen</option><option>A bathroom</option><option>Both</option><option>Gessi Haute Culture viewing</option><option>Not sure yet</option></select></div>
+      <div class="field"><label for="a-when">Preferred time (optional)</label><input id="a-when" name="preferred" placeholder="e.g. Saturday morning, or a date" /></div>
+      <div><button class="z-btn z-btn--primary" type="submit">Request the appointment</button></div>
+      <p class="caption">Or call <a href={site.phoneHref}>{site.phone}</a>. <a href="/privacy">Privacy</a>.</p>
+    </form>
+    <aside class="stack"><div><h3>What happens next</h3><ol class="small" style="padding-left:1.2em;color:var(--slate);margin-top:8px"><li>We confirm a time within one working day.</li><li>You spend an hour with a designer in the showroom.</li><li>If you'd like to go ahead, we book a survey.</li></ol></div><div><h3>Bring, if you have them</h3><p class="small" style="margin-top:8px;color:var(--slate)">A floor plan or rough measurements, photos of the room, anything you've saved that you like — or nothing at all.</p></div></aside>
+  </div></section>
+  <script>const i = new URLSearchParams(location.search).get('interest'); if (i) { (document.getElementById('interest') as HTMLInputElement).value = i; if (i === 'haute-culture') (document.getElementById('a-room') as HTMLSelectElement).value = 'Gessi Haute Culture viewing'; }</script>
+</Page>

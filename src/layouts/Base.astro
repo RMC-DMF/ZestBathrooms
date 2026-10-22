@@ -1,0 +1,110 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import '../styles/components.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import type { Accent } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Section accent applied to the whole page. */
+  accent?: Accent;
+  /** Dark ground — the default. Pass dark={false} only for a deliberately light page. */
+  dark?: boolean;
+  /** Header floats over the first section (full-screen hero). */
+  floatingHeader?: boolean;
+  ogImage?: string;
+  /** Extra JSON-LD objects for this page. */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+  canonical?: string;
+}
+const { title, description, accent = 'neutral', dark = true, floatingHeader = false, ogImage, schema = [], noindex = false, canonical } = Astro.props;
+const fullTitle = title.includes('Zest') ? title : `${title} | Zest Bathrooms & Kitchens, Chester`;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site.url).href;
+const og = ogImage ? new URL(ogImage, site.url).href : new URL('/images/og-default.jpg', site.url).href;
+
+const business = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HomeGoodsStore'],
+  '@id': `${site.url}/#business`,
+  name: site.name,
+  url: site.url,
+  telephone: '+441244345414',
+  email: site.email,
+  foundingDate: String(site.founded),
+  image: og,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    postalCode: site.address.postcode,
+    addressCountry: site.address.country,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: site.address.lat, longitude: site.address.lng },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '16:00' },
+  ],
+  areaServed: site.areas.map((a) => ({ '@type': 'Place', name: a.replace(/^the /, '') })),
+  sameAs: Object.values(site.social),
+};
+const breadcrumbs = (() => {
+  const parts = Astro.url.pathname.split('/').filter(Boolean);
+  if (!parts.length) return null;
+  const items = [{ '@type': 'ListItem', position: 1, name: 'Home', item: site.url }];
+  parts.forEach((p, i) => items.push({ '@type': 'ListItem', position: i + 2, name: p.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()), item: `${site.url}/${parts.slice(0, i + 1).join('/')}` }));
+  return { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items };
+})();
+---
+<!doctype html>
+<html lang="en-GB" data-theme={dark ? 'dark' : 'light'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={og} />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content={dark ? '#0f1114' : '#faf8f5'} />
+    <script type="application/ld+json" set:html={JSON.stringify(business)} />
+    {breadcrumbs && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />}
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    <slot name="head" />
+  </head>
+  <body class:list={['z-root', `z-accent--${accent}`, { dark }]}>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header floating={floatingHeader} dark={dark || floatingHeader} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      // Scroll reveal — one gentle rise per element, never repeated, off for reduced motion.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        const sel = 'main .fill, main .feat__img, main .row__img, main .gal__item, main .design__img, main .z-heading, main .z-case, main .z-person, main .kf__item, main .proc li, main .feat__txt, main .row__txt, main .statement__p, main .z-fact, main .post, main .coll';
+        const els = Array.from(document.querySelectorAll<HTMLElement>(sel)).filter((el) => !el.closest('[data-no-reveal], .hero, .page-head, .study-head, .bh, .bleed'));
+        els.forEach((el) => el.classList.add('reveal'));
+        const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { (e.target as HTMLElement).classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach((el) => io.observe(el));
+        // Safety nets: anything already on screen shows at once; everything shows after 4s regardless.
+        requestAnimationFrame(() => els.forEach((el) => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); }));
+        setTimeout(() => els.forEach((el) => el.classList.add('is-in')), 4000);
+      }
+    </script>
+    <!-- Analytics: GA4 via a delayed loader, only after consent. See src/components/Analytics.astro once the consent tool is chosen. -->
+  </body>
+</html>

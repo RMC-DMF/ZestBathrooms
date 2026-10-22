@@ -1,0 +1,8 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getCollection } from 'astro:content';
+const areas = await getCollection('areas');
+---
+<Page title="Areas We Serve" description="Zest designs and supplies kitchens and bathrooms for homes across Chester, Cheshire, the Wirral, North Wales, Liverpool and Manchester, and developments across the UK." eyebrow="Areas" heading="Designed in Chester. Fitted across the North West." lead="Homeowners within about an hour of the showroom; developer and hotel projects anywhere in the UK.">
+  <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{areas.map((a) => a.data.published ? <a class="z-case" href={`/areas/${a.id}`} style="max-width:none"><div class="z-case__body"><span class="caption">{a.data.distance}</span><h3 class="z-case__title">{a.data.title}</h3><p class="z-case__summary">{a.data.summary}</p></div></a> : <div class="z-case" style="max-width:none;opacity:.7"><div class="z-case__body"><span class="caption">{a.data.distance}</span><h3 class="z-case__title">{a.data.title}</h3><p class="z-case__summary">{a.data.summary}</p></div></div>)}</div></section>
+</Page>

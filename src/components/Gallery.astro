@@ -1,0 +1,23 @@
+---
+import Pic from './Pic.astro';
+/** Lifestyle gallery: first image wide, then pairs. Square corners, no captions unless alt is given. */
+interface Props { images: { src: string; alt?: string }[]; max?: number; eyebrow?: string; title?: string; lead?: string }
+const { images, max = 7, eyebrow, title, lead } = Astro.props;
+const list = images.slice(0, max);
+---
+{list.length > 0 && <section class="gal wrap">
+  {title && <div class="z-heading" style="margin-bottom:var(--space-6)">{eyebrow && <span class="z-eyebrow">{eyebrow}</span>}<h2>{title}</h2>{lead && <p class="z-heading__lead">{lead}</p>}</div>}
+  <div class="gal__grid">
+    {list.map((g, i) => <figure class:list={['gal__item', { wide: i === 0 || (i % 5 === 0) }]}><Pic src={g.src} alt={g.alt ?? ''} sizes={(i === 0 || i % 5 === 0) ? '(max-width: 1280px) 100vw, 1280px' : '(max-width: 700px) 100vw, 50vw'} widths={[480, 768, 1024, 1440, 1920]} />{g.alt && <figcaption class="caption">{g.alt}</figcaption>}</figure>)}
+  </div>
+</section>}
+<style>
+  .gal { padding-block: var(--space-8); }
+  .gal__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+  .gal__item { margin: 0; }
+  .gal__item.wide { grid-column: 1 / -1; }
+  .gal__item :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--stone); }
+  .gal__item.wide :global(img) { aspect-ratio: 21 / 9; }
+  figcaption { margin-top: var(--space-2); }
+  @media (max-width: 700px) { .gal__grid { grid-template-columns: 1fr; } .gal__item.wide :global(img) { aspect-ratio: 4 / 3; } }
+</style>

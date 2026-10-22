@@ -1,0 +1,11 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('journal', ({ data }) => !data.draft && data.decision !== 'drop')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Page title="Journal" description="Notes from the Zest studio in Chester: kitchen and bathroom design, brands, materials and what we are seeing in the showroom." eyebrow="Journal" heading="Notes from the studio." lead="Design, materials and the occasional opinion.">
+  <section class="wrap section" style="padding-top:0"><div class="grid grid--3" style="gap:40px 24px">{posts.map((p) => <a href={`/journal/${p.id}`} class="post"><div class="post__img">{p.data.hero && <Pic src={p.data.hero.src} alt="" sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} />}</div><p class="caption">{fmt(p.data.date)}{p.data.author && ` · ${p.data.author}`}</p><h3>{p.data.title}</h3></a>)}</div></section>
+</Page>
+<style>.post { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 12px; } .post__img { aspect-ratio: 3/2; background: var(--stone); overflow: hidden; } .post__img :global(img) { width: 100%; height: 100%; object-fit: cover; } .post:hover h3 { color: var(--accent-text); }</style>

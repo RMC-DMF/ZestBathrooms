@@ -1,0 +1,11 @@
+---
+import Pic from '../../components/Pic.astro';
+import Page from '../../layouts/Page.astro';
+import { getEntry, render } from 'astro:content';
+const copy = await getEntry('pages', 'tiles');
+const { Content } = await render(copy!);
+---
+<Page title="Luxury Tiles & Surfaces Chester" description="Large-format porcelain, natural stone and book-matched slabs for bathrooms and kitchens, from the Zest showroom in Chester." accent="bathrooms" eyebrow="Bathrooms — tiles and surfaces" heading="Tiles and surfaces." lead="Large-format porcelain, stone and the slab library in the showroom, specified with the room rather than after it." hero={copy?.data.hero}>
+  <section class="wrap section"><div class="prose"><Content /></div></section>
+  {copy!.data.gallery.length > 0 && <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{copy!.data.gallery.slice(0, 6).map((g) => <div class="fill" style="aspect-ratio:4/3"><Pic src={g.src} alt={g.alt} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div>)}</div></section>}
+</Page>

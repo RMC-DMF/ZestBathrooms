@@ -1,0 +1,40 @@
+---
+import Pic from './Pic.astro';
+/** Full-width image with copy in a corner. Haute Culture, showroom, section heroes. */
+import type { Accent } from '../data/site';
+interface Props { image: string; alt: string; eyebrow?: string; title: string; text?: string; cta?: { label: string; href: string; variant?: 'primary' | 'secondary' }; link?: { label: string; href: string }; accent?: Accent; align?: 'bottom' | 'center'; shade?: 'bottom' | 'left'; minHeight?: string; id?: string }
+const { image, alt, eyebrow, title, text, cta, link, accent = 'neutral', align = 'bottom', shade = 'bottom', minHeight = '88vh', id } = Astro.props;
+---
+<section id={id} class:list={['bleed', `z-accent--${accent}`, 'z-on-dark', `bleed--${align}`, `bleed--shade-${shade}`]} style={`min-height:${minHeight}`}>
+  <Pic src={image} alt={alt} class="bleed__img" sizes="100vw" widths={[768, 1200, 1600, 2000]} />
+  <div class="bleed__shade" aria-hidden="true"></div>
+  <div class="wrap bleed__copy">
+    <div class="bleed__block">
+      {eyebrow && <span class="z-eyebrow">{eyebrow}</span>}
+      <h2 class="bleed__title">{title}</h2>
+      {text && <p class="bleed__text">{text}</p>}
+      {(cta || link) && <div class="cluster" style="gap:28px">
+        {cta && <a class:list={['z-btn', `z-btn--${cta.variant ?? 'secondary'}`, 'z-btn--on-dark']} href={cta.href}>{cta.label}</a>}
+        {link && <a class="z-btn z-btn--link z-btn--on-dark" href={link.href}>{link.label} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>}
+      </div>}
+    </div>
+  </div>
+</section>
+<style>
+  .bleed { position: relative; display: flex; overflow: hidden; background: var(--panel-dark); }
+  .bleed--bottom { align-items: flex-end; }
+  .bleed--center { align-items: center; }
+  .bleed__img, .bleed :global(.pic img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bleed__shade { position: absolute; inset: 0; }
+  .bleed--shade-bottom .bleed__shade { background: linear-gradient(to top, rgba(15,17,20,.94) 0%, rgba(15,17,20,.72) 30%, rgba(15,17,20,.25) 62%, rgba(15,17,20,.08) 100%), linear-gradient(to right, rgba(15,17,20,.55) 0%, rgba(15,17,20,0) 60%); }
+  .bleed--shade-left .bleed__shade { background: linear-gradient(to right, rgba(15,17,20,.92) 0%, rgba(15,17,20,.78) 32%, rgba(15,17,20,.35) 62%, rgba(15,17,20,.08) 100%), linear-gradient(to top, rgba(15,17,20,.5) 0%, rgba(15,17,20,0) 40%); }
+  .bleed__copy { position: relative; width: 100%; padding-top: 160px; padding-bottom: 104px; }
+  .bleed--center .bleed__copy { padding-block: 128px; }
+  .bleed__block { position: relative; max-width: 640px; display: flex; flex-direction: column; gap: var(--space-5); }
+  /* A soft pool of shadow behind the words only, so bright photographs stay bright everywhere else */
+  .bleed__block::before { content: ""; position: absolute; inset: -120px -200px -140px -160px; background: radial-gradient(ellipse at 40% 55%, rgba(15,17,20,.78) 0%, rgba(15,17,20,.45) 40%, rgba(15,17,20,0) 72%); pointer-events: none; z-index: -1; }
+  .bleed__block { isolation: isolate; }
+  .bleed__title { font-size: clamp(36px, 4.2vw, 56px); line-height: 1; font-weight: 300; letter-spacing: -0.01em; font-variation-settings: 'opsz' 144; color: var(--on-panel); text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
+  .bleed__text { text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+  .bleed__text { font-size: 17px; line-height: 1.7; color: var(--on-panel); opacity: .85; max-width: 520px; }
+</style>

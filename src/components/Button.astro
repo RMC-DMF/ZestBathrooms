@@ -1,0 +1,10 @@
+---
+interface Props { href?: string; variant?: 'primary' | 'secondary' | 'link'; onDark?: boolean; arrow?: boolean; type?: 'button' | 'submit'; class?: string }
+const { href, variant = 'primary', onDark = false, arrow = false, type = 'button', class: cls = '' } = Astro.props;
+const classes = ['z-btn', `z-btn--${variant}`, onDark && 'z-btn--on-dark', cls].filter(Boolean).join(' ');
+const Tag = href ? 'a' : 'button';
+---
+<Tag class={classes} href={href} type={href ? undefined : type}>
+  <slot />
+  {(arrow || variant === 'link') && <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg>}
+</Tag>

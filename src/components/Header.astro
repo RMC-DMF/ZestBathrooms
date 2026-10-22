@@ -1,0 +1,97 @@
+---
+import { site, nav } from '../data/site';
+interface Props { floating?: boolean; dark?: boolean }
+const { floating = false, dark = false } = Astro.props;
+const logo = dark ? '/images/brand/zest-logo-white.png' : '/images/brand/zest-logo-slate.png';
+const path = Astro.url.pathname;
+---
+<header class:list={['hdr', { 'hdr--floating': floating, 'hdr--dark': dark }]}>
+  <div class="wrap hdr__in">
+    <a class="hdr__logo" href="/" aria-label="Zest Bathrooms & Kitchens, home"><img src={logo} alt="Zest Bathrooms & Kitchens" width="124" height="69" /></a>
+    <nav class="hdr__nav" aria-label="Primary">
+      {nav.map((n) => <a href={n.href} aria-current={path === n.href || path.startsWith(n.href + '/') ? 'page' : undefined}>{n.label}</a>)}
+    </nav>
+    <div class="hdr__actions">
+      <a class="hdr__phone" href={site.phoneHref}>{site.phone}</a>
+      <a class:list={['z-btn', dark ? 'z-btn--secondary z-btn--on-dark' : 'z-btn--primary']} href={site.cta.href}>Book an appointment</a>
+    </div>
+    <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+      <svg class="bars" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" /></svg><svg class="x" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="hdr__mobile" hidden>
+    <nav aria-label="Primary (mobile)">
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+    </nav>
+    <div class="hdr__mobile-actions">
+      <a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a>
+      <a href={site.phoneHref}>{site.phone}</a>
+    </div>
+  </div>
+</header>
+<script>
+  // Compact sticky bar once the page has scrolled past the first viewport (or 120px on inner pages).
+  const hdr = document.querySelector<HTMLElement>('.hdr');
+  const threshold = hdr?.classList.contains('hdr--floating') ? () => window.innerHeight * 0.85 : () => 120;
+  let stuck = false;
+  const onScroll = () => {
+    const should = window.scrollY > threshold();
+    if (should !== stuck) { stuck = should; hdr?.classList.toggle('hdr--stuck', stuck); document.body.classList.toggle('has-stuck-hdr', stuck); }
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const btn = document.querySelector<HTMLButtonElement>('.hdr__burger');
+  const panel = document.getElementById('mobile-nav');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    if (panel) panel.hidden = open;
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+</script>
+<style>
+  .hdr { position: relative; z-index: 20; background: var(--surface); border-bottom: var(--hairline) solid var(--line); }
+  .hdr--dark { background: var(--panel-dark); border-bottom-color: #1b1f26; color: var(--on-panel); }
+  .hdr--floating { position: absolute; top: 0; left: 0; right: 0; background: transparent; border-bottom: 0; }
+  .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); height: 88px; }
+  .hdr__logo { flex-shrink: 0; }
+  .hdr--floating .hdr__in { height: 104px; }
+  .hdr__logo img { width: 124px; height: auto; display: block; }
+  .hdr__nav { display: none; gap: var(--space-6); align-items: center; }
+  .hdr__nav a { color: var(--slate); text-decoration: none; font-size: 15px; font-weight: 500; white-space: nowrap; }
+  .hdr__nav a:hover, .hdr__nav a[aria-current="page"] { color: var(--ink); }
+  .hdr--dark .hdr__nav a { color: var(--on-panel); opacity: .85; }
+  .hdr--dark .hdr__nav a:hover, .hdr--dark .hdr__nav a[aria-current="page"] { opacity: 1; color: var(--on-panel); }
+  .hdr__actions { display: none; gap: var(--space-5); align-items: center; white-space: nowrap; flex-shrink: 0; }
+  .hdr__actions .z-btn { white-space: nowrap; }
+  .hdr__phone { color: var(--slate); text-decoration: none; font-size: 15px; font-weight: 500; display: none; }
+  @media (min-width: 1280px) { .hdr__phone { display: inline; } }
+  .hdr--dark .hdr__phone { color: var(--on-panel); opacity: .85; }
+  .hdr__burger { display: inline-grid; place-items: center; width: 44px; height: 44px; background: none; border: 0; color: inherit; cursor: pointer; position: relative; z-index: 30; }
+  .hdr__burger .x { display: none; }
+  .hdr__burger[aria-expanded="true"] .x { display: block; }
+  .hdr__burger[aria-expanded="true"] .bars { display: none; }
+  .hdr--floating .hdr__burger, .hdr--dark .hdr__burger { color: var(--on-panel); }
+  .hdr__mobile { position: fixed; inset: 0; background: var(--panel-dark); color: var(--on-panel); padding: 120px var(--gutter) var(--space-8); display: flex; flex-direction: column; gap: var(--space-8); z-index: 15; overflow: auto; }
+  .hdr__mobile[hidden] { display: none; }
+  .hdr__mobile nav { display: flex; flex-direction: column; gap: var(--space-4); }
+  .hdr__mobile nav a { font-family: var(--font-display); font-size: 36px; font-weight: 300; color: var(--on-panel); text-decoration: none; }
+  .hdr__mobile-actions { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+  .hdr__mobile-actions a { color: var(--on-panel); }
+  .hdr__mobile-actions .z-btn--primary { color: var(--panel-dark); }
+  /* Stuck state: a slim fixed bar on panel-dark, slides in */
+  .hdr--stuck { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 17, 20, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #1b1f26; color: var(--on-panel); animation: hdr-in .35s cubic-bezier(.2,.7,.2,1); }
+  .hdr--stuck .hdr__in { height: 64px; }
+  .hdr--stuck .hdr__logo img { width: 92px; }
+  .hdr--stuck .hdr__nav a, .hdr--stuck .hdr__phone { color: var(--on-panel); opacity: .85; }
+  .hdr--stuck .hdr__nav a:hover, .hdr--stuck .hdr__nav a[aria-current="page"] { opacity: 1; color: var(--on-panel); }
+  .hdr--stuck .hdr__actions .z-btn { padding: 12px 20px; background: var(--on-panel); color: var(--panel-dark); border-color: var(--on-panel); }
+  .hdr--stuck .hdr__actions .z-btn:hover { background: var(--brass-light); border-color: var(--brass-light); }
+  .hdr--stuck .hdr__phone { display: none; }
+  .hdr--stuck .hdr__logo img[src*="slate"] { content: url('/images/brand/zest-logo-white.png'); }
+  @keyframes hdr-in { from { transform: translateY(-100%); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .hdr--stuck { animation: none; } }
+  @media (min-width: 1024px) {
+    .hdr__nav, .hdr__actions { display: flex; }
+    .hdr__burger, .hdr__mobile { display: none !important; }
+  }
+</style>

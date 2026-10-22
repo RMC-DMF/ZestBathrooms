@@ -1,0 +1,41 @@
+---
+import { site, footerNav } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div class="ftr__brand">
+        <img src="/images/brand/zest-logo-white.png" alt="Zest Bathrooms & Kitchens" width="112" height="62" />
+        <p class="small">{site.address.street}, {site.address.locality} {site.address.postcode}<br /><a href={site.phoneHref}>{site.phone}</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p class="caption">SieMatic · Leicht · Gessi · AXOR · Bette · Novello · Villeroy &amp; Boch · Gaggenau · Effe</p>
+      </div>
+      <div class="ftr__col"><span class="ftr__h">Explore</span>{footerNav.explore.map((l) => <a href={l.href}>{l.label}</a>)}</div>
+      <div class="ftr__col"><span class="ftr__h">About</span>{footerNav.about.map((l) => <a href={l.href}>{l.label}</a>)}</div>
+      <div class="ftr__col">
+        <span class="ftr__h">Showroom</span>
+        <p class="small">{site.hours.map((h) => <span>{h.days} {h.open.replace(':00', 'am').replace('09am','9am')}–{h.close === '17:00' ? '5pm' : '4pm'}<br /></span>)}Sunday closed</p>
+        <a href={site.tradeCta.href}>Trade: register your project →</a>
+      </div>
+    </div>
+    <div class="ftr__base">
+      <span>© {year} Zest Bathrooms &amp; Kitchens Ltd</span>
+      <span class="ftr__links"><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href={site.social.instagram} rel="noopener">Instagram</a><a href={site.social.linkedin} rel="noopener">LinkedIn</a><a href={site.social.pinterest} rel="noopener">Pinterest</a></span>
+    </div>
+  </div>
+</footer>
+<style>
+  .ftr { background: #0a0c0f; color: #9aa0a9; padding: var(--space-9) 0 var(--space-6); margin-top: auto; }
+  .ftr a { color: #9aa0a9; text-decoration: none; font-size: 15px; }
+  .ftr a:hover { color: var(--on-panel); }
+  .ftr__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-7); margin-bottom: var(--space-8); }
+  .ftr__brand { display: flex; flex-direction: column; gap: var(--space-4); }
+  .ftr__brand img { width: 112px; height: auto; opacity: .9; }
+  .ftr__col { display: flex; flex-direction: column; gap: var(--space-3); }
+  .ftr__h { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: #636973; margin-bottom: var(--space-1); }
+  .ftr__base { border-top: var(--hairline) solid #1b1f26; padding-top: var(--space-5); display: flex; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap; font-size: 13px; color: #636973; }
+  .ftr__links { display: flex; gap: var(--space-5); }
+  .ftr__links a { font-size: 13px; }
+  .caption { color: #636973; }
+  @media (max-width: 900px) { .ftr__grid { grid-template-columns: 1fr; gap: var(--space-6); } }
+</style>

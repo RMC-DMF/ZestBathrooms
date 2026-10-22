@@ -1,0 +1,32 @@
+---
+import Pic from './Pic.astro';
+/** Light-theme image + copy row. The inner-page counterpart of ImageRow. */
+interface Props { image?: string; alt?: string; eyebrow?: string; title: string; flip?: boolean; ratio?: string; tone?: 'surface' | 'stone' }
+const { image, alt = '', eyebrow, title, flip = false, ratio = '4 / 5', tone = 'surface' } = Astro.props;
+---
+<section class:list={['feat', { 'feat--flip': flip, stone: tone === 'stone' }]}>
+  <div class="wrap feat__in">
+    <div class="feat__img" style={`aspect-ratio:${ratio}`}><Pic src={image} alt={alt} sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div>
+    <div class="feat__txt">
+      {eyebrow && <span class="z-eyebrow">{eyebrow}</span>}
+      <h2>{title}</h2>
+      <div class="feat__body"><slot /></div>
+    </div>
+  </div>
+</section>
+<style>
+  .feat { padding-block: var(--space-8); }
+  @media (min-width: 900px) { .feat { padding-block: var(--space-9); } }
+  .feat__in { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-9); align-items: center; }
+  .feat--flip .feat__img { order: 2; }
+  .feat__img { overflow: hidden; background: var(--stone); }
+  .feat__img :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .feat__ph { width: 100%; height: 100%; }
+  .feat__txt { display: flex; flex-direction: column; gap: var(--space-5); }
+  .feat__txt h2 { max-width: 480px; }
+  .feat__body { display: flex; flex-direction: column; gap: var(--space-4); max-width: 480px; font-size: 17px; line-height: 1.65; color: var(--slate); }
+  .feat__body :global(p) { margin: 0; }
+  .feat__body :global(ul) { margin: 0; padding-left: 1.1em; }
+  .feat__body :global(.cluster) { margin-top: var(--space-2); }
+  @media (max-width: 900px) { .feat__in { grid-template-columns: 1fr; gap: var(--space-6); } .feat--flip .feat__img { order: 0; } }
+</style>

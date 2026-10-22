@@ -1,0 +1,10 @@
+---
+interface Props { eyebrow?: string; title: string; lead?: string; level?: 1 | 2 | 3; display?: boolean; center?: boolean; class?: string }
+const { eyebrow, title, lead, level = 2, display = false, center = false, class: cls = '' } = Astro.props;
+const H = `h${level}` as 'h1' | 'h2' | 'h3';
+---
+<div class:list={['z-heading', { 'z-heading--center': center }, cls]}>
+  {eyebrow && <span class:list={['z-eyebrow', { 'z-eyebrow--center': center }]}>{eyebrow}</span>}
+  <H class:list={['z-heading__title', { 'z-heading__title--display': display }]}>{title}</H>
+  {lead && <p class="z-heading__lead">{lead}</p>}
+</div>

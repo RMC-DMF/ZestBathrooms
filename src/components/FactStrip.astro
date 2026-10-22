@@ -1,0 +1,7 @@
+---
+interface Props { facts: { value: string; label: string }[]; dark?: boolean }
+const { facts, dark = false } = Astro.props;
+---
+<div class:list={['z-facts', { 'z-facts--dark': dark }]}>
+  {facts.map((f) => <div class="z-fact"><p class="z-fact__value">{f.value}</p><p class="z-fact__label">{f.label}</p></div>)}
+</div>
