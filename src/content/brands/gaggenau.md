@@ -4,10 +4,10 @@ category: "Appliances"
 country: "Germany"
 summary: "Gaggenau is internationally recognised for its luxury kitchen appliances, combining sophisticated design, advanced technology and exceptional performance."
 hero:
-  src: "/images/brands/gaggenau-zest-bathrooms-kitchens-01.webp"
-  alt: "Gaggenau"
+  src: "/images/brands/press/gaggenau-expressive-oven-marble.jpg"
+  alt: "Gaggenau Expressive oven set into green marble"
 legacyUrl: "/about/gaggenau-zest-bathrooms-kitchens"
-gallery: []
+gallery: [{"src": "/images/brands/press/gaggenau-minimalist-kitchen.jpg", "alt": "Gaggenau Minimalistic series in an open-plan kitchen"}, {"src": "/images/brands/press/gaggenau-expressive-knobs.jpg", "alt": "Gaggenau Expressive series control knobs"}, {"src": "/images/brands/press/gaggenau-400-series-oven.jpg", "alt": "Gaggenau 400 series oven"}, {"src": "/images/brands/press/gaggenau-induction-marble-island.jpg", "alt": "Gaggenau induction cooktop in a marble island"}, {"src": "/images/brands/press/gaggenau-vario-cooktops.jpg", "alt": "Gaggenau Vario 400 series cooktops"}, {"src": "/images/brands/press/gaggenau-gas-cooktop.jpg", "alt": "Gaggenau gas cooktop"}, {"src": "/images/brands/gaggenau-zest-bathrooms-kitchens-01.webp", "alt": "Gaggenau on display at Zest"}]
 heritage: "Gaggenau is the appliance house we specify when cooking is the point of the kitchen. We plan it with the SieMatic cabinetry from the first drawing, because that is the only way it fits."
 tagline: "Appliances built for people who actually cook."
 founded: "1683"

@@ -4,9 +4,9 @@ category: "Sanitaryware"
 country: "Germany"
 summary: "Duravit ceramics and furniture — Philippe Starck, Cecilie Manz, Sieger Design — in the sanitaryware we specify most often for both private houses and developments."
 hero:
-  src: "/images/pages/bathrooms-26.webp"
-  alt: "Designer sanitaryware since 1817."
-gallery: []
+  src: "/images/brands/press/duravit-zencha-twin-vanity.jpg"
+  alt: "Duravit Zencha twin vanity in dark oak"
+gallery: [{"src": "/images/brands/press/duravit-zencha-bath.jpg", "alt": "Duravit Zencha freestanding bath"}, {"src": "/images/brands/press/duravit-aurena-vanity.jpg", "alt": "Duravit Aurena vanity with a dark basin"}, {"src": "/images/brands/press/duravit-aurena-bath.jpg", "alt": "Duravit Aurena bath in a light room"}, {"src": "/images/brands/press/duravit-vitrium-basins.jpg", "alt": "Duravit Vitrium twin basins with round mirrors"}, {"src": "/images/brands/press/duravit-lejoly.jpg", "alt": "Duravit bathroom by Bertrand Lejoly"}, {"src": "/images/brands/press/duravit-aurena-stage.jpg", "alt": "Duravit Aurena freestanding bath and vanity"}, {"src": "/images/pages/bathrooms-26.webp", "alt": "Duravit on display at Zest"}]
 heritage: "Duravit put architects' names on ceramics before anyone else, and its concealed systems are the ones our installers trust. We specify it where a scheme needs design and dependability in equal measure."
 tagline: "Designer sanitaryware since 1817."
 founded: "1817"

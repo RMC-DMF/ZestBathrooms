@@ -4,9 +4,9 @@ category: "Appliances"
 country: "Germany"
 summary: "Siemens home appliances — iQ700 ovens, induction, refrigeration and dishwashers — are the appliance package in most of the SieMatic kitchens we design."
 hero:
-  src: "/images/case-studies/kitchens/modern-open-plan-siematic-kitchen-in-northwich-03.jpg"
-  alt: "Siemens appliances in a SieMatic kitchen designed by Zest, Northwich"
-gallery: []
+  src: "/images/brands/press/siemens-studioline-black-column.jpg"
+  alt: "Siemens studioLine appliances in a black column"
+gallery: [{"src": "/images/brands/press/siemens-intelligent-kitchen.jpg", "alt": "Siemens appliances in a dark kitchen with a stone island"}, {"src": "/images/brands/press/siemens-kitchen-inspiration.jpg", "alt": "Siemens ovens in a timber kitchen"}, {"src": "/images/brands/press/siemens-glassdraft-air.jpg", "alt": "Siemens glassdraftAir downdraft extractor"}, {"src": "/images/case-studies/kitchens/modern-open-plan-siematic-kitchen-in-northwich-03.jpg", "alt": "Siemens appliances in a SieMatic kitchen designed by Zest, Northwich"}]
 heritage: "Siemens is the appliance brand we specify most often, because it does everything a serious home kitchen asks of it without making a fuss. Most of the SieMatic kitchens we have designed in Cheshire run on Siemens [confirm]."
 tagline: "The appliances most of our kitchens run on."
 founded: "1847"

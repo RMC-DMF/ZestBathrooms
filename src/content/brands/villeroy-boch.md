@@ -4,9 +4,9 @@ category: "Sanitaryware"
 country: "Germany"
 summary: "Villeroy & Boch ceramics, Quaryl baths and furniture — 275 years of making, and the sanitaryware behind many of the developments we have supplied."
 hero:
-  src: "/images/pages/bathrooms-25.webp"
-  alt: "Ceramics since 1748, and the sanitaryware most specifiers trust."
-gallery: [{"src": "/images/pages/bathrooms-38.jpg", "alt": ""}]
+  src: "/images/brands/press/villeroy-boch-antao-dark.jpg"
+  alt: "Villeroy & Boch Antao bath in a dark-tiled bathroom"
+gallery: [{"src": "/images/brands/press/villeroy-boch-finion.jpg", "alt": "Villeroy & Boch Finion in a period room"}, {"src": "/images/brands/press/villeroy-boch-collaro.jpg", "alt": "Villeroy & Boch Collaro bath under a skylight"}, {"src": "/images/brands/press/villeroy-boch-antao-green.jpg", "alt": "Villeroy & Boch Antao in morning green"}, {"src": "/images/brands/press/villeroy-boch-loop-friends.jpg", "alt": "Villeroy & Boch Loop & Friends in a Japanese-style bathroom"}, {"src": "/images/brands/press/villeroy-boch-memento.jpg", "alt": "Villeroy & Boch Memento 2.0 washbasin"}, {"src": "/images/brands/press/villeroy-boch-subway.jpg", "alt": "Villeroy & Boch Subway 3.0 in a beige bathroom"}, {"src": "/images/pages/bathrooms-38.jpg", "alt": "Villeroy & Boch on display at Zest"}]
 heritage: "Villeroy & Boch is the ceramics house we have supplied in the largest numbers — into Deansgate Square, Weir Mill and most of our developer work — because it combines a 275-year reputation with the range and availability a 1,500-apartment programme needs."
 tagline: "Ceramics since 1748, and the sanitaryware most specifiers trust."
 founded: "1748"
