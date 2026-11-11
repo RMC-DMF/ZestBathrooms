@@ -8,6 +8,7 @@ import MaterialToSpace from '../components/MaterialToSpace.astro';
 import FullBleed from '../components/FullBleed.astro';
 import Editorial from '../components/Editorial.astro';
 import Chapter from '../components/Chapter.astro';
+import Texture from '../components/Texture.astro';
 import ProcessList from '../components/ProcessList.astro';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
@@ -32,6 +33,8 @@ const steps = [
   />
 
   <div id="doors"><Manifesto note="Designed in Chester since 1992">A beautiful room changes how a home looks. <em>A considered room changes how it feels to live there.</em></Manifesto></div>
+
+  <Texture image="/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp" alt="Brass handle on dark lacquered cabinetry, close up" line="It starts with the material." caption="Brushed brass on dark lacquer — SieMatic" />
 
   <Chapter number="01" accent="kitchens" image="/images/home/red-siematic.jpg" alt="Slate SieMatic kitchen against a terracotta wall, Zest showroom" eyebrow="Kitchens" title="The kitchen. The heart of everything." text="SieMatic, planned by our own studio and specified for the way your household actually cooks, eats and gathers. Four displays on the floor in Chester, with the appliances in." href="/kitchens" linkLabel="Explore kitchens" position="50% 55%" />
   <Editorial number="02" overlap tone="light" accent="bathrooms" image="/images/home/bathroom-edgeley.jpg" alt="Plaster-pink bathroom with brushed-brass brassware, Edgeley, Chester — designed by Zest" detail="/images/home/green-2.jpg" detailAlt="Deep green basin wall with copper tap, Zest showroom" eyebrow="Bathrooms" title="The bathroom. A moment entirely your own." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades, designed into rooms like this one in Chester." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 55%" />

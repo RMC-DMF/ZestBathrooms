@@ -9,10 +9,9 @@ const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, ct
 ---
 <Base title={title} description={description} accent={accent} schema={schema} noindex={noindex}>
   <header class:list={['page-head', { 'page-head--img': hero }]}>
-    {hero && <Pic src={hero.src} alt={hero.alt} class="page-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} />}
-    {hero && <div class="page-head__shade head-shade" aria-hidden="true"></div>}
-    <div class:list={['wrap', 'z-heading', { 'z-on-dark': hero }]}>
-      {eyebrow && <span class:list={["z-eyebrow", { "rise q1": hero }]}>{eyebrow}</span>}
+    {hero && <div class="page-head__pic"><Pic src={hero.src} alt={hero.alt} class="page-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} /><div class="page-head__shade head-shade" aria-hidden="true"></div>{eyebrow && <div class="wrap page-head__mark"><span class="z-eyebrow rise q1">{eyebrow}</span></div>}</div>}
+    <div class:list={['wrap', 'z-heading', 'page-head__copy']}>
+      {eyebrow && !hero && <span class="z-eyebrow">{eyebrow}</span>}
       <h1 class:list={["z-heading__title z-heading__title--display", { "rise q2": hero }]}>{heading ?? title}</h1>
       {lead && <p class:list={["z-heading__lead", { "rise q3": hero }]}>{lead}</p>}
     </div>
@@ -26,11 +25,17 @@ const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, ct
   .page-head .z-heading { max-width: var(--container); }
   .page-head .z-heading__title { max-width: 820px; }
   .page-head .z-heading__lead { max-width: 640px; }
-  .page-head--img { position: relative; min-height: 86vh; display: flex; align-items: flex-end; background: var(--panel-dark); overflow: hidden; padding-top: 200px; padding-bottom: var(--space-8); }
-  .page-head--img .z-heading__title { font-size: clamp(44px, 5.6vw, 80px); line-height: .96; letter-spacing: -0.015em; }
-  .page-head--img .z-heading__lead { font-size: 19px; opacity: .9; }
-  .page-head__img, .page-head :global(.pic img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .page-head__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,17,20,.82) 0%, rgba(15,17,20,.25) 55%, rgba(15,17,20,.2) 100%); }
-  .page-head--img .z-heading { position: relative; width: 100%; }
-  .page-head--img .z-heading__title, .page-head--img .z-heading__lead { color: var(--on-panel); }
+  /* Photographic head: the picture is a full-width block and the title breaks out of its bottom edge */
+  .page-head--img { padding: 0 0 clamp(48px, 6vw, 88px); background: var(--panel-dark); }
+  .page-head__pic { position: relative; height: clamp(520px, 86vh, 920px); overflow: hidden; background: var(--panel-dark); }
+  .page-head__img, .page-head__pic :global(.pic img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .page-head__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,17,20,.78) 0%, rgba(15,17,20,.18) 48%, rgba(15,17,20,.2) 100%); }
+  .page-head__mark { position: absolute; left: 0; right: 0; bottom: clamp(150px, 24vh, 240px); }
+  .page-head__mark .z-eyebrow { color: var(--on-panel); }
+  .page-head__mark .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
+  .page-head--img .page-head__copy { position: relative; z-index: 1; }
+  .page-head--img .z-heading__title { margin-top: -0.5em; max-width: 13ch; font-size: clamp(48px, 8.2vw, 128px); line-height: .92; letter-spacing: -0.025em; color: var(--on-panel); text-shadow: 0 2px 4px rgba(0,0,0,.25), 0 16px 48px rgba(0,0,0,.35); text-wrap: balance; }
+  .page-head--img .z-heading__lead { margin-top: var(--space-5); font-size: 19px; color: #cfd3d9; max-width: 520px; }
+  @media (min-width: 900px) { .page-head--img .z-heading__lead { margin-left: clamp(0px, 22vw, 440px); } }
+  @media (max-width: 900px) { .page-head__pic { height: 70vh; } .page-head__mark { bottom: 110px; } .page-head--img .z-heading__title { font-size: clamp(40px, 11vw, 64px); } }
 </style>

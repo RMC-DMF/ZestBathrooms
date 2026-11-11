@@ -5,11 +5,11 @@ import Pic from './Pic.astro';
  * and two supporting projects hung as smaller, staggered tiles. Titles are always visible.
  */
 interface Item { title: string; href: string; image?: string; alt?: string; tags?: string[] }
-interface Props { number?: string; eyebrow: string; title: string; text?: string; items: Item[]; href: string; linkLabel?: string; secondary?: { label: string; href: string } }
-const { number, eyebrow, title, text, items, href, linkLabel = 'All projects', secondary } = Astro.props;
+interface Props { accent?: string; number?: string; eyebrow: string; title: string; text?: string; items: Item[]; href: string; linkLabel?: string; secondary?: { label: string; href: string } }
+const { accent = 'projects', number, eyebrow, title, text, items, href, linkLabel = 'All projects', secondary } = Astro.props;
 const [lead, ...rest] = items;
 ---
-<section class="work z-accent--projects z-on-dark">
+<section class:list={['work', `z-accent--${accent}`, 'z-on-dark']}>
   <div class="wrap work__head">
     <div class="work__mark z-heading">{number && <span class="ch-num">{number}</span>}<span class="z-eyebrow">{eyebrow}</span></div>
     <h2 class="work__title z-heading">{title}</h2>
