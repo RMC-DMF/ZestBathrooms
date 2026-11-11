@@ -2,16 +2,32 @@
 /**
  * Optimised picture. Pass a content path (/images/...) and it renders <Picture> with AVIF/WebP and a srcset;
  * anything not under src/assets falls back to a plain <img>, and no src renders a stone placeholder.
+ * `mobile` art-directs a different (portrait) asset below 900px — a real <picture> with media sources,
+ * so phones download only the portrait file.
  */
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import { resolveImage } from '../lib/images';
-interface Props { src?: string; alt: string; widths?: number[]; sizes?: string; priority?: boolean; class?: string; style?: string; aspect?: string; position?: string }
-const { src, alt, widths = [480, 768, 1024, 1440, 1920], sizes = '100vw', priority = false, class: cls = '', style = '', aspect, position } = Astro.props;
+interface Props { src?: string; alt: string; widths?: number[]; sizes?: string; priority?: boolean; class?: string; style?: string; aspect?: string; position?: string; mobile?: string; mobileWidths?: number[] }
+const { src, alt, widths = [480, 768, 1024, 1440, 1920], sizes = '100vw', priority = false, class: cls = '', style = '', aspect, position, mobile, mobileWidths = [480, 640, 860, 1080, 1320] } = Astro.props;
 const meta = await resolveImage(src);
+const mobileMeta = mobile ? await resolveImage(mobile) : null;
 const styleAttr = [style, aspect ? `aspect-ratio:${aspect}` : '', position ? `object-position:${position}` : ''].filter(Boolean).join(';');
 const ws = meta ? [...new Set(widths.filter((w) => w < meta.width).concat(meta.width))] : widths;
+const mws = mobileMeta ? [...new Set(mobileWidths.filter((w) => w < mobileMeta.width).concat(mobileMeta.width))] : mobileWidths;
+const MOBILE = '(max-width: 899px)';
+// Art-directed variant: build the sources by hand.
+const sources = meta && mobileMeta ? await Promise.all([
+  ...(['avif', 'webp'] as const).map(async (f) => ({ media: MOBILE, type: `image/${f}`, srcset: (await getImage({ src: mobileMeta, widths: mws, format: f, quality: 78 })).srcSet.attribute, sizes: '100vw' })),
+  ...(['avif', 'webp'] as const).map(async (f) => ({ media: undefined, type: `image/${f}`, srcset: (await getImage({ src: meta, widths: ws, format: f, quality: 78 })).srcSet.attribute, sizes })),
+]) : null;
+const fallback = meta && mobileMeta ? await getImage({ src: meta, widths: ws, format: 'jpg', quality: 78 }) : null;
 ---
-{meta ? (
+{sources && fallback ? (
+  <picture class="pic">
+    {sources.map((s) => <source media={s.media} type={s.type} srcset={s.srcset} sizes={s.sizes} />)}
+    <img src={fallback.src} srcset={fallback.srcSet.attribute} sizes={sizes} alt={alt} width={fallback.attributes.width} height={fallback.attributes.height} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding={priority ? 'sync' : 'async'} class={cls} style={styleAttr || undefined} />
+  </picture>
+) : meta ? (
   <Picture src={meta} alt={alt} widths={ws} sizes={sizes} formats={['avif', 'webp']} fallbackFormat="jpg" quality={78} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding={priority ? 'sync' : 'async'} class={cls} style={styleAttr || undefined} pictureAttributes={{ class: 'pic' }} />
 ) : src ? (
   <img src={src} alt={alt} loading={priority ? 'eager' : 'lazy'} decoding="async" class={cls} style={styleAttr || undefined} />

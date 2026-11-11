@@ -1,11 +1,11 @@
 ---
 import Pic from './Pic.astro';
 /** Full-screen image hero with copy that arrives after the picture. Used with Base floatingHeader + dark. */
-interface Props { image: string; alt: string; eyebrow?: string; title: string; text?: string; cta?: { label: string; href: string }; link?: { label: string; href: string }; position?: string; height?: string }
-const { image, alt, eyebrow, title, text, cta, link, position = '50% 50%', height = '100vh' } = Astro.props;
+interface Props { image: string; mobileImage?: string; alt: string; eyebrow?: string; title: string; text?: string; cta?: { label: string; href: string }; link?: { label: string; href: string }; position?: string; height?: string }
+const { image, mobileImage, alt, eyebrow, title, text, cta, link, position = '50% 50%', height = '100vh' } = Astro.props;
 ---
 <section class="hero" style={`min-height:${height}`}>
-  <Pic src={image} alt={alt} class="hero__img ken" position={position} priority sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} />
+  <Pic src={image} mobile={mobileImage} alt={alt} class="hero__img ken" position={position} priority sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} />
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="wrap hero__copy z-on-dark">
     <div class="hero__block">
@@ -34,4 +34,11 @@ const { image, alt, eyebrow, title, text, cta, link, position = '50% 50%', heigh
   .hero__title { text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
   .hero__actions { display: flex; gap: var(--space-6); align-items: center; flex-wrap: wrap; }
   .hero .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
+  @media (max-width: 899px) {
+    .hero { min-height: 100svh; }
+    .hero__copy { padding-bottom: calc(40px + env(safe-area-inset-bottom)); padding-top: 120px; }
+    .hero__title { font-size: clamp(48px, 15vw, 72px); max-width: 9ch; }
+    .hero__text { font-size: 16px; }
+    .hero__block { gap: var(--space-5); }
+  }
 </style>

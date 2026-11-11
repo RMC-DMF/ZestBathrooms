@@ -4,6 +4,7 @@ import '../styles/global.css';
 import '../styles/components.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MobileCta from '../components/MobileCta.astro';
 import { site } from '../data/site';
 import type { Accent } from '../data/site';
 
@@ -92,6 +93,7 @@ const breadcrumbs = (() => {
       <slot />
     </main>
     <Footer />
+    <MobileCta />
     <script>
       // Scroll reveal — one gentle rise per element, never repeated, off for reduced motion.
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {

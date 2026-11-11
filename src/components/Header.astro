@@ -20,12 +20,16 @@ const path = Astro.url.pathname;
     </button>
   </div>
   <div id="mobile-nav" class="hdr__mobile" hidden>
-    <nav aria-label="Primary (mobile)">
-      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
-    </nav>
-    <div class="hdr__mobile-actions">
-      <a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a>
-      <a href={site.phoneHref}>{site.phone}</a>
+    <div class="hdr__mobile-in">
+      <span class="hdr__mobile-eyebrow">Explore</span>
+      <nav aria-label="Primary (mobile)">
+        {nav.map((n, i) => <a href={n.href} style={`--i:${i}`} aria-current={path === n.href || path.startsWith(n.href + '/') ? 'page' : undefined}><span class="hdr__mobile-n">{String(i + 1).padStart(2, '0')}</span><span class="hdr__mobile-label">{n.label}</span></a>)}
+      </nav>
+      <div class="hdr__mobile-actions">
+        <a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a>
+        <a class="hdr__mobile-phone" href={site.phoneHref}>Chester {site.phone}</a>
+      </div>
+      <span class="hdr__mobile-foot">Chester · Kitchens &amp; Bathrooms since 1992</span>
     </div>
   </div>
 </header>
@@ -41,12 +45,16 @@ const path = Astro.url.pathname;
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
   const btn = document.querySelector<HTMLButtonElement>('.hdr__burger');
   const panel = document.getElementById('mobile-nav');
-  btn?.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    if (panel) panel.hidden = open;
-    document.body.style.overflow = open ? '' : 'hidden';
-  });
+  const setOpen = (open: boolean) => {
+    btn?.setAttribute('aria-expanded', String(open));
+    if (!panel) return;
+    if (open) { panel.hidden = false; requestAnimationFrame(() => panel.classList.add('is-open')); }
+    else { panel.classList.remove('is-open'); setTimeout(() => { if (!panel.classList.contains('is-open')) panel.hidden = true; }, 360); }
+    document.body.style.overflow = open ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', open);
+  };
+  btn?.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && btn?.getAttribute('aria-expanded') === 'true') setOpen(false); });
 </script>
 <style>
   .hdr { position: relative; z-index: 20; background: var(--surface); border-bottom: var(--hairline) solid var(--line); }
@@ -71,13 +79,24 @@ const path = Astro.url.pathname;
   .hdr__burger[aria-expanded="true"] .x { display: block; }
   .hdr__burger[aria-expanded="true"] .bars { display: none; }
   .hdr--floating .hdr__burger, .hdr--dark .hdr__burger { color: var(--on-panel); }
-  .hdr__mobile { position: fixed; inset: 0; background: var(--panel-dark); color: var(--on-panel); padding: 120px var(--gutter) var(--space-8); display: flex; flex-direction: column; gap: var(--space-8); z-index: 15; overflow: auto; }
+  .hdr__mobile { position: fixed; inset: 0; background: var(--panel-dark); color: var(--on-panel); z-index: 15; overflow: auto; opacity: 0; transition: opacity .3s ease; }
   .hdr__mobile[hidden] { display: none; }
-  .hdr__mobile nav { display: flex; flex-direction: column; gap: var(--space-4); }
-  .hdr__mobile nav a { font-family: var(--font-display); font-size: 36px; font-weight: 300; color: var(--on-panel); text-decoration: none; }
-  .hdr__mobile-actions { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
-  .hdr__mobile-actions a { color: var(--on-panel); }
+  .hdr__mobile.is-open { opacity: 1; }
+  .hdr__mobile-in { min-height: 100%; display: flex; flex-direction: column; gap: var(--space-6); padding: 112px var(--gutter) calc(var(--space-6) + env(safe-area-inset-bottom)); }
+  .hdr__mobile-eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #8f959e; }
+  .hdr__mobile nav { display: flex; flex-direction: column; }
+  .hdr__mobile nav a { display: flex; align-items: baseline; gap: 18px; padding: 14px 0; border-bottom: 1px solid #262b33; color: var(--on-panel); text-decoration: none; opacity: 0; transform: translateY(12px); transition: opacity .45s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1); transition-delay: calc(60ms + var(--i) * 45ms); }
+  .hdr__mobile.is-open nav a { opacity: 1; transform: none; }
+  .hdr__mobile nav a[aria-current="page"] .hdr__mobile-label { color: var(--brass-light); }
+  .hdr__mobile-n { font-family: var(--font-display); font-size: 14px; color: #8f959e; min-width: 28px; }
+  .hdr__mobile-label { font-family: var(--font-display); font-size: clamp(30px, 8.5vw, 40px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; font-variation-settings: 'opsz' 144; }
+  .hdr__mobile-actions { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; margin-top: auto; opacity: 0; transition: opacity .4s ease .35s; }
+  .hdr__mobile.is-open .hdr__mobile-actions { opacity: 1; }
+  .hdr__mobile-actions .z-btn { width: 100%; justify-content: center; min-height: 52px; }
   .hdr__mobile-actions .z-btn--primary { color: var(--panel-dark); }
+  .hdr__mobile-phone { color: var(--on-panel); text-decoration: none; font-size: 16px; }
+  .hdr__mobile-foot { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #6b717b; }
+  @media (prefers-reduced-motion: reduce) { .hdr__mobile, .hdr__mobile nav a, .hdr__mobile-actions { transition: none; } }
   /* Stuck state: a slim fixed bar on panel-dark, slides in */
   .hdr--stuck { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 17, 20, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #1b1f26; color: var(--on-panel); animation: hdr-in .35s cubic-bezier(.2,.7,.2,1); }
   .hdr--stuck .hdr__in { height: 64px; }

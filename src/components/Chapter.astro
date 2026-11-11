@@ -6,11 +6,11 @@ import Pic from './Pic.astro';
  * half on the ground beneath it. Nothing else sits on the image.
  */
 import type { Accent } from '../data/site';
-interface Props { number?: string; image: string; alt: string; eyebrow: string; title: string; text?: string; href: string; linkLabel?: string; accent?: Accent; position?: string; tone?: 'dark' | 'light' }
-const { number, image, alt, eyebrow, title, text, href, linkLabel = 'Explore', accent = 'neutral', position = '50% 50%', tone = 'dark' } = Astro.props;
+interface Props { number?: string; image: string; mobile?: string; alt: string; eyebrow: string; title: string; text?: string; href: string; linkLabel?: string; accent?: Accent; position?: string; tone?: 'dark' | 'light' }
+const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Explore', accent = 'neutral', position = '50% 50%', tone = 'dark' } = Astro.props;
 ---
 <section class:list={['chapter', `chapter--${tone}`, `z-accent--${accent}`, { 'z-on-dark': tone === 'dark' }]} data-theme={tone === 'light' ? 'light' : undefined}>
-  <a class="chapter__img fill" href={href} aria-label={title}><Pic src={image} alt={alt} position={position} sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} /></a>
+  <a class="chapter__img fill" href={href} aria-label={title}><Pic src={image} mobile={mobile} alt={alt} position={position} sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} /></a>
   <div class="wrap chapter__body">
     <div class="chapter__mark z-heading">{number && <span class="ch-num">{number}</span>}<span class="z-eyebrow">{eyebrow}</span></div>
     <h2 class="chapter__title z-heading">{title}</h2>
@@ -42,9 +42,9 @@ const { number, image, alt, eyebrow, title, text, href, linkLabel = 'Explore', a
   .chapter__title.reveal { transition-delay: .05s; }
   .chapter__foot.reveal { transition-delay: .2s; }
   @media (max-width: 900px) {
-    .chapter__img { height: 72vh; }
+    .chapter__img { height: 78svh; }
     .chapter__mark { margin-bottom: 96px; }
-    .chapter__title { font-size: clamp(44px, 12vw, 72px); margin-top: -0.5em; }
+    .chapter__title { font-size: clamp(46px, 14vw, 72px); margin-top: -0.5em; }
     .chapter__foot { padding-left: 0; flex-direction: column; gap: var(--space-4); }
   }
 </style>

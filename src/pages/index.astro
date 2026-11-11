@@ -26,6 +26,7 @@ const steps = [
 <Base title="Luxury Kitchens & Bathrooms, Chester | Zest Bathrooms & Kitchens" description={site.description} dark floatingHeader>
   <Hero
     image="/images/home/gessi-onyx.jpg"
+    mobileImage="/images/mobile/gessi-onyx-portrait.jpg"
     alt="Gessi rain showers in copper against a book-matched onyx wall"
     eyebrow="Chester · Luxury bathrooms and kitchens since 1992"
     title="Rooms worth coming home to."
@@ -38,7 +39,7 @@ const steps = [
 
   <Texture image="/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp" alt="Brass handle on dark lacquered cabinetry, close up" line="It starts with the material." caption="Brushed brass on dark lacquer — SieMatic" />
 
-  <Chapter number="01" accent="kitchens" image="/images/pages/introducing-our-new-siematic-display-08.webp" alt="The 2026 SieMatic display in graphite smoked oak and Black Tempest stone, Zest showroom" eyebrow="Kitchens" title="The kitchen. The heart of everything." text="SieMatic, planned by our own studio and specified for the way your household actually cooks, eats and gathers. Four displays on the floor in Chester, with the appliances in." href="/kitchens" linkLabel="Explore kitchens" position="50% 55%" />
+  <Chapter number="01" accent="kitchens" image="/images/pages/introducing-our-new-siematic-display-08.webp" mobile="/images/mobile/siematic-display-08-portrait.jpg" alt="The 2026 SieMatic display in graphite smoked oak and Black Tempest stone, Zest showroom" eyebrow="Kitchens" title="The kitchen. The heart of everything." text="SieMatic, planned by our own studio and specified for the way your household actually cooks, eats and gathers. Four displays on the floor in Chester, with the appliances in." href="/kitchens" linkLabel="Explore kitchens" position="50% 55%" />
   <Editorial number="02" overlap tone="light" accent="bathrooms" image="/images/home/bathroom-edgeley.jpg" alt="Plaster-pink bathroom with brushed-brass brassware, Edgeley, Chester — designed by Zest" detail="/images/home/green-2.jpg" detailAlt="Deep green basin wall with copper tap, Zest showroom" eyebrow="Bathrooms" title="The bathroom. A moment entirely your own." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades, designed into rooms like this one in Chester." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 55%" />
   <Work number="03" eyebrow="Projects" title={`${unitCount.toLocaleString()} units. ${allProjects.length} developments. One supplier.`} text="Specification and supply for developers, architects and hotels across the UK — Renaker, Capital & Centric, Domis, Audley, Fragrance Group — run from the Warrington project office." href="/projects" linkLabel="See the work" secondary={site.tradeCta} items={projects.map((p) => ({ title: p.data.title, href: `/projects/${p.id}`, image: p.data.hero?.src, alt: p.data.hero?.alt, tags: [p.data.sector, p.data.location?.split(',')[0], p.data.units && `${p.data.units.toLocaleString()} units`].filter(Boolean) as string[] }))} />
 
