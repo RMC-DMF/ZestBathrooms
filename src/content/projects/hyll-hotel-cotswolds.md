@@ -2,7 +2,7 @@
 title: "Hyll Hotel, Cotswolds"
 summary: "For the Hyll Hotel in the Cotswolds, Zest curated and supplied bathrooms that embody understated luxury and thoughtful design."
 location: "Cotswolds"
-client: "YOUTH"
+client: "Youth Studio (interior design)"
 hero:
   src: "/images/projects/hyll-hotel-cotswolds-01.webp"
   alt: "Hyll Hotel, Cotswolds"

@@ -33,7 +33,7 @@ export const site = {
     { value: '1992', label: 'Established in Chester' },
     { value: '3,389', label: 'Apartments supplied to developers and hotels' },
     { value: '19', label: 'Developments across the UK' },
-    { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms [confirm]' },
+    { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms — the first to launch' },
   ],
   cta: { label: 'Book a design appointment', href: '/book-a-design-appointment' },
   tradeCta: { label: 'Register your project', href: '/projects/register' },

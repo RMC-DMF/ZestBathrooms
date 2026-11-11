@@ -7,16 +7,8 @@ hero:
 gallery: [{"src":"/images/pages/introducing-our-new-siematic-display-02.jpg","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-03.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-04.jpg","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-05.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-06.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-07.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-08.webp","alt":""}]
 ---
 
-Bespoke SieMatic kitchens Cheshire
+Unveiled in spring 2026 and curated exclusively by Zest, the display pairs graphite smoked-oak veneer cabinetry with Black Tempest porcelain stoneware — a palette chosen for depth and longevity rather than fashion. Gaggenau appliances and a Quooker water system are integrated into the run so the architecture reads uninterrupted; lighting by Radnor brings warmth to the stone and shadow to the oak.
 
-## Introducing Our New SieMatic Display
+It was built with both homes and developments in mind. For a homeowner it shows what a SieMatic kitchen feels like to stand in: the weight of a drawer, the quiet of a door, the way light falls on a dark surface. For an architect or developer it is a specification reference — proof of how cabinetry, worktop, appliance and lighting can be resolved as one scheme.
 
-#### Experience Contemporary Kitchen Design at Its Finest
-
-Discover our newly unveiled SieMatic display at Zest Bathrooms & Kitchens — an exclusive new showroom installation showcasing the precision, craftsmanship and architectural elegance synonymous with modern luxury living.
-
-Designed for homeowners seeking refined, design-led interiors, this latest display combines premium materials, intelligent functionality and beautifully integrated living.
-
-Whether you are renovating, building or planning a future project, our design team can help translate inspiration into a bespoke kitchen tailored to your lifestyle.
-
-## Discover SieMatic Luxury Kitchens at Zest
+[Confirm with Zest: the exact SieMatic collection (SLX / Pure), and whether the display is bookable for trade visits outside showroom hours.]
