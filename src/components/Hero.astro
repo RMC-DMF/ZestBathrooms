@@ -11,11 +11,13 @@ const { image, alt, eyebrow, title, text, cta, link, position = '50% 50%', heigh
     <div class="hero__block">
       {eyebrow && <span class="z-eyebrow rise d1" style="color:var(--on-panel)">{eyebrow}</span>}
       <h1 class="hero__title rise d2">{title}</h1>
-      {text && <p class="hero__text rise d3">{text}</p>}
-      {(cta || link) && <div class="hero__actions rise d4">
-        {cta && <a class="z-btn z-btn--primary z-btn--on-dark" href={cta.href}>{cta.label}</a>}
-        {link && <a class="z-btn z-btn--link z-btn--on-dark" href={link.href} style="color:var(--on-panel)">{link.label} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>}
-      </div>}
+      <div class="hero__foot">
+        {text && <p class="hero__text rise d3">{text}</p>}
+        {(cta || link) && <div class="hero__actions rise d4">
+          {cta && <a class="z-btn z-btn--primary z-btn--on-dark" href={cta.href}>{cta.label}</a>}
+          {link && <a class="z-btn z-btn--link z-btn--on-dark" href={link.href} style="color:var(--on-panel)">{link.label} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>}
+        </div>}
+      </div>
     </div>
   </div>
 </section>
@@ -24,8 +26,10 @@ const { image, alt, eyebrow, title, text, cta, link, position = '50% 50%', heigh
   .hero__img, .hero :global(.pic img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero__shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,17,20,.4) 0%, rgba(15,17,20,0) 20%, rgba(15,17,20,0) 50%, rgba(15,17,20,.72) 100%), linear-gradient(to right, rgba(15,17,20,.35) 0%, rgba(15,17,20,0) 45%); }
   .hero__copy { position: relative; width: 100%; padding-bottom: 88px; padding-top: 160px; }
-  .hero__block { max-width: 720px; display: flex; flex-direction: column; gap: var(--space-6); }
-  .hero__title { font-size: clamp(44px, 6vw, 80px); line-height: .94; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; color: var(--on-panel); }
+  .hero__block { max-width: 1180px; display: flex; flex-direction: column; gap: var(--space-6); }
+  .hero__title { font-size: clamp(52px, 8.6vw, 128px); line-height: .9; font-weight: 300; letter-spacing: -0.03em; font-variation-settings: 'opsz' 144; color: var(--on-panel); max-width: 10ch; text-wrap: balance; }
+  .hero__foot { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; }
+  @media (min-width: 900px) { .hero__foot { padding-left: clamp(0px, 22vw, 440px); } }
   .hero__text { font-size: 18px; line-height: 1.6; color: var(--on-panel); max-width: 480px; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
   .hero__title { text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
   .hero__actions { display: flex; gap: var(--space-6); align-items: center; flex-wrap: wrap; }

@@ -177,3 +177,6 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 .dark [data-theme="light"] .z-btn--secondary { color: var(--ink); border-color: var(--ink); background: transparent; }
 .dark [data-theme="light"] .z-btn--link { color: var(--accent-text, var(--slate)); }
 .dark [data-theme="light"] .z-btn--link:hover { color: var(--ink); }
+
+/* Chapter numerals — the editorial table-of-contents device */
+.ch-num { font-family: var(--font-display); font-weight: 300; font-size: 26px; line-height: 1; letter-spacing: -0.02em; color: var(--accent-text); font-variation-settings: 'opsz' 72; }

@@ -11,18 +11,18 @@ interface Props {
   detail?: string; detailAlt?: string;
   eyebrow?: string; title: string; text?: string;
   href?: string; linkLabel?: string;
-  flip?: boolean; tone?: 'dark' | 'light'; accent?: Accent; position?: string;
+  flip?: boolean; tone?: 'dark' | 'light'; accent?: Accent; position?: string; number?: string; overlap?: boolean;
 }
-const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabel = 'Explore', flip = false, tone = 'dark', accent, position = '50% 50%' } = Astro.props;
+const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabel = 'Explore', flip = false, tone = 'dark', accent, position = '50% 50%', number, overlap = false } = Astro.props;
 ---
-<section class:list={['ed', `ed--${tone}`, { 'ed--flip': flip }, accent && `z-accent--${accent}`]} data-theme={tone === 'light' ? 'light' : undefined}>
+<section class:list={['ed', `ed--${tone}`, { 'ed--flip': flip, 'ed--overlap': overlap }, accent && `z-accent--${accent}`]} data-theme={tone === 'light' ? 'light' : undefined}>
   <div class="wrap ed__in">
     <div class="ed__media">
       <div class="ed__img"><Pic src={image} alt={alt} position={position} sizes="(max-width: 900px) 100vw, 60vw" widths={[640, 960, 1280, 1600, 1920]} /></div>
       {detail && <div class="ed__detail"><Pic src={detail} alt={detailAlt} sizes="(max-width: 900px) 50vw, 24vw" widths={[320, 480, 640, 800]} /></div>}
     </div>
     <div class="ed__txt">
-      {eyebrow && <span class="z-eyebrow">{eyebrow}</span>}
+      {eyebrow && <div class="ed__mark">{number && <span class="ch-num">{number}</span>}<span class="z-eyebrow">{eyebrow}</span></div>}
       <h2 class="ed__title">{title}</h2>
       {text && <p class="ed__lead">{text}</p>}
       {href && <a class:list={['z-btn z-btn--link', { 'z-btn--on-dark': tone === 'dark' }]} href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>}
@@ -49,7 +49,10 @@ const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabe
   .ed--flip .ed__detail { right: auto; left: -8%; }
   .ed--light .ed__detail { box-shadow: 0 24px 60px rgba(27,31,38,.18); }
   .ed__detail :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .ed__txt { display: flex; flex-direction: column; gap: var(--space-5); padding-top: var(--space-6); }
+  .ed__txt { display: flex; flex-direction: column; gap: var(--space-5); padding-top: var(--space-6); position: relative; z-index: 2; }
+  .ed__mark { display: flex; align-items: baseline; gap: 18px; }
+  /* overlap: the title crosses into the photograph */
+  @media (min-width: 900px) { .ed--overlap .ed__title { margin-left: -46%; max-width: 700px; } .ed--overlap.ed--flip .ed__title { margin-left: 0; margin-right: -46%; } .ed--overlap .ed__title { font-size: clamp(44px, 5.6vw, 84px); line-height: .96; } }
   .ed__title { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.0; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; max-width: 520px; text-wrap: balance; }
   .ed--dark .ed__title { color: var(--on-panel); }
   .ed--light .ed__title { color: var(--ink); }

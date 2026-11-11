@@ -1,0 +1,50 @@
+---
+import Pic from './Pic.astro';
+/**
+ * Chapter — a full-viewport photograph with a title that breaks the frame.
+ * The title straddles the bottom edge of the picture: half on the photograph,
+ * half on the ground beneath it. Nothing else sits on the image.
+ */
+import type { Accent } from '../data/site';
+interface Props { number?: string; image: string; alt: string; eyebrow: string; title: string; text?: string; href: string; linkLabel?: string; accent?: Accent; position?: string; tone?: 'dark' | 'light' }
+const { number, image, alt, eyebrow, title, text, href, linkLabel = 'Explore', accent = 'neutral', position = '50% 50%', tone = 'dark' } = Astro.props;
+---
+<section class:list={['chapter', `chapter--${tone}`, `z-accent--${accent}`, { 'z-on-dark': tone === 'dark' }]} data-theme={tone === 'light' ? 'light' : undefined}>
+  <a class="chapter__img fill" href={href} aria-label={title}><Pic src={image} alt={alt} position={position} sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} /></a>
+  <div class="wrap chapter__body">
+    <div class="chapter__mark z-heading">{number && <span class="ch-num">{number}</span>}<span class="z-eyebrow">{eyebrow}</span></div>
+    <h2 class="chapter__title z-heading">{title}</h2>
+    <div class="chapter__foot z-heading">
+      {text && <p class="chapter__text">{text}</p>}
+      <a class:list={['z-btn z-btn--link', { 'z-btn--on-dark': tone === 'dark' }]} href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
+    </div>
+  </div>
+</section>
+<style>
+  .chapter { position: relative; padding-bottom: clamp(72px, 9vw, 128px); }
+  .chapter--dark { background: var(--panel-dark); color: var(--on-panel); }
+  .chapter--light { background: var(--stone); color: var(--ink); }
+  .chapter__img { display: block; position: relative; height: clamp(520px, 84vh, 900px); background: var(--surface-raised); }
+  .chapter__img :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .chapter__img:hover :global(img) { transform: scale(1.015); }
+  .chapter__body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); }
+  /* The mark sits up on the photograph; the title straddles the edge */
+  .chapter__mark { position: absolute; left: var(--gutter); bottom: 100%; margin-bottom: clamp(140px, 22vh, 220px); display: flex; align-items: baseline; gap: 18px; }
+  .chapter--dark .chapter__mark .z-eyebrow { color: var(--on-panel); }
+  .chapter--dark .chapter__mark .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
+  .chapter__title { margin: calc(-0.52em) 0 0; font-size: clamp(56px, 9.2vw, 148px); line-height: .92; font-weight: 300; letter-spacing: -0.025em; font-variation-settings: 'opsz' 144; max-width: 14ch; text-wrap: balance; position: relative; z-index: 1; }
+  .chapter--dark .chapter__title { color: var(--on-panel); text-shadow: 0 2px 4px rgba(0,0,0,.25), 0 16px 48px rgba(0,0,0,.35); }
+  .chapter--light .chapter__title { color: var(--ink); }
+  .chapter__foot { display: flex; gap: var(--space-7); align-items: baseline; justify-content: space-between; flex-wrap: wrap; margin-top: var(--space-6); padding-left: clamp(0px, 20vw, 420px); }
+  .chapter__text { max-width: 440px; font-size: 17px; line-height: 1.7; }
+  .chapter--dark .chapter__text { color: #cfd3d9; }
+  .chapter--light .chapter__text { color: var(--slate); }
+  .chapter__title.reveal { transition-delay: .05s; }
+  .chapter__foot.reveal { transition-delay: .2s; }
+  @media (max-width: 900px) {
+    .chapter__img { height: 72vh; }
+    .chapter__mark { margin-bottom: 96px; }
+    .chapter__title { font-size: clamp(44px, 12vw, 72px); margin-top: -0.5em; }
+    .chapter__foot { padding-left: 0; flex-direction: column; gap: var(--space-4); }
+  }
+</style>
