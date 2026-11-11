@@ -10,19 +10,19 @@ import { site } from '../../data/site';
 const studies = (await getCollection('caseStudies', ({ data }) => data.room === 'kitchens' && !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const faqs = [
   { q: 'What does a SieMatic kitchen cost?', a: 'Most SieMatic kitchens we design fall between [£X] and [£X] including appliances and worktops; our <a href="/kitchens/cost-guide">cost guide</a> explains what moves the number.' },
-  { q: 'Do you only sell SieMatic?', a: 'SieMatic is our main range and the one on display. We also design with Leicht where it suits the brief [confirm].' },
+  { q: 'Do you only sell SieMatic?', a: 'Yes. Four SieMatic displays on the floor in Chester, with Gaggenau, Miele, Siemens, Bora and Quooker alongside. One range, known inside out, is how we keep the design and the installation right.' },
   { q: 'Do you install?', a: 'We supply and project-manage, and work with a small group of installers we have used for years. You can use your own installer too.' },
   { q: 'How long does it take?', a: 'Design typically takes [X] weeks from first appointment to signed-off specification; SieMatic lead times are [X] weeks from order; installation [X] weeks.' },
 ];
 ---
-<Page title="Luxury Kitchens Chester — SieMatic & Leicht" description="SieMatic and Leicht kitchens designed and supplied from Chester for homes across Cheshire, the Wirral, North Wales and the North West. See the displays in our showroom." accent="kitchens" eyebrow="Kitchens — Chester" heading="Kitchens designed around how you actually cook." lead="SieMatic and Leicht, planned and specified by our own studio, with every detail of the room considered before a single unit is ordered." hero={{ src: '/images/home/red-siematic.jpg', alt: 'Slate SieMatic kitchen against a terracotta wall, Zest showroom' }}>
-  <Feature image={imgs.siematic.collections.pure} alt="SieMatic Pure kitchen" eyebrow="The range" title="SieMatic — and Leicht where it suits.">
+<Page title="Luxury SieMatic Kitchens Chester" description="SieMatic kitchens designed and supplied from Chester for homes across Cheshire, the Wirral, North Wales and the North West. See the displays in our showroom." accent="kitchens" eyebrow="Kitchens — Chester" heading="Kitchens designed around how you actually cook." lead="SieMatic, planned and specified by our own studio, with every detail of the room considered before a single unit is ordered." hero={{ src: '/images/home/red-siematic.jpg', alt: 'Slate SieMatic kitchen against a terracotta wall, Zest showroom' }}>
+  <Feature image={imgs.siematic.collections.pure} alt="SieMatic Pure kitchen" eyebrow="The range" title="SieMatic, and nothing else.">
     <p>The handleless original since 1960, in four design languages: Pure, Urban, Classic and Mondial. Made in Löhne by a family firm in its third generation, and sold only through appointed studios like ours.</p>
-    <p>Leicht brings a broader palette — metal fronts, Le Corbusier colours, real wood — for the brief that wants it [confirm positioning].</p>
-    <div class="cluster"><a class="z-btn z-btn--secondary" href="/kitchens/siematic">Explore SieMatic</a><a class="z-btn z-btn--link" href="/brands/leicht">Leicht <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+    <p>We sell one kitchen range on purpose. Four SieMatic displays in the showroom, with Gaggenau, Miele, Siemens, Bora and Quooker built in, so you see the appliances in the cabinetry rather than on a shelf.</p>
+    <div class="cluster"><a class="z-btn z-btn--secondary" href="/kitchens/siematic">Explore SieMatic</a></div>
   </Feature>
   <Feature image="/images/home/green-tile.jpg" alt="Book-matched marble, Zest showroom" eyebrow="The process" title="One designer, from the first sketch to the last handle." flip tone="stone">
-    <p>A complimentary hour in the showroom, a survey, then layouts, 3D visuals and a specification with every product named — before anything is ordered. The same designer sees it through installation.</p>
+    <p>The design service is free. An hour in the showroom, a survey, then layouts, 3D visuals and a specification with every product named — before anything is ordered. The same designer sees it through installation.</p>
     <p>Appliances, worktops, lighting and the room around the kitchen are planned together; if the house has bathrooms to do, the same studio does those.</p>
     <div class="cluster"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link" href="/design-service">How it works <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
   </Feature>
@@ -31,7 +31,7 @@ const faqs = [
     <div class="grid grid--3">{studies.slice(0, 6).map((s) => <CaseStudyCard title={s.data.title} href={`/kitchens/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} alt={s.data.hero?.alt} summary={s.data.summary} tags={[{ label: 'Kitchen', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}</div>
   </section>
   <Gallery images={imgs.kitchenLife.map((src: string) => ({ src }))} max={5} eyebrow="Details" title="The parts you touch every day." />
-  <Feature image="/images/home/kitchen-leicht.jpg" alt="Leicht Aluro kitchen, Chester" eyebrow="Money" title="What a kitchen costs, before you book." tone="stone">
+  <Feature image={imgs.siematic.collections.urban} alt="SieMatic Urban kitchen" eyebrow="Money" title="What a kitchen costs, before you book." tone="stone">
     <p>Ranges, not quotes — but real ones, from kitchens we have designed and fitted, and an honest account of what moves the number.</p>
     <div class="cluster"><a class="z-btn z-btn--secondary" href="/kitchens/cost-guide">Read the cost guide</a><a class="z-btn z-btn--link" href="/kitchens/brochures">Request brochures <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
   </Feature>

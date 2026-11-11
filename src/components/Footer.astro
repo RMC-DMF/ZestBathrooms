@@ -7,8 +7,8 @@ const year = new Date().getFullYear();
     <div class="ftr__grid">
       <div class="ftr__brand">
         <img src="/images/brand/zest-logo-white.png" alt="Zest Bathrooms & Kitchens" width="112" height="62" />
-        <p class="small">{site.address.street}, {site.address.locality} {site.address.postcode}<br /><a href={site.phoneHref}>{site.phone}</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>
-        <p class="caption">SieMatic · Leicht · Gessi · AXOR · Bette · Novello · Villeroy &amp; Boch · Gaggenau · Effe</p>
+        <p class="small">{site.address.street}, {site.address.locality} {site.address.postcode}<br /><a href={site.phoneHref}>{site.phone}</a> · <a href={`mailto:${site.email}`}>{site.email}</a><br />Projects, Warrington: <a href={site.projectsPhoneHref}>{site.projectsPhone}</a></p>
+        <p class="caption">SieMatic · Gessi · AXOR · Dornbracht · Bette · Duravit · Villeroy &amp; Boch · Gaggenau · Effe</p>
       </div>
       <div class="ftr__col"><span class="ftr__h">Explore</span>{footerNav.explore.map((l) => <a href={l.href}>{l.label}</a>)}</div>
       <div class="ftr__col"><span class="ftr__h">About</span>{footerNav.about.map((l) => <a href={l.href}>{l.label}</a>)}</div>

@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 const brands = (await getCollection('brands')).sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
 const groups = [...new Set(brands.map((b) => b.data.category))];
 ---
-<Page title="Brands — Kitchens, Brassware, Sanitaryware, Wellness" description="The houses Zest works with: SieMatic, Leicht, Gessi, AXOR, Bette, Novello, Villeroy & Boch, Gaggenau, Effe and more, on display in Chester." eyebrow="Brands" heading="The houses we work with." lead="Chosen over three decades for how they are made, not how they are marketed. Most are on display in Chester.">
+<Page title="Brands — Kitchens, Brassware, Sanitaryware, Wellness" description="The houses Zest works with: SieMatic, Gessi, AXOR, Bette, Novello, Villeroy & Boch, Gaggenau, Effe and more, on display in Chester." eyebrow="Brands" heading="The houses we work with." lead="Chosen over three decades for how they are made, not how they are marketed. Most are on display in Chester.">
   {groups.map((g) => <section class="wrap section" style="padding-top:0"><h2 style="margin-bottom:var(--space-5);font-size:24px">{g}</h2><div class="grid grid--4">{brands.filter((b) => b.data.category === g).map((b) => <a href={`/brands/${b.id}`} class="brand-tile"><span class="caption">{b.data.country}</span><h3>{b.data.title}</h3><p class="small" style="color:var(--slate);margin-top:8px">{b.data.summary.slice(0, 110)}…</p></a>)}</div></section>)}
 </Page>
 <style>.brand-tile { display: block; padding: var(--space-5); background: var(--surface-raised); border: var(--hairline) solid var(--line); text-decoration: none; color: inherit; } .brand-tile:hover { border-color: var(--slate); } .brand-tile h3 { margin-top: 4px; }</style>

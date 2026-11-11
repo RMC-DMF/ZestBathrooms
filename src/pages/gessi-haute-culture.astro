@@ -28,14 +28,14 @@ const designers = (await getCollection('team', ({ data }) => data.published && /
 const projects = (await getCollection('team', ({ data }) => data.published && /Projects/.test(data.role))).slice(0, 1);
 const schema = [{
   '@context': 'https://schema.org', '@type': 'WebPage', name: 'Gessi Haute Culture at Zest, Chester',
-  description: 'Zest Bathrooms & Kitchens is one of ten Gessi Haute Culture partner showrooms in the UK and the first to launch.',
+  description: 'Zest Bathrooms & Kitchens is one of ten Gessi Haute Culture partner showrooms in the UK; its dedicated Haute Culture showroom in Chester opens in January 2027.',
   isPartOf: { '@id': `${site.url}/#business` },
 }];
 ---
-<Base title="Gessi Haute Culture Showroom — Chester" description="Zest is one of ten Gessi Haute Culture partner showrooms in the UK, and the first to launch. See the eight couture collections in Chester by private appointment." accent="bathrooms" dark floatingHeader schema={schema}>
-  <Hero image="/images/haute-culture/gessi-haute-culture-casa-gessi.jpg" alt="The Gessi Haute Culture display at Casa Gessi" eyebrow="Gessi Haute Culture · Chester" title="Couture, for the bathroom." text="One of ten Haute Culture showrooms in the UK, and the first to launch. By private appointment on Brookdale Place." cta={{ label: 'Book a private viewing', href: '/book-a-design-appointment?interest=haute-culture' }} position="50% 50%" />
+<Base title="Gessi Haute Culture Showroom — Chester" description="Zest is one of ten Gessi Haute Culture partner showrooms in the UK. The dedicated Chester showroom opens in January 2027 — register for a private preview of the eight couture collections." accent="bathrooms" dark floatingHeader schema={schema}>
+  <Hero image="/images/haute-culture/gessi-haute-culture-casa-gessi.jpg" alt="The Gessi Haute Culture display at Casa Gessi" eyebrow="Gessi Haute Culture · Chester" title="Couture, for the bathroom." text="One of ten Haute Culture showrooms in the UK. The dedicated Haute Culture space on Brookdale Place opens in January 2027; register for a private preview." cta={{ label: 'Register for the preview', href: '/book-a-design-appointment?interest=haute-culture' }} position="50% 50%" />
 
-  <Statement>Haute Culture is Gessi's answer to couture: eight collections made by hand in Italy, where jewellery, fashion and design meet. It is specified into a room by a designer, never bought off a shelf — which is why Gessi chose ten showrooms in the UK, not two hundred. Zest was the first of them to open its doors.</Statement>
+  <Statement>Haute Culture is Gessi's answer to couture: eight collections made by hand in Italy, where jewellery, fashion and design meet. It is specified into a room by a designer, never bought off a shelf — which is why Gessi chose ten showrooms in the UK, not two hundred. Zest is one of them: a dedicated Haute Culture showroom is being built on Brookdale Place now, with the collections arriving in December and the space opening in January 2027.</Statement>
 
   <Gallery images={gallery.slice(0, 5)} max={5} />
 
@@ -46,16 +46,16 @@ const schema = [{
     </div>
   </section>
 
-  <FullBleed accent="bathrooms" image="/images/haute-culture/gessi-haute-culture-hero.jpg" alt="The Haute Culture finishes box" eyebrow="Why Zest" title="Chosen by Gessi. First to launch." text="Gessi selected Zest as a Haute Culture Ambassador and official partner showroom — one of ten in the UK. We previewed the collections with Gessi at Milan Design Week in April 2026 and joined the inaugural launch at Casa Gessi London that October. Behind the invitation is three decades of specifying Gessi, in private houses across the North West and in developments and hotels across the country." minHeight="80vh" shade="left" />
+  <FullBleed accent="bathrooms" image="/images/haute-culture/gessi-haute-culture-hero.jpg" alt="The Haute Culture finishes box" eyebrow="Why Zest" title="Chosen by Gessi." text="Gessi selected Zest as a Haute Culture Ambassador and official partner showroom — one of ten in the UK. We previewed the collections with Gessi at Milan Design Week in April 2026 and joined the inaugural launch at Casa Gessi London that October. Behind the invitation is three decades of specifying Gessi, in private houses across the North West and in developments and hotels across the country. The Chester showroom opens in January 2027, with a launch evening in the spring." minHeight="80vh" shade="left" />
 
   <Gallery images={gallery.slice(5)} max={5} />
 
   <section class="wrap section--loose z-on-dark">
     <div class="grid grid--2" style="gap:96px;align-items:start">
-      <div class="z-heading"><span class="z-eyebrow">In Chester</span><h2>What you can see, and when.</h2><p class="z-heading__lead">The Haute Culture display is being installed in the Brookdale Place showroom [date to confirm with Gessi]. Until then, our bathroom designers can walk you through the collections, finishes and samples by private appointment — and for developments and hotels, our projects team specifies Haute Culture for penthouse and suite schemes.</p></div>
+      <div class="z-heading"><span class="z-eyebrow">In Chester</span><h2>What you can see, and when.</h2><p class="z-heading__lead">The dedicated Haute Culture showroom opens on Brookdale Place in January 2027, with a launch evening in the spring. Until then our bathroom designers can take you through the collections, finishes and samples by private appointment — and for developments and hotels, the projects team specifies Haute Culture for penthouse and suite schemes.</p></div>
       <div class="stack">
-        {designers.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.email ? `mailto:${t.data.email}` : undefined} contactLabel={t.data.email ? `Email ${t.data.name.split(' ')[0]}` : undefined} />)}
-        {projects.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask="Haute Culture for developments and hotels" contactHref={site.phoneHref} contactLabel={site.phone} />)}
+        {designers.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.office === 'warrington' ? site.projectsPhoneHref : site.phoneHref} contactLabel={t.data.office === 'warrington' ? `Warrington ${site.projectsPhone}` : `Chester ${site.phone}`} />)}
+        {projects.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask="Haute Culture for developments and hotels" contactHref={site.projectsPhoneHref} contactLabel={site.projectsPhone} />)}
       </div>
     </div>
   </section>
@@ -67,7 +67,7 @@ const schema = [{
     { q: 'Why can I only see it in ten showrooms?', a: 'Gessi chose partners who design rooms rather than sell boxes. Haute Culture needs a designer to specify it, finishes to be seen in the flesh, and a showroom that can do both.' },
   ]} /></div></section>
 
-  <section class="section--loose z-on-dark" style="border-top:1px solid #343a44"><div class="wrap stack" style="align-items:center;text-align:center;gap:32px"><h2 style="max-width:720px;font-size:clamp(36px,4.2vw,56px);line-height:1">See it in Chester.</h2><a class="z-btn z-btn--primary z-btn--on-dark" href="/book-a-design-appointment?interest=haute-culture">Book a private viewing</a></div></section>
+  <section class="section--loose z-on-dark" style="border-top:1px solid #343a44"><div class="wrap stack" style="align-items:center;text-align:center;gap:32px"><h2 style="max-width:720px;font-size:clamp(36px,4.2vw,56px);line-height:1">Be there when it opens.</h2><a class="z-btn z-btn--primary z-btn--on-dark" href="/book-a-design-appointment?interest=haute-culture">Register for the preview</a></div></section>
 </Base>
 <style>
   .dark .z-heading__lead { color: #cfd3d9; }

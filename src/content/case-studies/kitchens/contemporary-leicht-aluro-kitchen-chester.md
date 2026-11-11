@@ -3,7 +3,7 @@ title: "Contemporary LEICHT ALURO Kitchen, Chester"
 summary: "For this contemporary home in Chester, a sophisticated LEICHT ALURO kitchen was designed and supplied, featuring aluminium fronts in Oxide Bronze."
 location: "Chester"
 area: "chester"
-brands: ["siematic", "leicht"]
+brands: ["siematic"]
 hero:
   src: "/images/case-studies/kitchens/contemporary-leicht-aluro-kitchen-chester-01.webp"
   alt: "Contemporary LEICHT ALURO Kitchen, Chester"

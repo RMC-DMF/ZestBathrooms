@@ -5,9 +5,12 @@ export const site = {
   url: 'https://zestbathroomsandkitchens.co.uk',
   tagline: 'Luxury bathrooms and kitchens, designed in Chester since 1992.',
   description:
-    'Luxury kitchens and bathrooms designed in Chester. SieMatic and Leicht kitchens, Gessi Haute Culture bathrooms and a design studio serving homeowners across the North West, and developers and hotels across the UK.',
+    'Luxury kitchens and bathrooms designed in Chester. SieMatic kitchens, Gessi Haute Culture bathrooms and a design studio serving homeowners across the North West, and developers and hotels across the UK.',
   phone: '01244 345 414',
   phoneHref: 'tel:01244345414',
+  projectsPhone: '01925 269 517',
+  projectsPhoneHref: 'tel:01925269517',
+  projectsOffice: { name: 'Warrington project office', locality: 'Warrington' },
   email: 'info@zestbathroomsandkitchens.co.uk',
   address: {
     street: '2–6 Brookdale Place',
@@ -31,9 +34,9 @@ export const site = {
   areas: ['Chester', 'Cheshire', 'the Wirral', 'North Wales', 'Liverpool', 'Manchester'],
   facts: [
     { value: '1992', label: 'Established in Chester' },
-    { value: '3,389', label: 'Apartments supplied to developers and hotels' },
-    { value: '19', label: 'Developments across the UK' },
-    { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms — the first to launch' },
+    { value: '40+', label: 'Bathroom settings across two floors' },
+    { value: '4', label: 'SieMatic kitchen displays' },
+    { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms, opening 2027' },
   ],
   cta: { label: 'Book a design appointment', href: '/book-a-design-appointment' },
   tradeCta: { label: 'Register your project', href: '/projects/register' },

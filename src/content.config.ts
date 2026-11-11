@@ -104,6 +104,7 @@ const team = defineCollection({
     role: z.string(),
     ask: z.string().optional(),
     email: z.string().email().optional(),
+    office: z.enum(['chester', 'warrington']).default('chester'),
     phone: z.string().optional(),
     photo: z.string().optional(),
     order: z.number().default(50),

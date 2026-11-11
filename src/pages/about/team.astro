@@ -2,8 +2,18 @@
 import Page from '../../layouts/Page.astro';
 import PersonCard from '../../components/PersonCard.astro';
 import { getCollection } from 'astro:content';
+import { site } from '../../data/site';
 const team = (await getCollection('team', ({ data }) => data.published)).sort((a, b) => a.data.order - b.data.order);
+const chester = team.filter((t) => t.data.office === 'chester');
+const warrington = team.filter((t) => t.data.office === 'warrington');
 ---
-<Page title="The Team" description="The designers and project team at Zest Bathrooms & Kitchens, Chester — who to ask about kitchens, bathrooms, Haute Culture and developments." eyebrow="About — the team" heading="The people you will deal with." lead="Named, reachable, and attached to the work they did. One studio for kitchens and bathrooms, and a projects team that has supplied more than 3,000 apartments. [Photos and direct lines to come from Zest.]">
-  <section class="wrap section" style="padding-top:0"><div class="grid grid--2">{team.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.email ? `mailto:${t.data.email}` : undefined} contactLabel={t.data.email ? `Email ${t.data.name.split(' ')[0]}` : undefined} />)}</div></section>
+<Page title="The Team" description="The designers and project team at Zest Bathrooms & Kitchens, Chester — who to ask about kitchens, bathrooms, Haute Culture and developments." eyebrow="About — the team" heading="The people you will deal with." lead="Named and attached to the work they did: a design studio in Chester and a projects office in Warrington. [Photos to come from Zest.]">
+  <section class="wrap section" style="padding-top:0">
+    <div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Chester showroom</span><h2>The design studio.</h2><p class="z-heading__lead">Two kitchen designers and three bathroom designers on Brookdale Place. There are no direct lines — call the showroom and ask for them by name.</p></div>
+    <div class="grid grid--2">{chester.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={site.phoneHref} contactLabel={`Chester ${site.phone}`} />)}</div>
+  </section>
+  <section class="wrap section" style="padding-top:0">
+    <div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Warrington project office</span><h2>The projects team.</h2><p class="z-heading__lead">Specification and supply for developers, retirement-living operators, hotels and commercial fit-outs across the UK, run from Warrington.</p></div>
+    <div class="grid grid--2">{warrington.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={site.projectsPhoneHref} contactLabel={`Warrington ${site.projectsPhone}`} />)}</div>
+  </section>
 </Page>
