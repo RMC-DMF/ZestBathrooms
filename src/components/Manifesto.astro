@@ -1,0 +1,31 @@
+---
+/**
+ * The manifesto — an expansive ivory band with no photograph at all.
+ * Typography is the whole composition; the absence of imagery is the contrast
+ * to the cinematic hero above it. Used once, on the homepage.
+ */
+interface Props { eyebrow?: string; kicker?: string; note?: string }
+const { eyebrow = 'Zest / Design philosophy', kicker = 'Kitchens · Bathrooms · Interiors', note } = Astro.props;
+---
+<section class="manifesto" data-theme="light">
+  <div class="wrap manifesto__in">
+    <span class="manifesto__eyebrow z-heading">{eyebrow}</span>
+    <h2 class="manifesto__t z-heading"><slot /></h2>
+    <div class="manifesto__foot z-heading">
+      <span class="manifesto__kicker">{kicker}</span>
+      {note && <span class="manifesto__note">{note}</span>}
+    </div>
+  </div>
+</section>
+<style>
+  .manifesto { background: var(--stone); color: var(--ink); padding-block: clamp(96px, 14vw, 200px); }
+  .manifesto__in { display: flex; flex-direction: column; gap: clamp(32px, 4vw, 56px); }
+  .manifesto__eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--slate-muted); }
+  .manifesto__t { margin: 0; max-width: 1100px; font-family: var(--font-display); font-weight: 300; font-size: clamp(40px, 6.4vw, 96px); line-height: 1.02; letter-spacing: -0.018em; font-variation-settings: 'opsz' 144; color: var(--ink); text-wrap: balance; }
+  .manifesto__t :global(em) { font-style: italic; font-variation-settings: 'opsz' 144, 'SOFT' 40; color: var(--slate); }
+  .manifesto__foot { display: flex; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap; border-top: var(--hairline) solid var(--line); padding-top: var(--space-4); }
+  .manifesto__kicker, .manifesto__note { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--slate-muted); }
+  .manifesto__note { letter-spacing: .06em; text-transform: none; font-size: 14px; color: var(--slate); }
+  .manifesto__t.reveal { transition-delay: .1s; }
+  .manifesto__foot.reveal { transition-delay: .25s; }
+</style>

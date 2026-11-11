@@ -1,0 +1,91 @@
+---
+import Pic from './Pic.astro';
+/**
+ * Material → Space. The one signature interaction.
+ * Three coordinated views of the same real room — a material, a detail, the finished space —
+ * revealed one out of the other as the visitor scrolls. The visitor stays in control: nothing
+ * locks the page, and without JavaScript, with reduced motion, or on a phone it is simply
+ * three photographs in a row.
+ */
+interface Frame { src: string; alt: string; label: string }
+interface Props { frames: [Frame, Frame, Frame]; eyebrow?: string; title: string; text?: string; href?: string; linkLabel?: string; accent?: string }
+const { frames, eyebrow = 'The detail', title, text, href, linkLabel = 'See the showroom', accent = 'bathrooms' } = Astro.props;
+---
+<section class:list={['m2s', `z-accent--${accent}`]} data-m2s aria-label={title}>
+  <div class="m2s__stage">
+    {frames.map((f, i) => <figure class="m2s__layer" data-i={i}>
+      <div class="m2s__img"><Pic src={f.src} alt={f.alt} sizes="100vw" widths={[768, 1200, 1600, 2000]} /></div>
+      <figcaption class="m2s__cap"><span class="m2s__n">{String(i + 1).padStart(2, '0')}</span> {f.label}</figcaption>
+    </figure>)}
+    <div class="m2s__shade" aria-hidden="true"></div>
+    <div class="wrap m2s__txt">
+      <ol class="m2s__steps" aria-hidden="true">{frames.map((f, i) => <li data-i={i}><span class="m2s__n">{String(i + 1).padStart(2, '0')}</span>{f.label}</li>)}</ol>
+      <span class="z-eyebrow">{eyebrow}</span>
+      <h2 class="m2s__title">{title}</h2>
+      {text && <p class="m2s__lead">{text}</p>}
+      {href && <a class="z-btn z-btn--link z-btn--on-dark" href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>}
+    </div>
+  </div>
+</section>
+<script>
+  // Scroll-driven: progress 0→1 across the section drives CSS custom properties. No page locking.
+  const live = matchMedia('(min-width: 900px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (live) document.querySelectorAll<HTMLElement>('[data-m2s]').forEach((sec) => {
+    sec.classList.add('is-live');
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const r = sec.getBoundingClientRect();
+      const span = sec.offsetHeight - innerHeight;
+      const p = Math.min(1, Math.max(0, -r.top / span));
+      sec.style.setProperty('--p', p.toFixed(4));
+      sec.dataset.phase = String(p < 0.3 ? 0 : p < 0.68 ? 1 : 2);
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll);
+    update();
+  });
+</script>
+<style>
+  /* ---- Still version: three photographs in a row (no JS, reduced motion, phones) ---- */
+  .m2s { background: var(--panel-dark); color: var(--on-panel); padding-block: var(--space-9); }
+  .m2s__stage { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: var(--container); margin: 0 auto; padding-inline: var(--gutter); }
+  .m2s__layer { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .m2s__img { aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-raised); }
+  .m2s__img :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .m2s__cap { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-muted); }
+  .m2s__n { color: var(--accent-text); margin-right: 8px; }
+  .m2s__shade { display: none; }
+  .m2s__txt { grid-column: 1 / -1; order: -1; display: flex; flex-direction: column; gap: var(--space-4); max-width: 560px; margin-bottom: var(--space-6); padding-inline: 0; }
+  .m2s__steps { display: none; }
+  .m2s__title { font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; font-weight: 300; letter-spacing: -0.012em; font-variation-settings: 'opsz' 144; color: var(--on-panel); }
+  .m2s__lead { font-size: 17px; line-height: 1.7; color: #cfd3d9; max-width: 440px; }
+  @media (max-width: 700px) { .m2s__stage { grid-template-columns: 1fr; } .m2s__img { aspect-ratio: 4 / 3; } }
+
+  /* ---- Live version: a sticky stage, each view growing out of the one before it ---- */
+  .m2s.is-live { --p: 0; padding: 0; height: 280vh; position: relative; }
+  .m2s.is-live .m2s__stage { position: sticky; top: 0; height: 100vh; max-width: none; padding: 0; display: block; overflow: hidden; background: var(--panel-dark); }
+  .m2s.is-live .m2s__layer { position: absolute; inset: 0; display: block; }
+  .m2s.is-live .m2s__img { position: absolute; inset: 0; aspect-ratio: auto; }
+  .m2s.is-live .m2s__cap { display: none; }
+  /* progress per layer: t1 for the detail (layer 2), t2 for the space (layer 3) */
+  .m2s.is-live { --t1: clamp(0, (var(--p) - 0.18) / 0.34, 1); --t2: clamp(0, (var(--p) - 0.58) / 0.34, 1); }
+  /* layer 1 drifts and dims as it is replaced */
+  .m2s.is-live .m2s__layer[data-i="0"] .m2s__img :global(img) { transform: scale(calc(1 + var(--t1) * 0.08)); filter: brightness(calc(1 - var(--t1) * 0.5)); }
+  /* layers 2 and 3 open from a centred window: inset shrinks, image settles from a slight zoom */
+  .m2s.is-live .m2s__layer[data-i="1"] { clip-path: inset(calc((1 - var(--t1)) * 50%) calc((1 - var(--t1)) * 28%) calc((1 - var(--t1)) * 50%) calc((1 - var(--t1)) * 72%)); }
+  .m2s.is-live .m2s__layer[data-i="1"] .m2s__img :global(img) { transform: scale(calc(1.18 - var(--t1) * 0.18 + var(--t2) * 0.08)); filter: brightness(calc(1 - var(--t2) * 0.5)); }
+  .m2s.is-live .m2s__layer[data-i="2"] { clip-path: inset(calc((1 - var(--t2)) * 50%) calc((1 - var(--t2)) * 28%) calc((1 - var(--t2)) * 50%) calc((1 - var(--t2)) * 72%)); }
+  .m2s.is-live .m2s__layer[data-i="2"] .m2s__img :global(img) { transform: scale(calc(1.18 - var(--t2) * 0.18)); }
+  .m2s.is-live .m2s__img :global(img) { will-change: transform, filter; }
+  .m2s.is-live .m2s__shade { display: block; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, rgba(15,17,20,.82) 0%, rgba(15,17,20,.55) 34%, rgba(15,17,20,.12) 62%, rgba(15,17,20,0) 100%), linear-gradient(to top, rgba(15,17,20,.5) 0%, rgba(15,17,20,0) 40%); }
+  .m2s.is-live .m2s__txt { position: absolute; left: 0; right: 0; bottom: clamp(56px, 9vh, 112px); order: 0; margin: 0 auto; max-width: var(--container); padding-inline: var(--gutter); gap: var(--space-4); }
+  .m2s.is-live .m2s__txt > * { max-width: 520px; }
+  .m2s.is-live .m2s__title { text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
+  .m2s.is-live .m2s__lead { text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+  .m2s.is-live .m2s__steps { display: flex; gap: var(--space-5); list-style: none; margin: 0 0 var(--space-3); padding: 0; }
+  .m2s.is-live .m2s__steps li { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); transition: color .4s; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.18); }
+  .m2s.is-live .m2s__steps li .m2s__n { color: inherit; }
+  .m2s.is-live[data-phase="0"] .m2s__steps li[data-i="0"], .m2s.is-live[data-phase="1"] .m2s__steps li[data-i="1"], .m2s.is-live[data-phase="2"] .m2s__steps li[data-i="2"] { color: var(--on-panel); border-bottom-color: var(--accent-text); }
+</style>
