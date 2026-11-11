@@ -56,7 +56,7 @@ const brands = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/brands' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(['Kitchens', 'Brassware', 'Sanitaryware', 'Furniture', 'Wellness', 'Tiles & surfaces', 'Appliances', 'Baths']),
+    category: z.enum(['Kitchens', 'Brassware', 'Sanitaryware', 'Furniture', 'Wellness', 'Tiles & surfaces', 'Appliances', 'Baths', 'Showers']),
     country: z.string().optional(),
     summary: z.string().max(220),
     onDisplay: z.string().optional(),
