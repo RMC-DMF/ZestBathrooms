@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import Statement from '../components/Statement.astro';
 import ImageRow from '../components/ImageRow.astro';
 import FullBleed from '../components/FullBleed.astro';
+import Editorial from '../components/Editorial.astro';
 import ProcessList from '../components/ProcessList.astro';
 import CaseStudyCard from '../components/CaseStudyCard.astro';
 import { getCollection } from 'astro:content';
@@ -32,10 +33,10 @@ const steps = [
   <div id="doors"><Statement>For thirty-four years we have designed and supplied the kitchens and bathrooms of the North West's best homes — and, from a showroom on Brookdale Place, some of its largest developments.</Statement></div>
 
   <ImageRow accent="kitchens" image="/images/home/red-siematic.jpg" alt="Slate SieMatic kitchen against a terracotta wall, Zest showroom" eyebrow="Kitchens" title="SieMatic, planned by our own studio." text="Handleless German precision, specified for the way your household actually cooks, eats and gathers. Displays on the floor in Chester." href="/kitchens" linkLabel="Explore kitchens" />
-  <ImageRow accent="bathrooms" flip image="/images/home/gessi-bamboo.jpg" alt="Gessi Haute Culture bamboo-form tap in brushed copper" eyebrow="Bathrooms" title="Gessi, Bette, Novello — and rooms built for wellness." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 40%" />
+  <Editorial tone="light" accent="bathrooms" image="/images/home/bathroom-edgeley.jpg" alt="Plaster-pink bathroom with brushed-brass brassware, Edgeley, Chester — designed by Zest" detail="/images/home/green-2.jpg" detailAlt="Deep green basin wall with copper tap, Zest showroom" eyebrow="Bathrooms" title="Gessi, Bette, Novello — and rooms built for wellness." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades, designed into rooms like this one in Chester." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 55%" />
   <ImageRow accent="projects" image="/images/home/project-deansgate.jpg" alt="Deansgate Square towers, Manchester" eyebrow="Projects" title="3,389 apartments. 19 developments. One supplier." text="Specification and supply for developers, architects and hotels across the UK — Renaker, Capital & Centric, Domis, Audley, Fragrance Group." href="/projects" linkLabel="See the work" secondary={site.tradeCta} position="50% 30%" />
 
-  <FullBleed id="haute" accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom in a mirrored, marble room" eyebrow="Now in Chester" title="Gessi Haute Culture. One of ten showrooms in the UK." text="Eight couture collections, made by hand in Italy and specified rather than bought. Zest is a Haute Culture Ambassador and official partner showroom; the dedicated Haute Culture space opens in Chester in January 2027. Register for a private preview." cta={{ label: 'Register for the preview', href: '/gessi-haute-culture' }} />
+  <FullBleed id="haute" accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom in a mirrored, marble room" eyebrow="Opening January 2027" title="Gessi Haute Culture. One of ten showrooms in the UK." text="Eight couture collections, made by hand in Italy and specified rather than bought. Zest is a Haute Culture Ambassador and official partner showroom; the dedicated Haute Culture space opens in Chester in January 2027. Register for a private preview." cta={{ label: 'Register for the preview', href: '/gessi-haute-culture' }} />
 
   <section id="design" class="section--loose z-accent--design light-section" data-theme="light">
     <div class="wrap grid design">

@@ -2,21 +2,87 @@
 import Page from '../layouts/Page.astro';
 import { site } from '../data/site';
 ---
-<Page title="Book a Design Appointment" description="Book a complimentary design appointment at the Zest showroom in Chester. Three fields and a preferred time; we confirm within one working day." accent="design" eyebrow="Book a design appointment" heading="An hour in the showroom." lead="Complimentary, no obligation, with a designer who will plan the room with you. We confirm within one working day." cta={false}>
+<Page title="Book a Free Design Appointment" description="Book a free design appointment at the Zest showroom in Chester, or send a project enquiry to the Warrington projects team. We confirm within one working day." accent="design" eyebrow="Book a free design appointment" heading="An hour in the showroom." lead="Free, no obligation, with a designer who will plan the room with you. We confirm within one working day." cta={false}>
   <section class="wrap section" style="padding-top:0"><div class="grid grid--2" style="gap:96px;align-items:start">
-    <form class="stack" name="design-appointment" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=appointment">
-      <input type="hidden" name="form-name" value="design-appointment" />
-      <input type="hidden" name="interest" id="interest" value="" />
-      <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
-      <div class="field"><label for="a-name">Your name</label><input id="a-name" name="name" required autocomplete="name" /></div>
-      <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" required autocomplete="email" /></div>
-      <div class="field"><label for="a-phone">Phone</label><input id="a-phone" name="phone" type="tel" required autocomplete="tel" /></div>
-      <div class="field"><label for="a-room">What are we designing?</label><select id="a-room" name="room"><option>A kitchen</option><option>A bathroom</option><option>Both</option><option>Gessi Haute Culture viewing</option><option>Not sure yet</option></select></div>
-      <div class="field"><label for="a-when">Preferred time (optional)</label><input id="a-when" name="preferred" placeholder="e.g. Saturday morning, or a date" /></div>
-      <div><button class="z-btn z-btn--primary" type="submit">Request the appointment</button></div>
-      <p class="caption">Or call <a href={site.phoneHref}>{site.phone}</a>. <a href="/privacy">Privacy</a>.</p>
-    </form>
-    <aside class="stack"><div><h3>What happens next</h3><ol class="small" style="padding-left:1.2em;color:var(--slate);margin-top:8px"><li>We confirm a time within one working day.</li><li>You spend an hour with a designer in the showroom.</li><li>If you'd like to go ahead, we book a survey.</li></ol></div><div><h3>Bring, if you have them</h3><p class="small" style="margin-top:8px;color:var(--slate)">A floor plan or rough measurements, photos of the room, anything you've saved that you like — or nothing at all.</p></div></aside>
+    <div class="stack">
+      <div class="who" role="tablist" aria-label="Who is enquiring">
+        <button class="who__btn is-on" type="button" role="tab" aria-selected="true" data-who="home">A homeowner</button>
+        <button class="who__btn" type="button" role="tab" aria-selected="false" data-who="trade">An architect, developer or designer</button>
+      </div>
+
+      <form class="stack" id="form-home" name="design-appointment" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=appointment">
+        <input type="hidden" name="form-name" value="design-appointment" />
+        <input type="hidden" name="interest" id="interest" value="" />
+        <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+        <div class="field"><label for="a-name">Your name</label><input id="a-name" name="name" required autocomplete="name" /></div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" required autocomplete="email" /></div>
+          <div class="field"><label for="a-phone">Phone</label><input id="a-phone" name="phone" type="tel" required autocomplete="tel" /></div>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="a-room">What are we designing?</label><select id="a-room" name="room"><option>A kitchen</option><option>A bathroom</option><option>Both</option><option>Gessi Haute Culture preview</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="a-postcode">Postcode of the house</label><input id="a-postcode" name="postcode" autocomplete="postal-code" placeholder="CH1 …" /></div>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="a-timing">When would you like it done?</label><select id="a-timing" name="timescale"><option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just planning</option></select></div>
+          <div class="field"><label for="a-when">Preferred appointment time</label><input id="a-when" name="preferred" placeholder="e.g. Saturday morning, or a date" /></div>
+        </div>
+        <div class="field"><label for="a-notes">Anything we should know? <span class="caption">(optional)</span></label><textarea id="a-notes" name="notes" rows="3" placeholder="The room, the house, what you have in mind — or nothing at all."></textarea></div>
+        <div><button class="z-btn z-btn--primary" type="submit">Request the appointment</button></div>
+        <p class="caption">Or call the showroom on <a href={site.phoneHref}>{site.phone}</a>. <a href="/privacy">Privacy</a>.</p>
+      </form>
+
+      <form class="stack" id="form-trade" name="project-enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=project" hidden>
+        <input type="hidden" name="form-name" value="project-enquiry" />
+        <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="t-name">Your name</label><input id="t-name" name="name" required autocomplete="name" /></div>
+          <div class="field"><label for="t-company">Practice or company</label><input id="t-company" name="company" required autocomplete="organization" /></div>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="t-email">Email</label><input id="t-email" name="email" type="email" required autocomplete="email" /></div>
+          <div class="field"><label for="t-phone">Phone</label><input id="t-phone" name="phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="t-type">Project type</label><select id="t-type" name="project_type"><option>Residential development</option><option>Retirement living</option><option>Hotel or hospitality</option><option>Commercial or office</option><option>Private house</option><option>Other</option></select></div>
+          <div class="field"><label for="t-units">Approximate size</label><input id="t-units" name="units" placeholder="e.g. 120 apartments, 40 keys, one house" /></div>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4)">
+          <div class="field"><label for="t-postcode">Site postcode or town</label><input id="t-postcode" name="postcode" /></div>
+          <div class="field"><label for="t-stage">Stage and timescale</label><select id="t-stage" name="stage"><option>Early design — specifying now</option><option>Tender in the next 3 months</option><option>On site — supply needed within 6 months</option><option>Future pipeline</option></select></div>
+        </div>
+        <div class="field"><label for="t-notes">What you need from us</label><textarea id="t-notes" name="notes" rows="3" placeholder="Kitchens, bathrooms or both; brands in mind; whether you want a showroom visit for the design team."></textarea></div>
+        <div><button class="z-btn z-btn--primary" type="submit">Send to the projects team</button></div>
+        <p class="caption">Or call the Warrington project office on <a href={site.projectsPhoneHref}>{site.projectsPhone}</a>. <a href="/privacy">Privacy</a>.</p>
+      </form>
+    </div>
+
+    <aside class="stack">
+      <div id="aside-home"><h3>What happens next</h3><ol class="small" style="padding-left:1.2em;color:var(--slate);margin-top:8px"><li>We confirm a time within one working day.</li><li>You spend an hour with a designer in the showroom — four SieMatic kitchens and forty bathroom settings to walk through.</li><li>If you'd like to go ahead, we book a survey. There is no design fee at any stage.</li></ol><h3 style="margin-top:var(--space-6)">Bring, if you have them</h3><p class="small" style="margin-top:8px;color:var(--slate)">A floor plan or rough measurements, photos of the room, anything you've saved that you like — or nothing at all.</p></div>
+      <div id="aside-trade" hidden><h3>How the projects team works</h3><ol class="small" style="padding-left:1.2em;color:var(--slate);margin-top:8px"><li>Eddie or Tom comes back within one working day.</li><li>We review the scheme and propose a specification — brands, budget bands, lead times.</li><li>Samples, showroom visit for your design team, then supply to programme.</li></ol><p class="small" style="margin-top:var(--space-5);color:var(--slate)">Thousands of units a year across residential towers, retirement living, hotels and offices — <a href="/projects">see the work</a>.</p></div>
+    </aside>
   </div></section>
-  <script>const i = new URLSearchParams(location.search).get('interest'); if (i) { (document.getElementById('interest') as HTMLInputElement).value = i; if (i === 'haute-culture') (document.getElementById('a-room') as HTMLSelectElement).value = 'Gessi Haute Culture viewing'; }</script>
+  <script>
+    const btns = document.querySelectorAll<HTMLButtonElement>('.who__btn');
+    const show = (who: string) => {
+      btns.forEach((b) => { const on = b.dataset.who === who; b.classList.toggle('is-on', on); b.setAttribute('aria-selected', String(on)); });
+      (document.getElementById('form-home') as HTMLElement).hidden = who !== 'home';
+      (document.getElementById('form-trade') as HTMLElement).hidden = who !== 'trade';
+      (document.getElementById('aside-home') as HTMLElement).hidden = who !== 'home';
+      (document.getElementById('aside-trade') as HTMLElement).hidden = who !== 'trade';
+    };
+    btns.forEach((b) => b.addEventListener('click', () => show(b.dataset.who!)));
+    const q = new URLSearchParams(location.search);
+    if (q.get('who') === 'trade') show('trade');
+    const i = q.get('interest');
+    if (i) { (document.getElementById('interest') as HTMLInputElement).value = i; if (i === 'haute-culture') (document.getElementById('a-room') as HTMLSelectElement).value = 'Gessi Haute Culture preview'; }
+  </script>
 </Page>
+<style>
+  .who { display: flex; gap: var(--space-2); padding: 4px; border: var(--hairline) solid var(--line); width: max-content; max-width: 100%; }
+  .who__btn { font: inherit; font-size: 14px; font-weight: 500; padding: 10px 18px; background: none; border: 0; color: var(--slate); cursor: pointer; border-radius: var(--radius-sm); transition: background-color .25s, color .25s; }
+  .who__btn.is-on { background: var(--ink); color: var(--on-ink); }
+  .who__btn:focus-visible { outline: 2px solid var(--brass-text); outline-offset: 2px; }
+  @media (max-width: 600px) { .who { width: 100%; flex-direction: column; } .who__btn { text-align: left; } }
+  .field textarea { resize: vertical; }
+</style>

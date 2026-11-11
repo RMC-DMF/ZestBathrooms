@@ -24,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img, picture, video { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
 a { color: var(--accent-text, var(--slate)); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 2px solid var(--brass-text); outline-offset: 2px; }
@@ -135,14 +136,28 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 .z-case__media img, .z-case__media picture { width: 100%; height: 100%; object-fit: cover; display: block; }
 .feat__img img, .row__img img, .hero__img, .bleed__img, .page-head__img, .study-head__img { width: 100%; height: 100%; object-fit: cover; }
 
+/* Light band: a warm stone section inside the dark site */
+.light-band { background: var(--stone); color: var(--ink); }
+.light-band h1, .light-band h2, .light-band h3 { color: var(--ink); }
+.light-band .z-heading__lead, .light-band p { color: var(--slate); }
 /* Scroll reveal (added by Base.astro's script; no-ops without JS or with reduced motion) */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
 .reveal.is-in { opacity: 1; transform: none; }
+/* Photographs are unmasked rather than faded: a slow wipe up from the bottom edge with a settle in scale */
+.reveal--mask { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.65,0,.2,1); }
+.reveal--mask img { transform: scale(1.06); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
+.reveal--mask.is-in { clip-path: inset(0 0 0 0); }
+.reveal--mask.is-in img { transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal--mask { clip-path: none; } .reveal--mask img { transform: none; } }
 .z-case:nth-child(2).reveal, .kf__item:nth-child(2).reveal { transition-delay: .08s; }
 .z-case:nth-child(3).reveal, .kf__item:nth-child(3).reveal { transition-delay: .16s; }
 .kf__item:nth-child(4).reveal { transition-delay: .24s; }
 /* Hover and focus refinements */
-.z-case :global(img), .z-case img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.z-case img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.gal__item img, .feat__img img, .coll__img img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.gal__item:hover img, .coll:hover .coll__img img { transform: scale(1.03); }
+.z-btn__arrow { transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.z-btn:hover .z-btn__arrow { transform: translateX(4px); }
 .z-btn { transition: background-color .25s, color .25s, border-color .25s, transform .25s; }
 .z-btn--primary:active { transform: translateY(1px); }
 .field input, .field select, .field textarea { transition: border-color .2s, box-shadow .2s; }
@@ -155,3 +170,9 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 /* Head titles sit low, in the melt, with a soft lift off bright photographs */
 .page-head--img .z-heading__title, .page-head--img .z-heading__lead, .study-head .z-heading__title, .bh__title, .bh__lead { text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
 .page-head--img .z-eyebrow, .study-head .z-eyebrow, .bh .z-eyebrow { text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+/* Buttons inside a light band: the :is() rule above out-specifies the button colours, so restate them */
+.dark [data-theme="light"] .z-btn--primary { color: var(--on-ink); background: var(--ink); border-color: var(--ink); }
+.dark [data-theme="light"] .z-btn--primary:hover { background: var(--brass); border-color: var(--brass); color: var(--on-ink); }
+.dark [data-theme="light"] .z-btn--secondary { color: var(--ink); border-color: var(--ink); background: transparent; }
+.dark [data-theme="light"] .z-btn--link { color: var(--accent-text, var(--slate)); }
+.dark [data-theme="light"] .z-btn--link:hover { color: var(--ink); }

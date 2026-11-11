@@ -24,7 +24,7 @@ const collections = [
     <div class="grid grid--2" style="gap:var(--space-7) var(--space-6)">{collections.map((c) => <div><div style="aspect-ratio:3/2;overflow:hidden;margin-bottom:var(--space-4)" class="fill"><Pic src={c.image} alt={c.name} sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div><h3>{c.name}</h3><p class="small" style="color:var(--slate);margin-top:8px;max-width:480px">{c.text}</p></div>)}</div>
   </section>
   <KnownFor items={brand?.data.knownFor ?? []} title="What SieMatic is known for." />
-  <Feature image={imgs.siematic.display[0]} alt="SieMatic SLX display in the Zest showroom" eyebrow="SieMatic at Zest" title="On the floor in Chester.">
+  <Feature image={imgs.siematic.display[0]} alt="SieMatic SLX display in the Zest showroom" eyebrow="SieMatic at Zest" title="On the floor in Chester." tone="light">
     <p>{brand?.data.onDisplay}</p>
     <p>SieMatic is sold only through appointed studios, so the question isn't online versus showroom — it's which studio. Ours plans the bathroom with the kitchen when a house has both, and the designer who draws it sees it through.</p>
     <div class="cluster"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link" href="/about/showroom">Plan a visit <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>

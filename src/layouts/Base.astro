@@ -95,9 +95,10 @@ const breadcrumbs = (() => {
     <script>
       // Scroll reveal — one gentle rise per element, never repeated, off for reduced motion.
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-        const sel = 'main .fill, main .feat__img, main .row__img, main .gal__item, main .design__img, main .z-heading, main .z-case, main .z-person, main .kf__item, main .proc li, main .feat__txt, main .row__txt, main .statement__p, main .z-fact, main .post, main .coll';
+        const sel = 'main .fill, main .feat__img, main .row__img, main .gal__item, main .design__img, main .z-heading, main .z-case, main .z-person, main .kf__item, main .proc li, main .feat__txt, main .row__txt, main .statement__p, main .z-fact, main .post, main .coll, main .ed__img, main .ed__detail, main .ed__txt';
         const els = Array.from(document.querySelectorAll<HTMLElement>(sel)).filter((el) => !el.closest('[data-no-reveal], .hero, .page-head, .study-head, .bh, .bleed'));
-        els.forEach((el) => el.classList.add('reveal'));
+        const maskSel = '.fill, .feat__img, .row__img, .gal__item, .design__img, .ed__img, .ed__detail';
+        els.forEach((el) => el.classList.add(el.matches(maskSel) ? 'reveal--mask' : 'reveal'));
         const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { (e.target as HTMLElement).classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
         els.forEach((el) => io.observe(el));
         // Safety nets: anything already on screen shows at once; everything shows after 4s regardless.

@@ -1,10 +1,10 @@
 ---
 import Pic from './Pic.astro';
 /** Light-theme image + copy row. The inner-page counterpart of ImageRow. */
-interface Props { image?: string; alt?: string; eyebrow?: string; title: string; flip?: boolean; ratio?: string; tone?: 'surface' | 'stone' }
+interface Props { image?: string; alt?: string; eyebrow?: string; title: string; flip?: boolean; ratio?: string; tone?: 'surface' | 'stone' | 'light' }
 const { image, alt = '', eyebrow, title, flip = false, ratio = '4 / 5', tone = 'surface' } = Astro.props;
 ---
-<section class:list={['feat', { 'feat--flip': flip, stone: tone === 'stone' }]}>
+<section class:list={['feat', { 'feat--flip': flip, stone: tone === 'stone', 'feat--light': tone === 'light' }]} data-theme={tone === 'light' ? 'light' : undefined}>
   <div class="wrap feat__in">
     <div class="feat__img" style={`aspect-ratio:${ratio}`}><Pic src={image} alt={alt} sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div>
     <div class="feat__txt">
@@ -16,6 +16,9 @@ const { image, alt = '', eyebrow, title, flip = false, ratio = '4 / 5', tone = '
 </section>
 <style>
   .feat { padding-block: var(--space-8); }
+  .feat--light { background: var(--stone); color: var(--ink); }
+  .feat--light h2 { color: var(--ink); }
+  .feat--light .feat__body { color: var(--slate); }
   @media (min-width: 900px) { .feat { padding-block: var(--space-9); } }
   .feat__in { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-9); align-items: center; }
   .feat--flip .feat__img { order: 2; }

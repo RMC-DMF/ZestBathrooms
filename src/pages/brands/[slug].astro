@@ -56,7 +56,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
 
   {b.collections.length > 0 && <section class="wrap section"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Collections</span><h2>Where to start.</h2></div><div class="grid grid--3">{b.collections.map((c, i) => <div class="coll">{c.image ? <div class="coll__img fill"><Pic src={c.image} alt={c.name} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div> : <span class="coll__idx">{String(i + 1).padStart(2, '0')}</span>}<h3>{c.name}</h3>{c.text && <p class="small" style="color:var(--slate)">{c.text}</p>}</div>)}</div></section>}
 
-  {b.whyZest.length > 0 && <Feature image={restGallery[0]?.src ?? b.hero?.src} alt={restGallery[0]?.alt ?? ''} eyebrow={`Why ${b.title} from Zest`} title="The product is the same. The result isn't." flip>
+  {b.whyZest.length > 0 && <Feature image={restGallery[0]?.src ?? b.hero?.src} alt={restGallery[0]?.alt ?? ''} eyebrow={`Why ${b.title} from Zest`} title="The product is the same. The result isn't." tone="light" flip>
     {b.whyZest.map((p) => <p>{p}</p>)}
     {b.onDisplay && <p><strong>In Chester:</strong> {b.onDisplay}</p>}
     <div class="cluster"><a class="z-btn z-btn--secondary" href="/about/showroom">Plan a visit</a><a class="z-btn z-btn--link" href="/design-service">How the design service works <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
