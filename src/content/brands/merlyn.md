@@ -4,7 +4,10 @@ category: "Showers"
 country: "Ireland"
 summary: "Merlyn shower enclosures from Kilkenny — Series 10, Arysto and MBox — are the dependable, well-engineered glass we specify across developments and family bathrooms alike."
 website: "https://www.merlynshowering.com"
-gallery: []
+hero:
+  src: "/images/brands/press/merlyn-brushed-bronze.jpg"
+  alt: "Merlyn Arysto enclosure in brushed bronze"
+gallery: [{"src": "/images/brands/press/merlyn-wetroom.jpg", "alt": "Merlyn wet room panel with a freestanding bath"}, {"src": "/images/brands/press/merlyn-arysto-sleek.jpg", "alt": "Merlyn Arysto Sleek in brushed brass against dark stone"}, {"src": "/images/brands/press/merlyn-black-walkin.jpg", "alt": "Merlyn Black framed walk-in"}, {"src": "/images/brands/press/merlyn-8mm-bronze.jpg", "alt": "Merlyn 8mm framed wet room in bronze"}, {"src": "/images/brands/press/merlyn-bathscreen.jpg", "alt": "Merlyn bath screen"}]
 heritage: "Merlyn is the enclosure we have put into hundreds of apartments: thoughtfully engineered, quick to fit, easy to live with, and with a service team that answers the phone. For a family bathroom it is often the sensible answer."
 tagline: "Engineered glass from Kilkenny."
 founded: "2000"

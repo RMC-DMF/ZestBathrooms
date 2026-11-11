@@ -4,7 +4,10 @@ category: "Appliances"
 country: "Netherlands"
 summary: "Quooker is the boiling-water tap — and, with CUBE, chilled and sparkling too. Flex, Fusion and Front taps in finishes to match the brassware, fitted in every SieMatic display we have."
 website: "https://www.quooker.co.uk"
-gallery: []
+hero:
+  src: "/images/brands/press/quooker-flex-rose-copper.jpg"
+  alt: "Quooker Flex in rose copper"
+gallery: [{"src": "/images/brands/press/quooker-fusion-stainless.jpg", "alt": "Quooker Fusion in stainless steel"}, {"src": "/images/brands/press/quooker-flex-gunmetal.jpg", "alt": "Quooker Flex in gunmetal"}, {"src": "/images/brands/press/quooker-fusion-patinated-brass.jpg", "alt": "Quooker Fusion in patinated brass"}, {"src": "/images/brands/press/quooker-flex-black.jpg", "alt": "Quooker Flex in black on dark marble"}, {"src": "/images/brands/press/quooker-flex-rvs-pasta.jpg", "alt": "Quooker Flex filling a pasta pan"}, {"src": "/images/brands/press/quooker-patinated-brass-detail.jpg", "alt": "Quooker patinated brass detail"}]
 heritage: "Every one of our kitchen displays has a Quooker in it, because every kitchen we design ends up with one. It replaces the kettle, the filter jug and the sparkling-water bottles, and it looks right."
 tagline: "Boiling, chilled and sparkling, from one tap."
 founded: "1970"

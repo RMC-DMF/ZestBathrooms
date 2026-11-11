@@ -4,7 +4,10 @@ category: "Appliances"
 country: "Germany"
 summary: "Miele appliances — Generation 7000 ovens, ArtLine handleless fronts, MasterCool refrigeration — are the alternative appliance package in our SieMatic kitchens, built to a twenty-year test."
 website: "https://www.miele.co.uk"
-gallery: []
+hero:
+  src: "/images/brands/press/miele-black-column.jpg"
+  alt: "Miele Generation 7000 column in obsidian black"
+gallery: [{"src": "/images/brands/press/miele-ovens-living.jpg", "alt": "Miele ovens built into a dark column in an open-plan living space"}, {"src": "/images/brands/press/miele-fluted-wall-trio.jpg", "alt": "Three Miele ovens in a fluted dark wall"}, {"src": "/images/brands/press/miele-oven-window.jpg", "alt": "Miele oven beside a window"}, {"src": "/images/brands/press/miele-oven-terrace.jpg", "alt": "Miele oven in a kitchen opening onto a terrace"}, {"src": "/images/brands/press/miele-island-kitchen.jpg", "alt": "Miele appliances in an island kitchen"}, {"src": "/images/brands/press/miele-oak-tower.jpg", "alt": "Miele appliances in an oak tower"}, {"src": "/images/brands/press/miele-induction-hob.jpg", "alt": "Miele induction hob"}]
 heritage: "Miele is the appliance brand people ask for by name, and for good reason: it is tested to last twenty years and usually does. In a SieMatic kitchen it is the handleless ArtLine ovens that sit most naturally."
 tagline: "Tested for twenty years, built for longer."
 founded: "1899"

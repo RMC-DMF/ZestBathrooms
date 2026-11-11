@@ -4,7 +4,10 @@ category: "Sanitaryware"
 country: "United Kingdom"
 summary: "Burlington makes the traditional English bathroom at a sensible price: Edwardian and Victorian basins and WCs, roll-top and slipper baths, furniture and brassware that sit happily in a period house."
 website: "https://www.burlingtonbathrooms.com"
-gallery: []
+hero:
+  src: "/images/brands/press/burlington-strand-brushed-brass.jpg"
+  alt: "Burlington Strand bath taps in brushed brass"
+gallery: [{"src": "/images/brands/press/burlington-guild-brushed-nickel.jpg", "alt": "Burlington Guild bathroom in brushed nickel"}, {"src": "/images/brands/press/burlington-guild-chrome.jpg", "alt": "Burlington Guild bathroom with blue tiles"}, {"src": "/images/brands/press/burlington-freestanding.jpg", "alt": "Burlington freestanding vanity and walk-in shower"}, {"src": "/images/brands/press/burlington-chalfont.jpg", "alt": "Burlington Chalfont vanity in black"}, {"src": "/images/brands/press/burlington-marble.jpg", "alt": "Burlington green vanity with marble shower"}]
 heritage: "Burlington is how we give a Victorian terrace or a Cheshire farmhouse a bathroom that belongs to it without a country-house budget. It is the traditional range we specify most, and it pairs well with Lefroy Brooks and Thomas Crapper when a client wants to step up a piece or two. [Mark listed this as 'Burbridge' — confirm Burlington is the brand on the floor.]"
 tagline: "The traditional English bathroom, done properly."
 founded: "2004 [confirm]"

@@ -4,7 +4,10 @@ category: "Brassware"
 country: "United Kingdom"
 summary: "Crosswater is the British brassware we specify for well-made, well-priced bathrooms: MPRO, Union and Belgravia taps and showers, with the finishes and the spares to match."
 website: "https://www.crosswater.co.uk"
-gallery: []
+hero:
+  src: "/images/brands/press/crosswater-main-bathroom-set04.jpg"
+  alt: "Crosswater brassware in a green herringbone-tiled bathroom"
+gallery: [{"src": "/images/brands/press/crosswater-main-set-1.jpg", "alt": "Crosswater brassware with a freestanding bath and green vanity"}, {"src": "/images/brands/press/crosswater-ensuite-set01.jpg", "alt": "Crosswater en-suite with walk-in shower"}, {"src": "/images/brands/press/crosswater-fuse-brushed-brass.jpg", "alt": "Crosswater Fuse in brushed brass, pink bathroom"}]
 heritage: "Not every bathroom needs Gessi. Crosswater is the range we turn to when a client wants a considered room at a sensible number, and for developments where a hundred showers have to work for ten years. It has never let us down."
 tagline: "The British brassware that behaves."
 founded: "1998"

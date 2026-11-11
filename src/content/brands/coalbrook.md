@@ -4,7 +4,10 @@ category: "Brassware"
 country: "United Kingdom"
 summary: "Coalbrook is the young British brassware house winning interior designers over: Domo, Trio and Decca collections with proper weight, considered proportions and finishes that photograph as well as they wear."
 website: "https://www.coalbrook.co.uk"
-gallery: []
+hero:
+  src: "/images/brands/press/coalbrook-foundry-bath.jpg"
+  alt: "Coalbrook Foundry bath filler in brushed brass"
+gallery: [{"src": "/images/brands/press/coalbrook-bank.jpg", "alt": "Coalbrook Bank wall-mounted basin mixer in gunmetal"}, {"src": "/images/brands/press/coalbrook-decca.jpg", "alt": "Coalbrook Decca basin mixer"}, {"src": "/images/brands/press/coalbrook-zurich.jpg", "alt": "Coalbrook Zurich bath taps in brushed brass"}, {"src": "/images/brands/press/coalbrook-domo.jpg", "alt": "Coalbrook Domo basin mixer with pink tiles"}, {"src": "/images/brands/press/coalbrook-shepherd-main.jpg", "alt": "Coalbrook Shepherd furniture"}]
 heritage: "We added Coalbrook because designers kept asking for it. It is beautifully proportioned, the finishes are deep, and it fills the gap between the Italian houses and the mainstream — which is exactly where a lot of good bathrooms live."
 tagline: "New British brassware, old-fashioned heft."
 founded: "2021"
