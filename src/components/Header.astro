@@ -64,7 +64,7 @@ const path = Astro.url.pathname;
   .hdr__actions { display: none; gap: var(--space-5); align-items: center; white-space: nowrap; flex-shrink: 0; }
   .hdr__actions .z-btn { white-space: nowrap; }
   .hdr__phone { color: var(--slate); text-decoration: none; font-size: 15px; font-weight: 500; display: none; }
-  @media (min-width: 1280px) { .hdr__phone { display: inline; } }
+  @media (min-width: 1500px) { .hdr__phone { display: inline; } }
   .hdr--dark .hdr__phone { color: var(--on-panel); opacity: .85; }
   .hdr__burger { display: inline-grid; place-items: center; width: 44px; height: 44px; background: none; border: 0; color: inherit; cursor: pointer; position: relative; z-index: 30; }
   .hdr__burger .x { display: none; }
@@ -90,8 +90,9 @@ const path = Astro.url.pathname;
   .hdr--stuck .hdr__logo img[src*="slate"] { content: url('/images/brand/zest-logo-white.png'); }
   @keyframes hdr-in { from { transform: translateY(-100%); } to { transform: none; } }
   @media (prefers-reduced-motion: reduce) { .hdr--stuck { animation: none; } }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .hdr__nav, .hdr__actions { display: flex; }
     .hdr__burger, .hdr__mobile { display: none !important; }
   }
+  @media (min-width: 1200px) and (max-width: 1499px) { .hdr__nav { gap: var(--space-5); } .hdr__in { gap: var(--space-5); } }
 </style>

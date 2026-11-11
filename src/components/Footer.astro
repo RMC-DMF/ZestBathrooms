@@ -34,7 +34,7 @@ const year = new Date().getFullYear();
   .ftr__col { display: flex; flex-direction: column; gap: var(--space-3); }
   .ftr__h { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: #636973; margin-bottom: var(--space-1); }
   .ftr__base { border-top: var(--hairline) solid #1b1f26; padding-top: var(--space-5); display: flex; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap; font-size: 13px; color: #636973; }
-  .ftr__links { display: flex; gap: var(--space-5); }
+  .ftr__links { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); }
   .ftr__links a { font-size: 13px; }
   .caption { color: #636973; }
   @media (max-width: 900px) { .ftr__grid { grid-template-columns: 1fr; gap: var(--space-6); } }
