@@ -24,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img, picture, video { max-width: 100%; display: block; }
+img { height: auto; } /* the pipeline writes width/height attributes; CSS aspect-ratios must win */
 [hidden] { display: none !important; }
 a { color: var(--accent-text, var(--slate)); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
@@ -144,7 +145,7 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
 .reveal.is-in { opacity: 1; transform: none; }
 /* Photographs are unmasked rather than faded: a slow wipe up from the bottom edge with a settle in scale */
-.reveal--mask { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.65,0,.2,1); }
+.reveal--mask { opacity: 1; transform: none; overflow: hidden; clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.65,0,.2,1); }
 .reveal--mask img { transform: scale(1.06); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
 .reveal--mask.is-in { clip-path: inset(0 0 0 0); }
 .reveal--mask.is-in img { transform: none; }

@@ -1,14 +1,72 @@
 ---
-import Pic from '../../components/Pic.astro';
 import Page from '../../layouts/Page.astro';
-import { getEntry, render } from 'astro:content';
+import Editorial from '../../components/Editorial.astro';
+import Gallery from '../../components/Gallery.astro';
+import FullBleed from '../../components/FullBleed.astro';
+import FactStrip from '../../components/FactStrip.astro';
+import Feature from '../../components/Feature.astro';
 import { site } from '../../data/site';
-const copy = await getEntry('pages', 'showroom');
-const { Content } = await render(copy!);
-const display = await getEntry('pages', 'siematic-display');
-const { Content: Display } = display ? await render(display) : { Content: null };
+
+// Zest's own showroom photography (phone-grade until the New Year shoot after the refurb).
+const p = (n: string, ext = 'jpg') => `/images/pages/our-showroom-${n}.${ext}`;
+const facts = [
+  { value: '4', label: 'SieMatic kitchen displays' },
+  { value: '40+', label: 'Bathroom settings over two floors' },
+  { value: '5,000', label: 'Square feet, two minutes from the walls' },
+  { value: '3', label: 'Working showers and a steam room' },
+];
+const kitchens = [
+  { src: p('42'), alt: 'Book-matched marble island in a SieMatic display' },
+  { src: p('73', 'webp'), alt: 'Marble splashback and brass tap, SieMatic display' },
+  { src: p('03'), alt: 'Brass tap on a slate worktop, Zest showroom' },
+  { src: p('38'), alt: 'Marble worktop with a white undermount sink and brass fittings' },
+  { src: p('58'), alt: 'Walnut and white SieMatic kitchen with planted island' },
+];
+const bathrooms = [
+  { src: p('53'), alt: 'Printed marble shower panel with arched trees' },
+  { src: p('08'), alt: 'Terrazzo basin wall with a round backlit mirror' },
+  { src: p('21'), alt: 'Botanical-print shower enclosure' },
+  { src: p('74'), alt: 'Freestanding bath in a plaster-pink setting' },
+  { src: p('43'), alt: 'Striped marble and pink plaster' },
+];
+const schema = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: 'The Zest showroom, Chester', isPartOf: { '@id': `${site.url}/#business` } }];
 ---
-<Page title="The Showroom — Brookdale Place, Chester" description="Visit the Zest showroom in Chester: SieMatic kitchen displays, bathroom settings, working showers and the Gessi Haute Culture collection, two minutes from the city walls." accent="design" eyebrow="The showroom — Chester" heading="See it before you choose it." lead="Four SieMatic kitchen displays, more than forty bathroom settings across two floors, working showers and steam, and a tile studio — 5,000 sq ft in all, two minutes from the city walls. Appointments recommended; the showroom is being refurbished through to the New Year." hero={{ src: '/images/home/gessi-2.jpg', alt: 'Terrazzo basin wall and teal tiles, Zest showroom, Chester' }} cta={{ title: 'Plan a visit.', text: 'Drop in during opening hours, or book so a designer is free for you.', label: 'Book a design appointment', href: site.cta.href }}>
-  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div class="prose"><Content />{Display && <><h2>The SieMatic display</h2><Display /></>}</div><aside class="stack"><div class="z-person" style="display:block;max-width:none"><h3 style="margin-bottom:12px">Find us</h3><p class="small">{site.address.street}<br />{site.address.locality} {site.address.postcode}</p><p class="small" style="margin-top:12px">{site.hours.map((h) => <>{h.days}: {h.open}–{h.close}<br /></>)}Sunday closed</p><p class="small" style="margin-top:12px"><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></p><p class="small" style="margin-top:12px"><a href="https://maps.google.com/?q=Zest+Bathrooms+%26+Kitchens+Chester" rel="noopener">Open in Google Maps</a> · Parking is easiest in the city-centre car parks a few minutes' walk away; call ahead and we will point you to the nearest.</p></div><div><h3 style="margin-bottom:12px">On display</h3><ul class="small" style="padding-left:1.2em;color:var(--slate)"><li>Four SieMatic kitchen displays in around 1,000 sq ft, with Gaggenau, Miele, Siemens, Bora and Quooker — including the 2026 display in graphite smoked oak and Black Tempest stone</li><li>Two floors of bathrooms: around forty settings in 4,000 sq ft</li><li>Working water: a Hansgrohe and AXOR shower area, a working steam room and a working Gessi shower system</li><li>Brassware from Gessi, AXOR, Dornbracht, Samuel Heath, Lefroy Brooks, Crosswater and Coalbrook; sanitaryware and furniture from Duravit, Villeroy &amp; Boch, Cielo, Artelinea, Novello, Oasis, Thomas Crapper and Burbridge; baths and showers from Bette, Matki, Merlyn and Sunshower</li><li>The Gessi Haute Culture showroom, opening January 2027</li><li>A dedicated tile studio of Spanish and Italian tiles — Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola</li></ul></div></aside></div></section>
-  {copy!.data.gallery.length > 0 && <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{copy!.data.gallery.slice(0, 9).map((g) => <div class="fill" style="aspect-ratio:4/3"><Pic src={g.src} alt={g.alt || 'Zest showroom, Chester'} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div>)}</div></section>}
+<Page title="The Showroom — Brookdale Place, Chester" description="Visit the Zest showroom in Chester: four SieMatic kitchen displays, more than forty bathroom settings over two floors, working showers and steam, a tile studio and, from January 2027, the Gessi Haute Culture showroom." accent="design" eyebrow="The showroom — Brookdale Place, Chester" heading="Five thousand square feet of rooms you can stand in." lead="Four SieMatic kitchens, forty-odd bathrooms, working water and a tile studio, two minutes from the city walls. Book an hour with a designer and walk it properly." hero={{ src: p('19'), alt: 'Bathroom display with a walk-in shower and long vanity, Zest showroom, Chester' }} schema={schema} cta={{ title: 'Plan a visit.', text: 'Drop in Monday to Saturday, or book an hour with a designer so the right person is free when you arrive.', label: 'Book a free design appointment', href: site.cta.href }}>
+  <FactStrip facts={facts} dark />
+
+  <Editorial tone="light" accent="kitchens" image={p('67', 'webp')} alt="White SieMatic kitchen with a stone-topped island and leather bar stools, Zest showroom" detail={p('03')} detailAlt="Brass tap on a slate worktop" eyebrow="Ground floor — kitchens" title="Four SieMatic kitchens, with the appliances in." text="Around a thousand square feet of kitchen, each display a different answer: the 2026 scheme in graphite smoked oak and Black Tempest stone, a marble island, a walnut-and-white family kitchen. Gaggenau, Miele, Siemens, Bora and Quooker are built into the runs, so you judge the whole kitchen rather than a door sample." href="/kitchens" linkLabel="Kitchens at Zest" />
+  <Gallery images={kitchens} max={5} />
+
+  <Editorial accent="bathrooms" flip image={p('46')} alt="Pink plaster bathroom with a striped marble shower and brass frame, Zest showroom" detail={p('20')} detailAlt="Twin countertop basins with brass mixers" eyebrow="Two floors — bathrooms" title="Forty settings, from cloakroom to spa." text="Four thousand square feet across two floors: Gessi, AXOR and Dornbracht brassware; Duravit, Villeroy & Boch, Cielo and Novello ceramics and furniture; Bette and Matki baths and enclosures; Artelinea, Oasis and Thomas Crapper for the rooms that want character. Every setting is a room, not a row of products." href="/bathrooms" linkLabel="Bathrooms at Zest" />
+  <Gallery images={bathrooms} max={5} />
+
+  <Feature image={p('49')} alt="AXOR shower head in brushed bronze" eyebrow="Working water" title="Showers you can turn on." tone="light" ratio="4 / 5">
+    <p>A working Hansgrohe and AXOR shower area, a working steam room, and a working Gessi shower system — because spray patterns, thermostatic controls and the sound of water are things you cannot judge from a brochure.</p>
+    <p>Bring a towel if you are serious. People do.</p>
+    <div class="cluster"><a class="z-btn z-btn--link" href="/bathrooms/wellness">Wellness rooms <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
+  </Feature>
+
+  <Editorial accent="design" image={p('17')} alt="Botanical-print porcelain tiles in the Zest tile studio" detail={p('14')} detailAlt="Herringbone wood-effect porcelain" eyebrow="The tile studio" title="Spanish and Italian tiles, full slabs on the floor." text="Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola. Large formats laid out so you can walk on them, mosaics and wall tiles on boards, and samples to take home and hold against the light in your own room." href="/bathrooms/tiles" linkLabel="Tiles and surfaces" />
+
+  <FullBleed accent="bathrooms" image="/images/haute-culture/gessi-haute-culture-casa-gessi.jpg" alt="The Gessi Haute Culture display at Casa Gessi" eyebrow="Opening January 2027" title="The Gessi Haute Culture showroom." text="A dedicated space for the eight couture collections — one of ten in the UK. The product arrives in December, the room opens in January, and the launch evening follows in the spring. Register and we will hold you a place." cta={{ label: 'Register for the preview', href: '/gessi-haute-culture' }} minHeight="80vh" shade="left" />
+
+  <section class="light-band section" data-theme="light"><div class="wrap grid grid--2" style="gap:96px;align-items:start">
+    <div class="z-heading"><span class="z-eyebrow">Visiting</span><h2>Brookdale Place, Chester.</h2><p class="z-heading__lead">Two minutes from the city walls and the Northgate car parks. You can walk in Monday to Saturday; if you want a designer's full attention, book an hour and the right person will be free when you arrive.</p><p class="z-heading__lead" style="margin-top:var(--space-4)">The showroom is being refurbished through to the New Year — a few settings are under wraps and new ones are going in. Everything above is open.</p><div class="cluster" style="margin-top:var(--space-6)"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a><a class="z-btn z-btn--link" href="https://maps.google.com/?q=2-6+Brookdale+Place+Chester+CH1+3DY" rel="noopener">Open in Google Maps <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div></div>
+    <dl class="visit">
+      <div><dt>Address</dt><dd>{site.address.street}<br />{site.address.locality} {site.address.postcode}</dd></div>
+      <div><dt>Hours</dt><dd>{site.hours.map((h) => <>{h.days} {h.open}–{h.close}<br /></>)}Sunday closed</dd></div>
+      <div><dt>Showroom</dt><dd><a href={site.phoneHref}>{site.phone}</a><br /><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+      <div><dt>Projects office, Warrington</dt><dd><a href={site.projectsPhoneHref}>{site.projectsPhone}</a><br />Developers, architects and hotels</dd></div>
+      <div><dt>Parking</dt><dd>City-centre car parks a few minutes' walk; call ahead and we will point you to the nearest.</dd></div>
+      <div><dt>Trade visits</dt><dd>Design teams welcome by appointment, outside showroom hours if it helps.</dd></div>
+    </dl>
+  </div></section>
 </Page>
+<style>
+  .visit { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-6); }
+  .visit div { border-top: var(--hairline) solid var(--line); padding-top: var(--space-3); }
+  .visit dt { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-muted); margin-bottom: 6px; }
+  .visit dd { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink); }
+  .visit a { color: var(--ink); }
+  @media (max-width: 600px) { .visit { grid-template-columns: 1fr; } }
+</style>
