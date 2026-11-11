@@ -39,7 +39,7 @@ const { frames, eyebrow = 'The detail', title, text, href, linkLabel = 'See the 
       const span = sec.offsetHeight - innerHeight;
       const p = Math.min(1, Math.max(0, -r.top / span));
       sec.style.setProperty('--p', p.toFixed(4));
-      sec.dataset.phase = String(p < 0.3 ? 0 : p < 0.68 ? 1 : 2);
+      sec.dataset.phase = String(p < 0.33 ? 0 : p < 0.73 ? 1 : 2);
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
     addEventListener('scroll', onScroll, { passive: true });
@@ -64,13 +64,13 @@ const { frames, eyebrow = 'The detail', title, text, href, linkLabel = 'See the 
   @media (max-width: 700px) { .m2s__stage { grid-template-columns: 1fr; } .m2s__img { aspect-ratio: 4 / 3; } }
 
   /* ---- Live version: a sticky stage, each view growing out of the one before it ---- */
-  .m2s.is-live { --p: 0; padding: 0; height: 280vh; position: relative; }
+  .m2s.is-live { --p: 0; padding: 0; height: 320vh; position: relative; }
   .m2s.is-live .m2s__stage { position: sticky; top: 0; height: 100vh; max-width: none; padding: 0; display: block; overflow: hidden; background: var(--panel-dark); }
   .m2s.is-live .m2s__layer { position: absolute; inset: 0; display: block; }
   .m2s.is-live .m2s__img { position: absolute; inset: 0; aspect-ratio: auto; }
   .m2s.is-live .m2s__cap { display: none; }
   /* progress per layer: t1 for the detail (layer 2), t2 for the space (layer 3) */
-  .m2s.is-live { --t1: clamp(0, (var(--p) - 0.18) / 0.34, 1); --t2: clamp(0, (var(--p) - 0.58) / 0.34, 1); }
+  .m2s.is-live { --t1: clamp(0, (var(--p) - 0.12) / 0.42, 1); --t2: clamp(0, (var(--p) - 0.52) / 0.42, 1); }
   /* layer 1 drifts and dims as it is replaced */
   .m2s.is-live .m2s__layer[data-i="0"] .m2s__img :global(img) { transform: scale(calc(1 + var(--t1) * 0.08)); filter: brightness(calc(1 - var(--t1) * 0.5)); }
   /* layers 2 and 3 open from a centred window: inset shrinks, image settles from a slight zoom */

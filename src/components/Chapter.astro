@@ -24,12 +24,12 @@ const { number, image, alt, eyebrow, title, text, href, linkLabel = 'Explore', a
   .chapter { position: relative; padding-bottom: clamp(72px, 9vw, 128px); }
   .chapter--dark { background: var(--panel-dark); color: var(--on-panel); }
   .chapter--light { background: var(--stone); color: var(--ink); }
-  .chapter__img { display: block; position: relative; height: clamp(520px, 84vh, 900px); background: var(--surface-raised); }
+  .chapter__img { display: block; position: relative; height: clamp(480px, 78vh, 860px); background: var(--surface-raised); }
   .chapter__img :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
   .chapter__img:hover :global(img) { transform: scale(1.015); }
   .chapter__body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); }
   /* The mark sits up on the photograph; the title straddles the edge */
-  .chapter__mark { position: absolute; left: var(--gutter); bottom: 100%; margin-bottom: clamp(140px, 22vh, 220px); display: flex; align-items: baseline; gap: 18px; }
+  .chapter__mark { position: absolute; left: var(--gutter); bottom: 100%; margin-bottom: clamp(96px, 7.4vw, 130px); display: flex; align-items: baseline; gap: 18px; }
   .chapter--dark .chapter__mark .z-eyebrow { color: var(--on-panel); }
   .chapter--dark .chapter__mark .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
   .chapter__title { margin: calc(-0.52em) 0 0; font-size: clamp(56px, 9.2vw, 148px); line-height: .92; font-weight: 300; letter-spacing: -0.025em; font-variation-settings: 'opsz' 144; max-width: 14ch; text-wrap: balance; position: relative; z-index: 1; }

@@ -1,21 +1,49 @@
 ---
 import Page from '../../layouts/Page.astro';
 import FactStrip from '../../components/FactStrip.astro';
-import { getEntry, render } from 'astro:content';
+import Editorial from '../../components/Editorial.astro';
+import Gallery from '../../components/Gallery.astro';
+import FullBleed from '../../components/FullBleed.astro';
 import { site } from '../../data/site';
-const story = await getEntry('pages', 'our-story');
-const about = await getEntry('pages', 'about');
-const { Content: Story } = await render(story!);
-const { Content: About } = about ? await render(about) : { Content: null };
 const timeline = [
-  { year: '1992', text: 'Zest opens as a specialist bathroom showroom.' },
-  { year: '2019', text: 'Renaker Deansgate Square — 1,508 apartments, the largest residential scheme in the North West.' },
-  { year: '2026', text: 'Selected as one of ten Gessi Haute Culture showrooms in the UK.' },
-  { year: '2027', text: 'The Gessi Haute Culture showroom opens in Chester in January.' },
+  { year: '1992', title: 'Where it began', text: 'A specialist bathroom showroom opens in Chester.' },
+  { year: '2000', title: 'Into the luxury market', text: 'Partnerships with the European houses that are still on the floor today.' },
+  { year: '2008', title: 'SieMatic', text: 'Kitchens arrive: SieMatic, and only SieMatic, planned by our own studio.' },
+  { year: '2012', title: 'The contracts division', text: 'Specification and supply for developers and hotels begins.' },
+  { year: '2017', title: 'Warrington', text: 'A dedicated project office and distribution centre opens to serve schemes across the UK.' },
+  { year: '2019', title: 'Deansgate Square', text: 'Renaker\'s 1,508 apartments in Manchester — the largest residential scheme in the North West.' },
+  { year: '2026', title: 'Gessi Haute Culture', text: 'Selected as one of ten Haute Culture partner showrooms in the UK.' },
+  { year: '2027', title: 'The Haute Culture showroom', text: 'A dedicated space for the eight couture collections opens on Brookdale Place in January.' },
+];
+const gallery = [
+  { src: '/images/pages/our-story-19.webp', alt: 'The Zest showroom on Brookdale Place, Chester' },
+  { src: '/images/pages/our-story-22.webp', alt: 'Deansgate Square at dusk, Manchester' },
+  { src: '/images/pages/our-story-24.webp', alt: 'Book-matched marble worktop edge' },
+  { src: '/images/pages/our-story-29.jpg', alt: 'The Warrington project office and distribution centre' },
+  { src: '/images/pages/our-story-25.jpg', alt: 'SieMatic island with a stone worktop' },
 ];
 ---
-<Page title="About Zest — Chester, Since 1992" description="Zest Bathrooms & Kitchens: a Chester showroom and design studio since 1992, supplying homes across the North West and developments across the UK." eyebrow="About — our story" heading="Thirty-four years of rooms." lead="Founded in 1992 as a bathroom showroom. Still independent, still in Chester — with a projects office in Warrington and a KBB Awards customer service award on the shelf." hero={story?.data.hero}>
-  <FactStrip facts={site.facts} />
-  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div class="prose"><Story /></div><div><div class="z-heading" style="margin-bottom:var(--space-5)"><span class="z-eyebrow">Timeline</span><h2 style="font-size:28px">Milestones</h2></div><ol class="tl">{timeline.map((t) => <li><span class="tl__y">{t.year}</span><span>{t.text}</span></li>)}</ol><div class="cluster" style="margin-top:var(--space-6)"><a class="z-btn z-btn--secondary" href="/about/team">Meet the team</a><a class="z-btn z-btn--link" href="/about/showroom">The showroom <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div></div></div></section>
+<Page title="About Zest — Chester, Since 1992" description="Zest Bathrooms & Kitchens: a Chester showroom and design studio since 1992, supplying homes across the North West and developments across the UK." accent="design" eyebrow="About — our story" heading="Thirty-four years of rooms." lead="Founded in 1992 as a bathroom showroom. Still independent, still in Chester — with a projects office in Warrington and a KBB Awards customer service award on the shelf." hero={{ src: '/images/pages/our-story-01.jpg', alt: 'Freestanding bath in a bay window, designed by Zest' }}>
+  <FactStrip facts={site.facts} dark />
+
+  <Editorial overlap tone="light" accent="design" image="/images/pages/our-story-20.webp" alt="The Zest team outside the showroom on Brookdale Place" detail="/images/pages/our-story-06.jpg" detailAlt="SieMatic kitchen with island and dining table" eyebrow="Who we are" title="One studio, both rooms, since 1992." text="Zest began as a specialist bathroom showroom and grew into a design studio for kitchens, bathrooms and the rooms around them. The philosophy has not moved: understand how a household lives, then design something that looks right and feels effortless to live in. What starts as one project usually becomes a relationship — the next room, the next house, the children's houses." href="/about/team" linkLabel="Meet the team" />
+
+  <section class="section z-on-dark"><div class="wrap">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">Through the years</span><h2 class="tl__h">Eight dates that made the company.</h2></div>
+    <ol class="tl">{timeline.map((t) => <li class="tl__item z-fact"><span class="tl__year">{t.year}</span><h3 class="tl__title">{t.title}</h3><p class="tl__text">{t.text}</p></li>)}</ol>
+  </div></section>
+
+  <Gallery images={gallery} max={5} />
+
+  <FullBleed accent="projects" image="/images/home/project-deansgate.jpg" alt="Deansgate Square towers, Manchester" position="50% 30%" eyebrow="Two businesses, one standard" title="Private houses in Cheshire. Towers in Manchester." text="The showroom designs for homes across the North West. The Warrington project office specifies and supplies for developers, architects and hotels across the UK — thousands of units a year, to programme. The same brands, the same people, the same standard." cta={{ label: 'The showroom', href: '/about/showroom' }} link={{ label: 'Projects', href: '/projects' }} minHeight="72vh" shade="left" />
 </Page>
-<style>.tl { margin: 0; padding: 0; list-style: none; border-top: var(--hairline) solid var(--line); } .tl li { display: grid; grid-template-columns: 72px 1fr; gap: var(--space-4); padding: var(--space-3) 0; border-bottom: var(--hairline) solid var(--line); font-size: 15px; } .tl__y { font-family: var(--font-display); font-size: 20px; color: var(--slate); }</style>
+<style>
+  .tl__h { max-width: 14ch; }
+  .tl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6) var(--space-5); border-top: 1px solid #343a44; }
+  .tl__item { padding-top: var(--space-5); border-top: 1px solid #343a44; margin-top: -1px; }
+  .tl__year { display: block; font-family: var(--font-display); font-weight: 300; font-size: clamp(40px, 3.6vw, 56px); line-height: 1; letter-spacing: -0.02em; color: var(--accent-text); font-variation-settings: 'opsz' 144; }
+  .tl__title { margin-top: var(--space-3); font-size: 18px; font-weight: 500; color: var(--on-panel); }
+  .tl__text { margin-top: 8px; font-size: 15px; line-height: 1.6; color: #b9bec6; max-width: 28ch; }
+  @media (max-width: 1100px) { .tl { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .tl { grid-template-columns: 1fr; } }
+</style>

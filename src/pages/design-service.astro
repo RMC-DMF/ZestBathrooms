@@ -1,15 +1,19 @@
 ---
 import Page from '../layouts/Page.astro';
 import ProcessList from '../components/ProcessList.astro';
+import Editorial from '../components/Editorial.astro';
+import Gallery from '../components/Gallery.astro';
 import PersonCard from '../components/PersonCard.astro';
 import FAQ from '../components/FAQ.astro';
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 const team = (await getCollection('team', ({ data }) => data.published && /Designer/.test(data.role))).sort((a, b) => a.data.order - b.data.order);
-const copy = await getEntry('pages', 'design-service');
-const faq = await getEntry('pages', 'faq');
-const { Content } = await render(copy!);
-const { Content: FaqContent } = faq ? await render(faq) : { Content: null };
+const receive = [
+  { title: 'A measured survey', text: 'Services, levels, light and the awkward corner, drawn before anything is chosen.' },
+  { title: 'Layouts and 3D visuals', text: 'Plans and elevations, then a rendered view of the room so you can see it before you commit.' },
+  { title: 'A written specification', text: 'Every product, finish, size and price, named. Nothing is ordered from a mood board.' },
+  { title: 'One designer throughout', text: 'The person who drew it answers the installer\'s questions and signs the room off.' },
+];
 const steps = [
   { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples. Bring a plan, photos or nothing at all.' },
   { title: 'Survey and brief', text: 'We measure the room, look at services and light, and agree what the room has to do for you.' },
@@ -18,8 +22,17 @@ const steps = [
   { title: 'Installation support and aftercare', text: 'Your installer or one of ours. We stay on the project until it is finished, and after.' },
 ];
 ---
-<Page title="Kitchen & Bathroom Design Service, Chester" description="How Zest designs a kitchen or bathroom: showroom appointment, survey, design and specification, supply and installation support. The design service is free." accent="design" eyebrow="Design by Zest" heading="One studio. Both rooms. Start to finish." lead="The design service is free: an hour in the showroom, a survey, layouts, 3D visuals and a written specification, with no fee at any stage." hero={copy?.data.hero}>
-  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">How it works</span><h2>Five steps, one designer.</h2></div><ProcessList steps={steps} /><div style="margin-top:var(--space-6)"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></div></div><div class="prose"><h2>What you receive</h2><Content /></div></div></section>
+<Page title="Kitchen & Bathroom Design Service, Chester" description="How Zest designs a kitchen or bathroom: showroom appointment, survey, design and specification, supply and installation support. The design service is free." accent="design" eyebrow="Design by Zest" heading="One studio. Both rooms. Start to finish." lead="The design service is free: an hour in the showroom, a survey, layouts, 3D visuals and a written specification, with no fee at any stage." hero={{ src: '/images/pages/design-service-01.jpg', alt: 'Effegibi sauna looking out over a landscape' }}>
+  <section class="wrap section"><div class="grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">How it works</span><h2>Five steps, one designer.</h2></div><ProcessList steps={steps} /><div style="margin-top:var(--space-6)"><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></div></div>
+    <div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">What you receive</span><h2>Drawings, not promises.</h2></div><ol class="rcv">{receive.map((r, i) => <li><span class="ch-num">{String(i + 1).padStart(2, '0')}</span><div><h3>{r.title}</h3><p>{r.text}</p></div></li>)}</ol></div></div></section>
+  <Editorial overlap accent="design" image="/images/pages/design-service-14.webp" alt="Dark kitchen and dining space with a marble island, designed by Zest" detail="/images/pages/design-service-13.webp" detailAlt="Brushed-brass tap on a marble worktop" eyebrow="Who it is for" title="Homes across the North West. Schemes across the UK." text="Homeowners in Chester, Cheshire, the Wirral and North Wales — a single room or a whole house. Architects and interior designers who want a specification partner rather than a shop. Developers and hotels, through the Warrington project office. The service is the same; the scale changes." href="/projects" linkLabel="Projects and specification" />
+  <Gallery images={[{ src: '/images/pages/design-service-03.jpg', alt: 'Bathroom with windows looking over a garden' }, { src: '/images/pages/design-service-09.webp', alt: 'Marble worktop with brass tap and a bowl of fruit' }, { src: '/images/pages/design-service-10.jpg', alt: 'Kitchen and dining space with a marble island' }, { src: '/images/pages/design-service-19.webp', alt: 'Timber-lined bathroom with a window' }, { src: '/images/pages/design-service-15.webp', alt: 'Oak vanity in a light bathroom' }]} max={5} />
   <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">The designers</span><h2>Who you will work with.</h2></div><div class="grid grid--2">{team.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={t.data.office === 'warrington' ? site.projectsPhoneHref : site.phoneHref} contactLabel={t.data.office === 'warrington' ? `Warrington ${site.projectsPhone}` : `Chester ${site.phone}`} />)}</div></div></section>
-  <section class="wrap section" id="faqs"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>Things people ask before booking.</h2></div><FAQ items={[{ q: 'Is the design service really free?', a: 'Yes — the appointment, the survey, the drawings and the specification. We earn our living on the products we supply, which is why we would rather spend the time getting the design right than charge for it.' }, { q: 'Do I need to have an installer?', a: 'No. We work with a small group of installers we have used for years, or with yours.' }, { q: 'Can you design the kitchen and bathrooms together?', a: 'That is the point of one studio: one designer, one palette, one programme.' }, { q: 'Which areas do you cover?', a: 'Homeowners across Cheshire, the Wirral, North Wales and the North West. Developer and hotel projects anywhere in the UK.' }]} openFirst /></div>{FaqContent && <details style="margin-top:var(--space-7);max-width:720px"><summary class="caption">Legacy FAQ copy (to review)</summary><div class="prose"><FaqContent /></div></details>}</section>
+  <section class="wrap section" id="faqs"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>Things people ask before booking.</h2></div><FAQ items={[{ q: 'Is the design service really free?', a: 'Yes — the appointment, the survey, the drawings and the specification. We earn our living on the products we supply, which is why we would rather spend the time getting the design right than charge for it.' }, { q: 'Do I need to have an installer?', a: 'No. We work with a small group of installers we have used for years, or with yours.' }, { q: 'Can you design the kitchen and bathrooms together?', a: 'That is the point of one studio: one designer, one palette, one programme.' }, { q: 'Which areas do you cover?', a: 'Homeowners across Cheshire, the Wirral, North Wales and the North West. Developer and hotel projects anywhere in the UK.' }]} openFirst /></div></section>
 </Page>
+<style>
+  .rcv { list-style: none; margin: 0; padding: 0; border-top: var(--hairline) solid var(--line); }
+  .rcv li { display: grid; grid-template-columns: 48px 1fr; gap: var(--space-4); padding: var(--space-4) 0; border-bottom: var(--hairline) solid var(--line); }
+  .rcv h3 { font-size: 18px; font-weight: 500; }
+  .rcv p { margin-top: 6px; font-size: 15px; line-height: 1.6; color: var(--slate); }
+</style>
