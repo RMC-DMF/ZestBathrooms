@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "migrate": "node scripts/migrate.mjs",
-    "import-images": "node scripts/import-images.mjs"
+    "import-images": "node scripts/import-images.mjs",
+    "check": "node scripts/audit-content.mjs dist",
+    "check:strict": "node scripts/audit-content.mjs dist --strict"
   },
   "dependencies": {
     "@astrojs/netlify": "^6.6.5",

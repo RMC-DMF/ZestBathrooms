@@ -4,7 +4,7 @@ category: "Brassware"
 country: "Italy"
 featured: true
 order: 1
-summary: "Gessi is synonymous with distinctive Italian design, exceptional craftsmanship and an innovative approach to [luxury bathroom design](/bathrooms)."
+summary: "Gessi is synonymous with distinctive Italian design, exceptional craftsmanship and an innovative approach to luxury bathroom design."
 hero:
   src: "/images/brands/gessi-at-zest-bathrooms-kitchens-01.webp"
   alt: "Gessi"

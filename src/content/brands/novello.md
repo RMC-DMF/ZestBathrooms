@@ -2,7 +2,7 @@
 title: "Novello"
 category: "Furniture"
 country: "Italy"
-summary: "Novello has been creating beautifully considered [bathroom furniture](/bathrooms) in Italy for decades, combining refined design, quality materials and meticulous craftsmanship."
+summary: "Novello has been creating beautifully considered bathroom furniture in Italy for decades, combining refined design, quality materials and meticulous craftsmanship."
 legacyUrl: "/about/novello-at-zest-bathrooms-kitchens"
 hero:
   src: "/images/pages/bathrooms-10.webp"

@@ -33,35 +33,15 @@ Expect to see:
 
 This trend softens modern bathrooms making them feel more inviting while still maintaining a refined and contemporary aesthetic.
 
-[
+*Quaryl by Villeroy & Boch*
 
-Quaryl by Villeroy & Boch
+*Alba by Hib*
 
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/bathroom-gallery-014.jpg)
+*D'Art by Novello*
 
-[
+*Zencha by Duravit*
 
-Alba by Hib
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/mirror-gallery-001.jpg)
-
-[
-
-D'Art by Novello
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/10/bathroom-gallery-005.webp)
-
-[
-
-Zencha by Duravit
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/bathroom-gallery-007.jpg)
-
-[
-
-Smartcode by Oasis
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/10/bathroom-gallery-012.webp)
+*Smartcode by Oasis*
 
 ## 2\. Wellness Centred Spaces with Spa Level Rituals
 
@@ -108,29 +88,13 @@ Key elements in this 2026 trend include:
 The overall effect is intentionally simple but visually powerful. Every detail is purposeful. Every line is intentional.  
 The result is bathrooms that feel fresh, luxurious and effortlessly modern.
 
-[
+*Venti20 by Gessi*
 
-Venti20 by Gessi
+*AXOR MyEdition*
 
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/bathroom-gallery-015.jpg)
+*Catino Tondo Alga Anemone by Cielo*
 
-[
-
-AXOR MyEdition
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/bathroom-gallery-016.jpg)
-
-[
-
-Catino Tondo Alga Anemone by Cielo
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/11/bathroom-gallery-017.jpg)
-
-[
-
-D'Art by Novello
-
-](https://zestbathroomsandkitchens.co.uk/wp-content/uploads/2025/09/bathroom-gallery-006.jpg)
+*D'Art by Novello*
 
 #Luxury bathroom design #Bathroom trends #Smart bathroom ideas #Wellness bathrooms #Nature-driven material #Spa-inspired design #Modern bathrooms
 

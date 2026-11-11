@@ -2,7 +2,7 @@
 title: "Effe"
 category: "Wellness"
 country: "Italy"
-summary: "Effe forms part of our carefully curated approach to luxury bathroom and wellness specification, alongside our wider collection of [premium bathroom brands](/bathrooms)."
+summary: "Effe forms part of our carefully curated approach to luxury bathroom and wellness specification, alongside our wider collection of premium bathroom brands."
 legacyUrl: "/about/effe-at-zest-bathrooms-kitchens-2"
 hero:
   src: "/images/pages/wellness-01.jpg"

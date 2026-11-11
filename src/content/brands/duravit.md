@@ -2,7 +2,7 @@
 title: "Duravit"
 category: "Sanitaryware"
 country: "Germany"
-summary: "[Write a 200-character summary of what Zest carries from Duravit and what is on display in Chester.]"
+summary: "Duravit ceramics and furniture — Philippe Starck, Cecilie Manz, Sieger Design — in the sanitaryware we specify most often for both private houses and developments."
 hero:
   src: "/images/pages/bathrooms-26.webp"
   alt: "Designer sanitaryware since 1817."
@@ -23,4 +23,4 @@ faqs: []
 collections: []
 ---
 
-[Brand page copy for Duravit — to write.]
+Duravit is the sanitaryware we specify more than any other: designer-led ceramics and furniture from Hornberg that have the proportions of a design house and the lead times and spares of a large manufacturer. For a private bathroom that means Starck, Cecilie Manz and Sieger pieces on display in Chester; for a development it means a range that can be specified across two hundred bathrooms and still be in production when the snagging list arrives.

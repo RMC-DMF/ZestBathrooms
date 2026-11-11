@@ -4,7 +4,7 @@ category: "Kitchens"
 country: "Germany"
 featured: true
 order: 1
-summary: "[Write a 200-character summary of what Zest carries from SieMatic and what is on display in Chester.]"
+summary: "SieMatic is the only kitchen we sell: four displays in Chester across the Pure, Urban and Classic design languages, with Gaggenau, Miele, Siemens, Bora and Quooker built in."
 hero:
   src: "/images/pages/siematic-kitchens-31.webp"
   alt: "SieMatic Pure kitchen opening onto a terrace"
@@ -44,4 +44,4 @@ collections:
   text: "Luxe materials, grand scale."
 ---
 
-[Brand page copy for SieMatic — to write.]
+SieMatic is the kitchen we sell, and the only one. The handleless original from Löhne since 1960, in four design languages — Pure, Urban, Classic and Mondial — and sold only through appointed studios. Four displays stand in the Chester showroom, including the 2026 scheme in graphite smoked oak and Black Tempest stone, with the appliances built in so you can judge the whole kitchen rather than a door sample.

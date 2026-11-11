@@ -2,7 +2,7 @@
 title: "Villeroy & Boch"
 category: "Sanitaryware"
 country: "Germany"
-summary: "[Write a 200-character summary of what Zest carries from Villeroy & Boch and what is on display in Chester.]"
+summary: "Villeroy & Boch ceramics, Quaryl baths and furniture — 275 years of making, and the sanitaryware behind many of the developments we have supplied."
 hero:
   src: "/images/pages/bathrooms-25.webp"
   alt: "Ceramics since 1748, and the sanitaryware most specifiers trust."
@@ -33,4 +33,4 @@ collections:
   text: "The specifier's workhorse."
 ---
 
-[Brand page copy for Villeroy & Boch — to write.]
+Villeroy & Boch has been making ceramics since 1748, which is why it sits in so many of the developments we have supplied: a range wide enough to specify a whole scheme, a finish that lasts, and the TitanCeram and Quaryl materials that let designers draw thinner, sharper forms. In Chester the collections sit alongside the Italian houses, which is where the comparison is most useful.

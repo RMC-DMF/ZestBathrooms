@@ -1,6 +1,6 @@
 ---
 title: "Edgeley, Cheshire"
-summary: "For the Edgeley project, Zest Bathrooms & Kitchens collaborated with [\u014dH Studio](https://www.ohstudio."
+summary: "For the Edgeley project, Zest Bathrooms & Kitchens collaborated with ōH Studio"
 location: "Chester"
 area: "chester"
 brands: ["gessi", "bette", "novello"]

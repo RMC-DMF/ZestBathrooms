@@ -38,7 +38,7 @@ export const site = {
     { value: '4', label: 'SieMatic kitchen displays' },
     { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms, opening 2027' },
   ],
-  cta: { label: 'Book a design appointment', href: '/book-a-design-appointment' },
+  cta: { label: 'Book a free design appointment', href: '/book-a-design-appointment' },
   tradeCta: { label: 'Register your project', href: '/projects/register' },
 };
 

@@ -1,6 +1,6 @@
 ---
 title: "Contemporary SieMatic Kitchen & Pantry, Abbot’s Bank"
-summary: "For this contemporary home, Zest Bathrooms & Kitchens designed and supplied a sophisticated [SieMatic kitchen](/kitchens/siematic-kitchens), combining SLX H Graphite Oak Veneer and\u2026"
+summary: "For this contemporary home, Zest Bathrooms & Kitchens designed and supplied a sophisticated SieMatic kitchen, combining SLX H Graphite Oak Veneer and\u2026"
 location: "Cheshire"
 area: "cheshire"
 brands: ["siematic", "gaggenau"]
