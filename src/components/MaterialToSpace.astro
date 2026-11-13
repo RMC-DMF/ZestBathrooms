@@ -88,11 +88,13 @@ const { frames, eyebrow = 'The detail', title, text, href, linkLabel = 'See the 
   .m2s.is-live { --t1: clamp(0, (var(--p) - 0.12) / 0.42, 1); --t2: clamp(0, (var(--p) - 0.52) / 0.42, 1); }
   /* layer 1 drifts and dims as it is replaced */
   .m2s.is-live .m2s__layer[data-i="0"] .m2s__img :global(img) { transform: scale(calc(1 + var(--t1) * 0.08)); filter: brightness(calc(1 - var(--t1) * 0.5)); }
-  /* layers 2 and 3 open from a centred window: inset shrinks, image settles from a slight zoom */
-  .m2s.is-live .m2s__layer[data-i="1"] { clip-path: inset(calc((1 - var(--t1)) * 50%) calc((1 - var(--t1)) * 28%) calc((1 - var(--t1)) * 50%) calc((1 - var(--t1)) * 72%)); }
-  .m2s.is-live .m2s__layer[data-i="1"] .m2s__img :global(img) { transform: scale(calc(1.18 - var(--t1) * 0.18 + var(--t2) * 0.08)); filter: brightness(calc(1 - var(--t2) * 0.5)); }
-  .m2s.is-live .m2s__layer[data-i="2"] { clip-path: inset(calc((1 - var(--t2)) * 50%) calc((1 - var(--t2)) * 28%) calc((1 - var(--t2)) * 50%) calc((1 - var(--t2)) * 72%)); }
-  .m2s.is-live .m2s__layer[data-i="2"] .m2s__img :global(img) { transform: scale(calc(1.18 - var(--t2) * 0.18)); }
+  /* layers 2 and 3 rise through the one before them: a soft-edged wipe from the bottom (a 50%-tall feather, so it reads as
+     the room surfacing out of the material rather than a window opening), while the image settles from a slight zoom */
+  .m2s.is-live .m2s__layer[data-i="1"], .m2s.is-live .m2s__layer[data-i="2"] { --t: 0; opacity: clamp(0, var(--t) * 4, 1); -webkit-mask-image: linear-gradient(to top, #000 calc(var(--t) * 150% - 50%), transparent calc(var(--t) * 150%)); mask-image: linear-gradient(to top, #000 calc(var(--t) * 150% - 50%), transparent calc(var(--t) * 150%)); }
+  .m2s.is-live .m2s__layer[data-i="1"] { --t: var(--t1); }
+  .m2s.is-live .m2s__layer[data-i="2"] { --t: var(--t2); }
+  .m2s.is-live .m2s__layer[data-i="1"] .m2s__img :global(img) { transform: scale(calc(1.1 - var(--t1) * 0.1 + var(--t2) * 0.06)); filter: brightness(calc(1 - var(--t2) * 0.5)); }
+  .m2s.is-live .m2s__layer[data-i="2"] .m2s__img :global(img) { transform: scale(calc(1.1 - var(--t2) * 0.1)); }
   .m2s.is-live .m2s__img :global(img) { will-change: transform, filter; }
   .m2s.is-live .m2s__shade { display: block; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, rgba(15,17,20,.82) 0%, rgba(15,17,20,.55) 34%, rgba(15,17,20,.12) 62%, rgba(15,17,20,0) 100%), linear-gradient(to top, rgba(15,17,20,.5) 0%, rgba(15,17,20,0) 40%); }
   .m2s.is-live .m2s__txt { position: absolute; left: 0; right: 0; bottom: clamp(56px, 9vh, 112px); order: 0; margin: 0 auto; max-width: var(--container); padding-inline: var(--gutter); gap: var(--space-4); }

@@ -1,0 +1,91 @@
+---
+import Pic from './Pic.astro';
+/**
+ * ProcessLive — the four steps of the design service with a photograph that answers each one.
+ * The picture follows the visitor: hover or focus a step (tap on touch) and the image crossfades to it.
+ * Left alone while in view, it walks through the steps on its own every few seconds, so the block
+ * never sits still; reduced motion turns the walk off and keeps the hover.
+ */
+interface Step { title: string; text: string; image: string; alt: string }
+interface Props { steps: Step[]; class?: string }
+const { steps, class: cls = '' } = Astro.props;
+---
+<div class:list={['plive', cls]} data-plive>
+  <ol class="plive__list">
+    {steps.map((s, i) => <li class:list={['plive__step', { 'is-on': i === 0 }]} data-i={i} tabindex="0">
+      <span class="plive__n">{String(i + 1).padStart(2, '0')}</span>
+      <div><p class="plive__t">{s.title}</p><p class="plive__d">{s.text}</p></div>
+      <span class="plive__bar" aria-hidden="true"></span>
+    </li>)}
+  </ol>
+  <div class="plive__after"><slot /></div>
+  <div class="plive__stage" aria-hidden="true">
+    {steps.map((s, i) => <div class:list={['plive__pic', { 'is-on': i === 0 }]} data-i={i}><Pic src={s.image} alt={s.alt} sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div>)}
+    <span class="plive__cap"><span class="plive__cap-n">01</span><span class="plive__cap-t">{steps[0].title}</span></span>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-plive]').forEach((root) => {
+    const steps = [...root.querySelectorAll<HTMLElement>('.plive__step')];
+    const pics = [...root.querySelectorAll<HTMLElement>('.plive__pic')];
+    const capN = root.querySelector<HTMLElement>('.plive__cap-n');
+    const capT = root.querySelector<HTMLElement>('.plive__cap-t');
+    const titles = steps.map((s) => s.querySelector('.plive__t')?.textContent ?? '');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0, timer: number | undefined, held = 0, inView = false;
+    const show = (n: number) => {
+      i = (n + steps.length) % steps.length;
+      steps.forEach((s, k) => s.classList.toggle('is-on', k === i));
+      pics.forEach((p, k) => p.classList.toggle('is-on', k === i));
+      if (capN) capN.textContent = String(i + 1).padStart(2, '0');
+      if (capT) capT.textContent = titles[i];
+      root.style.setProperty('--dur', reduce ? '0s' : '4.5s');
+      root.classList.remove('is-ticking'); void root.offsetWidth; root.classList.add('is-ticking');
+    };
+    const tick = () => { if (inView && Date.now() > held) show(i + 1); };
+    const start = () => { if (reduce || timer) return; timer = window.setInterval(tick, 4500); };
+    const stop = () => { if (timer) { clearInterval(timer); timer = undefined; } };
+    steps.forEach((s, k) => {
+      const pick = () => { held = Date.now() + 9000; show(k); };
+      s.addEventListener('pointerenter', pick);
+      s.addEventListener('focus', pick);
+      s.addEventListener('click', pick);
+    });
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; if (inView) { show(i); start(); } else stop(); }, { threshold: 0.35 }).observe(root);
+  });
+</script>
+<style>
+  .plive { display: grid; grid-template-columns: 5fr 6fr; grid-template-rows: auto 1fr; gap: 0 96px; align-items: start; }
+  .plive__list { grid-column: 1; grid-row: 1; align-self: start; }
+  .plive__after { grid-column: 1; grid-row: 2; align-self: start; padding-top: 40px; }
+  .plive__after:empty { display: none; }
+  .plive__stage { grid-column: 2; grid-row: 1 / span 2; }
+  .plive__list { margin: 0; padding: 0; list-style: none; border-top: var(--hairline) solid var(--line); }
+  .plive__step { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: var(--space-4); padding: 22px 0; border-bottom: var(--hairline) solid var(--line); cursor: default; outline: none; transition: padding-left .4s cubic-bezier(.2,.7,.2,1); }
+  .plive__step:focus-visible { box-shadow: inset 2px 0 0 var(--accent-text); }
+  .plive__n { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--slate-muted); transition: color .3s; }
+  .plive__t { font-weight: 600; font-size: 17px; color: var(--slate); transition: color .3s; }
+  .plive__d { margin-top: 4px; font-size: 15px; color: var(--slate-muted); transition: color .3s; }
+  .plive__step.is-on .plive__n { color: var(--accent-text); }
+  .plive__step.is-on .plive__t { color: var(--ink); }
+  .plive__step.is-on .plive__d { color: var(--slate); }
+  /* a thin progress line runs along the active step for the time it is held */
+  .plive__bar { position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--accent-text); }
+  .is-ticking .plive__step.is-on .plive__bar { animation: plive-bar var(--dur, 4.5s) linear forwards; }
+  @keyframes plive-bar { from { width: 0; } to { width: 100%; } }
+  .plive__stage { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-raised); }
+  .plive__pic { position: absolute; inset: 0; opacity: 0; transition: opacity .9s cubic-bezier(.2,.7,.2,1); }
+  .plive__pic :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.06); transition: transform 6s cubic-bezier(.2,.7,.2,1); }
+  .plive__pic.is-on { opacity: 1; }
+  .plive__pic.is-on :global(img) { transform: scale(1); }
+  .plive__cap { position: absolute; left: 20px; bottom: 18px; display: flex; gap: 12px; align-items: baseline; color: #fff; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+  .plive__cap-n { font-family: var(--font-display); font-size: 18px; letter-spacing: 0; text-transform: none; }
+  @media (max-width: 900px) {
+    .plive { grid-template-columns: 1fr; grid-template-rows: auto; gap: 40px; }
+    .plive__stage { grid-column: 1; grid-row: 1; aspect-ratio: 4 / 5; margin-inline: calc(-1 * var(--gutter)); }
+    .plive__list { grid-column: 1; grid-row: 2; }
+    .plive__after { grid-column: 1; grid-row: 3; padding-top: 0; }
+    .plive__step { cursor: pointer; }
+  }
+  @media (prefers-reduced-motion: reduce) { .plive__pic, .plive__pic :global(img), .plive__step { transition: none; } .plive__pic :global(img) { transform: none; } .is-ticking .plive__step.is-on .plive__bar { animation: none; } }
+</style>

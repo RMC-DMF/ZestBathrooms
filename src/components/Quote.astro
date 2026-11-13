@@ -1,0 +1,36 @@
+---
+/**
+ * Quote — one client's words, set large, with the attribution underneath.
+ * tone="dark" (default) sits on the dark ground; tone="light" on stone.
+ */
+import type { Accent } from '../data/site';
+interface Props { quote: string; name: string; role?: string; org?: string; since?: string; tone?: 'dark' | 'light'; accent?: Accent }
+const { quote, name, role, org, since, tone = 'dark', accent } = Astro.props;
+---
+<section class:list={['qt', `qt--${tone}`, accent && `z-accent--${accent}`, { 'z-on-dark': tone === 'dark' }]} data-theme={tone === 'light' ? 'light' : undefined}>
+  <figure class="wrap qt__in">
+    <span class="qt__mark" aria-hidden="true">“</span>
+    <blockquote class="qt__q z-heading"><p>{quote}</p></blockquote>
+    <figcaption class="qt__by z-heading">
+      <span class="qt__name">{name}</span>
+      {(role || org) && <span class="qt__role">{[role, org].filter(Boolean).join(', ')}</span>}
+      {since && <span class="qt__since">{since}</span>}
+    </figcaption>
+  </figure>
+</section>
+<style>
+  .qt { padding-block: clamp(96px, 12vw, 176px); }
+  .qt--dark { background: var(--panel-dark); color: var(--on-panel); border-top: 1px solid #1b1f26; }
+  .qt--light { background: var(--stone); color: var(--ink); }
+  .qt__in { position: relative; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); padding-left: clamp(0px, 12vw, 200px); }
+  .qt__mark { position: absolute; left: var(--gutter); top: -0.1em; font-family: var(--font-display); font-weight: 300; font-size: clamp(200px, 26vw, 380px); line-height: .8; color: var(--accent-text, var(--slate)); opacity: .5; font-variation-settings: 'opsz' 144; pointer-events: none; }
+  .qt__q { margin: 0; }
+  .qt__q p { font-family: var(--font-display); font-weight: 300; font-size: clamp(28px, 3.6vw, 56px); line-height: 1.15; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; max-width: 22ch; text-wrap: balance; }
+  .qt--dark .qt__q p { color: var(--on-panel); }
+  .qt__by { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; font-size: 14px; letter-spacing: .04em; }
+  .qt__name { font-weight: 600; }
+  .qt__role { color: var(--slate-muted); }
+  .qt--dark .qt__role { color: #9aa0a8; }
+  .qt__since { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
+  @media (max-width: 900px) { .qt__in { padding-left: 0; padding-top: 56px; } .qt__mark { top: -24px; font-size: 180px; } }
+</style>

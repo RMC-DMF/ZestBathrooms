@@ -1,30 +1,29 @@
 ---
-title: "Novello"
-category: "Furniture"
-country: "Italy"
-summary: "Novello has been creating beautifully considered bathroom furniture in Italy for decades, combining refined design, quality materials and meticulous craftsmanship."
-legacyUrl: "/about/novello-at-zest-bathrooms-kitchens"
+title: Novello
+category: Furniture
+country: Italy
+summary: Novello has been creating beautifully considered bathroom furniture in Italy for decades, combining refined design, quality materials and meticulous craftsmanship.
+legacyUrl: /about/novello-at-zest-bathrooms-kitchens
 hero:
-  src: "/images/pages/bathrooms-10.webp"
-  alt: "Italian bathroom furniture, made to measure."
-gallery: [{"src": "/images/pages/bathrooms-19.webp", "alt": ""}]
-heritage: "Novello makes the furniture we specify when the room is tight and the millimetres matter: made to our survey, in finishes that sit quietly beside Italian brassware."
-tagline: "Italian bathroom furniture, made to measure."
-founded: "[Year]"
-hometown: "Treviso, Veneto [confirm]"
-onDisplay: "Novello vanity units and storage on display [confirm]."
+  src: /images/pages/bathrooms-10.webp
+  alt: Italian bathroom furniture, made to measure.
+gallery:
+- src: /images/pages/bathrooms-19.webp
+  alt: ''
+heritage: 'Novello makes the furniture we specify when the room is tight and the millimetres matter: made to our survey, in finishes that sit quietly beside Italian brassware.'
+tagline: Italian bathroom furniture, made to measure.
+hometown: Treviso, Veneto
+onDisplay: Novello is part of the Chester showroom. The displays change, so ask us what is currently on the floor when you book.
 knownFor:
-- title: "Made to measure"
-  text: "Widths, depths and internal layouts to the centimetre, which is what a real bathroom plan needs."
-- title: "Finishes"
-  text: "Lacquers, veneers, textured laminates and glass fronts, with matching tall units and mirrors."
-- title: "Integrated basins"
-  text: "Ceramic, mineral and stone tops with basins formed in one piece."
+- title: Made to measure
+  text: Widths, depths and internal layouts to the centimetre, which is what a real bathroom plan needs.
+- title: Finishes
+  text: Lacquers, veneers, textured laminates and glass fronts, with matching tall units and mirrors.
+- title: Integrated basins
+  text: Ceramic, mineral and stone tops with basins formed in one piece.
 whyZest:
-- "Furniture is where a bathroom design succeeds or fails on millimetres. Novello is specified from a survey, not a drop-down, and we take responsibility for it fitting."
-faqs:
-- q: "How long does Novello take?"
-  a: "Made to order in Italy: typically [X] weeks from signed-off design."
+- Furniture is where a bathroom design succeeds or fails on millimetres. Novello is specified from a survey, not a drop-down, and we take responsibility for it fitting.
+faqs: []
 collections: []
 ---
 

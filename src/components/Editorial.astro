@@ -58,6 +58,10 @@ const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabe
   .ed--overlap.ed--dark .ed__img::after { background: linear-gradient(to left, var(--panel-dark) 0%, rgba(15,17,20,.6) 16%, rgba(15,17,20,0) 44%); }
   .ed--overlap.ed--dark.ed--flip .ed__img::after { background: linear-gradient(to right, var(--panel-dark) 0%, rgba(15,17,20,.6) 16%, rgba(15,17,20,0) 44%); }
   @media (max-width: 900px) { .ed--overlap .ed__img::after { display: none; } }
+  /* overlap: the detail steps off the bottom-left of the photograph — the solid side, away from the melt — on a mount in the ground colour */
+  .ed--overlap .ed__detail { right: auto; left: clamp(24px, 5vw, 72px); bottom: -18%; width: 30%; aspect-ratio: 4 / 5; border: 10px solid var(--stone); box-shadow: 0 24px 60px rgba(27,31,38,.22); z-index: 2; }
+  .ed--overlap.ed--dark .ed__detail { border-color: var(--panel-dark); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .ed--overlap.ed--flip .ed__detail { left: auto; right: clamp(24px, 5vw, 72px); }
   @media (min-width: 900px) { .ed--overlap .ed__title { margin-left: -46%; max-width: 700px; } .ed--overlap.ed--flip .ed__title { margin-left: 0; margin-right: -46%; } .ed--overlap .ed__title { font-size: clamp(44px, 5.6vw, 84px); line-height: .96; } }
   .ed__title { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.0; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; max-width: 520px; text-wrap: balance; }
   .ed--dark .ed__title { color: var(--on-panel); }
@@ -71,5 +75,7 @@ const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabe
     .ed__img, .ed--flip .ed__img { margin: 0 calc(-1 * var(--gutter)); aspect-ratio: 4 / 5; }
     .ed__detail, .ed--flip .ed__detail { right: var(--space-2); left: auto; bottom: -12%; width: 44%; }
     .ed__txt { padding-top: var(--space-5); }
+    .ed--overlap .ed__detail, .ed--overlap.ed--flip .ed__detail { left: var(--space-3); right: auto; bottom: -12%; width: 38%; border-width: 6px; }
+    .ed--overlap .ed__txt { padding-top: var(--space-7); }
   }
 </style>

@@ -1,23 +1,28 @@
 ---
-title: "Glass Design"
-category: "Sanitaryware"
-country: "Italy"
-summary: "Glass Design is renowned for distinctive Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship."
+title: Glass Design
+category: Sanitaryware
+country: Italy
+summary: Glass Design is renowned for distinctive Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship.
 hero:
-  src: "/images/brands/glass-design-at-zest-bathrooms-kitchens-01.webp"
-  alt: "Glass Design"
-gallery: [{"src": "/images/brands/glass-design-at-zest-bathrooms-kitchens-02.webp", "alt": ""}, {"src": "/images/brands/glass-design-at-zest-bathrooms-kitchens-03.webp", "alt": ""}, {"src": "/images/brands/glass-design-at-zest-bathrooms-kitchens-04.webp", "alt": ""}]
-legacyUrl: "/about/glass-design-at-zest-bathrooms-kitchens"
-heritage: "Glass Design basins are hand-finished in Tuscany and no two are quite alike. We specify them as the single statement in an otherwise quiet room."
-tagline: "Hand-finished basins from Tuscany."
-founded: "[Year]"
-hometown: "Tuscany"
-onDisplay: "[Confirm.]"
+  src: /images/brands/glass-design-at-zest-bathrooms-kitchens-01.webp
+  alt: Glass Design
+gallery:
+- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-02.webp
+  alt: ''
+- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-03.webp
+  alt: ''
+- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-04.webp
+  alt: ''
+legacyUrl: /about/glass-design-at-zest-bathrooms-kitchens
+heritage: Glass Design basins are hand-finished in Tuscany and no two are quite alike. We specify them as the single statement in an otherwise quiet room.
+tagline: Hand-finished basins from Tuscany.
+hometown: Tuscany
+onDisplay: Glass Design is part of the Chester showroom. The displays change, so ask us what is currently on the floor when you book.
 knownFor:
-- title: "Artisan basins"
-  text: "Glass, marble and resin basins finished by hand."
+- title: Artisan basins
+  text: Glass, marble and resin basins finished by hand.
 whyZest:
-- "A Glass Design basin is a piece of furniture. We plan the vanity, the tap and the mirror around it."
+- A Glass Design basin is a piece of furniture. We plan the vanity, the tap and the mirror around it.
 faqs: []
 collections: []
 ---

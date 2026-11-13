@@ -61,7 +61,8 @@ const path = Astro.url.pathname;
   .hdr--dark { background: var(--panel-dark); border-bottom-color: #1b1f26; color: var(--on-panel); }
   .hdr--floating { position: absolute; top: 0; left: 0; right: 0; background: transparent; border-bottom: 0; }
   .hdr__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); height: 88px; }
-  .hdr__logo { flex-shrink: 0; }
+  .hdr__logo { flex-shrink: 0; position: relative; z-index: 30; }
+  body.menu-open .hdr__logo img[src*="slate"] { content: url('/images/brand/zest-logo-white.png'); }
   .hdr--floating .hdr__in { height: 104px; }
   .hdr__logo img { width: 124px; height: auto; display: block; }
   .hdr__nav { display: none; gap: var(--space-6); align-items: center; }
@@ -99,6 +100,8 @@ const path = Astro.url.pathname;
   @media (prefers-reduced-motion: reduce) { .hdr__mobile, .hdr__mobile nav a, .hdr__mobile-actions { transition: none; } }
   /* Stuck state: a slim fixed bar on panel-dark, slides in */
   .hdr--stuck { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 17, 20, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #1b1f26; color: var(--on-panel); animation: hdr-in .35s cubic-bezier(.2,.7,.2,1); }
+  /* backdrop-filter makes the header the containing block for the fixed menu panel — drop it while the menu is open */
+  body.menu-open .hdr--stuck { backdrop-filter: none; -webkit-backdrop-filter: none; animation: none; background: var(--panel-dark); }
   .hdr--stuck .hdr__in { height: 64px; }
   .hdr--stuck .hdr__logo img { width: 92px; }
   .hdr--stuck .hdr__nav a, .hdr--stuck .hdr__phone { color: var(--on-panel); opacity: .85; }

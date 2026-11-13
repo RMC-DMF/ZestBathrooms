@@ -1,28 +1,32 @@
 ---
-title: "Cielo"
-category: "Sanitaryware"
-country: "Italy"
-summary: "Ceramica Cielo is renowned for distinctive Italian bathroom design, combining traditional ceramic craftsmanship with contemporary forms, innovative finishes and expressive colour."
+title: Cielo
+category: Sanitaryware
+country: Italy
+summary: Ceramica Cielo is renowned for distinctive Italian bathroom design, combining traditional ceramic craftsmanship with contemporary forms, innovative finishes and expressive colour.
 hero:
-  src: "/images/brands/cielo-at-zest-bathrooms-kitchens-01.jpg"
-  alt: "Cielo"
-legacyUrl: "/about/cielo-at-zest-bathrooms-kitchens"
-gallery: [{"src": "/images/pages/bathrooms-23.webp", "alt": ""}, {"src": "/images/pages/bathrooms-24.webp", "alt": ""}]
-heritage: "Cielo is where colour in ceramics began for us. When a scheme calls for a basin in clay, sage or terracotta that will still look right in fifteen years, this is the house."
-tagline: "Italian ceramics in colour."
-founded: "1962"
-hometown: "Fabrica di Roma, Lazio"
-onDisplay: "Cielo basins and WCs [confirm]."
+  src: /images/brands/cielo-at-zest-bathrooms-kitchens-01.jpg
+  alt: Cielo
+legacyUrl: /about/cielo-at-zest-bathrooms-kitchens
+gallery:
+- src: /images/pages/bathrooms-23.webp
+  alt: ''
+- src: /images/pages/bathrooms-24.webp
+  alt: ''
+heritage: Cielo is where colour in ceramics began for us. When a scheme calls for a basin in clay, sage or terracotta that will still look right in fifteen years, this is the house.
+tagline: Italian ceramics in colour.
+founded: '1962'
+hometown: Fabrica di Roma, Lazio
+onDisplay: Cielo is part of the Chester showroom. The displays change, so ask us what is currently on the floor when you book.
 knownFor:
-- title: "Terre di Cielo"
-  text: "A palette of matt ceramic colours — sixteen and counting — that other makers copy."
-- title: "Shapes"
-  text: "Shui, Era, Le Giare — basins with real sculptural presence."
+- title: Terre di Cielo
+  text: A palette of matt ceramic colours — sixteen and counting — that other makers copy.
+- title: Shapes
+  text: Shui, Era, Le Giare — basins with real sculptural presence.
 whyZest:
-- "Colour in ceramics has to be matched to tiles, brassware finish and light. We put the samples together in the showroom."
+- Colour in ceramics has to be matched to tiles, brassware finish and light. We put the samples together in the showroom.
 faqs:
-- q: "Does coloured ceramic stain or fade?"
-  a: "No — the colour is in the glaze, fired with the piece. It cleans like white ceramic."
+- q: Does coloured ceramic stain or fade?
+  a: No — the colour is in the glaze, fired with the piece. It cleans like white ceramic.
 collections: []
 ---
 

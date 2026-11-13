@@ -9,7 +9,7 @@ import FullBleed from '../components/FullBleed.astro';
 import Editorial from '../components/Editorial.astro';
 import Chapter from '../components/Chapter.astro';
 import Texture from '../components/Texture.astro';
-import ProcessList from '../components/ProcessList.astro';
+import ProcessLive from '../components/ProcessLive.astro';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 
@@ -17,10 +17,10 @@ const allProjects = await getCollection('projects', ({ data }) => !data.draft);
 const projects = allProjects.filter((p) => p.data.featured).sort((a, b) => (b.data.units ?? 0) - (a.data.units ?? 0)).slice(0, 3);
 const unitCount = allProjects.reduce((n, p) => n + (p.data.units ?? 0), 0);
 const steps = [
-  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples.' },
-  { title: 'Survey and brief', text: 'We measure the room and agree what it has to do for you.' },
-  { title: 'Design and specification', text: 'Layouts, 3D visuals and a specification with every product named.' },
-  { title: 'Supply and installation support', text: 'Your installer or one of ours; we stay until it is finished.' },
+  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples.', image: '/images/pages/our-showroom-65.jpg', alt: 'Marble shower with a brass frame between striped tiled walls, Zest showroom' },
+  { title: 'Survey and brief', text: 'We measure the room and agree what it has to do for you.', image: '/images/pages/design-service-18.jpg', alt: 'A kitchen photographed in black and white before the design begins' },
+  { title: 'Design and specification', text: 'Layouts, 3D visuals and a specification with every product named.', image: '/images/pages/design-service-02.jpg', alt: 'A kitchen half-drawn as a line sketch, half-rendered' },
+  { title: 'Supply and installation support', text: 'Your installer or one of ours; we stay until it is finished.', image: '/images/pages/design-service-13.webp', alt: 'Brushed-brass tap on a marble worktop, fitted' },
 ];
 ---
 <Base title="Luxury Kitchens & Bathrooms, Chester | Zest Bathrooms & Kitchens" description={site.description} dark floatingHeader>
@@ -52,17 +52,13 @@ const steps = [
   <FullBleed id="haute" accent="bathrooms" image="/images/home/gessi-haute.jpg" alt="Gessi Venti20 bathroom in a mirrored, marble room" eyebrow="Opening January 2027" title="Gessi Haute Culture. One of ten showrooms in the UK." text="Eight couture collections, made by hand in Italy and specified rather than bought. Zest is a Haute Culture Ambassador and official partner showroom; the dedicated Haute Culture space opens in Chester in January 2027. Register for a private preview." cta={{ label: 'Register for the preview', href: '/gessi-haute-culture' }} />
 
   <section id="design" class="section--loose z-accent--design light-section" data-theme="light">
-    <div class="wrap grid design">
-      <div class="stack" style="gap:40px">
-        <div class="z-heading">
-          <span class="z-eyebrow">The design service</span>
-          <h2 class="design__title">One studio. Both rooms. Start to finish.</h2>
-          <p class="z-heading__lead">The design service is free — an hour in the showroom with a designer, a survey, layouts and a full specification, with no fee at any stage.</p>
-        </div>
-        <ProcessList steps={steps} />
-        <div><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></div>
+    <div class="wrap">
+      <div class="z-heading design__head">
+        <span class="z-eyebrow">The design service</span>
+        <h2 class="design__title">One studio. Both rooms. Start to finish.</h2>
+        <p class="z-heading__lead">The design service is free — an hour in the showroom with a designer, a survey, layouts and a full specification, with no fee at any stage.</p>
       </div>
-      <div class="design__img"><Pic src="/images/pages/design-service-13.webp" alt="Brushed-brass tap on a marble worktop, specified by Zest" sizes="(max-width: 900px) 100vw, 50vw" widths={[480, 768, 1024, 1440]} /></div>
+      <ProcessLive steps={steps}><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></ProcessLive>
     </div>
   </section>
 
@@ -84,11 +80,8 @@ const steps = [
   .light-section { background: var(--stone); color: var(--ink); }
   .light-section h2, .light-section .z-heading__lead { color: var(--ink); }
   .light-section .z-heading__lead { color: var(--slate); }
-  .design { grid-template-columns: 5fr 6fr; gap: 96px; align-items: center; }
-  .design__title { font-size: clamp(32px, 3.4vw, 44px); line-height: 1.05; font-weight: 300; }
-  .design__img { aspect-ratio: 4 / 5; overflow: hidden; }
-  .design__img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  @media (max-width: 900px) { .design { grid-template-columns: 1fr; gap: 48px; } }
+  .design__head { max-width: 640px; margin-bottom: var(--space-7); }
+  .design__title { font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; }
   .close { padding-block: clamp(112px, 16vw, 224px); border-top: 1px solid #343a44; }
   .close__in { display: flex; flex-direction: column; gap: var(--space-5); }
   .close__t { max-width: 1100px; font-size: clamp(44px, 7.2vw, 112px); line-height: .98; font-weight: 300; letter-spacing: -0.02em; font-variation-settings: 'opsz' 144; color: var(--on-panel); text-wrap: balance; }

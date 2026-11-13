@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
 import FactStrip from '../../components/FactStrip.astro';
+import Quote from '../../components/Quote.astro';
 import Work from '../../components/Work.astro';
 import Pic from '../../components/Pic.astro';
 import ProcessList from '../../components/ProcessList.astro';
@@ -23,6 +24,7 @@ const steps = [
   <Hero image="/images/home/project-deansgate.jpg" mobileImage="/images/mobile/project-deansgate-portrait.jpg" alt="Deansgate Square towers, Manchester" eyebrow="Projects — developers, architects, hospitality" title="Behind the biggest schemes." text="Bathroom and kitchen specification and supply for residential towers, retirement living, hotels and commercial fit-outs across the UK — thousands of units a year, run from our Warrington project office." cta={site.tradeCta} link={{ label: 'How we work', href: '/projects/how-we-work' }} position="50% 30%" height="88vh" />
   <section class="z-on-dark"><FactStrip dark facts={[{ value: units.toLocaleString(), label: 'Units supplied across the published projects' }, { value: String(projects.length), label: 'Developments and hotels' }, { value: String(clients.length), label: 'Developer and operator clients' }, { value: 'UK', label: 'Manchester, Liverpool, London, Birmingham, Bristol, Surrey' }]} /></section>
   <Work accent="projects" eyebrow="The work" title={`${projects.length} developments, by scale.`} text={`${units.toLocaleString()} units across residential towers, retirement living, hotels and student schemes — specified, sampled and supplied to programme from the Warrington project office.`} href="#index" linkLabel="The full index" secondary={site.tradeCta} items={projects.slice(0, 3).map((p) => ({ title: p.data.title, href: `/projects/${p.id}`, image: p.data.hero?.src, alt: p.data.hero?.alt, tags: [p.data.sector, p.data.location?.split(',')[0], p.data.unitsLabel ?? (p.data.units && `${p.data.units.toLocaleString()} units`)].filter(Boolean) as string[] }))} />
+  <Quote accent="projects" quote="We’ve worked with Zest since 2010 as our key partner for kitchen and bathroom supply. Their world-leading brands and dedicated team make finding the right solutions seamless and stress-free." name="Yousef Mousai" role="Design Director" org="Altin Homes" />
   <section id="index" class="wrap section z-on-dark">
     <div class="z-heading pidx__head"><span class="z-eyebrow">Index</span><h2>Every published project.</h2></div>
     <ol class="pidx">{projects.map((p, i) => <li class="pidx__row z-case"><a href={`/projects/${p.id}`} class="pidx__link">
