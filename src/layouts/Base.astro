@@ -52,6 +52,12 @@ const business = {
   ],
   areaServed: site.areas.map((a) => ({ '@type': 'Place', name: a.replace(/^the /, '') })),
   sameAs: Object.values(site.social),
+  department: {
+    '@type': 'LocalBusiness',
+    name: `${site.name} — ${site.projectsOffice.name}`,
+    telephone: '+441925269517',
+    address: { '@type': 'PostalAddress', streetAddress: site.projectsOffice.street, addressLocality: site.projectsOffice.locality, postalCode: site.projectsOffice.postcode, addressCountry: site.projectsOffice.country },
+  },
 };
 const breadcrumbs = (() => {
   const parts = Astro.url.pathname.split('/').filter(Boolean);

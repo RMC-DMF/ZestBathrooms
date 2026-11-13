@@ -10,7 +10,7 @@ export const site = {
   phoneHref: 'tel:01244345414',
   projectsPhone: '01925 269 517',
   projectsPhoneHref: 'tel:01925269517',
-  projectsOffice: { name: 'Warrington project office', locality: 'Warrington' },
+  projectsOffice: { name: 'Warrington project office', street: 'Unit 10, Appleton Thorn', locality: 'Warrington', postcode: 'WA4 4TQ', country: 'GB' },
   email: 'info@zestbathroomsandkitchens.co.uk',
   address: {
     street: '2–6 Brookdale Place',
