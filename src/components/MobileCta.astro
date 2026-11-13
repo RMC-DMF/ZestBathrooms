@@ -12,7 +12,7 @@ import { site } from '../data/site';
 <script>
   const bar = document.getElementById('mobile-cta');
   if (bar && matchMedia('(max-width: 899px)').matches) {
-    const avoid = Array.from(document.querySelectorAll('.m2s, .close, .z-cta, footer, form, .hero, .page-head, .bh'));
+    const avoid = Array.from(document.querySelectorAll('.m2s, .close, .z-cta, footer, form, .page-head, .bh'));
     let past = false; const near = new Set<Element>();
     const apply = () => { const on = past && near.size === 0 && !document.body.classList.contains('menu-open'); bar.classList.toggle('is-on', on); bar.setAttribute('aria-hidden', String(!on)); };
     const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) near.add(e.target); else near.delete(e.target); }); apply(); }, { rootMargin: '0px 0px -40px 0px', threshold: 0.02 });
@@ -23,7 +23,7 @@ import { site } from '../data/site';
   }
 </script>
 <style>
-  .mcta { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 14; display: none; gap: 8px; transform: translateY(120%); opacity: 0; transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s; pointer-events: none; }
+  .mcta { view-transition-name: mcta; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 14; display: none; gap: 8px; transform: translateY(120%); opacity: 0; transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s; pointer-events: none; }
   .mcta.is-on { transform: none; opacity: 1; pointer-events: auto; }
   .mcta__book { flex: 1; min-height: 52px; display: flex; align-items: center; justify-content: center; background: rgba(15,17,20,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--on-panel); border: 1px solid rgba(255,255,255,.14); text-decoration: none; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
   .mcta__call { width: 52px; min-height: 52px; display: grid; place-items: center; background: var(--brass-light); color: var(--panel-dark); text-decoration: none; }

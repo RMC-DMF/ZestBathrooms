@@ -101,11 +101,13 @@ const breadcrumbs = (() => {
         const els = Array.from(document.querySelectorAll<HTMLElement>(sel)).filter((el) => !el.closest('[data-no-reveal], .hero, .page-head, .study-head, .bh, .bleed'));
         const maskSel = '.fill, .feat__img, .row__img, .gal__item, .design__img, .ed__img, .ed__detail';
         els.forEach((el) => el.classList.add(el.matches(maskSel) ? 'reveal--mask' : 'reveal'));
-        const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { (e.target as HTMLElement).classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        // With scroll-driven animations the CSS does the work from the scroll position; the observer only matters as the fallback,
+        // where it fires a little before the element enters so the short transition is over by the time it is seen.
+        const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { (e.target as HTMLElement).classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px 12% 0px', threshold: 0 });
         els.forEach((el) => io.observe(el));
-        // Safety nets: anything already on screen shows at once; everything shows after 4s regardless.
+        // Safety nets: anything already on screen shows at once; everything shows after 2.5s regardless.
         requestAnimationFrame(() => els.forEach((el) => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); }));
-        setTimeout(() => els.forEach((el) => el.classList.add('is-in')), 4000);
+        setTimeout(() => els.forEach((el) => el.classList.add('is-in')), 2500);
       }
     </script>
     <!-- Analytics: GA4 via a delayed loader, only after consent. See src/components/Analytics.astro once the consent tool is chosen. -->

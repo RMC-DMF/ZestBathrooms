@@ -34,6 +34,18 @@ const { image, mobileImage, alt, eyebrow, title, text, cta, link, position = '50
   .hero__title { text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
   .hero__actions { display: flex; gap: var(--space-6); align-items: center; flex-wrap: wrap; }
   .hero .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
+  /* The curtain: the hero stays put while the next section slides up over it, and it recedes — darker, slightly larger —
+     in step with the scroll. Pure CSS; without scroll-driven animations it simply scrolls away like any section. */
+  :global(main) > .hero { position: sticky; top: 0; z-index: 0; }
+  @supports (animation-timeline: scroll()) {
+    :global(main) > .hero :global(.pic img), :global(main) > .hero .hero__img { animation-name: ken, hero-recede; animation-duration: 14s, auto; animation-timing-function: ease-out, linear; animation-fill-mode: forwards, both; animation-timeline: auto, scroll(root); animation-range: normal, 0 100vh; }
+    :global(main) > .hero .hero__copy { animation: hero-copy linear both; animation-timeline: scroll(root); animation-range: 0 55vh; }
+    :global(main) > .hero .hero__shade { animation: hero-shade linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+  }
+  @keyframes hero-recede { from { scale: 1; filter: brightness(1); } to { scale: 1.1; filter: brightness(.35); } }
+  @keyframes hero-copy { from { opacity: 1; translate: 0 0; } to { opacity: 0; translate: 0 -48px; } }
+  @keyframes hero-shade { from { opacity: 1; } to { opacity: .4; } }
+  @media (prefers-reduced-motion: reduce) { :global(main) > .hero { position: relative; } :global(main) > .hero .hero__copy, :global(main) > .hero .hero__shade { animation: none; } }
   @media (max-width: 899px) {
     .hero { min-height: 100svh; }
     .hero__copy { padding-bottom: calc(40px + env(safe-area-inset-bottom)); padding-top: 120px; }

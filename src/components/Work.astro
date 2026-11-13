@@ -3,11 +3,13 @@ import Pic from './Pic.astro';
 /**
  * The work — one dominant project bleeding to the viewport edge with its title set over it,
  * and two supporting projects hung as smaller, staggered tiles. Titles are always visible.
+ * On phones the three become a portrait strip you swipe through, each card carrying its own title.
  */
 interface Item { title: string; href: string; image?: string; alt?: string; tags?: string[] }
 interface Props { accent?: string; number?: string; eyebrow: string; title: string; text?: string; items: Item[]; href: string; linkLabel?: string; secondary?: { label: string; href: string } }
 const { accent = 'projects', number, eyebrow, title, text, items, href, linkLabel = 'All projects', secondary } = Astro.props;
 const [lead, ...rest] = items;
+const strip = [lead, ...rest.slice(0, 2)].filter(Boolean) as Item[];
 ---
 <section class:list={['work', `z-accent--${accent}`, 'z-on-dark']}>
   <div class="wrap work__head">
@@ -15,56 +17,81 @@ const [lead, ...rest] = items;
     <h2 class="work__title z-heading">{title}</h2>
   </div>
   <div class="work__grid">
-    {lead && <a class="work__lead" href={lead.href}>
-      <div class="work__media fill"><Pic src={lead.image} alt={lead.alt ?? lead.title} sizes="(max-width: 900px) 100vw, 62vw" widths={[768, 1024, 1440, 1800]} /></div>
-      <div class="work__shade" aria-hidden="true"></div>
-      <div class="work__cap work__cap--lead"><span class="work__tags">{(lead.tags ?? []).join(' · ')}</span><h3>{lead.title}</h3></div>
-    </a>}
-    <div class="work__side">
-      {text && <p class="work__lead-text z-heading">{text}</p>}
-      {rest.slice(0, 2).map((p, i) => <a class:list={['work__item', `work__item--${i}`]} href={p.href}>
-        <div class="work__media fill"><Pic src={p.image} alt={p.alt ?? p.title} sizes="(max-width: 900px) 100vw, 30vw" widths={[480, 768, 1024]} /></div>
-        <div class="work__cap"><span class="work__tags">{(p.tags ?? []).join(' · ')}</span><h3>{p.title}</h3></div>
+    <div class="work__strip" data-work-strip>
+      {strip.map((p, i) => <a class:list={['work__card', i === 0 ? 'work__lead' : `work__item work__item--${i - 1}`]} href={p.href} data-i={i}>
+        <div class="work__media fill"><Pic src={p.image} alt={p.alt ?? p.title} sizes={i === 0 ? '(max-width: 900px) 84vw, 62vw' : '(max-width: 900px) 84vw, 30vw'} widths={i === 0 ? [768, 1024, 1440, 1800] : [480, 768, 1024]} /></div>
+        <div class="work__shade" aria-hidden="true"></div>
+        <div class:list={['work__cap', { 'work__cap--lead': i === 0 }]}><span class="work__tags">{(p.tags ?? []).join(' · ')}</span><h3>{p.title}</h3></div>
+        <span class="work__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
       </a>)}
-      <div class="cluster work__actions z-heading">
-        {secondary && <a class="z-btn z-btn--secondary z-btn--on-dark" href={secondary.href}>{secondary.label}</a>}
-        <a class="z-btn z-btn--link z-btn--on-dark" href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
-      </div>
+    </div>
+    <div class="work__hint" aria-hidden="true"><span class="work__hint-n">01 / {String(strip.length).padStart(2, '0')}</span><span>Swipe through the work →</span></div>
+    {text && <p class="work__lead-text z-heading">{text}</p>}
+    <div class="cluster work__actions z-heading">
+      {secondary && <a class="z-btn z-btn--secondary z-btn--on-dark" href={secondary.href}>{secondary.label}</a>}
+      <a class="z-btn z-btn--link z-btn--on-dark" href={href}>{linkLabel} <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a>
     </div>
   </div>
 </section>
+<script>
+  // Phones: keep the "01 / 03" counter in step with the card snapped into view.
+  if (matchMedia('(max-width: 899px)').matches) document.querySelectorAll<HTMLElement>('[data-work-strip]').forEach((strip) => {
+    const n = strip.parentElement?.querySelector<HTMLElement>('.work__hint-n'); const cards = strip.querySelectorAll<HTMLElement>('.work__card'); if (!n) return;
+    const total = String(cards.length).padStart(2, '0');
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) n.textContent = `${String(Number((e.target as HTMLElement).dataset.i) + 1).padStart(2, '0')} / ${total}`; }), { root: strip, threshold: 0.6 });
+    cards.forEach((c) => io.observe(c));
+  });
+</script>
 <style>
   .work { background: var(--panel-dark); color: var(--on-panel); padding-block: clamp(96px, 12vw, 176px) 0; overflow: hidden; }
   .work__head { margin-bottom: var(--space-7); }
   .work__mark { display: flex; align-items: baseline; gap: 18px; margin-bottom: var(--space-4); }
   .work__title { font-size: clamp(44px, 7vw, 112px); line-height: .94; font-weight: 300; letter-spacing: -0.025em; font-variation-settings: 'opsz' 144; max-width: 12ch; color: var(--on-panel); text-wrap: balance; }
-  /* The lead runs to the left viewport edge; the side column stays on the grid */
-  .work__grid { display: grid; grid-template-columns: minmax(0, 62fr) minmax(0, 38fr); gap: 0 clamp(32px, 4vw, 64px); align-items: stretch; }
-  .work__lead { position: relative; display: block; text-decoration: none; color: inherit; min-height: clamp(480px, 76vh, 820px); align-self: stretch; }
-  .work__lead .work__media { position: absolute; inset: 0; }
+  .work__card { position: relative; display: block; text-decoration: none; color: inherit; }
   .work__media { position: relative; overflow: hidden; background: var(--surface-raised); }
   .work__media :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
-  .work__lead:hover .work__media :global(img), .work__item:hover .work__media :global(img) { transform: scale(1.025); }
+  .work__card:hover .work__media :global(img) { transform: scale(1.025); }
   .work__shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,17,20,.82) 0%, rgba(15,17,20,.3) 38%, rgba(15,17,20,0) 65%); pointer-events: none; }
   .work__cap { display: flex; flex-direction: column; gap: 6px; }
-  .work__cap--lead { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(32px, 5vh, 56px); }
   .work__tags { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-text); }
   .work__cap h3 { font-size: 20px; font-weight: 400; line-height: 1.25; color: var(--on-panel); }
-  .work__cap--lead h3 { font-size: clamp(28px, 3.2vw, 48px); font-weight: 300; line-height: 1; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); max-width: 14ch; }
-  .work__side { display: flex; flex-direction: column; gap: var(--space-6); padding-right: var(--gutter); }
-  .work__lead-text { font-size: 17px; line-height: 1.7; color: #cfd3d9; max-width: 420px; margin-bottom: var(--space-3); }
-  .work__item { display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; }
-  .work__item .work__media { aspect-ratio: 4 / 3; }
-  /* The second tile hangs lower and narrower than the first — a stagger, not a row */
-  .work__item--0 { width: 78%; }
-  .work__item--1 { width: 92%; align-self: flex-end; margin-top: calc(-1 * var(--space-2)); }
-  .work__actions { gap: 28px; margin-top: var(--space-4); padding-bottom: clamp(72px, 9vw, 128px); }
-  @media (min-width: 900px) { .work__grid { max-width: var(--container); margin: 0 auto; padding-left: var(--gutter); } .work__lead { margin-left: calc(-1 * var(--gutter)); } }
+  .work__n { display: none; }
+  .work__hint { display: none; }
+  .work__lead-text { font-size: 17px; line-height: 1.7; color: #cfd3d9; max-width: 420px; }
+  .work__actions { gap: 28px; padding-bottom: clamp(72px, 9vw, 128px); }
+
+  /* ---- Desktop: the lead runs to the left viewport edge; text, two staggered tiles and the actions stack on the right ---- */
+  @media (min-width: 900px) {
+    .work__grid { display: grid; grid-template-columns: minmax(0, 62fr) minmax(0, 38fr); grid-template-rows: auto auto auto 1fr; gap: 0 clamp(32px, 4vw, 64px); align-items: start; max-width: var(--container); margin: 0 auto; padding-left: var(--gutter); }
+    .work__strip { display: contents; }
+    .work__lead { grid-column: 1; grid-row: 1 / span 4; align-self: stretch; min-height: clamp(480px, 76vh, 820px); margin-left: calc(-1 * var(--gutter)); }
+    .work__lead .work__media { position: absolute; inset: 0; }
+    .work__cap--lead { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(32px, 5vh, 56px); }
+    .work__cap--lead h3 { font-size: clamp(28px, 3.2vw, 48px); font-weight: 300; line-height: 1; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); max-width: 14ch; }
+    .work__lead-text { grid-column: 2; grid-row: 1; margin: 0 var(--gutter) var(--space-6) 0; }
+    .work__item { grid-column: 2; display: flex; flex-direction: column; gap: 14px; margin-right: var(--gutter); }
+    .work__item .work__media { aspect-ratio: 4 / 3; }
+    .work__item .work__shade { display: none; }
+    /* The second tile hangs lower and narrower than the first — a stagger, not a row */
+    .work__item--0 { grid-row: 2; width: 78%; margin-bottom: var(--space-6); }
+    .work__item--1 { grid-row: 3; width: 92%; justify-self: end; margin-top: calc(-1 * var(--space-2)); margin-bottom: var(--space-6); }
+    .work__actions { grid-column: 2; grid-row: 4; margin-top: var(--space-4); }
+  }
   @media (min-width: 1360px) { .work__lead { margin-left: calc(-1 * ((100vw - var(--container)) / 2 + var(--gutter))); } }
-  @media (max-width: 900px) {
-    .work__grid { grid-template-columns: 1fr; gap: var(--space-6); }
-    .work__lead { min-height: 0; aspect-ratio: 4 / 5; }
-    .work__side { padding-inline: var(--gutter); }
-    .work__item--0, .work__item--1 { width: 100%; align-self: auto; margin-top: 0; }
+
+  /* ---- Phones: a portrait strip. Swipe between the three, each with its title on the picture; or scroll past. ---- */
+  @media (max-width: 899px) {
+    .work__strip { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+    .work__strip::-webkit-scrollbar { display: none; }
+    .work__card { flex: 0 0 84%; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+    .work__card:last-child { margin-right: var(--gutter); }
+    .work__card .work__media { position: absolute; inset: 0; aspect-ratio: auto; }
+    .work__cap { position: absolute; left: 20px; right: 20px; bottom: 22px; z-index: 1; }
+    .work__cap h3 { font-size: clamp(24px, 6.4vw, 32px); font-weight: 300; line-height: 1.02; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
+    .work__n { display: block; position: absolute; top: 18px; left: 20px; font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--on-panel); opacity: .85; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+    .work__hint { display: flex; justify-content: space-between; gap: 16px; padding: 14px var(--gutter) 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
+    .work__hint-n { font-family: var(--font-display); font-size: 14px; letter-spacing: 0; color: var(--accent-text); }
+    .work__lead-text { padding-inline: var(--gutter); margin-top: var(--space-6); }
+    .work__actions { padding-inline: var(--gutter); margin-top: var(--space-5); }
   }
 </style>

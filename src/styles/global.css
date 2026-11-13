@@ -121,10 +121,10 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 .honey { position: absolute; left: -9999px; }
 
 /* Motion */
-.rise { opacity: 0; transform: translateY(18px); animation: rise 1.1s cubic-bezier(.2,.7,.2,1) forwards; }
-.rise.d1 { animation-delay: .9s; } .rise.d2 { animation-delay: 1.2s; } .rise.d3 { animation-delay: 1.5s; } .rise.d4 { animation-delay: 1.9s; }
-/* Inner-page heads: the picture lands first, the words a beat later */
-.rise.q1 { animation-delay: .35s; } .rise.q2 { animation-delay: .55s; } .rise.q3 { animation-delay: .75s; } .rise.q4 { animation-delay: .95s; }
+.rise { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+.rise.d1 { animation-delay: .12s; } .rise.d2 { animation-delay: .24s; } .rise.d3 { animation-delay: .36s; } .rise.d4 { animation-delay: .5s; }
+/* Inner-page heads: the words follow the picture by a beat, not a wait */
+.rise.q1 { animation-delay: .1s; } .rise.q2 { animation-delay: .2s; } .rise.q3 { animation-delay: .3s; } .rise.q4 { animation-delay: .4s; }
 .ken--slow { animation: ken 22s ease-out forwards; transform-origin: 50% 50%; }
 @keyframes rise { to { opacity: 1; transform: none; } }
 .ken { animation: ken 14s ease-out forwards; transform-origin: 50% 60%; }
@@ -141,18 +141,25 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 .light-band { background: var(--stone); color: var(--ink); }
 .light-band h1, .light-band h2, .light-band h3 { color: var(--ink); }
 .light-band .z-heading__lead, .light-band p { color: var(--slate); }
-/* Scroll reveal (added by Base.astro's script; no-ops without JS or with reduced motion) */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
+/* Scroll reveal (classes added by Base.astro's script; no-ops without JS or with reduced motion).
+   Where the browser supports scroll-driven animations the reveal is tied to the scroll position itself: an element rises
+   exactly as far as it has been scrolled into view, so nothing waits and nothing plays. Elsewhere it falls back to a short
+   transition that fires just before the element enters. */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .45s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1); }
 .reveal.is-in { opacity: 1; transform: none; }
-/* Photographs are unmasked rather than faded: a slow wipe up from the bottom edge with a settle in scale */
-.reveal--mask { opacity: 1; transform: none; overflow: hidden; clip-path: inset(0 0 100% 0); transition: clip-path 1.2s cubic-bezier(.65,0,.2,1); }
-.reveal--mask img { transform: scale(1.06); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
-.reveal--mask.is-in { clip-path: inset(0 0 0 0); }
+.reveal--mask { opacity: 0; transition: opacity .5s cubic-bezier(.2,.7,.2,1); }
+.reveal--mask img { transform: scale(1.04); transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.reveal--mask.is-in { opacity: 1; }
 .reveal--mask.is-in img { transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal--mask { clip-path: none; } .reveal--mask img { transform: none; } }
-.z-case:nth-child(2).reveal, .kf__item:nth-child(2).reveal { transition-delay: .08s; }
-.z-case:nth-child(3).reveal, .kf__item:nth-child(3).reveal { transition-delay: .16s; }
-.kf__item:nth-child(4).reveal { transition-delay: .24s; }
+@supports (animation-timeline: view()) {
+  .reveal, .reveal.is-in { opacity: 1; transform: none; transition: none; animation: reveal-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  .reveal--mask, .reveal--mask.is-in { opacity: 1; transition: none; animation: reveal-fade linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+  .reveal--mask img, .reveal--mask.is-in img { transform: none; animation: reveal-settle linear both; animation-timeline: view(); animation-range: entry 0% cover 40%; }
+  @keyframes reveal-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes reveal-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes reveal-settle { from { scale: 1.06; } to { scale: 1; } }
+}
+@media (prefers-reduced-motion: reduce) { .reveal, .reveal--mask, .reveal--mask img { opacity: 1; transform: none; animation: none; transition: none; } }
 /* Hover and focus refinements */
 .z-case img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
 .gal__item img, .feat__img img, .coll__img img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
@@ -180,3 +187,20 @@ html[data-theme="dark"] { background: #0f1114; color-scheme: dark; }
 
 /* Chapter numerals — the editorial table-of-contents device */
 .ch-num { font-family: var(--font-display); font-weight: 300; font-size: 26px; line-height: 1; letter-spacing: -0.02em; color: var(--accent-text); font-variation-settings: 'opsz' 72; }
+
+/* Page to page: a short cross-document crossfade where the browser supports it (Safari 18.2+, Chrome 126+). No JS, no router. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: .18s; }
+::view-transition-new(root) { animation-duration: .28s; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* Hero curtain: everything after a sticky hero paints above it, on its own ground (zero specificity so any section colour wins) */
+:where(main > .hero ~ *) { position: relative; z-index: 1; background-color: var(--panel-dark); }
+
+/* Depth on the big photographs: each one drifts a few percent against its frame as it crosses the viewport, in step with the
+   scroll (scroll-driven, no JS). The image is held slightly oversize so the drift never shows an edge. */
+@supports (animation-timeline: view()) {
+  .chapter__img img, .page-head__pic img, .bleed__img, .texture__img img, .work__lead img { scale: 1.1; animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+  @keyframes drift { from { translate: 0 -4.5%; } to { translate: 0 4.5%; } }
+  @media (prefers-reduced-motion: reduce) { .chapter__img img, .page-head__pic img, .bleed__img, .texture__img img, .work__lead img { scale: 1; animation: none; } }
+}
