@@ -9,7 +9,7 @@ const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, ct
 ---
 <Base title={title} description={description} accent={accent} schema={schema} noindex={noindex}>
   <header class:list={['page-head', { 'page-head--img': hero }]}>
-    {hero && <div class="page-head__pic"><Pic src={hero.src} mobile={hero.mobile} alt={hero.alt} class="page-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} /><div class="page-head__shade head-shade" aria-hidden="true"></div>{eyebrow && <div class="wrap page-head__mark"><span class="z-eyebrow rise q1">{eyebrow}</span></div>}</div>}
+    {hero && <div class="page-head__pic" style={accent !== 'neutral' ? `view-transition-name:${accent}-head` : undefined}><Pic src={hero.src} mobile={hero.mobile} alt={hero.alt} class="page-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} /><div class="page-head__shade head-shade" aria-hidden="true"></div>{eyebrow && <div class="wrap page-head__mark"><span class="z-eyebrow rise q1">{eyebrow}</span></div>}</div>}
     <div class:list={['wrap', 'z-heading', 'page-head__copy']}>
       {eyebrow && !hero && <span class="z-eyebrow">{eyebrow}</span>}
       <h1 class:list={["z-heading__title z-heading__title--display", { "rise q2": hero }]}>{heading ?? title}</h1>

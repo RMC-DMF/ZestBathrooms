@@ -6,11 +6,12 @@ import Pic from './Pic.astro';
  * half on the ground beneath it. Nothing else sits on the image.
  */
 import type { Accent } from '../data/site';
-interface Props { number?: string; image: string; mobile?: string; alt: string; eyebrow: string; title: string; text?: string; href: string; linkLabel?: string; accent?: Accent; position?: string; tone?: 'dark' | 'light' }
-const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Explore', accent = 'neutral', position = '50% 50%', tone = 'dark' } = Astro.props;
+interface Props { number?: string; image: string; mobile?: string; alt: string; eyebrow: string; title: string; text?: string; href: string; linkLabel?: string; accent?: Accent; position?: string; tone?: 'dark' | 'light'; inspect?: { src: string; alt: string; caption: string } }
+const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Explore', accent = 'neutral', position = '50% 50%', tone = 'dark', inspect } = Astro.props;
 ---
 <section class:list={['chapter', `chapter--${tone}`, `z-accent--${accent}`, { 'z-on-dark': tone === 'dark' }]} data-theme={tone === 'light' ? 'light' : undefined}>
-  <a class="chapter__img fill" href={href} aria-label={title}><Pic src={image} mobile={mobile} alt={alt} position={position} sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} /><span class="chapter__shade" aria-hidden="true"></span></a>
+  <a class="chapter__img fill" href={href} aria-label={title} style={accent !== 'neutral' ? `view-transition-name:${accent}-head` : undefined}><Pic src={image} mobile={mobile} alt={alt} position={position} sizes="100vw" widths={[768, 1200, 1600, 2000, 2560]} />{inspect && <span class="chapter__macro" aria-hidden="true"><Pic src={inspect.src} alt="" sizes="100vw" widths={[768, 1200, 1600, 2000]} /><span class="chapter__macro-cap">{inspect.caption}</span></span>}<span class="chapter__shade" aria-hidden="true"></span></a>
+  {inspect && <button class="chapter__pill" type="button" aria-pressed="false" data-inspect><span class="chapter__pill-plus" aria-hidden="true">+</span><span class="chapter__pill-a">Inspect the finish</span><span class="chapter__pill-b">Back to the room</span></button>}
   <div class="wrap chapter__body">
     <div class="chapter__mark z-heading">{number && <span class="ch-num">{number}</span>}<span class="z-eyebrow">{eyebrow}</span></div>
     <h2 class="chapter__title z-heading">{title}</h2>
@@ -20,6 +21,13 @@ const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Exp
     </div>
   </div>
 </section>
+<script>
+  // Inspect the finish: tap the pill and the room crossfades into a macro of its material, like picking up the sample block.
+  document.querySelectorAll<HTMLButtonElement>('[data-inspect]').forEach((btn) => {
+    const sec = btn.closest('.chapter'); if (!sec) return;
+    btn.addEventListener('click', () => { const on = !sec.classList.contains('is-macro'); sec.classList.toggle('is-macro', on); btn.setAttribute('aria-pressed', String(on)); });
+  });
+</script>
 <style>
   .chapter { position: relative; padding-bottom: clamp(72px, 9vw, 128px); }
   .chapter--dark { background: var(--panel-dark); color: var(--on-panel); }
@@ -30,6 +38,19 @@ const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Exp
   /* Ground for the straddling title: the picture darkens into the section colour along its lower edge, heavier on the left where the type sits */
   .chapter__shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(15,17,20,.88) 0%, rgba(15,17,20,.6) 16%, rgba(15,17,20,.22) 34%, rgba(15,17,20,0) 52%), linear-gradient(to right, rgba(15,17,20,.28) 0%, rgba(15,17,20,0) 55%); }
   .chapter--light .chapter__shade { background: linear-gradient(to top, rgba(239,234,226,.9) 0%, rgba(239,234,226,.55) 16%, rgba(239,234,226,.18) 34%, rgba(239,234,226,0) 52%); }
+  /* The macro layer and the pill that reveals it */
+  .chapter__macro { position: absolute; inset: 0; opacity: 0; transition: opacity .7s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+  .chapter__macro :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; scale: 1.08; transition: scale 1.6s cubic-bezier(.2,.7,.2,1); }
+  .chapter.is-macro .chapter__macro { opacity: 1; }
+  .chapter.is-macro .chapter__macro :global(img) { scale: 1; }
+  .chapter__macro-cap { position: absolute; right: var(--gutter); bottom: clamp(96px, 7.4vw, 130px); max-width: 260px; text-align: right; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; line-height: 1.5; color: var(--on-panel); text-shadow: 0 1px 2px rgba(0,0,0,.5); opacity: 0; translate: 0 8px; transition: opacity .5s .2s, translate .5s .2s; }
+  .chapter.is-macro .chapter__macro-cap { opacity: 1; translate: 0 0; }
+  .chapter__pill { position: absolute; right: var(--gutter); top: calc(clamp(480px, 78vh, 860px) - 56px); z-index: 3; display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 16px 0 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(15,17,20,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: var(--on-panel); font: inherit; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .3s, border-color .3s; }
+  .chapter__pill:hover { background: rgba(15,17,20,.75); border-color: rgba(255,255,255,.4); }
+  .chapter__pill-plus { font-family: var(--font-display); font-size: 20px; line-height: 1; transition: rotate .4s cubic-bezier(.2,.7,.2,1); }
+  .chapter.is-macro .chapter__pill-plus { rotate: 45deg; }
+  .chapter__pill-b, .chapter.is-macro .chapter__pill-a { display: none; }
+  .chapter.is-macro .chapter__pill-b { display: inline; }
   .chapter__body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); }
   /* The mark sits up on the photograph; the title straddles the edge */
   .chapter__mark { position: absolute; left: var(--gutter); bottom: 100%; margin-bottom: clamp(96px, 7.4vw, 130px); display: flex; align-items: baseline; gap: 18px; }
@@ -46,6 +67,8 @@ const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Exp
   .chapter__foot.reveal { transition-delay: .2s; }
   @media (max-width: 900px) {
     .chapter__img { height: 78svh; }
+    .chapter__pill { top: calc(78svh - 52px); min-height: 38px; }
+    .chapter__macro-cap { bottom: auto; top: 88px; left: var(--gutter); right: auto; text-align: left; max-width: 62%; }
     .chapter__mark { margin-bottom: 96px; }
     .chapter__title { font-size: clamp(46px, 14vw, 72px); margin-top: -0.5em; }
     .chapter__foot { padding-left: 0; flex-direction: column; gap: var(--space-4); }

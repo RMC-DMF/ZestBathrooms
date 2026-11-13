@@ -25,7 +25,7 @@ const strip = [lead, ...rest.slice(0, 2)].filter(Boolean) as Item[];
         <span class="work__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
       </a>)}
     </div>
-    <div class="work__hint" aria-hidden="true"><span class="work__hint-n">01 / {String(strip.length).padStart(2, '0')}</span><span>Swipe through the work →</span></div>
+    <div class="work__hint" aria-hidden="true"><span class="work__hint-n">01 / {String(strip.length).padStart(2, '0')}</span><span class="work__track"><i class="work__fill"></i></span><span>Swipe →</span></div>
     {text && <p class="work__lead-text z-heading">{text}</p>}
     <div class="cluster work__actions z-heading">
       {secondary && <a class="z-btn z-btn--secondary z-btn--on-dark" href={secondary.href}>{secondary.label}</a>}
@@ -40,6 +40,9 @@ const strip = [lead, ...rest.slice(0, 2)].filter(Boolean) as Item[];
     const total = String(cards.length).padStart(2, '0');
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) n.textContent = `${String(Number((e.target as HTMLElement).dataset.i) + 1).padStart(2, '0')} / ${total}`; }), { root: strip, threshold: 0.6 });
     cards.forEach((c) => io.observe(c));
+    // The progress line follows the thumb 1:1
+    const onScroll = () => strip.parentElement!.style.setProperty('--p', String(strip.scrollLeft / Math.max(1, strip.scrollWidth - strip.clientWidth)));
+    strip.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   });
 </script>
 <style>
@@ -83,13 +86,16 @@ const strip = [lead, ...rest.slice(0, 2)].filter(Boolean) as Item[];
   @media (max-width: 899px) {
     .work__strip { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
     .work__strip::-webkit-scrollbar { display: none; }
-    .work__card { flex: 0 0 84%; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+    .work__card { flex: 0 0 88%; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+    .work__tags { display: none; }
     .work__card:last-child { margin-right: var(--gutter); }
     .work__card .work__media { position: absolute; inset: 0; aspect-ratio: auto; }
     .work__cap { position: absolute; left: 20px; right: 20px; bottom: 22px; z-index: 1; }
     .work__cap h3 { font-size: clamp(24px, 6.4vw, 32px); font-weight: 300; line-height: 1.02; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; text-shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 44px rgba(0,0,0,.5); }
     .work__n { display: block; position: absolute; top: 18px; left: 20px; font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--on-panel); opacity: .85; text-shadow: 0 1px 2px rgba(0,0,0,.4); }
-    .work__hint { display: flex; justify-content: space-between; gap: 16px; padding: 14px var(--gutter) 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
+    .work__hint { display: flex; align-items: center; gap: 16px; padding: 16px var(--gutter) 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
+    .work__track { flex: 1; height: 1px; background: rgba(255,255,255,.15); position: relative; overflow: hidden; }
+    .work__fill { position: absolute; left: 0; top: 0; bottom: 0; width: 34%; background: var(--accent-text); translate: calc(var(--p, 0) * 194%) 0; }
     .work__hint-n { font-family: var(--font-display); font-size: 14px; letter-spacing: 0; color: var(--accent-text); }
     .work__lead-text { padding-inline: var(--gutter); margin-top: var(--space-6); }
     .work__actions { padding-inline: var(--gutter); margin-top: var(--space-5); }

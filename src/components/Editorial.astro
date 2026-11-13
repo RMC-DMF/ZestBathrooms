@@ -11,14 +11,14 @@ interface Props {
   detail?: string; detailAlt?: string;
   eyebrow?: string; title: string; text?: string;
   href?: string; linkLabel?: string;
-  flip?: boolean; tone?: 'dark' | 'light'; accent?: Accent; position?: string; number?: string; overlap?: boolean;
+  flip?: boolean; tone?: 'dark' | 'light'; accent?: Accent; position?: string; number?: string; overlap?: boolean; morph?: boolean;
 }
-const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabel = 'Explore', flip = false, tone = 'dark', accent, position = '50% 50%', number, overlap = false } = Astro.props;
+const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabel = 'Explore', flip = false, tone = 'dark', accent, position = '50% 50%', number, overlap = false, morph = false } = Astro.props;
 ---
 <section class:list={['ed', `ed--${tone}`, { 'ed--flip': flip, 'ed--overlap': overlap }, accent && `z-accent--${accent}`]} data-theme={tone === 'light' ? 'light' : undefined}>
   <div class="wrap ed__in">
     <div class="ed__media">
-      <div class="ed__img"><Pic src={image} alt={alt} position={position} sizes="(max-width: 900px) 100vw, 60vw" widths={[640, 960, 1280, 1600, 1920]} /></div>
+      <div class="ed__img" style={morph && accent ? `view-transition-name:${accent}-head` : undefined}><Pic src={image} alt={alt} position={position} sizes="(max-width: 900px) 100vw, 60vw" widths={[640, 960, 1280, 1600, 1920]} /></div>
       {detail && <div class="ed__detail"><Pic src={detail} alt={detailAlt} sizes="(max-width: 900px) 50vw, 24vw" widths={[320, 480, 640, 800]} /></div>}
     </div>
     <div class="ed__txt">

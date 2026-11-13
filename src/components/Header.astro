@@ -1,5 +1,6 @@
 ---
 import { site, nav } from '../data/site';
+import OpenStatus from './OpenStatus.astro';
 interface Props { floating?: boolean; dark?: boolean }
 const { floating = false, dark = false } = Astro.props;
 const logo = dark ? '/images/brand/zest-logo-white.png' : '/images/brand/zest-logo-slate.png';
@@ -28,6 +29,7 @@ const path = Astro.url.pathname;
       <div class="hdr__mobile-actions">
         <a class="z-btn z-btn--primary z-btn--on-dark" href={site.cta.href}>{site.cta.label}</a>
         <a class="hdr__mobile-phone" href={site.phoneHref}>Chester {site.phone}</a>
+        <OpenStatus />
       </div>
       <span class="hdr__mobile-foot">Chester · Kitchens &amp; Bathrooms since 1992</span>
     </div>

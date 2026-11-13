@@ -1,4 +1,5 @@
 ---
+import OpenStatus from './OpenStatus.astro';
 import { site, footerNav } from '../data/site';
 const year = new Date().getFullYear();
 ---
@@ -15,6 +16,7 @@ const year = new Date().getFullYear();
       <div class="ftr__col">
         <span class="ftr__h">Showroom</span>
         <p class="small">{site.hours.map((h) => <span>{h.days} {h.open.replace(':00', 'am').replace('09am','9am')}–{h.close === '17:00' ? '5pm' : '4pm'}<br /></span>)}Sunday closed</p>
+        <OpenStatus />
         <a href={site.tradeCta.href}>Trade: register your project →</a>
       </div>
     </div>

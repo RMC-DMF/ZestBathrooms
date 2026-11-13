@@ -1,0 +1,35 @@
+---
+/**
+ * Live showroom status — "Open today until 5pm" / "Opens tomorrow at 9am" — from the published hours, computed in UK time
+ * on the visitor's device. Renders the static hours without JavaScript.
+ */
+import { site } from '../data/site';
+interface Props { class?: string }
+const { class: cls = '' } = Astro.props;
+// Mon–Fri 09–17, Sat 09–16, Sun closed — as JSON for the client script
+const week = [null, [9, 17], [9, 17], [9, 17], [9, 17], [9, 17], [9, 16]]; // index 0 = Sunday
+---
+<span class:list={['ostat', cls]} data-ostat={JSON.stringify(week)}><i class="ostat__dot" aria-hidden="true"></i><span class="ostat__t">Chester showroom · {site.hours[0].days} 9am–5pm, Sat 9am–4pm</span></span>
+<script>
+  const fmt = (h: number) => `${h > 12 ? h - 12 : h}${h >= 12 ? 'pm' : 'am'}`;
+  document.querySelectorAll<HTMLElement>('[data-ostat]').forEach((el) => {
+    const week = JSON.parse(el.dataset.ostat!) as ([number, number] | null)[];
+    const t = el.querySelector('.ostat__t'); if (!t) return;
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    const get = (k: string) => parts.find((p) => p.type === k)?.value ?? '';
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    const now = Number(get('hour')) + Number(get('minute')) / 60;
+    const today = week[day];
+    if (today && now < today[0]) { t.textContent = `Chester showroom · Opens today at ${fmt(today[0])}`; return; }
+    if (today && now < today[1]) { el.classList.add('is-open'); t.textContent = `Chester showroom · Open today until ${fmt(today[1])}`; return; }
+    for (let i = 1; i <= 7; i++) { const d = (day + i) % 7; const h = week[d]; if (h) { t.textContent = `Chester showroom · Opens ${i === 1 ? 'tomorrow' : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d]} at ${fmt(h[0])}`; break; } }
+  });
+</script>
+<style>
+  .ostat { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-muted); }
+  .ostat__dot { width: 7px; height: 7px; border-radius: 50%; background: #6b717b; flex-shrink: 0; }
+  .ostat.is-open .ostat__dot { background: var(--brass-light); box-shadow: 0 0 0 0 rgba(201,169,110,.5); animation: ostat-pulse 2.6s ease-out infinite; }
+  .ostat.is-open { color: #b9bec6; }
+  @keyframes ostat-pulse { 0% { box-shadow: 0 0 0 0 rgba(201,169,110,.45); } 70% { box-shadow: 0 0 0 8px rgba(201,169,110,0); } 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); } }
+  @media (prefers-reduced-motion: reduce) { .ostat.is-open .ostat__dot { animation: none; } }
+</style>
