@@ -3,23 +3,35 @@
  * SectionNav — the second level under a front door: a slim row of the section's pages.
  * Sits directly under the page head. Scrolls sideways on phones rather than wrapping.
  */
-interface Props { items: { label: string; href: string }[]; label?: string }
-const { items, label = 'In this section' } = Astro.props;
-const here = Astro.url.pathname.replace(/\/$/, '');
+interface Props { items: { label: string; href: string }[]; label?: string; sticky?: boolean }
+const { items, label = 'In this section', sticky = false } = Astro.props;
+const here = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
 ---
-<nav class="snav" aria-label={label}>
+<nav class:list={["snav", { "snav--sticky": sticky }]} aria-label={label} data-snav>
   <div class="wrap snav__in">
     <span class="snav__label">{label}</span>
     <ul class="snav__list">{items.map((i) => <li><a href={i.href} aria-current={here === i.href.replace(/\/$/, '') ? 'page' : undefined}>{i.label}</a></li>)}</ul>
   </div>
 </nav>
+<script>
+  // The sticky rail appears once the pills in the page head have scrolled out of view
+  document.querySelectorAll<HTMLElement>('[data-snav].snav--sticky').forEach((rail) => {
+    const pills = document.querySelector('.page-head__sections'); if (!pills) { rail.classList.add('is-shown'); return; }
+    new IntersectionObserver(([e]) => rail.classList.toggle('is-shown', !e.isIntersecting && e.boundingClientRect.top < 0), { threshold: 0 }).observe(pills);
+  });
+</script>
 <style>
   .snav { background: var(--panel-dark); border-top: 1px solid #1b1f26; border-bottom: 1px solid #1b1f26; }
-  .snav__in { display: flex; align-items: center; gap: var(--space-6); min-height: 56px; }
+  /* Sticky variant: a slim rail that stays under the header while the visitor is in the section. Hidden until the head's pills have scrolled away. */
+  .snav--sticky { position: fixed; top: 64px; left: 0; right: 0; z-index: 12; transition: opacity .3s, translate .3s; }
+  .snav--sticky:not(.is-shown) { opacity: 0; translate: 0 -8px; pointer-events: none; }
+  .snav--sticky .snav__in { min-height: 48px; }
+  .snav--sticky .snav__list a { padding: 14px 0; }
+  .snav__in { display: flex; align-items: center; gap: var(--space-6); min-height: 60px; }
   .snav__label { flex-shrink: 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
   .snav__list { display: flex; gap: var(--space-5); list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .snav__list::-webkit-scrollbar { display: none; }
-  .snav__list a { display: inline-block; padding: 18px 0; font-size: 13px; letter-spacing: .04em; color: #cfd3d9; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; transition: color .25s, border-color .25s; }
+  .snav__list a { display: inline-block; padding: 20px 0; font-size: 15px; letter-spacing: .04em; color: #cfd3d9; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; transition: color .25s, border-color .25s; }
   .snav__list a:hover { color: var(--on-panel); border-bottom-color: rgba(255,255,255,.35); }
   .snav__list a[aria-current="page"] { color: var(--on-panel); border-bottom-color: var(--accent-text); }
   @media (max-width: 899px) {

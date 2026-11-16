@@ -1,11 +1,13 @@
 ---
 import Pic from '../components/Pic.astro';
 /** Light content page: eyebrow / title / lead header, then slot, then the CTA band. */
+import SectionNav from '../components/SectionNav.astro';
 import Base from './Base.astro';
 import CtaBand from '../components/CtaBand.astro';
 import type { Accent } from '../data/site';
-interface Props { title: string; description: string; eyebrow?: string; heading?: string; lead?: string; accent?: Accent; hero?: { src: string; alt: string; mobile?: string }; cta?: { title?: string; text?: string; label?: string; href?: string } | false; schema?: Record<string, unknown>[]; noindex?: boolean }
-const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, cta = {}, schema, noindex } = Astro.props;
+interface Props { title: string; description: string; eyebrow?: string; heading?: string; lead?: string; accent?: Accent; hero?: { src: string; alt: string; mobile?: string }; cta?: { title?: string; text?: string; label?: string; href?: string } | false; schema?: Record<string, unknown>[]; noindex?: boolean; sections?: { label: string; href: string }[] }
+const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, cta = {}, schema, noindex, sections } = Astro.props;
+const here = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 ---
 <Base title={title} description={description} accent={accent} schema={schema} noindex={noindex}>
   <header class:list={['page-head', { 'page-head--img': hero }]}>
@@ -14,8 +16,10 @@ const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, ct
       {eyebrow && !hero && <span class="z-eyebrow">{eyebrow}</span>}
       <h1 class:list={["z-heading__title z-heading__title--display", { "rise q2": hero }]}>{heading ?? title}</h1>
       {lead && <p class:list={["z-heading__lead", { "rise q3": hero }]}>{lead}</p>}
+      {sections && <nav class:list={["page-head__sections", { "rise q4": hero }]} aria-label="In this section"><span class="page-head__sections-l">In this section</span><ul>{sections.map((i) => <li><a href={i.href} aria-current={here === i.href.replace(/\/$/, '') ? 'page' : undefined}>{i.label}</a></li>)}</ul></nav>}
     </div>
   </header>
+  {sections && <SectionNav items={sections} sticky />}
   <slot />
   {cta !== false && <CtaBand {...cta} />}
 </Base>
@@ -34,6 +38,18 @@ const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, ct
   .page-head__mark .z-eyebrow { color: var(--on-panel); }
   .page-head__mark .z-eyebrow::after { background: var(--on-panel); opacity: .6; }
   .page-head--img .page-head__copy { position: relative; z-index: 1; }
+  /* Second level: outline pills under the lead, the current page in the accent */
+  .page-head__sections { margin-top: var(--space-6); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+  .page-head__sections-l { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); margin-right: 6px; }
+  .page-head__sections ul { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .page-head__sections a { display: inline-block; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; transition: border-color .25s, color .25s, background .25s; }
+  .page-head__sections a:hover { border-color: var(--slate); }
+  .page-head__sections a[aria-current="page"] { border-color: var(--accent-text); color: var(--accent-text); }
+  .page-head--img .page-head__sections a { border-color: rgba(255,255,255,.22); color: var(--on-panel); }
+  .page-head--img .page-head__sections a:hover { border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.05); }
+  .page-head--img .page-head__sections a[aria-current="page"] { border-color: var(--accent-light); color: var(--accent-light); }
+  @media (min-width: 900px) { .page-head--img .page-head__sections { margin-left: clamp(0px, 22vw, 440px); } }
+  @media (max-width: 899px) { .page-head__sections-l { display: none; } .page-head__sections a { padding: 9px 14px; font-size: 14px; } }
   .page-head--img .z-heading__title { margin-top: -0.5em; max-width: 13ch; font-size: clamp(48px, 8.2vw, 128px); line-height: .92; letter-spacing: -0.025em; color: var(--on-panel); text-shadow: 0 2px 4px rgba(0,0,0,.25), 0 16px 48px rgba(0,0,0,.35); text-wrap: balance; }
   .page-head--img .z-heading__lead { margin-top: var(--space-5); font-size: 19px; color: #cfd3d9; max-width: 520px; }
   @media (min-width: 900px) { .page-head--img .z-heading__lead { margin-left: clamp(0px, 22vw, 440px); } }
