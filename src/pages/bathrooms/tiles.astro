@@ -1,12 +1,97 @@
 ---
 import Pic from '../../components/Pic.astro';
-import { sections } from '../../data/site';
+import Texture from '../../components/Texture.astro';
+import Editorial from '../../components/Editorial.astro';
+import Gallery from '../../components/Gallery.astro';
+import FullBleed from '../../components/FullBleed.astro';
+import FAQ from '../../components/FAQ.astro';
+import { sections, site } from '../../data/site';
 import Page from '../../layouts/Page.astro';
-import { getEntry, render } from 'astro:content';
-const copy = await getEntry('pages', 'tiles');
-const { Content } = await render(copy!);
+import { getCollection } from 'astro:content';
+
+const houses = (await getCollection('brands', (b) => b.data.category === 'Tiles & surfaces')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const choose = [
+  { title: 'Material', text: 'Porcelain for floors, wet rooms and anywhere hard-wearing; glazed ceramic for walls, where colour and a soft gloss matter more than abrasion.' },
+  { title: 'Format', text: 'Large formats make a small room calmer by taking the grout lines away; small formats and mosaics bring texture and grip to shower floors and feature walls.' },
+  { title: 'Colour and finish', text: 'Matt stone and concrete sit well with brushed brass and bronze; polished marble with chrome and glass. We lay the combinations out together in the showroom light.' },
+  { title: 'Practicality', text: 'Slip resistance for floors, rectified edges for tight joints, the right adhesive and grout for underfloor heating — specified on the drawing, not left to the tiler.' },
+];
+
+const gallery = [
+  { src: '/images/brands/press/museum-savage-green-marble.jpg', alt: 'Museum Savage Green marble-effect slabs' },
+  { src: '/images/brands/press/imola-pink-tiled-kitchen.jpg', alt: 'Imola Ceramica glossy pink wall tiles' },
+  { src: '/images/brands/press/mirage-jewels-statuario-venato.jpg', alt: 'Mirage Jewels Statuario Venato slabs' },
+  { src: '/images/brands/press/energieker-oxide-bath.jpg', alt: 'Energieker oxidised-metal effect behind a bath' },
+  { src: '/images/brands/press/peronda-alchemy-iron-bathroom.jpg', alt: 'Peronda Alchemy textured wall tiles' },
+  { src: '/images/brands/press/novabell-smeraldo-green.jpg', alt: 'Novabell Smeraldo green wall tiles' },
+];
+
+const faqs = [
+  { q: 'Do you sell tiles on their own, without a bathroom?', a: 'Yes. Most tile orders are part of a Zest bathroom or kitchen, but the library is open to anyone with a room to finish, and we will still draw the layout.' },
+  { q: 'Can I take samples home?', a: 'Samples go home with you. For a specific scheme we order larger pieces, and full slabs are on the floor in the showroom to walk on.' },
+  { q: 'Do you supply tiles to trade and developments?', a: 'Yes — specification, sampling and supply to programme, through the Warrington project office.' },
+  { q: 'Which is better, porcelain or natural stone?', a: 'Porcelain for anything wet or hard-worn; it does not stain or need sealing, and the best marble effects now hold up at arm\'s length. Natural stone where the variation is the point and the room is dry enough to look after it.' },
+];
 ---
-<Page sections={sections.bathrooms} title="Luxury Tiles & Surfaces Chester" description="Large-format porcelain, natural stone and book-matched slabs for bathrooms and kitchens, from the Zest showroom in Chester." accent="bathrooms" eyebrow="Bathrooms — tiles and surfaces" heading="Tiles and surfaces." lead="Large-format porcelain, stone and the slab library in the showroom, specified with the room rather than after it." hero={copy?.data.hero}>
-  <section class="wrap section"><div class="prose"><Content /></div></section>
-  {copy!.data.gallery.length > 0 && <section class="wrap section" style="padding-top:0"><div class="grid grid--3">{copy!.data.gallery.slice(0, 6).map((g) => <div class="fill" style="aspect-ratio:4/3"><Pic src={g.src} alt={g.alt} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div>)}</div></section>}
+<Page sections={sections.bathrooms} title="Luxury Tiles & Surfaces Chester — Porcelain, Slabs, Stone" description="Large-format porcelain, slabs and glazed wall tiles from eight European houses — Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola — in the Zest showroom in Chester." accent="bathrooms" eyebrow="Bathrooms — tiles and surfaces" heading="The surface is the room." lead="Porcelain slabs to 160×320, glazed wall tiles with real colour, stone and wood that pass at arm's length — from eight European houses, chosen with the room rather than after it." hero={{ src: '/images/brands/press/benadresa-icaro-blue-marble.jpg', alt: 'Blue marble-effect porcelain behind a freestanding bath' }}>
+
+  <Texture image="/images/home/material-agate.webp" alt="Agate slab — bands of amber, smoke and white crystal, close up" line="Start with the slab." caption="Agate — book-matched, backlit if you like" position="50% 40%" />
+
+  <Editorial overlap tone="light" accent="bathrooms" image="/images/brands/press/imola-sea-blue-bathroom.jpg" alt="Glossy sea-blue wall tiles with a freestanding bath, Imola Ceramica" detail="/images/brands/press/peronda-cluny-sand-vanity.jpg" detailAlt="Ribbed, textured wall tile behind a vanity, Peronda Cluny" eyebrow="How we choose" title="Chosen with the room, not after it." text="Our designers plan the surfaces alongside the brassware, furniture and lighting, so a slab, a mosaic and a floor read as one scheme rather than three decisions. The sample goes home with you; the layout is drawn before anything is cut." href="/design-service" linkLabel="How the design service works" position="50% 50%" />
+
+  <section class="houses z-on-dark">
+    <div class="wrap">
+      <div class="z-heading houses__head">
+        <span class="z-eyebrow">The houses</span>
+        <h2 class="houses__title">Eight makers. One wall of samples.</h2>
+        <p class="z-heading__lead">Italian and Spanish houses we have specified for years — each with its own character, each with a page of its own.</p>
+      </div>
+      <ul class="houses__grid">
+        {houses.map((h) => <li class="house z-heading">
+          <a class="house__link" href={`/brands/${h.id}`}>
+            <div class="house__img fill">{h.data.hero && <Pic src={h.data.hero.src} alt={h.data.hero.alt} sizes="(max-width: 900px) 100vw, 25vw" widths={[480, 720, 960]} />}</div>
+            <div class="house__body">
+              <span class="house__meta">{h.data.hometown}{h.data.founded && ` · since ${h.data.founded}`}</span>
+              <h3 class="house__name">{h.data.title}</h3>
+              {h.data.tagline && <p class="house__tag">{h.data.tagline}</p>}
+            </div>
+          </a>
+        </li>)}
+      </ul>
+    </div>
+  </section>
+
+  <FullBleed accent="bathrooms" image="/images/brands/press/museum-sublime-vulcano-bath.jpg" alt="Dark marble-effect slabs around a freestanding bath, Museum Sublime" eyebrow="Slabs" title="One piece, floor to ceiling." text="100×275 and 160×320 porcelain slabs mean a shower wall, a vanity front or a worktop is one uninterrupted surface — book-matched if you want the veining to mirror. Lighter and tougher than the stone they are drawn from, and they never need sealing." cta={site.cta} minHeight="72vh" shade="left" />
+
+  <section class="section z-on-dark choose"><div class="wrap">
+    <div class="z-heading" style="margin-bottom:var(--space-7)"><span class="z-eyebrow">Choosing well</span><h2 class="choose__title">Four decisions, made together.</h2></div>
+    <ol class="choose__list">{choose.map((c, i) => <li class="choose__item z-heading"><span class="ch-num">{String(i + 1).padStart(2, '0')}</span><h3 class="choose__h">{c.title}</h3><p class="choose__t">{c.text}</p></li>)}</ol>
+  </div></section>
+
+  <Gallery images={gallery} max={6} eyebrow="From the library" title="Colour, texture, scale." />
+
+  <section class="section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2 class="choose__title" style="color:var(--on-panel)">Tiles, answered.</h2></div><FAQ items={faqs} /></div></section>
 </Page>
+<style>
+  .houses { background: var(--panel-dark); color: var(--on-panel); padding-block: clamp(96px, 12vw, 160px); }
+  .houses__head { max-width: 720px; margin-bottom: var(--space-7); }
+  .houses__title { font-size: clamp(36px, 4.6vw, 64px); line-height: 1; font-weight: 300; letter-spacing: -0.02em; font-variation-settings: 'opsz' 144; color: var(--on-panel); }
+  .houses .z-heading__lead { color: #cfd3d9; }
+  .houses__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
+  .house__link { display: block; text-decoration: none; color: inherit; }
+  .house__img { aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-raised); }
+  .house__img :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+  .house__link:hover .house__img :global(img) { transform: scale(1.03); }
+  .house__body { padding-top: 14px; }
+  .house__meta { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
+  .house__name { margin-top: 6px; font-family: var(--font-display); font-weight: 300; font-size: clamp(22px, 2vw, 28px); line-height: 1.1; color: var(--on-panel); }
+  .house__tag { margin-top: 6px; font-size: 14px; color: #b9bec6; }
+  .choose__title { font-size: clamp(32px, 3.8vw, 52px); line-height: 1.02; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; }
+  .choose__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6) var(--space-5); border-top: 1px solid #343a44; }
+  .choose__item { padding-top: var(--space-5); border-top: 1px solid #343a44; margin-top: -1px; }
+  .choose__h { margin-top: var(--space-3); font-size: 18px; font-weight: 500; color: var(--on-panel); }
+  .choose__t { margin-top: 8px; font-size: 15px; line-height: 1.6; color: #b9bec6; }
+  @media (max-width: 1100px) { .houses__grid, .choose__list { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .choose__list { grid-template-columns: 1fr; } .houses__grid { gap: var(--space-4); } }
+</style>
