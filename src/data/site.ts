@@ -42,6 +42,28 @@ export const site = {
   tradeCta: { label: 'Register your project', href: '/projects/register' },
 };
 
+export const sections = {
+  kitchens: [
+    { label: 'Kitchens', href: '/kitchens' },
+    { label: 'SieMatic', href: '/kitchens/siematic' },
+    { label: 'Case studies', href: '/kitchens/case-studies' },
+    { label: 'Brochures', href: '/kitchens/brochures' },
+  ],
+  bathrooms: [
+    { label: 'Bathrooms', href: '/bathrooms' },
+    { label: 'Gessi Haute Culture', href: '/gessi-haute-culture' },
+    { label: 'Wellness', href: '/bathrooms/wellness' },
+    { label: 'Tiles & surfaces', href: '/bathrooms/tiles' },
+    { label: 'Case studies', href: '/bathrooms/case-studies' },
+    { label: 'Brochures', href: '/bathrooms/brochures' },
+  ],
+  projects: [
+    { label: 'Projects', href: '/projects' },
+    { label: 'How we work', href: '/projects/how-we-work' },
+    { label: 'Register your project', href: '/projects/register' },
+  ],
+};
+
 export const nav = [
   { label: 'Kitchens', href: '/kitchens' },
   { label: 'Bathrooms', href: '/bathrooms' },
@@ -57,6 +79,9 @@ export const footerNav = {
     { label: 'Kitchens', href: '/kitchens' },
     { label: 'Bathrooms', href: '/bathrooms' },
     { label: 'Gessi Haute Culture', href: '/gessi-haute-culture' },
+    { label: 'SieMatic kitchens', href: '/kitchens/siematic' },
+    { label: 'Wellness', href: '/bathrooms/wellness' },
+    { label: 'Tiles & surfaces', href: '/bathrooms/tiles' },
     { label: 'Design Service', href: '/design-service' },
     { label: 'Projects', href: '/projects' },
     { label: 'Brands', href: '/brands' },

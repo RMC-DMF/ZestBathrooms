@@ -1,0 +1,30 @@
+---
+/**
+ * SectionNav — the second level under a front door: a slim row of the section's pages.
+ * Sits directly under the page head. Scrolls sideways on phones rather than wrapping.
+ */
+interface Props { items: { label: string; href: string }[]; label?: string }
+const { items, label = 'In this section' } = Astro.props;
+const here = Astro.url.pathname.replace(/\/$/, '');
+---
+<nav class="snav" aria-label={label}>
+  <div class="wrap snav__in">
+    <span class="snav__label">{label}</span>
+    <ul class="snav__list">{items.map((i) => <li><a href={i.href} aria-current={here === i.href.replace(/\/$/, '') ? 'page' : undefined}>{i.label}</a></li>)}</ul>
+  </div>
+</nav>
+<style>
+  .snav { background: var(--panel-dark); border-top: 1px solid #1b1f26; border-bottom: 1px solid #1b1f26; }
+  .snav__in { display: flex; align-items: center; gap: var(--space-6); min-height: 56px; }
+  .snav__label { flex-shrink: 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-muted); }
+  .snav__list { display: flex; gap: var(--space-5); list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .snav__list::-webkit-scrollbar { display: none; }
+  .snav__list a { display: inline-block; padding: 18px 0; font-size: 13px; letter-spacing: .04em; color: #cfd3d9; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; transition: color .25s, border-color .25s; }
+  .snav__list a:hover { color: var(--on-panel); border-bottom-color: rgba(255,255,255,.35); }
+  .snav__list a[aria-current="page"] { color: var(--on-panel); border-bottom-color: var(--accent-text); }
+  @media (max-width: 899px) {
+    .snav__in { gap: var(--space-4); padding-right: 0; }
+    .snav__label { display: none; }
+    .snav__list { padding-right: var(--gutter); }
+  }
+</style>
