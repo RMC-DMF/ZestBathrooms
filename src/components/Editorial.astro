@@ -59,9 +59,14 @@ const { image, alt, detail, detailAlt = '', eyebrow, title, text, href, linkLabe
   .ed--overlap.ed--dark.ed--flip .ed__img::after { background: linear-gradient(to right, var(--panel-dark) 0%, rgba(15,17,20,.6) 16%, rgba(15,17,20,0) 44%); }
   @media (max-width: 900px) { .ed--overlap .ed__img::after { display: none; } }
   /* overlap: the detail steps off the bottom-left of the photograph — the solid side, away from the melt — on a mount in the ground colour */
-  .ed--overlap .ed__detail { right: auto; left: clamp(24px, 5vw, 72px); bottom: -18%; width: 30%; aspect-ratio: 4 / 5; border: 10px solid var(--stone); box-shadow: 0 24px 60px rgba(27,31,38,.22); z-index: 2; }
+  /* anchored to the photograph's bleed edge (the viewport edge on wide screens), not to the content column, so it always sits in the picture's corner */
+  .ed--overlap .ed__detail { right: auto; left: calc(clamp(24px, 4vw, 72px) - var(--gutter)); bottom: -18%; width: clamp(180px, 24%, 320px); aspect-ratio: 4 / 5; border: 10px solid var(--stone); box-shadow: 0 24px 60px rgba(27,31,38,.22); z-index: 2; }
   .ed--overlap.ed--dark .ed__detail { border-color: var(--panel-dark); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
-  .ed--overlap.ed--flip .ed__detail { left: auto; right: clamp(24px, 5vw, 72px); }
+  .ed--overlap.ed--flip .ed__detail { left: auto; right: calc(clamp(24px, 4vw, 72px) - var(--gutter)); }
+  @media (min-width: 1360px) {
+    .ed--overlap .ed__detail { left: calc(clamp(40px, 3.5vw, 96px) - ((100vw - var(--container)) / 2 + var(--gutter))); width: clamp(240px, 14vw, 380px); }
+    .ed--overlap.ed--flip .ed__detail { left: auto; right: calc(clamp(40px, 3.5vw, 96px) - ((100vw - var(--container)) / 2 + var(--gutter))); }
+  }
   @media (min-width: 900px) { .ed--overlap .ed__title { margin-left: -46%; max-width: 700px; } .ed--overlap.ed--flip .ed__title { margin-left: 0; margin-right: -46%; } .ed--overlap .ed__title { font-size: clamp(44px, 5.6vw, 84px); line-height: .96; } }
   .ed__title { font-size: clamp(36px, 4.4vw, 64px); line-height: 1.0; font-weight: 300; letter-spacing: -0.015em; font-variation-settings: 'opsz' 144; max-width: 520px; text-wrap: balance; }
   .ed--dark .ed__title { color: var(--on-panel); }
