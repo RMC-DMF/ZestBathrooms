@@ -3,8 +3,8 @@ title: "Inside the Icon: A Closer Look at Gessi’s Flagship Collections"
 summary: "At Zest, we pride ourselves on curating the finest bathroom brands for our clients and few embody innovation and elegance like Gessi."
 date: "2025-06-23"
 hero:
-  src: "/images/journal/inside-the-icon-a-closer-look-at-gessis-flagship-collections-01.jpg"
-  alt: "Inside the Icon: A Closer Look at Gessi’s Flagship Collections"
+  src: "/images/journal/gessi-brushed-brass-bath-shower-mixer-by-fluted-glass-and-green-marble.jpg"
+  alt: "Gessi brushed brass bath shower mixer by fluted glass and green marble"
 tags: ["gessi", "effe"]
 legacyUrl: "/blog/inside-the-icon-a-closer-look-at-gessis-flagship-collections"
 decision: "review"

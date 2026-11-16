@@ -3,8 +3,8 @@ title: "Kitchen Trends 2026: Where SieMatic Defines the Future of Luxury Living"
 summary: "Warmer timbers, earthy tones and kitchens that open into the living space: the 2026 trends, and how SieMatic's collections answer them."
 date: "2026-04-14"
 hero:
-  src: "/images/journal/kitchen-trends-2026-where-siematic-defines-the-future-of-luxury-living-01.jpg"
-  alt: "Kitchen Trends 2026: Where SieMatic Defines the Future of Luxury Living"
+  src: "/images/journal/walk-in-pantry-in-dark-siematic-units-with-a-marble-splashback-and-lit.jpg"
+  alt: "Walk-in pantry in dark SieMatic units with a marble splashback and lit shelves"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/kitchen-trends-2026-where-siematic-defines-the-future-of-luxury-living"
 decision: "review"

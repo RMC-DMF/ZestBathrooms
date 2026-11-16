@@ -5,9 +5,9 @@ location: "Stockport"
 area: "manchester"
 client: "Capital & Centric"
 hero:
-  src: "/images/projects/weir-mill-01.jpg"
-  alt: "Weir Mill"
-gallery: [{"src":"/images/projects/weir-mill-02.jpg","alt":""}]
+  src: "/images/projects/cafe-bar-beneath-brick-arches-weir-mill-stockport.jpg"
+  alt: "Cafe bar beneath brick arches, Weir Mill, Stockport"
+gallery: [{"src":"/images/projects/people-at-tables-under-brick-arches-and-planting-weir-mill-stockport.jpg","alt":"People at tables under brick arches and planting, Weir Mill, Stockport"}]
 date: "2025-09-14"
 legacyUrl: "/projects/weir-mill"
 sector: "Residential"

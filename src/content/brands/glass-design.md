@@ -4,15 +4,15 @@ category: Sanitaryware
 country: Italy
 summary: 'Glass Design makes basins, baths and furniture in glass and resin in Tuscany — coloured, textured and sometimes translucent pieces that no other material can do.'
 hero:
-  src: /images/brands/glass-design-at-zest-bathrooms-kitchens-01.webp
-  alt: Glass Design
+  src: /images/brands/glass-design-amber-cut-glass-vessel-basin-with-a-black-wall-mounted.webp
+  alt: "Glass Design amber cut-glass vessel basin with a black wall-mounted tap"
 gallery:
-- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-02.webp
-  alt: ''
-- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-03.webp
-  alt: ''
-- src: /images/brands/glass-design-at-zest-bathrooms-kitchens-04.webp
-  alt: ''
+- src: /images/brands/glass-design-green-faceted-glass-basin-with-brass-wall-controls.webp
+  alt: "Glass Design green faceted glass basin with brass wall controls"
+- src: /images/brands/glass-design-cobalt-blue-glass-bath-by-a-window-over-a-mountain-lake.webp
+  alt: "Glass Design cobalt blue glass bath by a window over a mountain lake"
+- src: /images/brands/glass-design-blue-translucent-glass-bath-with-a-black-floor-standing.webp
+  alt: "Glass Design blue translucent glass bath with a black floor-standing filler"
 legacyUrl: /about/glass-design-at-zest-bathrooms-kitchens
 heritage: Glass Design basins are hand-finished in Tuscany and no two are quite alike. We specify them as the single statement in an otherwise quiet room.
 tagline: Hand-finished basins from Tuscany.

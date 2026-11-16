@@ -16,14 +16,14 @@ gallery:
   alt: Gaggenau Minimalistic series in an open-plan kitchen
 - src: /images/brands/press/gaggenau-expressive-knobs.jpg
   alt: Gaggenau Expressive series control knobs
-- src: /images/brands/press/gaggenau-400-series-oven.jpg
-  alt: Gaggenau 400 series oven
+- src: /images/brands/press/gaggenau-400-series-oven-set-into-dark-timber-cabinetry.jpg
+  alt: "Gaggenau 400 series oven set into dark timber cabinetry"
 - src: /images/brands/press/gaggenau-induction-marble-island.jpg
   alt: Gaggenau induction cooktop in a marble island
 - src: /images/brands/press/gaggenau-vario-cooktops.jpg
   alt: Gaggenau Vario 400 series cooktops
-- src: /images/brands/press/gaggenau-gas-cooktop.jpg
-  alt: Gaggenau gas cooktop
+- src: /images/brands/press/gaggenau-gas-hob-with-brass-burners-and-steel-control-knobs.jpg
+  alt: "Gaggenau gas hob with brass burners and steel control knobs"
 - src: /images/brands/gaggenau-zest-bathrooms-kitchens-01.webp
   alt: Gaggenau on display at Zest
 heritage: Gaggenau is the appliance house we specify when cooking is the point of the kitchen. We plan it with the SieMatic cabinetry from the first drawing, because that is the only way it fits.

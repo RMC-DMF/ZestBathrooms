@@ -4,9 +4,9 @@ summary: "Information Client: Audley Retirement Architect:Gaunt Francis Project:
 location: "Redwood, Bristol"
 client: "Audley Retirement"
 hero:
-  src: "/images/projects/audley-villages-redwood-bristol-01.jpg"
-  alt: "Audley Villages : Redwood, Bristol"
-gallery: [{"src":"/images/projects/audley-villages-redwood-bristol-02.jpg","alt":""}, {"src":"/images/projects/audley-villages-redwood-bristol-03.jpg","alt":""}]
+  src: "/images/projects/audley-villages-redwood-retirement-village-entrance-bristol.jpg"
+  alt: "Audley Villages Redwood retirement village entrance, Bristol"
+gallery: [{"src":"/images/projects/audley-redwood-village-buildings-from-the-drive-bristol.jpg","alt":"Audley Redwood village buildings from the drive, Bristol"}, {"src":"/images/projects/apartment-bathroom-with-a-bath-wall-hung-basin-and-beige-tiles-audley.jpg","alt":"Apartment bathroom with a bath, wall-hung basin and beige tiles, Audley Redwood"}]
 date: "2024-09-24"
 legacyUrl: "/projects/audley-villages-redwood-bristol"
 architect: "Gaunt Francis"

@@ -5,9 +5,9 @@ location: "Sale, Greater Manchester"
 area: "manchester"
 brands: ["siematic", "siemens"]
 hero:
-  src: "/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-01.webp"
-  alt: "Contemporary SieMatic Kitchen with Bespoke Dining Area"
-gallery: [{"src":"/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-02.webp","alt":""}, {"src":"/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-03.webp","alt":""}, {"src":"/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-04.webp","alt":""}, {"src":"/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-05.webp","alt":""}, {"src":"/images/case-studies/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions-06.jpg","alt":""}]
+  src: "/images/case-studies/kitchens/dark-timber-island-with-a-raised-wooden-bar-and-bar-stools-under-cone.webp"
+  alt: "Dark timber island with a raised wooden bar and bar stools under cone pendants"
+gallery: [{"src":"/images/case-studies/kitchens/kitchen-island-with-timber-breakfast-bar-and-dining-area-by-the-garden.webp","alt":"Kitchen island with timber breakfast bar and dining area by the garden doors"}, {"src":"/images/case-studies/kitchens/siematic-kitchen-in-light-oak-with-a-dark-splashback-island-and.webp","alt":"SieMatic kitchen in light oak with a dark splashback, island and bespoke dining table"}, {"src":"/images/case-studies/kitchens/oak-siematic-island-and-dining-table-under-black-pendant-lights.webp","alt":"Oak SieMatic island and dining table under black pendant lights"}, {"src":"/images/case-studies/kitchens/new-build-houses-with-brick-and-timber-gables-behind-a-red-hedge.webp","alt":"New-build houses with brick and timber gables behind a red hedge"}, {"src":"/images/case-studies/kitchens/row-of-gabled-new-build-houses-with-integral-garages.jpg","alt":"Row of gabled new-build houses with integral garages"}]
 date: "2026-06-09"
 legacyUrl: "/kitchens/siematic-slc-kitchen-design-bespoke-dining-storage-solutions"
 room: "kitchens"

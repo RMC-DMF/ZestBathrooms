@@ -3,8 +3,8 @@ title: "Intelligent Bathrooms: The Future of Luxury, Technology and Wellness at 
 summary: "Digital showers, integrated lighting and wellness technology: what makes a bathroom intelligent, and what is worth specifying for a home or a development."
 date: "2026-03-16"
 hero:
-  src: "/images/journal/intelligent-bathrooms-the-future-of-luxury-technology-and-wellness-at-home-01.jpg"
-  alt: "Intelligent Bathrooms: The Future of Luxury, Technology and Wellness at Home"
+  src: "/images/journal/spa-bathroom-with-a-black-stone-bath-living-wall-arched-backlit-mirror.jpg"
+  alt: "Spa bathroom with a black stone bath, living wall, arched backlit mirror and timber slats"
 tags: ["gessi", "axor", "hansgrohe", "duravit", "effe"]
 legacyUrl: "/blog/intelligent-bathrooms-the-future-of-luxury-technology-and-wellness-at-home"
 decision: "review"

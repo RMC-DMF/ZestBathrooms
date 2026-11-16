@@ -10,8 +10,8 @@ hero:
 gallery:
 - src: /images/brands/press/quooker-fusion-stainless.jpg
   alt: Quooker Fusion in stainless steel
-- src: /images/brands/press/quooker-flex-gunmetal.jpg
-  alt: Quooker Flex in gunmetal
+- src: /images/brands/press/quooker-flex-tap-in-gunmetal-on-a-black-kitchen-island.jpg
+  alt: "Quooker Flex tap in gunmetal on a black kitchen island"
 - src: /images/brands/press/quooker-fusion-patinated-brass.jpg
   alt: Quooker Fusion in patinated brass
 - src: /images/brands/press/quooker-flex-black.jpg

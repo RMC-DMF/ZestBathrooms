@@ -4,9 +4,9 @@ summary: "Zest fitted 226 student accommodation bathrooms in this vibrant London
 location: "Elephant & Castle, London"
 client: "HG Construction"
 hero:
-  src: "/images/projects/avonmouth-street-01.jpg"
-  alt: "Avonmouth Street"
-gallery: [{"src":"/images/projects/avonmouth-street-02.jpg","alt":""}]
+  src: "/images/projects/avonmouth-street-residential-tower-and-brick-block-london.jpg"
+  alt: "Avonmouth Street residential tower and brick block, London"
+gallery: [{"src":"/images/projects/avonmouth-street-development-in-elephant-and-castle-london.jpg","alt":"Avonmouth Street development in Elephant and Castle, London"}]
 date: "2025-01-29"
 legacyUrl: "/projects/avonmouth-street"
 sector: "Student"

@@ -4,8 +4,8 @@ summary: "This contemporary urban development required bathroom designs that com
 location: "Southwark, London"
 client: "HG Construction"
 hero:
-  src: "/images/projects/glengall-road-01.jpg"
-  alt: "Glengall Road"
+  src: "/images/projects/glengall-road-apartment-development-beside-a-retained-victorian.jpg"
+  alt: "Glengall Road apartment development beside a retained Victorian building, London"
 date: "2025-01-03"
 legacyUrl: "/projects/glengall-road"
 sector: "Student"

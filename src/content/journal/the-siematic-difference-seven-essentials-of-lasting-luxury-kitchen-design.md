@@ -3,8 +3,8 @@ title: "The SieMatic Difference: Seven Essentials of Lasting Luxury Kitchen Desi
 summary: "Seven things that make a SieMatic kitchen last — from architectural proportion and material quality to storage, appliances and the way it is planned."
 date: "2026-01-26"
 hero:
-  src: "/images/journal/the-siematic-difference-seven-essentials-of-lasting-luxury-kitchen-design-01.jpg"
-  alt: "The SieMatic Difference: Seven Essentials of Lasting Luxury Kitchen Design"
+  src: "/images/journal/siematic-sink-run-with-a-pull-out-tap-open-glass-cabinet-and-steam.jpg"
+  alt: "SieMatic sink run with a pull-out tap, open glass cabinet and steam oven"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/the-siematic-difference-seven-essentials-of-lasting-luxury-kitchen-design"
 decision: "review"

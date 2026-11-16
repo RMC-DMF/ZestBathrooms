@@ -18,13 +18,13 @@ const facts = [
 const kitchens = [
   { src: p('42'), alt: 'Book-matched marble island in a SieMatic display' },
   { src: p('73', 'webp'), alt: 'Marble splashback and brass tap, SieMatic display' },
-  { src: p('03'), alt: 'Brass tap on a slate worktop, Zest showroom' },
+  { src: '/images/pages/brass-quooker-tap-and-black-tempest-stone-sink-run-zest-showroom.jpg', alt: 'Brass tap on a slate worktop, Zest showroom' },
   { src: p('38'), alt: 'Marble worktop with a white undermount sink and brass fittings' },
   { src: p('58'), alt: 'Walnut and white SieMatic kitchen with planted island' },
 ];
 const bathrooms = [
-  { src: p('53'), alt: 'Printed marble shower panel with arched trees' },
-  { src: p('08'), alt: 'Terrazzo basin wall with a round backlit mirror' },
+  { src: '/images/pages/gessi-shower-with-black-controls-between-tree-print-panels-and-white.jpg', alt: 'Printed marble shower panel with arched trees' },
+  { src: '/images/pages/terrazzo-wall-with-a-round-illuminated-mirror-over-an-oak-vanity-zest.jpg', alt: 'Terrazzo basin wall with a round backlit mirror' },
   { src: p('21'), alt: 'Botanical-print shower enclosure' },
   { src: p('74'), alt: 'Freestanding bath in a plaster-pink setting' },
   { src: p('43'), alt: 'Striped marble and pink plaster' },
@@ -34,7 +34,7 @@ const schema = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: 'T
 <Page title="The Showroom — Brookdale Place, Chester" description="Visit the Zest showroom in Chester: four SieMatic kitchen displays, more than forty bathroom settings over two floors, working showers and steam, a tile studio and, from January 2027, the Gessi Haute Culture showroom." accent="design" eyebrow="The showroom — Brookdale Place, Chester" heading="Five thousand square feet of rooms you can stand in." lead="Four SieMatic kitchens, forty-odd bathrooms, working water and a tile studio, two minutes from the city walls. Book an hour with a designer and walk it properly." hero={{ src: p('19'), alt: 'Bathroom display with a walk-in shower and long vanity, Zest showroom, Chester' }} schema={schema} cta={{ title: 'Plan a visit.', text: 'Drop in Monday to Saturday, or book an hour with a designer so the right person is free when you arrive.', label: 'Book a free design appointment', href: site.cta.href }}>
   <FactStrip facts={facts} dark />
 
-  <Editorial tone="light" accent="kitchens" image={p('67', 'webp')} alt="White SieMatic kitchen with a stone-topped island and leather bar stools, Zest showroom" detail={p('03')} detailAlt="Brass tap on a slate worktop" eyebrow="Ground floor — kitchens" title="Four SieMatic kitchens, with the appliances in." text="Around a thousand square feet of kitchen, each display a different answer: the 2026 scheme in graphite smoked oak and Black Tempest stone, a marble island, a walnut-and-white family kitchen. Gaggenau, Miele, Siemens, Bora and Quooker are built into the runs, so you judge the whole kitchen rather than a door sample." href="/kitchens" linkLabel="Kitchens at Zest" />
+  <Editorial tone="light" accent="kitchens" image={p('67', 'webp')} alt="White SieMatic kitchen with a stone-topped island and leather bar stools, Zest showroom" detail={'/images/pages/brass-quooker-tap-and-black-tempest-stone-sink-run-zest-showroom.jpg'} detailAlt="Brass tap on a slate worktop" eyebrow="Ground floor — kitchens" title="Four SieMatic kitchens, with the appliances in." text="Around a thousand square feet of kitchen, each display a different answer: the 2026 scheme in graphite smoked oak and Black Tempest stone, a marble island, a walnut-and-white family kitchen. Gaggenau, Miele, Siemens, Bora and Quooker are built into the runs, so you judge the whole kitchen rather than a door sample." href="/kitchens" linkLabel="Kitchens at Zest" />
   <Gallery images={kitchens} max={5} context="The Zest showroom, Chester" />
 
   <Editorial accent="bathrooms" flip image={p('46')} alt="Pink plaster bathroom with a striped marble shower and brass frame, Zest showroom" detail={p('20')} detailAlt="Twin countertop basins with brass mixers" eyebrow="Two floors — bathrooms" title="Forty settings, from cloakroom to spa." text="Four thousand square feet across two floors: Gessi, AXOR and Dornbracht brassware; Duravit, Villeroy & Boch, Cielo and Novello ceramics and furniture; Bette and Matki baths and enclosures; Artelinea, Oasis and Thomas Crapper for the rooms that want character. Every setting is a room, not a row of products." href="/bathrooms" linkLabel="Bathrooms at Zest" />

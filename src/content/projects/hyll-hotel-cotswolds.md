@@ -4,8 +4,8 @@ summary: "For the Hyll Hotel in the Cotswolds, Zest curated and supplied bathroo
 location: "Cotswolds"
 client: "Youth Studio (interior design)"
 hero:
-  src: "/images/projects/hyll-hotel-cotswolds-01.webp"
-  alt: "Hyll Hotel, Cotswolds"
+  src: "/images/projects/guest-bedroom-in-dark-tones-hyll-hotel-cotswolds.webp"
+  alt: "Guest bedroom in dark tones, Hyll Hotel, Cotswolds"
 date: "2025-11-24"
 legacyUrl: "/projects/hyll-hotel-cotswolds"
 sector: "Hospitality"

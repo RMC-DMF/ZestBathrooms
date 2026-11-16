@@ -16,8 +16,8 @@ gallery:
   alt: Merlyn Black framed walk-in
 - src: /images/brands/press/merlyn-8mm-bronze.jpg
   alt: Merlyn 8mm framed wet room in bronze
-- src: /images/brands/press/merlyn-bathscreen.jpg
-  alt: Merlyn bath screen
+- src: /images/brands/press/merlyn-brushed-brass-bath-screen-and-shower-over-a-stone-clad-bath.jpg
+  alt: "Merlyn brushed brass bath screen and shower over a stone-clad bath"
 heritage: 'Merlyn is the enclosure we have put into hundreds of apartments: thoughtfully engineered, quick to fit, easy to live with, and with a service team that answers the phone. For a family bathroom it is often the sensible answer.'
 tagline: Engineered glass from Kilkenny.
 founded: '2000'

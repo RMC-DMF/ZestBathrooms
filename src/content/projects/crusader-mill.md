@@ -5,9 +5,9 @@ location: "Manchester"
 area: "manchester"
 client: "Capital & Centric"
 hero:
-  src: "/images/projects/crusader-mill-01.jpg"
-  alt: "Crusader Mill"
-gallery: [{"src":"/images/projects/crusader-mill-02.jpg","alt":""}, {"src":"/images/projects/crusader-mill-03.jpg","alt":""}]
+  src: "/images/projects/crusader-mill-courtyard-with-gardens-between-converted-mill-buildings.jpg"
+  alt: "Crusader Mill courtyard with gardens between converted mill buildings, Manchester"
+gallery: [{"src":"/images/projects/crusader-mill-and-its-capital-and-centric-chimney-manchester.jpg","alt":"Crusader Mill and its Capital & Centric chimney, Manchester"}, {"src":"/images/projects/crusader-mill-apartment-kitchen-and-living-room-with-exposed-brick-and.jpg","alt":"Crusader Mill apartment kitchen and living room with exposed brick and beams"}]
 date: "2025-02-25"
 legacyUrl: "/projects/crusader-mill"
 sector: "Residential"

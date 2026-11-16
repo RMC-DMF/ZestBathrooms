@@ -4,9 +4,9 @@ summary: "Set in the heart of Surrey, this exclusive residential project showcas
 location: "Cobham, Surrey"
 client: "Audley Villages"
 hero:
-  src: "/images/projects/fairmile-cobham-surrey-01.jpg"
-  alt: "Fairmile – Cobham, Surrey"
-gallery: [{"src":"/images/projects/fairmile-cobham-surrey-02.jpg","alt":""}, {"src":"/images/projects/fairmile-cobham-surrey-03.jpg","alt":""}]
+  src: "/images/projects/crusader-mill-apartment-bathroom-with-grey-stone-tiles-and-a-bronze.jpg"
+  alt: "Crusader Mill apartment bathroom with grey stone tiles and a bronze tap"
+gallery: [{"src":"/images/projects/residents-swimming-pool-fairmile-cobham-surrey.jpg","alt":"Residents' swimming pool, Fairmile, Cobham, Surrey"}, {"src":"/images/projects/fairmile-retirement-village-buildings-and-gardens-cobham-surrey.jpg","alt":"Fairmile retirement village buildings and gardens, Cobham, Surrey"}]
 date: "2024-12-04"
 legacyUrl: "/projects/fairmile-cobham-surrey"
 sector: "Retirement Living"

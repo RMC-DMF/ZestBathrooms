@@ -3,8 +3,8 @@ title: "Sustainable Luxury Bathrooms: Three Brands Setting the Standard"
 summary: "Discover how Gessi, Bette and Hansgrohe are redefining sustainable luxury bathroom design through innovative materials, water-saving technology and long-lasting craftsmanship."
 date: "2026-05-12"
 hero:
-  src: "/images/journal/sustainable-luxury-bathrooms-three-brands-setting-the-standard-01.webp"
-  alt: "Sustainable Luxury Bathrooms: Three Brands Setting the Standard"
+  src: "/images/journal/hotel-style-bathroom-and-bedroom-with-a-timber-lattice-living-wall-and.webp"
+  alt: "Hotel-style bathroom and bedroom with a timber lattice, living wall and freestanding bath"
 tags: ["gessi", "bette", "hansgrohe", "effe"]
 legacyUrl: "/blog/sustainable-luxury-bathrooms-three-brands-setting-the-standard"
 decision: "review"

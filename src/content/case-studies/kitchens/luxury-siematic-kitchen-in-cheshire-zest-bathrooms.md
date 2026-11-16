@@ -5,9 +5,9 @@ location: "Cheshire"
 area: "cheshire"
 brands: ["siematic", "gaggenau"]
 hero:
-  src: "/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-01.webp"
-  alt: "Contemporary SieMatic Kitchen & Pantry, Abbot’s Bank"
-gallery: [{"src":"/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-02.webp","alt":""}, {"src":"/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-03.webp","alt":""}, {"src":"/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-04.webp","alt":""}, {"src":"/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-05.webp","alt":""}, {"src":"/images/case-studies/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms-06.webp","alt":""}]
+  src: "/images/case-studies/kitchens/dark-siematic-island-with-open-shelving-under-a-glazed-gable-abbots.webp"
+  alt: "Dark SieMatic island with open shelving under a glazed gable, Abbot's Bank, Cheshire"
+gallery: [{"src":"/images/case-studies/kitchens/siematic-island-in-dark-oak-with-a-ceramic-top-and-downdraft-hob-under.webp","alt":"SieMatic island in dark oak with a ceramic top and downdraft hob under track lighting, Abbot's Bank"}, {"src":"/images/case-studies/kitchens/island-with-a-timber-dining-extension-and-stools-living-room-beyond.webp","alt":"Island with a timber dining extension and stools, living room beyond, Abbot's Bank"}, {"src":"/images/case-studies/kitchens/dark-siematic-island-with-open-display-niche-and-a-glass-fronted-wall.webp","alt":"Dark SieMatic island with open display niche and a glass-fronted wall unit, Abbot's Bank"}, {"src":"/images/case-studies/kitchens/siematic-kitchen-with-a-dark-island-and-lit-glass-cabinets-under-a.webp","alt":"SieMatic kitchen with a dark island and lit glass cabinets under a vaulted glazed gable, Abbot's Bank"}, {"src":"/images/case-studies/kitchens/island-dining-table-in-dark-timber-with-upholstered-stools-fireplace.webp","alt":"Island dining table in dark timber with upholstered stools, fireplace beyond, Abbot's Bank"}]
 date: "2026-09-24"
 legacyUrl: "/kitchens/luxury-siematic-kitchen-in-cheshire-zest-bathrooms"
 room: "kitchens"

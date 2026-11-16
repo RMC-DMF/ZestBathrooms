@@ -3,8 +3,8 @@ title: "3 Ways We Make Your Kitchen & Bathroom Projects Seamless"
 summary: "How the Zest project office keeps multi-unit kitchen and bathroom supply on programme: clear communication, logistics handled, and problems solved before site."
 date: "2025-11-13"
 hero:
-  src: "/images/journal/3-ways-we-make-your-kitchen-bathroom-projects-seamless-01.webp"
-  alt: "3 Ways We Make Your Kitchen & Bathroom Projects Seamless"
+  src: "/images/journal/red-brick-apartment-development-beside-a-victorian-industrial-building.webp"
+  alt: "Red-brick apartment development beside a Victorian industrial building"
 tags: ["effe"]
 legacyUrl: "/blog/3-ways-we-make-your-kitchen-bathroom-projects-seamless"
 decision: "review"

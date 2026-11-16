@@ -5,9 +5,9 @@ location: "Manchester"
 area: "manchester"
 client: "Renaker"
 hero:
-  src: "/images/projects/renaker-deansgate-square-01.jpg"
-  alt: "Renaker Deansgate Square"
-gallery: [{"src":"/images/projects/renaker-deansgate-square-02.jpg","alt":""}]
+  src: "/images/projects/deansgate-square-towers-on-the-manchester-skyline-at-dusk.jpg"
+  alt: "Deansgate Square towers on the Manchester skyline at dusk"
+gallery: [{"src":"/images/projects/deansgate-square-podium-garden-at-dusk-manchester.jpg","alt":"Deansgate Square podium garden at dusk, Manchester"}]
 date: "2025-09-20"
 legacyUrl: "/projects/renaker-deansgate-square"
 sector: "Residential"

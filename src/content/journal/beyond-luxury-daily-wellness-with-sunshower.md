@@ -3,8 +3,8 @@ title: "Beyond Luxury: Daily Wellness with Sunshower"
 summary: "Sunshower combines infrared warmth and UV light in the shower or steam room. What it does, and how it fits into a shower or steam room."
 date: "2025-09-22"
 hero:
-  src: "/images/journal/beyond-luxury-daily-wellness-with-sunshower-01.webp"
-  alt: "Beyond Luxury: Daily Wellness with Sunshower"
+  src: "/images/journal/sunshower-infrared-and-uv-unit-set-into-a-shower-wall-with-a-walk-in.webp"
+  alt: "Sunshower infrared and UV unit set into a shower wall with a walk-in tray"
 tags: ["effe"]
 legacyUrl: "/blog/beyond-luxury-daily-wellness-with-sunshower"
 decision: "review"

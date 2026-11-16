@@ -5,9 +5,9 @@ location: "Manchester"
 area: "manchester"
 client: "Domis"
 hero:
-  src: "/images/projects/glassworks-01.jpg"
-  alt: "Glassworks"
-gallery: [{"src":"/images/projects/glassworks-02.jpg","alt":""}]
+  src: "/images/projects/render-of-the-glassworks-tower-in-manchester-city-centre.jpg"
+  alt: "Render of the Glassworks tower in Manchester city centre"
+gallery: [{"src":"/images/projects/render-of-the-glassworks-tower-rising-behind-brick-buildings.jpg","alt":"Render of the Glassworks tower rising behind brick buildings, Manchester"}]
 date: "2024-12-29"
 legacyUrl: "/projects/glassworks"
 sector: "Commercial"

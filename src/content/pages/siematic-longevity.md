@@ -2,9 +2,9 @@
 title: "SieMatic Kitchens-Where Design Meets Longevity"
 legacyUrl: "/siematic-kitchens-where-design-meets-longevity"
 hero:
-  src: "/images/pages/siematic-kitchens-where-design-meets-longevity-01.jpg"
-  alt: "SieMatic Kitchens-Where Design Meets Longevity"
-gallery: [{"src":"/images/pages/siematic-kitchens-where-design-meets-longevity-02.webp","alt":""}]
+  src: "/images/pages/siematic-glass-and-steel-display-shelving-above-a-marble-splashback.jpg"
+  alt: "SieMatic glass and steel display shelving above a marble splashback"
+gallery: [{"src":"/images/pages/siematic-island-in-bronze-with-tall-timber-units-and-a-wine-column.webp","alt":"SieMatic island in bronze with tall timber units and a wine column"}]
 ---
 
 Bespoke SieMatic kitchens Cheshire

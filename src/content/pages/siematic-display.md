@@ -2,9 +2,9 @@
 title: "Introducing Our New SieMatic Display"
 legacyUrl: "/introducing-our-new-siematic-display"
 hero:
-  src: "/images/pages/introducing-our-new-siematic-display-01.webp"
-  alt: "Introducing Our New SieMatic Display"
-gallery: [{"src":"/images/pages/introducing-our-new-siematic-display-02.jpg","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-03.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-04.jpg","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-05.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-06.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-07.webp","alt":""}, {"src":"/images/pages/introducing-our-new-siematic-display-08.webp","alt":""}]
+  src: "/images/pages/downdraft-extractor-vent-in-a-matt-black-hob-close-up-zest-siematic.webp"
+  alt: "Downdraft extractor vent in a matt black hob, close up, Zest SieMatic display"
+gallery: [{"src":"/images/pages/black-tempest-stone-worktop-and-smoked-oak-siematic-units-zest.jpg","alt":"Black Tempest stone worktop and smoked oak SieMatic units, Zest showroom"}, {"src":"/images/pages/brushed-brass-tap-on-a-black-tempest-stone-worktop-zest-siematic.webp","alt":"Brushed brass tap on a Black Tempest stone worktop, Zest SieMatic display"}, {"src":"/images/pages/graphite-siematic-tall-units-with-a-built-in-oven-and-brass-light.jpg","alt":"Graphite SieMatic tall units with a built-in oven and brass light channel"}, {"src":"/images/pages/siematic-display-in-graphite-and-smoked-oak-with-a-lit-glass-wall.webp","alt":"SieMatic display in graphite and smoked oak with a lit glass wall cabinet"}, {"src":"/images/pages/brushed-bronze-waste-plug-close-up.webp","alt":"Brushed bronze waste plug, close up"}, {"src":"/images/pages/smoked-oak-siematic-fronts-with-a-brass-light-channel-close-up.webp","alt":"Smoked oak SieMatic fronts with a brass light channel, close up"}, {"src":"/images/pages/2026-siematic-display-with-a-black-tempest-island-and-glass-wall.webp","alt":"2026 SieMatic display with a Black Tempest island and glass wall cabinets, Zest showroom"}]
 ---
 
 Unveiled in spring 2026 and curated exclusively by Zest, the display pairs graphite smoked-oak veneer cabinetry with Black Tempest porcelain stoneware — a palette chosen for depth and longevity rather than fashion. Gaggenau appliances and a Quooker water system are integrated into the run so the architecture reads uninterrupted; lighting by Radnor brings warmth to the stone and shadow to the oak.

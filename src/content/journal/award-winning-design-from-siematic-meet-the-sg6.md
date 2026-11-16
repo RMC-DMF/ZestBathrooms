@@ -3,8 +3,8 @@ title: "Award-Winning Design from SieMatic: Meet the SG6"
 summary: "We are proud to share that the SieMatic SG6 has been awarded the Red Dot Design Award 2025."
 date: "2025-06-25"
 hero:
-  src: "/images/journal/award-winning-design-from-siematic-meet-the-sg6-01.jpg"
-  alt: "Award-Winning Design from SieMatic: Meet the SG6"
+  src: "/images/journal/siematic-kitchen-in-dark-timber-and-cream-with-an-island-and-slatted.jpg"
+  alt: "SieMatic kitchen in dark timber and cream with an island and slatted ceiling"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/award-winning-design-from-siematic-meet-the-sg6"
 decision: "review"

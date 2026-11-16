@@ -6,7 +6,7 @@ featured: true
 order: 1
 summary: 'SieMatic is the only kitchen we sell: four displays in Chester across the Pure, Urban and Classic design languages, with Gaggenau, Miele, Siemens, Bora and Quooker built in.'
 hero:
-  src: /images/pages/siematic-kitchens-31.webp
+  src: /images/pages/siematic-kitchen-in-an-open-plan-loft-with-a-brass-edged-island-and.webp
   alt: SieMatic Pure kitchen opening onto a terrace
 gallery:
 - src: /images/case-studies/kitchens/walnut-farm-02.webp
@@ -15,28 +15,28 @@ gallery:
   alt: Dark timber SieMatic kitchen with a taupe island, designed by Zest
 - src: /images/case-studies/kitchens/walnut-farm-07.webp
   alt: Open SieMatic drawer in a walnut island
-- src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-02.webp
-  alt: ''
-- src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-03.webp
-  alt: ''
-- src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-05.webp
-  alt: ''
-- src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-06.webp
-  alt: ''
-- src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-07.webp
-  alt: ''
-- src: /images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-01.webp
-  alt: ''
-- src: /images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-02.webp
-  alt: ''
-- src: /images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp
-  alt: ''
-- src: /images/journal/sustainable-luxury-bathrooms-three-brands-setting-the-standard-04.webp
-  alt: ''
-- src: /images/journal/kitchen-trends-2026-where-siematic-defines-the-future-of-luxury-living-01.jpg
-  alt: ''
-- src: /images/journal/kitchen-trends-2026-where-siematic-defines-the-future-of-luxury-living-02.jpg
-  alt: ''
+- src: /images/journal/backlit-onyx-behind-bronze-framed-siematic-shelving-and-drawers.webp
+  alt: "Backlit onyx behind bronze-framed SieMatic shelving and drawers"
+- src: /images/journal/siematic-bronze-shelving-unit-lit-against-a-veined-onyx-wall.webp
+  alt: "SieMatic bronze shelving unit lit against a veined onyx wall"
+- src: /images/journal/thin-white-stone-worktop-over-a-recessed-handle-and-timber-tall-unit.webp
+  alt: "Thin white stone worktop over a recessed handle and timber tall unit, close up"
+- src: /images/journal/handleless-siematic-fronts-with-a-shadow-gap-grip-close-up.webp
+  alt: "Handleless SieMatic fronts with a shadow-gap grip, close up"
+- src: /images/journal/bevelled-edge-of-a-dark-marble-worktop-close-up.webp
+  alt: "Bevelled edge of a dark marble worktop, close up"
+- src: /images/journal/green-marble-worktop-edge-over-light-oak-with-a-bronze-pull-handle.webp
+  alt: "Green marble worktop edge over light oak with a bronze pull handle, close up"
+- src: /images/journal/white-siematic-island-with-bronze-open-shelving-in-a-room-with-dark.webp
+  alt: "White SieMatic island with bronze open shelving in a room with dark stone floors"
+- src: /images/journal/bronze-handle-on-a-smoked-glass-siematic-cabinet-door-close-up.webp
+  alt: "Bronze handle on a smoked glass SieMatic cabinet door, close up"
+- src: /images/journal/siematic-island-in-bronze-with-tall-timber-units-and-trailing-plants.webp
+  alt: "SieMatic island in bronze with tall timber units and trailing plants above"
+- src: /images/journal/walk-in-pantry-in-dark-siematic-units-with-a-marble-splashback-and-lit.jpg
+  alt: "Walk-in pantry in dark SieMatic units with a marble splashback and lit shelves"
+- src: /images/journal/siematic-tall-units-in-walnut-with-an-integrated-desk-and-open-shelves.jpg
+  alt: "SieMatic tall units in walnut with an integrated desk and open shelves"
 heritage: 'We became a SieMatic studio because it is the kitchen we would want ourselves: the original handleless system, still family-made in Löhne, and engineered so that a design drawn in Chester arrives on site exactly as drawn. We have designed and supplied SieMatic from Chester since 2008.'
 tagline: The handleless original, since 1960.
 founded: '1929'

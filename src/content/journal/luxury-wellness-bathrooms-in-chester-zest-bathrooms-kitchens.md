@@ -3,8 +3,8 @@ title: "Why Wellness Has Moved from the Spa to the Bathroom"
 summary: "Steam, light and natural materials: why homeowners across Chester and the North West now plan the bathroom as a place to recover, not just to wash."
 date: "2026-09-14"
 hero:
-  src: "/images/journal/luxury-wellness-bathrooms-in-chester-zest-bathrooms-kitchens-01.webp"
-  alt: "Why Wellness Has Moved from the Spa to the Bathroom"
+  src: "/images/journal/rain-shower-head-with-coloured-light-behind-glass-and-planting.webp"
+  alt: "Rain shower head with coloured light behind glass and planting"
 tags: ["effe"]
 legacyUrl: "/blog/luxury-wellness-bathrooms-in-chester-zest-bathrooms-kitchens"
 decision: "review"

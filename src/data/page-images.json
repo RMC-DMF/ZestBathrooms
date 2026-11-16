@@ -1,48 +1,48 @@
 {
  "siematic": {
   "collections": {
-   "pure": "/images/pages/siematic-kitchens-12.webp",
-   "urban": "/images/pages/siematic-kitchens-07.jpg",
-   "classic": "/images/pages/siematic-kitchens-09.jpg",
-   "mondial": "/images/pages/siematic-kitchens-28.jpg"
+   "pure": "/images/pages/teal-metallic-siematic-island-under-display-shelving-with-plants.webp",
+   "urban": "/images/pages/siematic-kitchen-in-a-glass-pavilion-open-to-a-courtyard.jpg",
+   "classic": "/images/pages/siematic-classic-kitchen-with-a-marble-island-and-glass-display-units.jpg",
+   "mondial": "/images/pages/siematic-mondial-kitchen-with-an-antique-mirror-wall-beside-an-indoor.jpg"
   },
   "gallery": [
-   "/images/pages/siematic-kitchens-08.webp",
-   "/images/journal/kitchen-design-trends-03.jpg",
-   "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-05.webp",
-   "/images/pages/our-story-06.jpg",
-   "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-07.webp",
-   "/images/journal/award-winning-design-from-siematic-meet-the-sg6-02.webp",
-   "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-01.webp",
-   "/images/pages/siematic-kitchens-67.jpg"
+   "/images/pages/siematic-classic-kitchen-in-oxblood-with-a-red-marble-island.webp",
+   "/images/journal/marble-worktop-edge-on-a-siematic-island-with-a-recessed-handle-rail.jpg",
+   "/images/journal/thin-white-stone-worktop-over-a-recessed-handle-and-timber-tall-unit.webp",
+   "/images/pages/double-height-siematic-kitchen-with-open-shelving-dining-table-and.jpg",
+   "/images/journal/bevelled-edge-of-a-dark-marble-worktop-close-up.webp",
+   "/images/journal/siematic-kitchen-with-a-stone-island-and-open-shelving-in-a-glass.webp",
+   "/images/journal/green-marble-worktop-edge-over-light-oak-with-a-bronze-pull-handle.webp",
+   "/images/pages/white-siematic-island-and-open-shelving-under-a-sculptural-ceiling.jpg"
   ],
   "display": [
-   "/images/pages/introducing-our-new-siematic-display-05.webp",
-   "/images/pages/introducing-our-new-siematic-display-06.webp",
-   "/images/pages/introducing-our-new-siematic-display-07.webp",
-   "/images/pages/introducing-our-new-siematic-display-08.webp",
-   "/images/pages/our-showroom-04.jpg",
-   "/images/pages/siematic-kitchens-01.webp"
+   "/images/pages/siematic-display-in-graphite-and-smoked-oak-with-a-lit-glass-wall.webp",
+   "/images/pages/brushed-bronze-waste-plug-close-up.webp",
+   "/images/pages/smoked-oak-siematic-fronts-with-a-brass-light-channel-close-up.webp",
+   "/images/pages/2026-siematic-display-with-a-black-tempest-island-and-glass-wall.webp",
+   "/images/pages/graphite-and-smoked-oak-siematic-display-with-a-terracotta-wall-zest.jpg",
+   "/images/pages/graphite-siematic-units-with-a-lit-glass-cabinet-and-stone-island-zest.webp"
   ],
-  "hero": "/images/pages/siematic-kitchens-31.webp"
+  "hero": "/images/pages/siematic-kitchen-in-an-open-plan-loft-with-a-brass-edged-island-and.webp"
  },
  "bathrooms": {
   "gallery": [
-   "/images/pages/bathrooms-01.jpg",
-   "/images/pages/bathrooms-02.jpg",
-   "/images/pages/bathrooms-03.jpg",
-   "/images/pages/bathrooms-04.webp",
-   "/images/pages/bathrooms-05.webp",
-   "/images/pages/bathrooms-06.webp",
-   "/images/pages/bathrooms-07.jpg",
-   "/images/pages/bathrooms-08.webp"
+   "/images/pages/gessi-bronze-basin-taps-on-a-black-marble-vanity-with-a-fluted-front.jpg",
+   "/images/pages/copper-vessel-basin-and-wall-tap-against-black-marble-and-a-round.jpg",
+   "/images/pages/victoria-and-albert-deep-soaking-bath-by-a-garden-window-with-a-timber.jpg",
+   "/images/pages/twin-arched-backlit-mirrors-over-a-dark-vanity-against-grey-marble.webp",
+   "/images/pages/freestanding-bath-black-double-vanity-and-wall-hung-wc-by-a-woodland.webp",
+   "/images/pages/bette-bath-and-basin-in-a-pale-bathroom-with-a-stone-shower-wall.webp",
+   "/images/pages/loft-bathroom-with-a-stone-clad-bath-teal-herringbone-tiles-and-a-walk.jpg",
+   "/images/pages/covered-roof-terrace-with-sofas-at-sunset.webp"
   ]
  },
  "kitchenLife": [
-  "/images/journal/the-siematic-difference-seven-essentials-of-lasting-luxury-kitchen-design-01.jpg",
-  "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp",
-  "/images/journal/kitchen-design-trends-01.jpg",
-  "/images/pages/the-siematic-difference-seven-essentials-of-lasting-luxury-02.jpg",
-  "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-06.webp"
+  "/images/journal/siematic-sink-run-with-a-pull-out-tap-open-glass-cabinet-and-steam.jpg",
+  "/images/journal/bronze-handle-on-a-smoked-glass-siematic-cabinet-door-close-up.webp",
+  "/images/journal/white-marble-effect-island-with-a-black-tap-and-herb-planter.jpg",
+  "/images/pages/siematic-sink-run-in-pale-stone-with-a-pull-out-tap-and-open-glass.jpg",
+  "/images/journal/handleless-siematic-fronts-with-a-shadow-gap-grip-close-up.webp"
  ]
 }

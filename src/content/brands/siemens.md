@@ -13,7 +13,7 @@ gallery:
   alt: Siemens ovens in a timber kitchen
 - src: /images/brands/press/siemens-glassdraft-air.jpg
   alt: Siemens glassdraftAir downdraft extractor
-- src: /images/case-studies/kitchens/modern-open-plan-siematic-kitchen-in-northwich-03.jpg
+- src: /images/case-studies/kitchens/white-island-top-with-an-induction-hob-and-flowers-garden-doors-beyond.jpg
   alt: Siemens appliances in a SieMatic kitchen designed by Zest, Northwich
 heritage: Siemens is the appliance brand we specify most often, because it does everything a serious home kitchen asks of it without making a fuss. Most of the SieMatic kitchens we have designed in Cheshire run on Siemens.
 tagline: The appliances most of our kitchens run on.

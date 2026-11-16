@@ -2,9 +2,9 @@
 title: "About Us"
 legacyUrl: "/about"
 hero:
-  src: "/images/pages/about-01.webp"
-  alt: "About Us"
-gallery: [{"src":"/images/pages/about-02.webp","alt":""}, {"src":"/images/pages/about-03.jpg","alt":""}, {"src":"/images/pages/about-04.webp","alt":""}, {"src":"/images/pages/about-05.webp","alt":""}, {"src":"/images/pages/about-06.webp","alt":""}]
+  src: "/images/pages/open-plan-siematic-kitchen-with-an-island-and-dining-table-in-soft.webp"
+  alt: "Open-plan SieMatic kitchen with an island and dining table in soft daylight"
+gallery: [{"src":"/images/pages/rounded-siematic-island-end-in-taupe-with-a-towel-rail-dark-wall-units.webp","alt":"Rounded SieMatic island end in taupe with a towel rail, dark wall units beyond"}, {"src":"/images/pages/bette-walk-in-shower-in-terracotta-red-with-a-terrazzo-floor-and-sheer.jpg","alt":"Bette walk-in shower in terracotta red with a terrazzo floor and sheer curtains"}, {"src":"/images/pages/dark-siematic-island-with-a-lit-open-shelf-unit-and-herringbone-floor.webp","alt":"Dark SieMatic island with a lit open shelf unit and herringbone floor"}, {"src":"/images/pages/bathroom-with-a-timber-wall-brass-framed-double-vanity-and-backlit.webp","alt":"Bathroom with a timber wall, brass-framed double vanity and backlit mirror"}, {"src":"/images/pages/bette-bath-in-a-black-frame-in-a-glass-bathroom-open-to-the-trees.webp","alt":"Bette bath in a black frame in a glass bathroom open to the trees"}]
 ---
 
 About Zest Bathrooms & Kitchensr

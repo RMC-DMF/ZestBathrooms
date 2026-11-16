@@ -4,31 +4,31 @@ category: Baths
 country: UK
 summary: 'Victoria + Albert makes freestanding baths and basins in Quarrycast — volcanic limestone and resin — in Britain, warm to the touch and light enough to go upstairs.'
 hero:
-  src: /images/brands/victoria-albert-at-zest-bathrooms-kitchens-01.webp
-  alt: Victoria Albert
+  src: /images/brands/victoria-and-albert-freestanding-bath-in-a-grey-bathroom-with-a-garden.webp
+  alt: "Victoria + Albert freestanding bath in a grey bathroom with a garden window"
 gallery:
-- src: /images/brands/victoria-albert-at-zest-bathrooms-kitchens-02.webp
-  alt: ''
-- src: /images/brands/victoria-albert-at-zest-bathrooms-kitchens-03.webp
-  alt: ''
-- src: /images/pages/testimonials-01.jpg
-  alt: ''
-- src: /images/pages/testimonials-02.jpg
-  alt: ''
-- src: /images/pages/design-service-03.jpg
-  alt: ''
-- src: /images/pages/design-service-06.webp
-  alt: ''
-- src: /images/pages/our-showroom-01.jpg
-  alt: ''
-- src: /images/pages/our-story-01.jpg
-  alt: ''
-- src: /images/pages/our-story-02.jpg
-  alt: ''
-- src: /images/pages/our-story-09.jpg
-  alt: ''
-- src: /images/pages/bathrooms-03.jpg
-  alt: ''
+- src: /images/brands/victoria-and-albert-oval-freestanding-bath-on-herringbone-floor-with-a.webp
+  alt: "Victoria + Albert oval freestanding bath on herringbone floor with a black console basin"
+- src: /images/brands/victoria-and-albert-bath-in-front-of-a-timber-wall-with-drop-pendant.webp
+  alt: "Victoria + Albert bath in front of a timber wall with drop pendant lights"
+- src: /images/pages/victoria-and-albert-back-to-wall-bath-in-front-of-a-dark-panelled-wall.jpg
+  alt: "Victoria + Albert back-to-wall bath in front of a dark panelled wall"
+- src: /images/pages/victoria-and-albert-bath-in-black-by-tall-doors-onto-a-planted.jpg
+  alt: "Victoria + Albert bath in black by tall doors onto a planted courtyard"
+- src: /images/pages/victoria-and-albert-freestanding-bath-before-a-full-height-window-onto.jpg
+  alt: "Victoria + Albert freestanding bath before a full-height window onto birch woodland"
+- src: /images/pages/victoria-and-albert-bath-on-a-herringbone-floor-facing-a-woodland.webp
+  alt: "Victoria + Albert bath on a herringbone floor facing a woodland window"
+- src: /images/pages/victoria-and-albert-freestanding-bath-by-a-double-height-window.jpg
+  alt: "Victoria + Albert freestanding bath by a double-height window"
+- src: /images/pages/victoria-and-albert-bath-in-a-victorian-bay-windowed-bathroom-with-a.jpg
+  alt: "Victoria + Albert bath in a Victorian bay-windowed bathroom with a console basin"
+- src: /images/pages/victoria-and-albert-freestanding-bath-by-tall-bay-windows-and-a.jpg
+  alt: "Victoria + Albert freestanding bath by tall bay windows and a fireplace"
+- src: /images/pages/victoria-and-albert-bath-and-console-basin-in-a-victorian-bay-windowed.jpg
+  alt: "Victoria + Albert bath and console basin in a Victorian bay-windowed bathroom"
+- src: /images/pages/victoria-and-albert-deep-soaking-bath-by-a-garden-window-with-a-timber.jpg
+  alt: "Victoria + Albert deep soaking bath by a garden window with a timber vanity"
 legacyUrl: /about/victoria-albert-at-zest-bathrooms-kitchens
 heritage: Victoria + Albert is the freestanding bath we have specified most often, because Quarrycast is warm, repairable and holds a shape no acrylic can. The Vetralla in black sits in our showroom for a reason.
 tagline: Freestanding baths in volcanic limestone.

@@ -5,9 +5,9 @@ location: "Birmingham"
 client: "Beaufort House Developments"
 brands: ["hansgrohe"]
 hero:
-  src: "/images/projects/beaufort-house-birmingham-01.jpg"
-  alt: "Beaufort House, Birmingham"
-gallery: [{"src":"/images/projects/beaufort-house-birmingham-02.jpg","alt":""}]
+  src: "/images/projects/beaufort-house-a-brick-office-building-converted-to-apartments.jpg"
+  alt: "Beaufort House, a brick office building converted to apartments, Birmingham"
+gallery: [{"src":"/images/projects/beaufort-house-from-the-street-birmingham.jpg","alt":"Beaufort House from the street, Birmingham"}]
 date: "2024-11-24"
 legacyUrl: "/projects/beaufort-house-birmingham"
 sector: "Residential"

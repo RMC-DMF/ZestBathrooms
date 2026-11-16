@@ -1,4 +1,5 @@
 ---
+import alts from '../data/alts.json';
 import Pic from '../components/Pic.astro';
 /** Case study and project layout. */
 import Base from './Base.astro';
@@ -35,7 +36,7 @@ const brandEntries = (await Promise.all(brands.map((b) => getEntry('brands', b))
       </div>
     </div>
     {gallery.length > 0 && <section class="wrap study__gallery">
-      {gallery.map((g, i) => <figure class:list={{ wide: i % 3 === 0 }}><Pic src={g.src} alt={g.alt || `${title} — photograph ${i + 2}`} sizes={i % 3 === 0 ? '(max-width: 1280px) 100vw, 1280px' : '(max-width: 900px) 100vw, 50vw'} widths={[480, 768, 1024, 1440, 1920]} /></figure>)}
+      {gallery.map((g, i) => <figure class:list={{ wide: i % 3 === 0 }}><Pic src={g.src} alt={g.alt || (alts as Record<string, string>)[g.src] || `${title} — photograph ${i + 2}`} sizes={i % 3 === 0 ? '(max-width: 1280px) 100vw, 1280px' : '(max-width: 900px) 100vw, 50vw'} widths={[480, 768, 1024, 1440, 1920]} /></figure>)}
     </section>}
     {related.length > 0 && <section class="wrap section">
       <div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">More like this</span><h2>Related work</h2></div>

@@ -2,9 +2,9 @@
 title: "How we work"
 legacyUrl: "/projects/how-we-work"
 hero:
-  src: "/images/pages/how-we-work-01.webp"
-  alt: "How we work"
-gallery: [{"src":"/images/pages/how-we-work-02.webp","alt":""}, {"src":"/images/pages/how-we-work-03.webp","alt":""}, {"src":"/images/pages/how-we-work-04.webp","alt":""}, {"src":"/images/pages/how-we-work-05.webp","alt":""}]
+  src: "/images/pages/architects-render-of-a-brick-apartment-scheme-in-an-inner-city-setting.webp"
+  alt: "Architect's render of a brick apartment scheme in an inner-city setting"
+gallery: [{"src":"/images/pages/render-of-a-red-framed-residential-tower-beside-a-brick-railway.webp","alt":"Render of a red-framed residential tower beside a brick railway viaduct"}, {"src":"/images/pages/render-of-a-brick-residential-tower-with-ground-floor-shops-and-street.webp","alt":"Render of a brick residential tower with ground-floor shops and street trees"}, {"src":"/images/pages/the-reserve-at-chester-zoo-sign-on-a-rammed-earth-wall.webp","alt":"The Reserve at Chester Zoo sign on a rammed-earth wall"}, {"src":"/images/pages/hotel-bathroom-with-a-terracotta-wall-floating-vanity-and-walk-in.webp","alt":"Hotel bathroom with a terracotta wall, floating vanity and walk-in wardrobe"}]
 ---
 
 How We Work

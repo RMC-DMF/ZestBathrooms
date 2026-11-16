@@ -4,34 +4,34 @@ category: Brassware
 country: Germany
 summary: 'AXOR is Hansgrohe''s designer brassware from Schiltach in the Black Forest: collections by Antonio Citterio, Philippe Starck and Barber Osgerby, in fifteen PVD finishes, with Hansgrohe engineering behind every one.'
 hero:
-  src: /images/brands/axor-at-zest-bathrooms-kitchens-01.webp
-  alt: AXOR
+  src: /images/brands/axor-spout-filling-a-flush-stone-bath-beside-timber-panelling.webp
+  alt: "AXOR spout filling a flush stone bath beside timber panelling"
 legacyUrl: /about/axor-at-zest-bathrooms-kitchens
 gallery:
-- src: /images/pages/our-showroom-11.jpg
-  alt: ''
-- src: /images/pages/our-showroom-26.jpg
-  alt: ''
-- src: /images/pages/our-showroom-27.jpg
-  alt: ''
-- src: /images/pages/our-showroom-28.jpg
-  alt: ''
-- src: /images/pages/our-showroom-29.jpg
-  alt: ''
-- src: /images/pages/our-showroom-30.jpg
-  alt: ''
-- src: /images/pages/our-showroom-31.jpg
-  alt: ''
-- src: /images/pages/our-showroom-32.jpg
-  alt: ''
-- src: /images/pages/our-showroom-33.jpg
-  alt: ''
-- src: /images/pages/our-showroom-34.jpg
-  alt: ''
-- src: /images/pages/our-showroom-35.jpg
-  alt: ''
-- src: /images/pages/our-showroom-36.jpg
-  alt: ''
+- src: /images/pages/curved-dark-vanity-with-twin-basins-against-onyx-effect-walls-zest.jpg
+  alt: "Curved dark vanity with twin basins against onyx-effect walls, Zest showroom, Chester"
+- src: /images/pages/dark-curved-vanity-with-a-walnut-top-and-backlit-mirrors-zest-showroom.jpg
+  alt: "Dark curved vanity with a walnut top and backlit mirrors, Zest showroom"
+- src: /images/pages/speckled-onyx-effect-slab-close-up.jpg
+  alt: "Speckled onyx-effect slab, close up"
+- src: /images/pages/walk-in-shower-with-brass-framed-glass-and-onyx-effect-slabs-zest.jpg
+  alt: "Walk-in shower with brass-framed glass and onyx-effect slabs, Zest showroom"
+- src: /images/pages/polished-cross-handle-bath-taps-above-a-duravit-bath-zest-showroom.jpg
+  alt: "Polished cross-handle bath taps above a Duravit bath, Zest showroom"
+- src: /images/pages/shower-slab-wall-with-a-black-hand-shower-and-lit-shelf-zest-showroom.jpg
+  alt: "Shower slab wall with a black hand shower and lit shelf, Zest showroom"
+- src: /images/pages/wall-hung-black-wc-and-brass-framed-shower-in-onyx-effect-slabs-zest.jpg
+  alt: "Wall-hung black WC and brass-framed shower in onyx-effect slabs, Zest showroom"
+- src: /images/pages/twin-basins-on-a-curved-vanity-under-backlit-mirrors-zest-showroom.jpg
+  alt: "Twin basins on a curved vanity under backlit mirrors, Zest showroom, Chester"
+- src: /images/pages/onyx-effect-porcelain-slab-with-dark-mineral-inclusions-close-up.jpg
+  alt: "Onyx-effect porcelain slab with dark mineral inclusions, close up"
+- src: /images/pages/shower-enclosure-in-onyx-effect-slabs-with-a-brass-frame-zest-showroom.jpg
+  alt: "Shower enclosure in onyx-effect slabs with a brass frame, Zest showroom"
+- src: /images/pages/cross-handle-wall-mounted-bath-filler-over-a-duravit-bath-zest.jpg
+  alt: "Cross-handle wall-mounted bath filler over a Duravit bath, Zest showroom"
+- src: /images/pages/lit-niche-and-black-hand-shower-set-into-onyx-effect-slabs-zest.jpg
+  alt: "Lit niche and black hand shower set into onyx-effect slabs, Zest showroom"
 heritage: AXOR earned its place in our showroom by never letting us down on site. Behind every designer collection is Hansgrohe engineering, and behind that a parts and service operation that still answers the phone about a tap we fitted a decade ago.
 tagline: Hansgrohe's design house, with the architects' names attached.
 founded: '1993'

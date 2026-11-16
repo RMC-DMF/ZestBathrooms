@@ -2,9 +2,9 @@
 title: "Contact Us"
 legacyUrl: "/contact-us"
 hero:
-  src: "/images/pages/contact-us-01.jpg"
-  alt: "Contact Us"
-gallery: [{"src":"/images/pages/contact-us-02.jpg","alt":""}]
+  src: "/images/pages/hotel-style-marble-bathroom-with-a-freestanding-bath-and-city-skyline.jpg"
+  alt: "Hotel-style marble bathroom with a freestanding bath and city skyline view"
+gallery: []
 ---
 
 Whether you’re exploring ideas or ready to discuss your project, our experienced team is here to help.

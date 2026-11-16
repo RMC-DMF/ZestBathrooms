@@ -3,8 +3,8 @@ title: "What Makes a Luxury Kitchen? 7 Details Worth Investing In"
 summary: "Seven details that separate a good kitchen from a great one: storage, lighting, worktops, appliances, hardware, layout and the planning behind them."
 date: "2026-10-13"
 hero:
-  src: "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-01.webp"
-  alt: "What Makes a Luxury Kitchen? 7 Details Worth Investing In"
+  src: "/images/journal/siematic-display-cabinet-in-bronze-framing-with-a-backlit-onyx-back.webp"
+  alt: "SieMatic display cabinet in bronze framing with a backlit onyx back panel"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/what-makes-a-luxury-kitchen-7-details-worth-investing-in"
 decision: "review"

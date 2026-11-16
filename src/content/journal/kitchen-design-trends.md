@@ -3,8 +3,8 @@ title: "Kitchen Design Trends 2025: What We’re Seeing in High-End Homes"
 summary: "As we approach the midpoint of 2025, the kitchen continues its evolution from a purely practical space into the design-led centrepiece of the home."
 date: "2025-07-07"
 hero:
-  src: "/images/journal/kitchen-design-trends-01.jpg"
-  alt: "Kitchen Design Trends 2025: What We’re Seeing in High-End Homes"
+  src: "/images/journal/white-marble-effect-island-with-a-black-tap-and-herb-planter.jpg"
+  alt: "White marble-effect island with a black tap and herb planter"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/kitchen-design-trends"
 decision: "review"

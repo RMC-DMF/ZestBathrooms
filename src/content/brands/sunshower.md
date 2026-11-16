@@ -5,17 +5,17 @@ country: Netherlands
 summary: 'Sunshower is a Dutch panel that fits into a shower wall and gives you warmth and light while you wash — infrared heat, and UV if you want it — in a bathroom that gets no sun.'
 legacyUrl: /about/sunshower-at-zest-bathrooms-kitchens
 hero:
-  src: /images/journal/beyond-luxury-daily-wellness-with-sunshower-01.webp
+  src: /images/journal/sunshower-infrared-and-uv-unit-set-into-a-shower-wall-with-a-walk-in.webp
   alt: Infrared and sunlight in the shower.
 gallery:
-- src: /images/journal/beyond-luxury-daily-wellness-with-sunshower-02.jpg
-  alt: ''
-- src: /images/journal/beyond-luxury-daily-wellness-with-sunshower-03.jpg
-  alt: ''
-- src: /images/pages/wellness-03.jpg
-  alt: ''
-- src: /images/pages/wellness-11.jpg
-  alt: ''
+- src: /images/journal/walk-in-shower-with-a-built-in-sunshower-light-panel-bedroom-beyond.jpg
+  alt: "Walk-in shower with a built-in Sunshower light panel, bedroom beyond"
+- src: /images/journal/minimal-shower-area-with-a-recessed-sunshower-unit-and-plants.jpg
+  alt: "Minimal shower area with a recessed Sunshower unit and plants"
+- src: /images/pages/sunshower-health-and-wellbeing-woman-under-a-shower-in-blue-light.jpg
+  alt: "Sunshower health and wellbeing, woman under a shower in blue light"
+- src: /images/pages/sunshower-unit-recessed-into-a-plain-shower-wall.jpg
+  alt: "Sunshower unit recessed into a plain shower wall"
 heritage: We added Sunshower when clients started asking for wellness that fits a normal shower. Infrared warmth and regulated light, specified with the electrician briefed by us.
 tagline: Infrared and sunlight in the shower.
 founded: '2001'

@@ -2,9 +2,9 @@
 title: "Wellness"
 legacyUrl: "/bathrooms/wellness"
 hero:
-  src: "/images/pages/wellness-01.jpg"
-  alt: "Wellness"
-gallery: [{"src":"/images/pages/wellness-02.jpg","alt":""}, {"src":"/images/pages/wellness-03.jpg","alt":""}, {"src":"/images/pages/wellness-04.jpg","alt":""}, {"src":"/images/pages/wellness-05.jpg","alt":""}, {"src":"/images/pages/wellness-06.jpg","alt":""}, {"src":"/images/pages/wellness-07.jpg","alt":""}, {"src":"/images/pages/wellness-08.jpg","alt":""}, {"src":"/images/pages/wellness-09.jpg","alt":""}, {"src":"/images/pages/wellness-10.jpg","alt":""}, {"src":"/images/pages/wellness-11.jpg","alt":""}, {"src":"/images/pages/wellness-12.jpg","alt":""}]
+  src: "/images/pages/effe-sauna-in-light-timber-with-planting-around-it.jpg"
+  alt: "Effe sauna in light timber with planting around it"
+gallery: [{"src":"/images/pages/effe-steam-shower-with-glass-doors-and-teak-trim.jpg","alt":"Effe steam shower with glass doors and teak trim"}, {"src":"/images/pages/sunshower-health-and-wellbeing-woman-under-a-shower-in-blue-light.jpg","alt":"Sunshower health and wellbeing, woman under a shower in blue light"}, {"src":"/images/pages/sunshower-panel-set-into-a-shower-wall-beside-a-bedroom.jpg","alt":"Sunshower panel set into a shower wall beside a bedroom"}, {"src":"/images/pages/man-under-a-shower-beside-a-sunshower-infrared-panel.jpg","alt":"Man under a shower beside a Sunshower infrared panel"}, {"src":"/images/pages/sunshower-round-in-medium-mounted-in-a-shower-wall.jpg","alt":"Sunshower Round in medium, mounted in a shower wall"}, {"src":"/images/pages/woman-in-a-walk-in-shower-with-a-sunshower-infrared-panel-glowing-red.jpg","alt":"Woman in a walk-in shower with a Sunshower infrared panel glowing red"}, {"src":"/images/pages/woman-under-a-rain-shower-beside-a-sunshower-uv-panel.jpg","alt":"Woman under a rain shower beside a Sunshower UV panel"}, {"src":"/images/pages/walk-in-shower-with-a-sunshower-infrared-panel-and-planting.jpg","alt":"Walk-in shower with a Sunshower infrared panel and planting"}, {"src":"/images/pages/effe-sauna-with-glass-door-against-a-stone-wall.jpg","alt":"Effe sauna with glass door against a stone wall"}, {"src":"/images/pages/sunshower-unit-recessed-into-a-plain-shower-wall.jpg","alt":"Sunshower unit recessed into a plain shower wall"}, {"src":"/images/pages/morning-sun-through-glazed-doors-onto-heathland.jpg","alt":"Morning sun through glazed doors onto heathland"}]
 ---
 
 WELLNESS AT ZEST

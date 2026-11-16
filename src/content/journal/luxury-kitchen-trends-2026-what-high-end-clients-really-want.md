@@ -3,8 +3,8 @@ title: "Luxury Kitchen Trends 2026: What High-End Clients Really Want"
 summary: "The kitchen trends we are seeing from high-end clients in 2026: calmer layouts, natural materials, hidden function and rooms designed to be lived in rather than to impress."
 date: "2026-06-02"
 hero:
-  src: "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-01.webp"
-  alt: "Luxury Kitchen Trends 2026: What High-End Clients Really Want"
+  src: "/images/journal/green-marble-worktop-edge-over-light-oak-with-a-bronze-pull-handle.webp"
+  alt: "Green marble worktop edge over light oak with a bronze pull handle, close up"
 tags: ["siematic", "effe"]
 legacyUrl: "/blog/luxury-kitchen-trends-2026-what-high-end-clients-really-want"
 decision: "review"

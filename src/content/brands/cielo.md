@@ -4,14 +4,14 @@ category: Sanitaryware
 country: Italy
 summary: 'Ceramica Cielo makes basins, WCs and bathroom ceramics near Rome, famous for its Terre di Cielo colours — sixteen matt glazes that put real colour into a bathroom.'
 hero:
-  src: /images/brands/cielo-at-zest-bathrooms-kitchens-01.jpg
-  alt: Cielo
+  src: /images/brands/cielo-washbasins-on-black-and-brass-stands-in-mustard-and-green-with.jpg
+  alt: "Cielo washbasins on black and brass stands in mustard and green, with tall mirrors"
 legacyUrl: /about/cielo-at-zest-bathrooms-kitchens
 gallery:
-- src: /images/pages/bathrooms-23.webp
-  alt: ''
-- src: /images/pages/bathrooms-24.webp
-  alt: ''
+- src: /images/pages/cielo-basins-on-white-vanities-against-an-ochre-wall-with-oval-mirrors.webp
+  alt: "Cielo basins on white vanities against an ochre wall with oval mirrors"
+- src: /images/pages/cielo-double-vanity-in-oxblood-red-with-round-mirrors.webp
+  alt: "Cielo double vanity in oxblood red with round mirrors"
 heritage: Cielo is where colour in ceramics began for us. When a scheme calls for a basin in clay, sage or terracotta that will still look right in fifteen years, this is the house.
 tagline: Italian ceramics in colour.
 founded: '1962'

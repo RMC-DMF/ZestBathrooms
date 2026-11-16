@@ -5,11 +5,11 @@ country: Italy
 summary: 'Novello has made bathroom furniture in Italy for decades — vanities and storage with clean lines, good drawer hardware and a wide range of finishes, at a sensible price.'
 legacyUrl: /about/novello-at-zest-bathrooms-kitchens
 hero:
-  src: /images/pages/bathrooms-10.webp
+  src: /images/pages/floating-grey-vanity-with-a-round-backlit-mirror-and-blue-glass-shower.webp
   alt: Italian bathroom furniture, made to measure.
 gallery:
-- src: /images/pages/bathrooms-19.webp
-  alt: ''
+- src: /images/pages/novello-timber-vanity-with-backlit-mirror-and-glass-fronted-wall.webp
+  alt: "Novello timber vanity with backlit mirror and glass-fronted wall cabinet"
 heritage: 'Novello makes the furniture we specify when the room is tight and the millimetres matter: made to our survey, in finishes that sit quietly beside Italian brassware.'
 tagline: Italian bathroom furniture, made to measure.
 hometown: Treviso, Veneto

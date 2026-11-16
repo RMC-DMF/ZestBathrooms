@@ -20,8 +20,8 @@ gallery:
   alt: Miele appliances in an island kitchen
 - src: /images/brands/press/miele-oak-tower.jpg
   alt: Miele appliances in an oak tower
-- src: /images/brands/press/miele-induction-hob.jpg
-  alt: Miele induction hob
+- src: /images/brands/press/miele-induction-hob-in-a-black-island-with-a-pan-someone-setting-the.jpg
+  alt: "Miele induction hob in a black island with a pan, someone setting the heat"
 heritage: 'Miele is the appliance brand people ask for by name, and for good reason: it is tested to last twenty years and usually does. In a SieMatic kitchen it is the handleless ArtLine ovens that sit most naturally.'
 tagline: Tested for twenty years, built for longer.
 founded: '1899'
