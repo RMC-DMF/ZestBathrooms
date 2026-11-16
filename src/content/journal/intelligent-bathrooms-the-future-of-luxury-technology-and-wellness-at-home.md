@@ -1,6 +1,6 @@
 ---
 title: "Intelligent Bathrooms: The Future of Luxury, Technology and Wellness at Home"
-summary: "At Zest Bathrooms & Kitchens, we believe wellness should be as integral to your home as great design."
+summary: "Digital showers, integrated lighting and wellness technology: what makes a bathroom intelligent, and what is worth specifying for a home or a development."
 date: "2026-03-16"
 hero:
   src: "/images/journal/intelligent-bathrooms-the-future-of-luxury-technology-and-wellness-at-home-01.jpg"

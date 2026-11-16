@@ -1,6 +1,6 @@
 ---
 title: "Kitchen Trends 2026: Where SieMatic Defines the Future of Luxury Living"
-summary: "At Zest Bathrooms & Kitchens, we believe wellness should be as integral to your home as great design."
+summary: "Warmer timbers, earthy tones and kitchens that open into the living space: the 2026 trends, and how SieMatic's collections answer them."
 date: "2026-04-14"
 hero:
   src: "/images/journal/kitchen-trends-2026-where-siematic-defines-the-future-of-luxury-living-01.jpg"

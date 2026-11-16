@@ -50,7 +50,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
     <div class="bf__intro prose">{b.heritage && <p class="bf__heritage">{b.heritage}</p>}<Content /></div>
   </section>
 
-  <div id="gallery"><Gallery images={topGallery} max={5} /></div>
+  <div id="gallery"><Gallery images={topGallery} max={5} context={entry.data.title} /></div>
 
   <KnownFor items={b.knownFor} title={`What ${b.title} is known for.`} />
 
@@ -64,7 +64,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
 
   {(studies.length > 0 || projects.length > 0) && <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">In our work</span><h2>{b.title}, as we've used it.</h2></div><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/${s.data.room}/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} summary={s.data.summary} tags={[{ label: s.data.room === 'kitchens' ? 'Kitchen' : 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}{projects.map((p) => <CaseStudyCard title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} summary={p.data.summary} tags={[{ label: p.data.sector ?? 'Project', accent: true }, ...(p.data.units ? [{ label: `${p.data.units.toLocaleString()} units` }] : [])]} />)}</div></div></section>}
 
-  {restGallery.length > 1 && <Gallery images={restGallery.slice(1)} max={4} />}
+  {restGallery.length > 1 && <Gallery images={restGallery.slice(1)} max={4} context={entry.data.title} />}
 
   <OnlineBand brand={b.title} room={isKitchen ? 'kitchen' : b.category === 'Tiles & surfaces' ? 'surfaces' : 'bathroom'} />
 

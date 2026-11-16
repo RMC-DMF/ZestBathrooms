@@ -1,6 +1,6 @@
 ---
 title: "Why Wellness Has Moved from the Spa to the Bathroom"
-summary: "Discover how Gessi, Bette and Hansgrohe are redefining sustainable luxury bathroom design through innovative materials, water-saving technology and long-lasting craftsmanship."
+summary: "Steam, light and natural materials: why homeowners across Chester and the North West now plan the bathroom as a place to recover, not just to wash."
 date: "2026-09-14"
 hero:
   src: "/images/journal/luxury-wellness-bathrooms-in-chester-zest-bathrooms-kitchens-01.webp"

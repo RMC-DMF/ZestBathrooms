@@ -1,6 +1,6 @@
 ---
 title: "Top Bathroom Trends for 2026: What’s Shaping the Future of Luxury Bathroom Design"
-summary: "At Zest Bathrooms & Kitchens, we believe wellness should be as integral to your home as great design."
+summary: "Natural materials, calmer palettes and wellness built in: three bathroom trends for 2026 and how to bring them into a home or a development."
 date: "2025-11-24"
 hero:
   src: "/images/journal/top-3-bathroom-trends-for-2026-01.jpg"

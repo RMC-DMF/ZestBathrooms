@@ -1,6 +1,6 @@
 ---
 title: "Beyond Luxury: Daily Wellness with Sunshower"
-summary: "At Zest Bathrooms & Kitchens, we believe wellness should be as integral to your home as great design."
+summary: "Sunshower combines infrared warmth and UV light in the shower or steam room. What it does, and how it fits into a shower or steam room."
 date: "2025-09-22"
 hero:
   src: "/images/journal/beyond-luxury-daily-wellness-with-sunshower-01.webp"

@@ -58,13 +58,12 @@ We understand that professional projects require accuracy, responsiveness and co
 
 Whether you’re specifying a single luxury property or multiple units within a larger development, we provide a dependable supply partner for [premium kitchens](/kitchens/siematic-kitchens) and [bathrooms](/bathrooms).
 
-.
 
 ## Built Around Your Project
 
 Every project is different. Our approach is flexible, collaborative and focused on making specification and supply as straightforward as possible.
 
-Our LATEST PROJECT
+Our latest project
 
 ## Hyll Hotel, Cotswolds
 

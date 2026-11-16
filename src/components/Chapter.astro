@@ -67,7 +67,8 @@ const { number, image, mobile, alt, eyebrow, title, text, href, linkLabel = 'Exp
   .chapter__foot.reveal { transition-delay: .2s; }
   @media (max-width: 900px) {
     .chapter__img { height: 78svh; }
-    .chapter__pill { top: calc(78svh - 52px); min-height: 38px; }
+    .chapter__pill { top: calc(78svh - 133px); width: 44px; height: 44px; min-height: 0; padding: 0; justify-content: center; gap: 0; }
+    .chapter__pill-a, .chapter__pill-b, .chapter.is-macro .chapter__pill-b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .chapter__macro-cap { bottom: auto; top: 88px; left: var(--gutter); right: auto; text-align: left; max-width: 62%; }
     .chapter__mark { margin-bottom: 96px; }
     .chapter__title { font-size: clamp(46px, 14vw, 72px); margin-top: -0.5em; }

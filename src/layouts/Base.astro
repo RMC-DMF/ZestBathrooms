@@ -24,8 +24,12 @@ interface Props {
   canonical?: string;
 }
 const { title, description, accent = 'neutral', dark = true, floatingHeader = false, ogImage, schema = [], noindex = false, canonical } = Astro.props;
-const fullTitle = title.includes('Zest') ? title : `${title} | Zest Bathrooms & Kitchens, Chester`;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site.url).href;
+// Keep titles inside ~65 characters: use the longest brand suffix that fits
+const fullTitle = title.includes('Zest') ? title : ([' | Zest Bathrooms & Kitchens, Chester', ' | Zest Bathrooms & Kitchens', ' | Zest Chester', ' | Zest'].map((x) => title + x).find((t) => t.length <= 65) ?? `${title} | Zest`);
+// Descriptions over 160 characters are cut at the last full sentence (or word) that fits
+const metaDescription = description.length <= 160 ? description : (() => { const cut = description.slice(0, 158); const stop = cut.lastIndexOf('. '); return stop > 90 ? cut.slice(0, stop + 1) : cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:—–-]\s*$/, '') + '…'; })();
+const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/(.)\/$/, '$1') || '/';
+const canonicalUrl = canonical ?? new URL(cleanPath, site.url).href;
 const og = ogImage ? new URL(ogImage, site.url).href : new URL('/images/og-default.jpg', site.url).href;
 
 const business = {
@@ -59,11 +63,12 @@ const business = {
     address: { '@type': 'PostalAddress', streetAddress: site.projectsOffice.street, addressLocality: site.projectsOffice.locality, postalCode: site.projectsOffice.postcode, addressCountry: site.projectsOffice.country },
   },
 };
+const crumbNames: Record<string, string> = { 'case-studies': 'Case studies', 'design-service': 'Design service', 'about': 'About', 'areas': 'Areas', 'brands': 'Brands', 'journal': 'Journal', 'kitchens': 'Kitchens', 'bathrooms': 'Bathrooms', 'projects': 'Projects' };
 const breadcrumbs = (() => {
-  const parts = Astro.url.pathname.split('/').filter(Boolean);
+  const parts = cleanPath.split('/').filter(Boolean);
   if (!parts.length) return null;
   const items = [{ '@type': 'ListItem', position: 1, name: 'Home', item: site.url }];
-  parts.forEach((p, i) => items.push({ '@type': 'ListItem', position: i + 2, name: p.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()), item: `${site.url}/${parts.slice(0, i + 1).join('/')}` }));
+  parts.forEach((p, i) => items.push({ '@type': 'ListItem', position: i + 2, name: i === parts.length - 1 ? title.split(' | ')[0] : (crumbNames[p] ?? p.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())), item: `${site.url}/${parts.slice(0, i + 1).join('/')}` }));
   return { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items };
 })();
 ---
@@ -73,7 +78,7 @@ const breadcrumbs = (() => {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
     <meta property="og:type" content="website" />

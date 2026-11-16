@@ -1,4 +1,5 @@
 ---
+import FullBleed from '../../components/FullBleed.astro';
 import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
 import FactStrip from '../../components/FactStrip.astro';
@@ -27,6 +28,7 @@ const steps = [
   <SectionNav items={sections.projects} />
   <Work accent="projects" eyebrow="The work" title={`${projects.length} developments, by scale.`} text={`${units.toLocaleString()} units across residential towers, retirement living, hotels and student schemes — specified, sampled and supplied to programme from the Warrington project office.`} href="#index" linkLabel="The full index" secondary={site.tradeCta} items={projects.slice(0, 3).map((p) => ({ title: p.data.title, href: `/projects/${p.id}`, image: p.data.hero?.src, alt: p.data.hero?.alt, tags: [p.data.sector, p.data.location?.split(',')[0], p.data.unitsLabel ?? (p.data.units && `${p.data.units.toLocaleString()} units`)].filter(Boolean) as string[] }))} />
   <Quote accent="projects" quote="We’ve worked with Zest since 2010 as our key partner for kitchen and bathroom supply. Their world-leading brands and dedicated team make finding the right solutions seamless and stress-free." name="Yousef Mousai" role="Design Director" org="Altin Homes" />
+  <FullBleed accent="projects" image="/images/home/project-pool-arches.webp" alt="Residents' pool under brick vaults with linear lighting" eyebrow="The project office — Warrington" title="Specified to the drawing. Supplied to programme." text="One team from the first sample board to the last call-off, with a named contact for every scheme." cta={{ label: 'Register your project', href: '/projects/register' }} minHeight="72vh" shade="left" />
   <section id="index" class="wrap section z-on-dark">
     <div class="z-heading pidx__head"><span class="z-eyebrow">Index</span><h2>Every published project.</h2></div>
     <ol class="pidx">{projects.map((p, i) => <li class="pidx__row z-case"><a href={`/projects/${p.id}`} class="pidx__link">

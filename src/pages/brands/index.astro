@@ -4,8 +4,48 @@ import Pic from '../../components/Pic.astro';
 import { getCollection } from 'astro:content';
 const brands = (await getCollection('brands')).sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
 const groups = [...new Set(brands.map((b) => b.data.category))];
+const slug = (g: string) => g.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 ---
 <Page title="Brands — Kitchens, Brassware, Sanitaryware, Wellness" description="The houses Zest works with: SieMatic, Gessi, AXOR, Bette, Novello, Villeroy & Boch, Gaggenau, Effe and more, on display in Chester." eyebrow="Brands" heading="The houses we work with." lead="Chosen over three decades for how they are made, not how they are marketed. Most are on display in Chester.">
-  {groups.map((g) => <section class="wrap section" style="padding-top:0"><div class="z-heading" style="margin-bottom:var(--space-5)"><span class="z-eyebrow">{g}</span></div><div class="grid grid--4">{brands.filter((b) => b.data.category === g).map((b) => <a href={`/brands/${b.id}`} class="brand-tile">{b.data.hero ? <div class="fill brand-tile__img"><Pic src={b.data.hero.src} alt="" sizes="(max-width: 900px) 50vw, 25vw" widths={[320, 480, 640]} /></div> : <div class="brand-tile__mark" aria-hidden="true"><span>{b.data.title}</span></div>}<div class="brand-tile__body"><span class="caption">{b.data.country}{b.data.founded && !/\[/.test(b.data.founded) && ` · since ${b.data.founded}`}</span><h3>{b.data.title}</h3>{b.data.tagline && !/\[/.test(b.data.tagline) && <p class="small brand-tile__tag">{b.data.tagline}</p>}</div></a>)}</div></section>)}
+  <nav class="bfilter" aria-label="Filter brands by category" data-bfilter>
+    <div class="wrap"><ul class="bfilter__list">
+      <li><a href="#all" class="bfilter__chip" data-cat="all" aria-current="true">All <span>{brands.length}</span></a></li>
+      {groups.map((g) => <li><a href={`#${slug(g)}`} class="bfilter__chip" data-cat={slug(g)}>{g} <span>{brands.filter((b) => b.data.category === g).length}</span></a></li>)}
+    </ul></div>
+  </nav>
+  {groups.map((g) => <section id={slug(g)} data-group={slug(g)} class="wrap section bgroup" style="padding-top:0"><div class="z-heading" style="margin-bottom:var(--space-5)"><span class="z-eyebrow">{g}</span></div><div class="grid grid--4">{brands.filter((b) => b.data.category === g).map((b) => <a href={`/brands/${b.id}`} class="brand-tile">{b.data.hero ? <div class="fill brand-tile__img"><Pic src={b.data.hero.src} alt="" sizes="(max-width: 900px) 50vw, 25vw" widths={[320, 480, 640]} /></div> : <div class="brand-tile__mark" aria-hidden="true"><span>{b.data.title}</span></div>}<div class="brand-tile__body"><span class="caption">{b.data.country}{b.data.founded && !/\[/.test(b.data.founded) && ` · since ${b.data.founded}`}</span><h3>{b.data.title}</h3>{b.data.tagline && !/\[/.test(b.data.tagline) && <p class="small brand-tile__tag">{b.data.tagline}</p>}</div></a>)}</div></section>)}
 </Page>
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-bfilter]');
+  if (nav) {
+    const chips = [...nav.querySelectorAll<HTMLAnchorElement>('[data-cat]')];
+    const groups = [...document.querySelectorAll<HTMLElement>('[data-group]')];
+    const apply = (cat: string, scroll = false) => {
+      if (!chips.some((c) => c.dataset.cat === cat)) cat = 'all';
+      chips.forEach((c) => c.setAttribute('aria-current', String(c.dataset.cat === cat)));
+      groups.forEach((g) => { g.hidden = cat !== 'all' && g.dataset.group !== cat; });
+      chips.find((c) => c.dataset.cat === cat)?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      if (scroll) nav.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    };
+    nav.addEventListener('click', (e) => {
+      const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('[data-cat]'); if (!a) return;
+      e.preventDefault(); const cat = a.dataset.cat!;
+      history.replaceState(null, '', cat === 'all' ? location.pathname : `#${cat}`); apply(cat, true);
+    });
+    apply(location.hash.slice(1) || 'all');
+    addEventListener('hashchange', () => apply(location.hash.slice(1) || 'all'));
+  }
+</script>
+<style>
+  .bfilter { position: sticky; top: 64px; z-index: 11; background: var(--panel-dark, #111317); border-block: 1px solid #1b1f26; margin-bottom: var(--space-7); }
+  .bfilter__list { display: flex; gap: 10px; list-style: none; margin: 0; padding: 14px 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .bfilter__list::-webkit-scrollbar { display: none; }
+  .bfilter__chip { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; font-size: 14px; font-weight: 500; color: #cfd3d9; text-decoration: none; white-space: nowrap; transition: border-color .25s, color .25s, background .25s; }
+  .bfilter__chip span { font-size: 12px; color: var(--slate-muted); }
+  .bfilter__chip:hover { border-color: rgba(255,255,255,.6); color: var(--on-panel); }
+  .bfilter__chip[aria-current="true"] { background: #f3efe8; border-color: #f3efe8; color: #15181d; }
+  .bfilter__chip[aria-current="true"] span { color: #5b616b; }
+  .bgroup { scroll-margin-top: 140px; }
+  @media (max-width: 899px) { .bfilter__list { padding-right: var(--gutter); margin-right: calc(-1 * var(--gutter)); } }
+</style>
 <style>.brand-tile { display: block; background: var(--surface-raised); border: var(--hairline) solid var(--line); text-decoration: none; color: inherit; overflow: hidden; } .brand-tile__img { aspect-ratio: 4 / 3; } .brand-tile__img :global(img) { transition: transform .8s cubic-bezier(.2,.7,.2,1); } .brand-tile:hover .brand-tile__img :global(img) { transform: scale(1.04); } .brand-tile:hover { border-color: var(--accent); } .brand-tile__body { padding: var(--space-4); } .brand-tile h3 { margin-top: 4px; font-size: 20px; } .brand-tile__tag { color: var(--slate); margin-top: 6px; } .brand-tile__mark { aspect-ratio: 4/3; display: grid; place-items: center; background: radial-gradient(120% 90% at 30% 20%, #262b33, var(--stone)); padding: var(--space-4); } .brand-tile__mark span { font-family: var(--font-display); font-weight: 300; font-size: clamp(22px, 2.2vw, 30px); color: var(--on-panel); opacity: .85; text-align: center; line-height: 1.1; }</style>

@@ -33,7 +33,7 @@ const gallery = [
     <ol class="tl">{timeline.map((t) => <li class="tl__item z-fact"><span class="tl__year">{t.year}</span><h3 class="tl__title">{t.title}</h3><p class="tl__text">{t.text}</p></li>)}</ol>
   </div></section>
 
-  <Gallery images={gallery} max={5} />
+  <Gallery images={gallery} max={5} context="Zest Bathrooms & Kitchens, Chester" />
 
   <FullBleed accent="projects" image="/images/home/project-deansgate.jpg" alt="Deansgate Square towers, Manchester" position="50% 30%" eyebrow="Two businesses, one standard" title="Private houses in Cheshire. Towers in Manchester." text="The showroom designs for homes across the North West. The Warrington project office specifies and supplies for developers, architects and hotels across the UK — thousands of units a year, to programme. The same brands, the same people, the same standard." cta={{ label: 'The showroom', href: '/about/showroom' }} link={{ label: 'Projects', href: '/projects' }} minHeight="72vh" shade="left" />
 </Page>
