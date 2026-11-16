@@ -9,6 +9,12 @@ hero:
   src: /images/pages/siematic-kitchens-31.webp
   alt: SieMatic Pure kitchen opening onto a terrace
 gallery:
+- src: /images/case-studies/kitchens/walnut-farm-02.webp
+  alt: Walnut SieMatic island with a flush induction hob, designed by Zest
+- src: /images/case-studies/kitchens/al-kadami-05.webp
+  alt: Dark timber SieMatic kitchen with a taupe island, designed by Zest
+- src: /images/case-studies/kitchens/walnut-farm-07.webp
+  alt: Open SieMatic drawer in a walnut island
 - src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-02.webp
   alt: ''
 - src: /images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-03.webp
