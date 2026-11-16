@@ -2,7 +2,7 @@
 title: Oasis
 category: Furniture
 country: Italy
-summary: Oasis is renowned for beautifully crafted Italian bathroom furniture, combining refined design, exceptional materials and meticulous attention to detail.
+summary: 'Oasis is Italian bathroom furniture: vanities, mirrors and storage in lacquer, wood and stone, made to order in the sizes and finishes a specific room needs.'
 hero:
   src: /images/brands/oasis-at-zest-bathrooms-kitchens-01.webp
   alt: Oasis
@@ -41,8 +41,6 @@ faqs: []
 collections: []
 ---
 
-Oasis is renowned for beautifully crafted Italian bathroom furniture, combining refined design, exceptional materials and meticulous attention to detail. At Zest Bathrooms & Kitchens, we’re pleased to offer Oasis as part of our carefully curated collection of premium bathroom brands.
+Oasis makes bathroom furniture in Italy — vanity units, tall storage, mirrors and washbasin tops — to order rather than from stock, so a unit can be the width the wall actually is, in the lacquer or veneer the rest of the room calls for. The Nàos collection is the one we specify most.
 
-From contemporary bathroom furniture with clean, architectural lines to more decorative designs inspired by classic and Art Deco aesthetics, Oasis creates bathrooms with a distinctive sense of character. Its collections bring together considered forms, sophisticated finishes and carefully crafted details to create spaces that feel both functional and highly individual.
-
-Whether you’re creating a luxury bathroom, ensuite or [private wellness](/bathrooms/wellness) space, Oasis offers the flexibility to create a bathroom that feels beautifully considered and personal.
+We use Oasis where the furniture has to do more than hold a basin: en-suites with no room to waste, long double vanities, and schemes where the drawer front and the door need to be the same colour as the kitchen next door.

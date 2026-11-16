@@ -2,7 +2,7 @@
 title: Glass Design
 category: Sanitaryware
 country: Italy
-summary: Glass Design is renowned for distinctive Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship.
+summary: 'Glass Design makes basins, baths and furniture in glass and resin in Tuscany — coloured, textured and sometimes translucent pieces that no other material can do.'
 hero:
   src: /images/brands/glass-design-at-zest-bathrooms-kitchens-01.webp
   alt: Glass Design
@@ -27,8 +27,6 @@ faqs: []
 collections: []
 ---
 
-Glass Design is renowned for distinctive Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship. At Zest Bathrooms & Kitchens, we’re pleased to offer Glass Design as part of our carefully curated collection of [premium bathroom brands](/brands).
+Glass Design works in glass the way other houses work in ceramic: countertop basins in coloured and textured glass, freestanding baths in translucent resin, vanity units that catch light rather than block it. Everything is made in Tuscany, much of it to order.
 
-With glass at the heart of its design heritage, Glass Design creates bathroom furniture, washbasins, taps, mirrors, bathtubs and accessories with a distinctive sense of sophistication. Its collections combine expressive materials, colour and sculptural forms, creating interiors that feel contemporary, considered and highly individual.
-
-Whether you’re creating a luxury bathroom, ensuite or private wellness space, Glass Design offers an elegant approach to bathroom design, with beautifully resolved details and a sophisticated material palette.
+We specify Glass Design for the one piece in a room that is meant to be looked at — a cloakroom basin, a bath under a window — and we keep examples in Chester because photographs do not show how the light moves through them.

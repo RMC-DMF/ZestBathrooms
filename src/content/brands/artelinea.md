@@ -2,7 +2,7 @@
 title: Artelinea
 category: Furniture
 country: Italy
-summary: Artelinea is renowned for exceptional Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship.
+summary: 'Artelinea is a Florentine maker of glass bathroom furniture and basins — slim, luminous pieces that bring light into a bathroom without decoration.'
 hero:
   src: /images/brands/artelinea-at-zest-bathrooms-kitchens-01.webp
   alt: Artelinea
@@ -34,8 +34,6 @@ faqs: []
 collections: []
 ---
 
-Artelinea is renowned for exceptional Italian bathroom design, combining innovative materials, refined forms and meticulous craftsmanship. At Zest Bathrooms & Kitchens, we’re pleased to offer Artelinea as part of our carefully curated collection of premium bathroom brands.
+Artelinea has made glass bathroom furniture in Florence since the 1980s: integrated glass basins, vanity tops and storage in which the glass is structural rather than decorative. The pieces are thinner and lighter-looking than ceramic or stone, and the colour sits inside the glass rather than on it.
 
-With glass at the heart of its design philosophy, Artelinea creates bathroom furniture, washbasins, mirrors and wall coverings with a distinctive sense of sophistication. Its collections balance architectural forms with expressive surfaces, colour and light, creating interiors that feel contemporary, considered and highly individual.
-
-Whether you’re creating a [luxury bathroom](/bathrooms), ensuite or private wellness space, Artelinea offers an elegant approach to bathroom design, with beautifully resolved details and a sophisticated material palette.
+We use Artelinea where a bathroom wants to feel lighter — small en-suites, rooms without much daylight — and where the brief is modern without being cold.

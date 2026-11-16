@@ -4,7 +4,7 @@ category: Brassware
 country: Italy
 featured: true
 order: 1
-summary: Gessi is synonymous with distinctive Italian design, exceptional craftsmanship and an innovative approach to luxury bathroom design.
+summary: 'Gessi makes brassware, showers and bathroom furniture in one factory in Piedmont — expressive forms, its own finishes, and the Haute Culture collections that Zest is one of ten UK showrooms to carry.'
 hero:
   src: /images/brands/gessi-at-zest-bathrooms-kitchens-01.webp
   alt: Gessi
@@ -34,7 +34,7 @@ gallery:
 - src: /images/pages/bathrooms-01.jpg
   alt: ''
 legacyUrl: /about/gessi-at-zest-bathrooms-kitchens
-heritage: 'We have specified Gessi since, first for the finishes and then for the way the company works: one factory in Piedmont, one standard, and a willingness to make the unusual. When Gessi chose ten UK showrooms for Haute Culture, we were one of them.'
+heritage: 'We have specified Gessi for many years, first for the finishes and then for the way the company works: one factory in Piedmont, one standard, and a willingness to make the unusual. When Gessi chose ten UK showrooms for Haute Culture, we were one of them.'
 tagline: Italian brassware that treats water as design.
 founded: '1992'
 hometown: Serravalle Sesia, Piedmont
@@ -66,8 +66,6 @@ collections:
   text: Rain, cascade and body showers; steam and spa systems.
 ---
 
-Gessi is synonymous with distinctive Italian design, exceptional craftsmanship and an innovative approach to [luxury bathroom design](/bathrooms). At Zest Bathrooms & Kitchens, we’re proud to offer Gessi as part of our carefully curated collection of premium bathroom brands.
+Gessi designs and makes everything in one place, at Gessi Park outside Novara, which is why its finishes match across a basin mixer, a shower system and a bath filler, and why it can make the unusual to order. The collections run from the pared-back 316 stainless steel to the sculptural Inciso and Rilievo, with Private Wellness covering steam, rain and body showers.
 
-From refined contemporary collections to statement pieces, Gessi combines innovative design, meticulous attention to detail and beautifully engineered products to create bathrooms that feel both highly individual and effortlessly sophisticated.
-
-Whether you’re creating a luxury bathroom, ensuite or private wellness space, Gessi offers the flexibility to create a bathroom that is as considered as the wider interior.
+In Chester we keep Gessi on working displays so you can feel the weight of a handle and see the finishes in daylight, and from January 2027 the dedicated Haute Culture showroom brings the eight couture collections to Brookdale Place — one of ten showrooms in the UK to carry them.

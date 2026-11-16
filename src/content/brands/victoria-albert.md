@@ -2,7 +2,7 @@
 title: Victoria Albert
 category: Baths
 country: UK
-summary: Victoria + Albert is renowned for beautifully crafted freestanding baths and basins, combining distinctive British design with innovative materials and exceptional craftsmanship.
+summary: 'Victoria + Albert makes freestanding baths and basins in Quarrycast — volcanic limestone and resin — in Britain, warm to the touch and light enough to go upstairs.'
 hero:
   src: /images/brands/victoria-albert-at-zest-bathrooms-kitchens-01.webp
   alt: Victoria Albert
@@ -50,8 +50,6 @@ faqs:
 collections: []
 ---
 
-Victoria + Albert is renowned for beautifully crafted freestanding baths and basins, combining distinctive British design with innovative materials and exceptional craftsmanship. At Zest Bathrooms & Kitchens, we’re pleased to offer Victoria + Albert as part of our carefully curated collection of [premium bathroom brands](/brands).
+Victoria + Albert has made freestanding baths and basins in Britain since 1996, all in Quarrycast: a blend of volcanic limestone and resin that is warm to the touch, holds heat, and weighs far less than cast iron, so a bath can go on a first floor without strengthening the joists. The shapes range from the traditional roll-top to the slipper and the modern oval.
 
-At the heart of the collection is QUARRYCAST™, a unique stone composite made from finely ground Volcanic Limestone™ and high-performance resins. Strong, durable, easy to clean and naturally warm to the touch, the material gives Victoria + Albert baths and basins their distinctive quality and character.
-
-Whether you’re creating a luxurious master bathroom, contemporary ensuite or private wellness space, Victoria + Albert offers beautifully considered pieces designed to become a defining feature of the room.
+It is the bath clients want to sit in before they decide, and the exterior colours are better chosen against a real wall than a swatch — ask us which Victoria + Albert pieces are on the floor when you book.

@@ -2,7 +2,7 @@
 title: Cielo
 category: Sanitaryware
 country: Italy
-summary: Ceramica Cielo is renowned for distinctive Italian bathroom design, combining traditional ceramic craftsmanship with contemporary forms, innovative finishes and expressive colour.
+summary: 'Ceramica Cielo makes basins, WCs and bathroom ceramics near Rome, famous for its Terre di Cielo colours — sixteen matt glazes that put real colour into a bathroom.'
 hero:
   src: /images/brands/cielo-at-zest-bathrooms-kitchens-01.jpg
   alt: Cielo
@@ -30,8 +30,6 @@ faqs:
 collections: []
 ---
 
-Ceramica Cielo is renowned for distinctive Italian bathroom design, combining traditional ceramic craftsmanship with contemporary forms, innovative finishes and expressive colour. At Zest Bathrooms & Kitchens, we’re pleased to offer Ceramica Cielo as part of our carefully curated collection of [premium bathroom brands](/brands).
+Ceramica Cielo makes sanitaryware in Fabrica di Roma, north of Rome, and is best known for colour: the Terre di Cielo palette of matt glazes — clay, sage, pomice, cement — on basins, WCs and freestanding pieces, and the Shui and Elle collections that carry them. The forms are soft and thin-walled, closer to pottery than to standard sanitaryware.
 
-With ceramic at the heart of its design philosophy, Ceramica Cielo creates washbasins, sanitaryware, bathroom furniture and complementary pieces that bring a distinctive architectural quality to the bathroom. Its collections explore new shapes, proportions, surfaces and colours, balancing refined aesthetics with everyday functionality.
-
-Whether you’re creating a luxury bathroom, contemporary ensuite or private wellness space, Ceramica Cielo offers beautifully considered solutions designed to make the bathroom a distinctive part of the interior.
+We specify Cielo when a bathroom wants colour that is not paint or tile: a coloured basin on a plain wall, a WC that matches the vanity top. A palette that wide has to be seen against the stone and the brass it will live with, so we keep Cielo samples in the Chester showroom.

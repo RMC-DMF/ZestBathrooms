@@ -2,7 +2,7 @@
 title: Novello
 category: Furniture
 country: Italy
-summary: Novello has been creating beautifully considered bathroom furniture in Italy for decades, combining refined design, quality materials and meticulous craftsmanship.
+summary: 'Novello has made bathroom furniture in Italy for decades — vanities and storage with clean lines, good drawer hardware and a wide range of finishes, at a sensible price.'
 legacyUrl: /about/novello-at-zest-bathrooms-kitchens
 hero:
   src: /images/pages/bathrooms-10.webp
@@ -27,8 +27,6 @@ faqs: []
 collections: []
 ---
 
-Novello has been creating beautifully considered [bathroom furniture](/bathrooms) in Italy for decades, combining refined design, quality materials and meticulous craftsmanship. At Zest Bathrooms & Kitchens, we’re pleased to offer Novello as part of our carefully curated collection of premium bathroom brands.
+Novello is a long-established Italian maker of bathroom furniture: wall-hung and floor-standing vanities, tall units and mirrors, in lacquers, wood effects and stone-look tops. The hardware is good — soft-close drawers that still run true after years of use — and the range of sizes means we rarely have to compromise a layout.
 
-From contemporary bathroom furniture with clean, architectural lines to more expressive designs with distinctive detailing, Novello creates collections designed to bring character, functionality and individuality to the bathroom. With a wide choice of finishes, materials, configurations and complementary elements, each scheme can be tailored to suit your space.
-
-Whether you’re creating a luxury bathroom, ensuite or private wellness space, Novello offers the flexibility to create a bathroom that feels beautifully considered and personal.
+It is the furniture we reach for in family bathrooms and second bathrooms, where the budget has to go further without the room looking like it did.

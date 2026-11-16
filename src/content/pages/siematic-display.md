@@ -11,4 +11,3 @@ Unveiled in spring 2026 and curated exclusively by Zest, the display pairs graph
 
 It was built with both homes and developments in mind. For a homeowner it shows what a SieMatic kitchen feels like to stand in: the weight of a drawer, the quiet of a door, the way light falls on a dark surface. For an architect or developer it is a specification reference — proof of how cabinetry, worktop, appliance and lighting can be resolved as one scheme.
 
-[Confirm with Zest: the exact SieMatic collection (SLX / Pure), and whether the display is bookable for trade visits outside showroom hours.]

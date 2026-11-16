@@ -2,7 +2,7 @@
 title: AXOR
 category: Brassware
 country: Germany
-summary: AXOR is synonymous with exceptional design, German engineering and meticulous craftsmanship.
+summary: 'AXOR is Hansgrohe''s designer brassware from Schiltach in the Black Forest: collections by Antonio Citterio, Philippe Starck and Barber Osgerby, in fifteen PVD finishes, with Hansgrohe engineering behind every one.'
 hero:
   src: /images/brands/axor-at-zest-bathrooms-kitchens-01.webp
   alt: AXOR
@@ -63,8 +63,6 @@ collections:
   text: Barber Osgerby's single-control concept; Massaud's cut-metal Edge.
 ---
 
-AXOR is synonymous with exceptional design, German engineering and meticulous craftsmanship. At Zest Bathrooms & Kitchens, we’re proud to offer AXOR as part of our carefully curated collection of premium bathroom brands.
+AXOR is the design arm of Hansgrohe, made in Schiltach in the Black Forest. Each collection is designed with an outside studio — Antonio Citterio, Philippe Starck, Barber Osgerby, Jean-Marie Massaud among them — and all of them share the same cartridges, valves and finishes, so a Citterio basin mixer and a Starck shower can sit in one room without a seam.
 
-From minimalist contemporary collections to more expressive designs, AXOR combines innovative technology, precision engineering and exceptional attention to detail. Working with renowned international designers, AXOR creates bathroom collections where form, function and individuality come together.
-
-Whether you’re creating a luxury bathroom, ensuite or private wellness space, AXOR offers the freedom to create a bathroom that feels highly personal and considered.
+We have fitted AXOR for long enough to know what matters afterwards: the PVD finishes do not wear at the handle, the concealed iBox valve is the same across the ranges, and a part for a tap we installed ten years ago is still a phone call away. AXOR is on display in Chester, with the FinishPlus finishes to compare side by side in daylight.

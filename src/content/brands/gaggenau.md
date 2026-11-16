@@ -2,7 +2,7 @@
 title: Gaggenau
 category: Appliances
 country: Germany
-summary: Gaggenau is internationally recognised for its luxury kitchen appliances, combining sophisticated design, advanced technology and exceptional performance.
+summary: 'Gaggenau has made kitchen appliances in Germany since 1683 — the 400 and 200 series ovens, Vario cooktops and wine cabinets that sit in most of our SieMatic kitchens.'
 hero:
   src: /images/brands/press/gaggenau-expressive-oven-marble.jpg
   alt: Gaggenau Expressive oven set into green marble
@@ -42,10 +42,6 @@ faqs:
 collections: []
 ---
 
-Gaggenau is internationally recognised for its luxury kitchen appliances, combining sophisticated design, advanced technology and exceptional performance. Designed for those who appreciate precision and considered craftsmanship, Gaggenau appliances bring a distinctive level of refinement to contemporary kitchen interiors.
+Gaggenau began as a hammer and nail works in the Black Forest in 1683 and has made cooking appliances since the nineteenth century. Today that means the 400 series — ovens, steam ovens, warming drawers in stainless steel and glass — the 200 series, the Vario cooktops that let you compose a hob from modules, and refrigeration and wine cabinets built to be hidden behind furniture.
 
-At Zest Bathrooms & Kitchens in Chester, we work with Gaggenau to help homeowners, designers and developers create beautifully considered kitchens where appliances are seamlessly integrated into the overall design.
-
-Gaggenau appliances are designed to become an integral part of the kitchen rather than simply functional additions. From statement ovens and precision cooktops to sophisticated refrigeration and wine climate cabinets, each appliance is developed with a focus on performance, materials and timeless design.
-
-The Gaggenau collection includes ovens, combi-steam ovens, coffee machines, cooktops, ventilation, refrigeration, wine cabinets and dishwashers, providing a comprehensive solution for luxury kitchen projects.
+Gaggenau is built into the SieMatic displays in Chester, where you can open the doors, feel the hinges and see how the appliances line through with the cabinetry. We plan them in at the layout stage because the ventilation, the clearances and the electrics all follow from where the ovens go.

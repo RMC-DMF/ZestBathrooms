@@ -26,8 +26,8 @@ const topGallery = gallery.slice(0, 5);
 const restGallery = gallery.slice(5, 10);
 const universalFaqs = [
   { q: `Can I buy ${b.title} from Zest without the design service?`, a: `Yes — if you know exactly what you want we'll quote it. Most people find the design appointment pays for itself, because it's where the mistakes get caught.` },
-  { q: `Do you price-match ${b.title} found online?`, a: `We'll always talk about price openly and we're competitive on the full specification, but we don't chase anonymous online listings — grey imports, discontinued stock and missing warranties are common. Bring the quote to the showroom and we'll show you the real comparison.` },
-  { q: `Can I see ${b.title} in Chester?`, a: b.onDisplay ?? `[Confirm what is on display.]` },
+  { q: `How does your ${b.title} pricing compare?`, a: `We are competitive on a like-for-like specification and happy to compare any quote in the showroom. Ours includes the design, the survey, the checks before ordering and the support afterwards, so we compare the whole job rather than one line.` },
+  { q: `Can I see ${b.title} in Chester?`, a: b.onDisplay ?? `Ask us what is on the floor when you book — the displays change.` },
 ];
 const faqs = [...b.faqs, ...universalFaqs];
 const schema = [{ '@context': 'https://schema.org', '@type': 'Brand', name: b.title, url: b.website, description: b.tagline ?? b.summary }];
@@ -66,7 +66,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
 
   {restGallery.length > 1 && <Gallery images={restGallery.slice(1)} max={4} />}
 
-  <OnlineBand brand={b.title} />
+  <OnlineBand brand={b.title} room={isKitchen ? 'kitchen' : b.category === 'Tiles & surfaces' ? 'surfaces' : 'bathroom'} />
 
   <section class="wrap section"><div style="max-width:720px"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2>{b.title}, practically.</h2></div><FAQ items={faqs} openFirst /></div></section>
 

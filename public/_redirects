@@ -87,3 +87,5 @@ https://www.zestbathroomsandkitchens.co.uk/* https://zestbathroomsandkitchens.co
 /page/* /journal 301
 /blog/page/* /journal 301
 /brands/leicht /kitchens 301
+/kitchens/cost-guide /kitchens 302
+/bathrooms/cost-guide /bathrooms 302

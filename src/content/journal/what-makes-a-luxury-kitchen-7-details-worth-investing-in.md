@@ -1,6 +1,6 @@
 ---
 title: "What Makes a Luxury Kitchen? 7 Details Worth Investing In"
-summary: "Discover how Gessi, Bette and Hansgrohe are redefining sustainable luxury bathroom design through innovative materials, water-saving technology and long-lasting craftsmanship."
+summary: "Seven details that separate a good kitchen from a great one: storage, lighting, worktops, appliances, hardware, layout and the planning behind them."
 date: "2026-10-13"
 hero:
   src: "/images/journal/what-makes-a-luxury-kitchen-7-details-worth-investing-in-01.webp"

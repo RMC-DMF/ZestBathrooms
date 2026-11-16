@@ -1,15 +1,16 @@
 ---
-/** "Found it cheaper online?" — the showroom argument, used on brand pages. */
+/** What the price includes — the showroom case, stated positively. Used on brand pages. */
 import { site } from '../data/site';
-interface Props { brand: string }
-const { brand } = Astro.props;
+interface Props { brand: string; room?: 'kitchen' | 'bathroom' | 'surfaces' }
+const { brand, room = 'bathroom' } = Astro.props;
+const made = room === 'kitchen' ? 'the kitchen it goes into' : room === 'surfaces' ? 'the room it finishes' : 'the bathroom it goes into';
 ---
 <section class="ob">
   <div class="wrap ob__in">
     <div class="z-heading">
-      <span class="z-eyebrow">Found {brand} cheaper online?</span>
-      <h2>You can buy the box anywhere. You can't buy the room.</h2>
-      <p class="z-heading__lead">A price on a screen doesn't include the person who checks the valve matches the trim, the survey that says where it goes, the installer who has fitted it fifty times, or the call you make when something's wrong. We don't claim to be the cheapest place to buy {brand}. We are the place where it turns into a bathroom that works — and we'll always talk about price openly, in the showroom.</p>
+      <span class="z-eyebrow">What the price includes</span>
+      <h2>{brand}, and {made}.</h2>
+      <p class="z-heading__lead">A {brand} quote from us comes with the design, the survey, a specification where every part is named, a check that it all fits together before it is ordered, and a designer to call once it is in. We are open about price and happy to compare any quote like for like in the showroom.</p>
     </div>
     <div class="ob__acts">
       <a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a>

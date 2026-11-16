@@ -2,7 +2,7 @@
 title: Bette
 category: Baths
 country: Germany
-summary: BETTE forms part of our carefully curated collection of premium bathroom brands, bringing together refined design, quality materials and considered solutions for contemporary bathrooms.
+summary: 'Bette makes baths, shower trays and basins from glazed titanium-steel in Delbrück, Germany — thin, hard, colour-fast, and guaranteed for thirty years.'
 hero:
   src: /images/brands/betteat-zest-bathrooms-kitchens-01.webp
   alt: Bette
@@ -48,8 +48,6 @@ collections:
   text: Freestanding steel baths with a seamless skirt.
 ---
 
-BETTE forms part of our carefully curated collection of premium bathroom brands, bringing together refined design, quality materials and considered solutions for contemporary bathrooms.
+Bette makes baths, shower floors and basins from glazed titanium-steel: a sheet of enamelled steel that is thinner than acrylic, harder than ceramic, does not scratch or fade, and carries a thirty-year guarantee. The shower floors are made to sit flush with the finished floor, which is why we specify so many of them.
 
-Whether you’re creating a statement bathroom for a private Cheshire home, designing a contemporary ensuite, or specifying bathrooms for a residential development, hotel or hospitality project, our experienced team can help you explore the right BETTE solution for your space.
-
-With more than 30 years of design experience, specialist product knowledge and established manufacturer relationships, we take a considered approach to every [bathroom specification](/bathrooms). From individual residential bathrooms to larger-scale developments and hospitality projects, we work closely with you to select products that meet the design, performance and practical requirements of the space.
+Stand on a Bette shower floor next to an acrylic one and the difference is obvious; ask us what is on the floor in Chester when you book.

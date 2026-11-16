@@ -56,7 +56,7 @@ collections:
 - name: SieMatic Urban
   text: Open, mixed materials, lived-in.
 - name: SieMatic Classic
-  text: Framed fronts, timeless proportions.
+  text: Framed fronts, classical proportions.
 - name: SieMatic Mondial
   text: Luxe materials, grand scale.
 ---

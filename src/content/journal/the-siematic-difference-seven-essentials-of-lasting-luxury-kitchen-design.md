@@ -1,6 +1,6 @@
 ---
 title: "The SieMatic Difference: Seven Essentials of Lasting Luxury Kitchen Design"
-summary: "At Zest Bathrooms & Kitchens, we believe wellness should be as integral to your home as great design."
+summary: "Seven things that make a SieMatic kitchen last — from architectural proportion and material quality to storage, appliances and the way it is planned."
 date: "2026-01-26"
 hero:
   src: "/images/journal/the-siematic-difference-seven-essentials-of-lasting-luxury-kitchen-design-01.jpg"

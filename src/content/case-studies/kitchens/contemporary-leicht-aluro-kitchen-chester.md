@@ -14,6 +14,7 @@ room: "kitchens"
 featured: true
 ---
 
+*Zest now designs and supplies SieMatic kitchens only. This Leicht project is kept here for the planning and the installation, which are the same.*
 For this contemporary home in Chester, a sophisticated LEICHT ALURO kitchen was designed and supplied, featuring aluminium fronts in Oxide Bronze. The warm metallic finish creates a distinctive architectural look, complemented by clean lines and carefully considered detailing throughout.
 
 The kitchen features substantial 60mm Opus Borghini porcelain worktops, providing a luxurious and durable surface that contrasts beautifully with the Oxide Bronze cabinetry. A suite of Miele appliances completes the specification, combining seamless integration with high-performance functionality.

@@ -2,7 +2,7 @@
 title: Effe
 category: Wellness
 country: Italy
-summary: Effe forms part of our carefully curated approach to luxury bathroom and wellness specification, alongside our wider collection of premium bathroom brands.
+summary: 'Effe makes steam rooms, saunas and hammams in Italy — from a steam generator behind a shower wall to a complete room — and is the wellness system Zest specifies most often.'
 legacyUrl: /about/effe-at-zest-bathrooms-kitchens-2
 hero:
   src: /images/pages/wellness-01.jpg
@@ -38,8 +38,6 @@ collections:
   text: Compact steam showers.
 ---
 
-Effe forms part of our carefully curated approach to luxury bathroom and wellness specification, alongside our wider collection of [premium bathroom brands](/bathrooms).
+Effe designs and makes wellness equipment in Italy: steam generators that fit behind a shower wall, glass steam cabins, saunas, hammams and the Bodylove range that combines them. The engineering is the point — quiet generators, even heat, controls that a household will actually use.
 
-Whether you’re creating a private wellness space in a Cheshire home, incorporating a steam shower or sauna into a contemporary bathroom, or specifying wellness facilities for a high-end residential development, hotel or hospitality project, our experienced team can help you identify the right Effe solution for your project.
-
-With more than 30 years of design experience, specialist product knowledge and established manufacturer relationships, we take a considered approach to bathroom and wellness specification. From individual residential bathrooms to larger-scale hospitality, residential development and commercial projects, we work closely with you to select products and solutions that meet the design, performance and practical requirements of the space.
+There is a working Effe steam room in the Chester showroom. Most of what we install is simpler than it looks: a steam generator added to a shower enclosure that was being built anyway, planned at the drawing stage so the ventilation and the drainage are right.

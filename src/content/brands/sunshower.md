@@ -2,7 +2,7 @@
 title: Sunshower
 category: Wellness
 country: Netherlands
-summary: Sunshower brings innovative wellness technology into the everyday shower, combining infrared warmth and light technology to create a more considered approach to relaxation and wellbeing.
+summary: 'Sunshower is a Dutch panel that fits into a shower wall and gives you warmth and light while you wash — infrared heat, and UV if you want it — in a bathroom that gets no sun.'
 legacyUrl: /about/sunshower-at-zest-bathrooms-kitchens
 hero:
   src: /images/journal/beyond-luxury-daily-wellness-with-sunshower-01.webp
@@ -34,10 +34,6 @@ faqs:
 collections: []
 ---
 
-Sunshower brings innovative wellness technology into the everyday shower, combining infrared warmth and light technology to create a more considered approach to relaxation and wellbeing.
+Sunshower is made in the Netherlands: a flat panel, recessed into a shower wall or mounted on it, that gives infrared warmth and, on some models, a measured dose of UV light. It is designed for exactly the bathrooms most of our clients have — internal, no window, used first thing on a dark morning.
 
-At Zest Bathrooms & Kitchens, we offer Sunshower as part of our carefully curated collection of premium bathroom and wellness brands. Designed to integrate seamlessly into contemporary interiors, Sunshower provides an opportunity to introduce sophisticated wellness technology without compromising the design of your bathroom.
-
-Whether you are creating a private wellness space at home, designing a [luxury bathroom](/bathrooms), or specifying wellness facilities for a residential development, hotel, spa or leisure environment, our team can help you explore how Sunshower could work within your project.
-
-With more than 30 years of bathroom and kitchen design experience, specialist product knowledge and established manufacturer relationships, we bring a considered approach to bathroom and wellness specification.
+It is simple to plan if it is planned early, because it needs a recess and a supply. We show it in Chester with the Effe steam equipment, as part of a wellness bathroom rather than a gadget.

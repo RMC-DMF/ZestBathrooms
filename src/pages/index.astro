@@ -35,7 +35,7 @@ const steps = [
     position="60% 50%"
   />
 
-  <div id="doors"><Manifesto note="Designed in Chester since 1992">A beautiful room changes how a home looks. <em>A considered room changes how it feels to live there.</em></Manifesto></div>
+  <div id="doors"><Manifesto note="One studio, since 1992">We design kitchens and bathrooms around the way a household actually lives — <em>and we have done it from the same showroom in Chester for over thirty years.</em></Manifesto></div>
 
   <Texture image="/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-03.webp" alt="Brass handle on dark lacquered cabinetry, close up" line="It starts with the material." caption="Brushed brass on dark lacquer — SieMatic" />
 
@@ -43,7 +43,7 @@ const steps = [
   <Editorial number="02" overlap morph tone="light" accent="bathrooms" image="/images/home/bathroom-stone-wall.webp" alt="Wet room with a sculpted stone wall, open shower and copper pendants" detail="/images/home/bathroom-detail-tile.webp" detailAlt="Freestanding bath against grey tiles with a timber shelf and rattan chair" eyebrow="Bathrooms" title="The bathroom. A moment entirely your own." text="From a cloakroom to a private spa. Brassware, stone and furniture from the European houses we have worked with for decades, designed around the way you live." href="/bathrooms" linkLabel="Explore bathrooms" position="50% 55%" />
   <Work number="03" eyebrow="Projects" title={`${unitCount.toLocaleString()} units. ${allProjects.length} developments. One supplier.`} text="Specification and supply for developers, architects and hotels across the UK — Renaker, Capital & Centric, Domis, Audley, Fragrance Group — run from the Warrington project office." href="/projects" linkLabel="See the work" secondary={site.tradeCta} items={projects.map((p, i) => ({ title: p.data.title, href: `/projects/${p.id}`, image: i === 0 ? '/images/home/project-pool-arches.webp' : p.data.hero?.src, alt: i === 0 ? 'Residents\' pool under brick vaults with linear lighting' : p.data.hero?.alt, tags: [p.data.sector, p.data.location?.split(',')[0], p.data.units && `${p.data.units.toLocaleString()} units`].filter(Boolean) as string[] }))} />
 
-  <MaterialToSpace eyebrow="From the material to the room" title="A slab of stone becomes a wall. A wall becomes a room." text="Every room starts with one decision — a marble, a timber, a finish — and every other decision follows from it. This is the Brookdale Place showroom, where you can stand in the result." href="/about/showroom" linkLabel="Walk the showroom" frames={[
+  <MaterialToSpace eyebrow="From the material to the room" title="Pick the material first. We plan the room around it." text="Most of our rooms start with one sample — a marble, a timber, a finish — and the rest follows: the brassware that suits it, the light that shows it, the furniture that does not fight it. In the Brookdale Place showroom you can stand in the result rather than imagine it." href="/about/showroom" linkLabel="Walk the showroom" frames={[
     { src: '/images/home/material-agate.webp', alt: 'Agate slab — bands of amber, smoke and white crystal, close up', label: 'Material' },
     { src: '/images/pages/our-showroom-46.jpg', alt: 'Marble shower with a brass frame and striped tiles, Zest showroom', label: 'Detail' },
     { src: '/images/pages/our-showroom-74.jpg', alt: 'Freestanding bath in a plaster-pink bathroom, Zest showroom', label: 'Space' },
@@ -55,8 +55,8 @@ const steps = [
     <div class="wrap">
       <div class="z-heading design__head">
         <span class="z-eyebrow">The design service</span>
-        <h2 class="design__title">One studio. Both rooms. Start to finish.</h2>
-        <p class="z-heading__lead">The design service is free — an hour in the showroom with a designer, a survey, layouts and a full specification, with no fee at any stage.</p>
+        <h2 class="design__title">The design service is free. It starts with an hour in the showroom.</h2>
+        <p class="z-heading__lead">An hour with a designer among real displays, then a survey, layouts, 3D visuals and a written specification — no fee at any stage, and no obligation to buy.</p>
       </div>
       <ProcessLive steps={steps}><a class="z-btn z-btn--primary" href={site.cta.href}>{site.cta.label}</a></ProcessLive>
     </div>

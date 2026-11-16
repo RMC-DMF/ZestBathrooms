@@ -1,6 +1,6 @@
 ---
 title: "Luxury Kitchen Trends 2026: What High-End Clients Really Want"
-summary: "Discover how Gessi, Bette and Hansgrohe are redefining sustainable luxury bathroom design through innovative materials, water-saving technology and long-lasting craftsmanship."
+summary: "The kitchen trends we are seeing from high-end clients in 2026: calmer layouts, natural materials, hidden function and rooms designed to be lived in rather than to impress."
 date: "2026-06-02"
 hero:
   src: "/images/journal/luxury-kitchen-trends-2026-what-high-end-clients-really-want-01.webp"

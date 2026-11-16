@@ -41,7 +41,7 @@ whyZest:
 - Miele or Gaggenau or Siemens? We will tell you honestly which suits how you cook and what you want to spend.
 faqs:
 - q: Miele or Gaggenau?
-  a: Gaggenau when cooking is the point of the room; Miele for exceptional everyday quality. Both are on display.
+  a: Gaggenau when cooking is the point of the room; Miele for everyday cooking and laundry that lasts twenty years. Both are on display.
 - q: Can I buy the appliances elsewhere?
   a: You can, and if it saves you money we will tell you — but we still need the exact models to build the kitchen around.
 collections:
