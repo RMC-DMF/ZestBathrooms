@@ -9,7 +9,7 @@ interface Props { title: string; description: string; eyebrow?: string; heading?
 const { title, description, eyebrow, heading, lead, accent = 'neutral', hero, cta = {}, schema, noindex, sections } = Astro.props;
 const here = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 ---
-<Base title={title} description={description} accent={accent} schema={schema} noindex={noindex}>
+<Base title={title} description={description} accent={accent} schema={schema} noindex={noindex} ogImage={hero?.src}>
   <header class:list={['page-head', { 'page-head--img': hero }]}>
     {hero && <div class="page-head__pic" style={accent !== 'neutral' ? `view-transition-name:${accent}-head` : undefined}><Pic src={hero.src} mobile={hero.mobile} alt={hero.alt} class="page-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} /><div class="page-head__shade head-shade" aria-hidden="true"></div>{eyebrow && <div class="wrap page-head__mark"><span class="z-eyebrow rise q1">{eyebrow}</span></div>}</div>}
     <div class:list={['wrap', 'z-heading', 'page-head__copy']}>

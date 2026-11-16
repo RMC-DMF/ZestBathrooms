@@ -11,7 +11,7 @@ const { title, description, accent, eyebrow, hero, gallery = [], facts, quote, d
 const person = designer ? await getEntry('team', designer) : undefined;
 const brandEntries = (await Promise.all(brands.map((b) => getEntry('brands', b)))).filter(Boolean);
 ---
-<Base title={title} description={description} accent={accent}>
+<Base title={title} description={description} accent={accent} ogImage={hero?.src}>
   <article>
     <header class="study-head">
       {hero && <Pic src={hero.src} alt={hero.alt} class="study-head__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} />}

@@ -33,7 +33,7 @@ const faqs = [...b.faqs, ...universalFaqs];
 const schema = [{ '@context': 'https://schema.org', '@type': 'Brand', name: b.title, url: b.website, description: b.tagline ?? b.summary }];
 const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: 'Made in', v: b.hometown }, b.country && { k: 'Country', v: b.country }, { k: 'Category', v: b.category }].filter(Boolean) as { k: string; v: string }[];
 ---
-<Base title={`${b.title} — ${b.category} at Zest, Chester`} description={b.tagline ? `${b.title}: ${b.tagline} Specified and supplied by Zest in Chester; see it in the showroom.` : b.summary} accent={accent} schema={schema}>
+<Base ogImage={b.hero?.src} title={`${b.title} — ${b.category} at Zest, Chester`} description={b.tagline ? `${b.title}: ${b.tagline} Specified and supplied by Zest in Chester; see it in the showroom.` : b.summary} accent={accent} schema={schema}>
   <header class="bh">
     {b.hero && <Pic src={b.hero.src} alt={b.hero.alt || b.title} class="bh__img ken--slow" priority sizes="100vw" widths={[768, 1200, 1600, 2000]} />}
     <div class="bh__shade head-shade" aria-hidden="true"></div>

@@ -1,4 +1,6 @@
 ---
+import { getImage } from 'astro:assets';
+import { resolveImage } from '../lib/images';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import '../styles/components.css';
@@ -30,7 +32,10 @@ const fullTitle = title.includes('Zest') ? title : ([' | Zest Bathrooms & Kitche
 const metaDescription = description.length <= 160 ? description : (() => { const cut = description.slice(0, 158); const stop = cut.lastIndexOf('. '); return stop > 90 ? cut.slice(0, stop + 1) : cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:—–-]\s*$/, '') + '…'; })();
 const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/(.)\/$/, '$1') || '/';
 const canonicalUrl = canonical ?? new URL(cleanPath, site.url).href;
-const og = ogImage ? new URL(ogImage, site.url).href : new URL('/images/og-default.jpg', site.url).href;
+// Social preview: the page's own hero, cropped to 1200×630; the default card only when a page has no picture
+const ogMeta = await resolveImage(ogImage);
+const ogSrc = ogMeta ? (await getImage({ src: ogMeta, width: 1200, height: 630, fit: 'cover', format: 'jpg', quality: 80 })).src : ogImage;
+const og = new URL((ogSrc && ogSrc.includes('/.netlify/images') && !ogSrc.includes('fit=') ? ogSrc + '&fit=cover' : ogSrc) ?? '/images/og-default.jpg', site.url).href;
 
 const business = {
   '@context': 'https://schema.org',
@@ -87,6 +92,8 @@ const breadcrumbs = (() => {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_GB" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.png" type="image/png" />
