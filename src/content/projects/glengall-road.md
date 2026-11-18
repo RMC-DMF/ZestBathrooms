@@ -11,6 +11,7 @@ legacyUrl: "/projects/glengall-road"
 sector: "Student"
 units: 170
 featured: false
+completed: "2026-03"
 ---
 
 ## Glengall Road

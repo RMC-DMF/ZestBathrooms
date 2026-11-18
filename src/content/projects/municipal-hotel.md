@@ -13,6 +13,9 @@ legacyUrl: "/projects/municipal-hotel"
 sector: "Hospitality"
 units: 179
 featured: true
+completed: "2023-05"
+products: ["Villeroy & Boch", "Grohe"]
+brands: ["villeroy-boch"]
 ---
 
 For the prestigious Fragrance Group project in Liverpool, Zest completed 179 luxury hotel bathrooms. The result is a seamless blend of historical architecture and contemporary elegance throughout every guest suite.

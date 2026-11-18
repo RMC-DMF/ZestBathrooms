@@ -1,5 +1,6 @@
 ---
 title: "Contemporary LEICHT ALURO Kitchen, Chester"
+kind: "Leicht kitchen"
 summary: "For this contemporary home in Chester, a sophisticated LEICHT ALURO kitchen was designed and supplied, featuring aluminium fronts in Oxide Bronze."
 location: "Chester"
 area: "chester"
@@ -12,6 +13,7 @@ date: "2026-10-19"
 legacyUrl: "/kitchens/contemporary-leicht-aluro-kitchen-chester"
 room: "kitchens"
 featured: true
+draft: true
 ---
 
 *Zest now designs and supplies SieMatic kitchens only. This Leicht project is kept here for the planning and the installation, which are the same.*

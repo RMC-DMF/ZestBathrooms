@@ -1,6 +1,6 @@
 ---
 title: "Avonmouth Street"
-summary: "Zest fitted 226 student accommodation bathrooms in this vibrant London development."
+summary: "Zest supplied 226 student accommodation bathrooms in this vibrant London development."
 location: "Elephant & Castle, London"
 client: "HG Construction"
 hero:
@@ -12,8 +12,11 @@ legacyUrl: "/projects/avonmouth-street"
 sector: "Student"
 units: 226
 featured: false
+completed: "2025-09"
+products: ["Villeroy & Boch", "Scudo"]
+brands: ["villeroy-boch"]
 ---
 
 ## Avonmouth Street
 
-Zest fitted 226 student accommodation bathrooms in this vibrant London development. Each design prioritises quality, functionality, and longevity, creating spaces built to enhance daily life for residents.
+Zest supplied 226 student accommodation bathrooms in this vibrant London development. Each design prioritises quality, functionality, and longevity, creating spaces built to enhance daily life for residents.

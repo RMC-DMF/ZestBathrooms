@@ -4,16 +4,16 @@ category: Kitchens
 country: Germany
 featured: true
 order: 1
-summary: 'SieMatic is the only kitchen we sell: four displays in Chester across the Pure, Urban and Classic design languages, with Gaggenau, Miele, Siemens, Bora and Quooker built in.'
+summary: 'SieMatic is the heart of our kitchen studio: four displays in Chester across the Pure, Urban and Classic design languages, with Gaggenau, Miele, Siemens, Bora and Quooker built in.'
 hero:
   src: /images/pages/siematic-kitchen-in-an-open-plan-loft-with-a-brass-edged-island-and.webp
   alt: SieMatic Pure kitchen opening onto a terrace
 gallery:
-- src: /images/case-studies/kitchens/walnut-farm-02.webp
+- src: /images/case-studies/kitchens/walnut-porcelain-kitchen-02.webp
   alt: Walnut SieMatic island with a flush induction hob, designed by Zest
-- src: /images/case-studies/kitchens/al-kadami-05.webp
+- src: /images/case-studies/kitchens/dark-timber-sea-view-kitchen-05.webp
   alt: Dark timber SieMatic kitchen with a taupe island, designed by Zest
-- src: /images/case-studies/kitchens/walnut-farm-07.webp
+- src: /images/case-studies/kitchens/walnut-porcelain-kitchen-07.webp
   alt: Open SieMatic drawer in a walnut island
 - src: /images/journal/backlit-onyx-behind-bronze-framed-siematic-shelving-and-drawers.webp
   alt: "Backlit onyx behind bronze-framed SieMatic shelving and drawers"
@@ -67,4 +67,4 @@ collections:
   text: Luxe materials, grand scale.
 ---
 
-SieMatic is the kitchen we sell, and the only one. The handleless original from Löhne since 1960, in four design languages — Pure, Urban, Classic and Mondial — and sold only through appointed studios. Four displays stand in the Chester showroom, including the 2026 scheme in graphite smoked oak and Black Tempest stone, with the appliances built in so you can judge the whole kitchen rather than a door sample.
+SieMatic is the kitchen we lead with. The handleless original from Löhne since 1960, in four design languages — Pure, Urban, Classic and Mondial — and sold only through appointed studios. Four displays stand in the Chester showroom, including the 2026 scheme in graphite smoked oak and Black Tempest stone, with the appliances built in so you can judge the whole kitchen rather than a door sample.

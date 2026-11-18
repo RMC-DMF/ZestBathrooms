@@ -13,6 +13,8 @@ legacyUrl: "/projects/weir-mill"
 sector: "Residential"
 units: 253
 featured: false
+completed: "2026-10"
+products: ["Vitra", "Vado"]
 ---
 
 Zest delivered 253 bespoke bathrooms for this large-scale heritage conversion in Stockport for client Capital & Centric. Each space combines industrial charm with modern luxury, creating distinctive homes that celebrate the building’s history.

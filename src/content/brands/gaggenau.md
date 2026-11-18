@@ -8,9 +8,9 @@ hero:
   alt: Gaggenau Expressive oven set into green marble
 legacyUrl: /about/gaggenau-zest-bathrooms-kitchens
 gallery:
-- src: /images/case-studies/kitchens/walnut-farm-06.webp
-  alt: Four Gaggenau ovens in walnut tall units, Walnut Farm, designed by Zest
-- src: /images/case-studies/kitchens/mere-court-04.webp
+- src: /images/case-studies/kitchens/walnut-porcelain-kitchen-06.webp
+  alt: Four Gaggenau ovens in walnut tall units, designed by Zest
+- src: /images/case-studies/kitchens/oak-bar-kitchen-04.webp
   alt: Gaggenau ovens and coffee machine in grey lacquer tall units, designed by Zest
 - src: /images/brands/press/gaggenau-minimalist-kitchen.jpg
   alt: Gaggenau Minimalistic series in an open-plan kitchen

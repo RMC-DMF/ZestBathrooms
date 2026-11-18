@@ -1,12 +1,13 @@
 ---
-title: "Mere Court: a dark timber island with an oak breakfast bar"
+title: "Oak & Shadow"
+kind: "Kitchen"
 summary: "An open-plan kitchen and living room with a long dark timber island, a stone-effect top with a raised oak breakfast bar, and a wall of Gaggenau appliances in grey lacquer."
 brands: ["gaggenau"]
 style: ["Contemporary", "Open plan"]
 hero:
-  src: "/images/case-studies/kitchens/mere-court-01.webp"
+  src: "/images/case-studies/kitchens/oak-bar-kitchen-01.webp"
   alt: "Long dark timber island with a pale stone-effect top, open to a living area with green velvet sofas"
-gallery: [{"src":"/images/case-studies/kitchens/mere-court-02.webp","alt":"Velvet bar stools under a raised dark oak breakfast bar, bronze light line along the island"}, {"src":"/images/case-studies/kitchens/mere-court-03.webp","alt":"Stone-effect island top and charred oak bar, framed artwork beyond"}, {"src":"/images/case-studies/kitchens/mere-court-04.webp","alt":"Gaggenau ovens and coffee machine in a grey lacquered tall wall"}]
+gallery: [{"src":"/images/case-studies/kitchens/oak-bar-kitchen-02.webp","alt":"Velvet bar stools under a raised dark oak breakfast bar, bronze light line along the island"}, {"src":"/images/case-studies/kitchens/oak-bar-kitchen-03.webp","alt":"Stone-effect island top and charred oak bar, framed artwork beyond"}, {"src":"/images/case-studies/kitchens/oak-bar-kitchen-04.webp","alt":"Gaggenau ovens and coffee machine in a grey lacquered tall wall"}]
 date: "2026-11-14"
 room: "kitchens"
 ---

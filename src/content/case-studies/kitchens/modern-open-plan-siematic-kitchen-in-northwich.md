@@ -1,7 +1,8 @@
 ---
-title: "Modern Open-Plan SieMatic Kitchen in Northwich"
+title: "Open House"
+kind: "SieMatic kitchen"
 summary: "Designed for modern family living, this bespoke SieMatic S2 kitchen in Northwich combines clean lines, practical functionality and timeless contemporary style."
-location: "Sandiway Park, Northwich"
+location: "Northwich, Cheshire"
 area: "cheshire"
 brands: ["siematic", "siemens"]
 hero:

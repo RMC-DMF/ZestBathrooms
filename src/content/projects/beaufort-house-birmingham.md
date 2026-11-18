@@ -1,9 +1,8 @@
 ---
-title: "Beaufort House, Birmingham"
+title: "Beaufort House"
 summary: "88 Luxury Apartments on Newhall Street in Birmingham appointed with luxury fittings throughout."
 location: "Birmingham"
 client: "Beaufort House Developments"
-brands: ["hansgrohe"]
 hero:
   src: "/images/projects/beaufort-house-a-brick-office-building-converted-to-apartments.jpg"
   alt: "Beaufort House, a brick office building converted to apartments, Birmingham"
@@ -13,6 +12,9 @@ legacyUrl: "/projects/beaufort-house-birmingham"
 sector: "Residential"
 units: 88
 featured: false
+completed: "2019-05"
+products: ["Villeroy & Boch", "Hansgrohe"]
+brands: ["villeroy-boch", "hansgrohe"]
 ---
 
 ## Beaufort House, Birmingham

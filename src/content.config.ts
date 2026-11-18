@@ -8,6 +8,7 @@ const caseStudies = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/case-studies' }),
   schema: z.object({
     title: z.string(),
+    kind: z.string().optional(), // e.g. "SieMatic kitchen" — shown under the title and used in the page title
     room: z.enum(['kitchens', 'bathrooms']),
     summary: z.string().max(220),
     location: z.string().optional(),
@@ -40,6 +41,10 @@ const projects = defineCollection({
     sector: z.enum(['Residential', 'Hospitality', 'Student', 'Retirement Living', 'Commercial', 'Leisure', 'Residential development']).optional(),
     units: z.number().int().optional(),
     unitsLabel: z.string().optional(), // e.g. "106 apartments + 20 cottages", "47,000 sq ft"
+    bathrooms: z.string().optional(), // e.g. "1,000+"
+    completed: z.string().regex(/^\d{4}-\d{2}$/).optional(), // YYYY-MM
+    completedLabel: z.string().optional(), // overrides the formatted month, e.g. "Early 2021"
+    products: z.array(z.string()).default([]), // brands supplied, as display names
     brands: z.array(z.string()).default([]),
     scope: z.array(z.string()).default([]),
     hero: imageRef.optional(),

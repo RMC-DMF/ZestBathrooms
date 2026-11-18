@@ -1,5 +1,6 @@
 ---
-title: "Contemporary SieMatic Kitchen with Bespoke Dining Area"
+title: "Built to Gather"
+kind: "SieMatic kitchen"
 summary: "This bespoke SieMatic SLC kitchen was designed to create a warm, sociable and highly functional living space."
 location: "Sale, Greater Manchester"
 area: "manchester"

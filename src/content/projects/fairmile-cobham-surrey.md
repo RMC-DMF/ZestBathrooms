@@ -1,5 +1,5 @@
 ---
-title: "Fairmile – Cobham, Surrey"
+title: "Audley Fairmile"
 summary: "Set in the heart of Surrey, this exclusive residential project showcases refined finishes and timeless design."
 location: "Cobham, Surrey"
 client: "Audley Villages"
@@ -12,6 +12,9 @@ legacyUrl: "/projects/fairmile-cobham-surrey"
 sector: "Retirement Living"
 units: 74
 featured: false
+completed: "2023-06"
+products: ["Villeroy & Boch", "Hansgrohe"]
+brands: ["villeroy-boch", "hansgrohe"]
 ---
 
 ## Fairmile – Cobham, Surrey

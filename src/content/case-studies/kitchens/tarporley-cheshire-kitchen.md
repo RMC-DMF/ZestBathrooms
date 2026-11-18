@@ -1,5 +1,6 @@
 ---
-title: "Refined Family Kitchen & Bathroom, Tarporley"
+title: "Family Classic"
+kind: "Kitchen & bathroom"
 summary: "For this project, Zest crafted a luxury kitchen that gracefully fuses modern design with Georgian character, using sleek units and refined materials."
 location: "Tarporley, Cheshire"
 area: "cheshire"

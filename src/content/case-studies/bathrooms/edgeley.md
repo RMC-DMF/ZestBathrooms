@@ -1,7 +1,8 @@
 ---
-title: "Edgeley, Cheshire"
+title: "Blush & Brass"
+kind: "Bathroom"
 summary: "For the Edgeley project, Zest Bathrooms & Kitchens collaborated with ōH Studio"
-location: "Chester"
+location: "Cheshire"
 area: "chester"
 brands: ["gessi", "bette", "novello"]
 hero:

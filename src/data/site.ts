@@ -39,13 +39,14 @@ export const site = {
     { value: '1 of 10', label: 'UK Gessi Haute Culture showrooms, opening 2027' },
   ],
   cta: { label: 'Book a free design appointment', href: '/book-a-design-appointment' },
-  tradeCta: { label: 'Register your project', href: '/projects/register' },
+  tradeCta: { label: 'Discuss your project', href: '/projects/enquire' },
 };
 
 export const sections = {
   kitchens: [
     { label: 'Kitchens', href: '/kitchens' },
     { label: 'SieMatic', href: '/kitchens/siematic' },
+    { label: 'Burbidge', href: '/brands/burbidge' },
     { label: 'Case studies', href: '/kitchens/case-studies' },
     { label: 'Brochures', href: '/kitchens/brochures' },
   ],
@@ -60,7 +61,7 @@ export const sections = {
   projects: [
     { label: 'Projects', href: '/projects' },
     { label: 'How we work', href: '/projects/how-we-work' },
-    { label: 'Register your project', href: '/projects/register' },
+    { label: 'Discuss your project', href: '/projects/enquire' },
   ],
 };
 

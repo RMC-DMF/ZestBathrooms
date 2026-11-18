@@ -1,6 +1,6 @@
 ---
-title: "Audley Villages : Redwood, Bristol"
-summary: "Information Client: Audley Retirement Architect:Gaunt Francis Project:106 Apartments & 20 Cottages Location:Audley Villages : Redwood, Bristol Download PDF Discover refined living with\u2026"
+title: "Audley Redwood"
+summary: "Audley's Redwood village in Bristol: 106 apartments and 20 cottages for later living. Zest supplied the bathrooms, with Villeroy & Boch sanitaryware and Hansgrohe brassware."
 location: "Redwood, Bristol"
 client: "Audley Retirement"
 hero:
@@ -14,6 +14,11 @@ sector: "Retirement Living"
 units: 126
 unitsLabel: "106 apartments and 20 cottages"
 featured: false
+completed: "2018-05"
+products: ["Villeroy & Boch", "Hansgrohe"]
+brands: ["villeroy-boch", "hansgrohe"]
 ---
 
-## Discover refined living with Zest
+## Redwood, Bristol
+
+Audley's Redwood village is a retirement community of 106 apartments and 20 cottages, designed by Gaunt Francis. Zest supplied the bathrooms across the scheme: Villeroy & Boch sanitaryware and Hansgrohe brassware, chosen to look residential rather than institutional and to be easy to use for people of every age and ability. Completed May 2018.

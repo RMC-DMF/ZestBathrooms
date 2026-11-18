@@ -1,5 +1,5 @@
 ---
-title: "Hyll Hotel, Cotswolds"
+title: "Hyll Hotel"
 summary: "For the Hyll Hotel in the Cotswolds, Zest curated and supplied bathrooms that embody understated luxury and thoughtful design."
 location: "Cotswolds"
 client: "Youth Studio (interior design)"
@@ -10,6 +10,9 @@ date: "2025-11-24"
 legacyUrl: "/projects/hyll-hotel-cotswolds"
 sector: "Hospitality"
 featured: false
+completed: "2025-09"
+products: ["JTP", "Villeroy & Boch"]
+brands: ["villeroy-boch"]
 ---
 
 For the Hyll Hotel in the Cotswolds, Zest curated and supplied bathrooms that embody understated luxury and thoughtful design. Every fixture, finish, and detail was selected to harmonise with the hotel’s natural materials and serene palette, creating spaces that are both tactile and visually refined.

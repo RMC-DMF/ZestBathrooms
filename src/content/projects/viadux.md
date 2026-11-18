@@ -13,6 +13,10 @@ legacyUrl: "/projects/viadux"
 sector: "Residential"
 units: 375
 featured: true
+completed: "2024-06"
+products: ["Duravit", "Hansgrohe"]
+brands: ["duravit", "hansgrohe"]
+bathrooms: "500+"
 ---
 
 For this iconic city-centre development, Zest collaborated to deliver bathrooms that balance bold contemporary aesthetics with long-term performance. Every detail was crafted to match Viadux’s ambition for modern, high-end living.

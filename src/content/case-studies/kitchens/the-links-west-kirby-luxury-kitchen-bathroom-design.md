@@ -1,7 +1,8 @@
 ---
-title: "The Links, West Kirby Luxury Kitchen Specification"
+title: "Coastal Oak"
+kind: "Apartment kitchens & bathrooms"
 summary: "For The Links, an exclusive collection of ten bespoke three-bedroom apartments overlooking the Royal Liverpool Golf Course, Zest Bathrooms & Kitchens provided the kitchen design and\u2026"
-location: "Meols Drive, West Kirby, Wirral"
+location: "West Kirby, Wirral"
 area: "wirral"
 client: "Blueoak Estates"
 brands: ["siematic"]

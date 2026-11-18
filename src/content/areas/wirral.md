@@ -1,7 +1,7 @@
 ---
 title: "The Wirral"
 county: "Merseyside"
-summary: "West Kirby, Heswall, Hoylake and the coast. The Links at Meols Drive is ours."
+summary: "West Kirby, Heswall, Hoylake and the coast. Including The Links apartments in West Kirby."
 distance: "30 minutes from the showroom"
 published: true
 ---

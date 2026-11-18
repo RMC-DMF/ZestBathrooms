@@ -1,7 +1,8 @@
 ---
-title: "Cutting-edge SieMatic Kitchen, Knutsford"
+title: "Light & Line"
+kind: "SieMatic kitchen"
 summary: "When property developer Nathan Sproson sought a modern farmhouse kitchen for his expansive family room, he brought his concept to Zest where collaboration turned idea into highly\u2026"
-location: "Knutsford"
+location: "Knutsford, Cheshire"
 area: "cheshire"
 client: "Nathan Sproson"
 brands: ["siematic"]

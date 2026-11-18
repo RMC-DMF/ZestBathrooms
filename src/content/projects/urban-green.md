@@ -13,6 +13,8 @@ legacyUrl: "/projects/urban-green"
 sector: "Residential"
 units: 174
 featured: false
+completed: "2024-01"
+products: ["Vitra", "Scudo"]
 ---
 
 ## Urban Green

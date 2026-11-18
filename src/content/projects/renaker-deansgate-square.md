@@ -1,5 +1,5 @@
 ---
-title: "Renaker Deansgate Square"
+title: "Deansgate Square"
 summary: "Comprising elegant spacious apartments across four carefully designed towers, Deansgate Square delivers another level of city centre living to Manchester."
 location: "Manchester"
 area: "manchester"
@@ -12,7 +12,11 @@ date: "2025-09-20"
 legacyUrl: "/projects/renaker-deansgate-square"
 sector: "Residential"
 units: 1508
-featured: true
+featured: false
+completed: "2021-01"
+completedLabel: "Early 2021"
+products: ["Duravit", "Vado"]
+brands: ["duravit"]
 ---
 
 Comprising elegant spacious apartments across four carefully designed towers, Deansgate Square delivers another level of city centre living to Manchester.

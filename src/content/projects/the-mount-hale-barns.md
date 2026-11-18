@@ -1,5 +1,5 @@
 ---
-title: "Sleek handleless bespoke kitchen, Hale Barns"
+title: "The Mount"
 summary: "Four luxury townhouses in Hale Barns with GA Studio: bespoke bathrooms and SieMatic kitchens specified and supplied as one cohesive scheme."
 location: "Hale Barns, Cheshire"
 area: "manchester"
@@ -14,6 +14,9 @@ units: 4
 unitsLabel: "townhouses"
 sector: "Residential development"
 featured: false
+completed: "2020-01"
+products: ["SieMatic", "Duravit", "Hansgrohe"]
+brands: ["siematic", "duravit", "hansgrohe"]
 ---
 
 The Mount is an exclusive development of four luxury townhouses in Hale Barns, where every detail reflects considered design and premium living.

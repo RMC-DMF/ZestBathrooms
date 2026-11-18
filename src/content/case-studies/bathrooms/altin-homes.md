@@ -1,7 +1,8 @@
 ---
-title: "Altin Homes"
+title: "Marble & Glass"
+kind: "Development bathrooms"
 summary: "For Altin Homes, Zest outfitted premium bathrooms featuring elegant Gessi brassware perfectly paired with signature Villeroy & Boch sanitaryware."
-location: "Prestbury"
+location: "Prestbury, Cheshire"
 area: "cheshire"
 client: "Altin Homes"
 brands: ["gessi"]

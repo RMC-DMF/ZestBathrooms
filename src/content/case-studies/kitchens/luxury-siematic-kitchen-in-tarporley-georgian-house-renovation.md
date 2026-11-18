@@ -1,5 +1,6 @@
 ---
-title: "Defined Contemporary Kitchen & Glass Extension in Tarporley"
+title: "Georgian Glasshouse"
+kind: "SieMatic kitchen"
 summary: "Set within a beautifully renovated Georgian house in Tarporley, this bespoke SieMatic SLX kitchen was designed to create a seamless transition between the original property and a\u2026"
 location: "Tarporley, Cheshire"
 area: "cheshire"

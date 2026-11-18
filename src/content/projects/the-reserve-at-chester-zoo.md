@@ -11,6 +11,9 @@ date: "2025-09-23"
 legacyUrl: "/projects/the-reserve-at-chester-zoo"
 sector: "Leisure"
 featured: false
+completed: "2025-08"
+products: ["JTP", "Villeroy & Boch"]
+brands: ["villeroy-boch"]
 ---
 
 Zest proudly supplied bathrooms that combine natural finishes, water-efficient fittings, and timeless design — proving that luxury can exist in harmony with sustainability..

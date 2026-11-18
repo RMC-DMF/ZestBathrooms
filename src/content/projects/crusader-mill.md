@@ -13,6 +13,8 @@ legacyUrl: "/projects/crusader-mill"
 sector: "Residential"
 units: 126
 featured: false
+completed: "2022-08"
+products: ["Vitra", "Vado"]
 ---
 
 A listed mill brought back to life through design-led regeneration. Zest supplied beautifully crafted bathrooms that respect the building’s character while offering modern comfort and functionality.
