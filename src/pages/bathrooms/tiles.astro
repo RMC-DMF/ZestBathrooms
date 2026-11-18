@@ -5,6 +5,7 @@ import Editorial from '../../components/Editorial.astro';
 import Gallery from '../../components/Gallery.astro';
 import FullBleed from '../../components/FullBleed.astro';
 import FAQ from '../../components/FAQ.astro';
+import SampleCta from '../../components/SampleCta.astro';
 import { sections, site } from '../../data/site';
 import Page from '../../layouts/Page.astro';
 import { getCollection } from 'astro:content';
@@ -29,7 +30,7 @@ const gallery = [
 
 const faqs = [
   { q: 'Do you sell tiles on their own, without a bathroom?', a: 'Yes. Most tile orders are part of a Zest bathroom or kitchen, but the library is open to anyone with a room to finish, and we will still draw the layout.' },
-  { q: 'Can I take samples home?', a: 'Samples go home with you. For a specific scheme we order larger pieces, and full slabs are on the floor in the showroom to walk on.' },
+  { q: 'Can I take samples home?', a: 'Yes — request them online and collect them in the showroom, or we can post them. Samples go home with you. For a specific scheme we order larger pieces, and full slabs are on the floor in the showroom to walk on.' },
   { q: 'Do you supply tiles to trade and developments?', a: 'Yes — specification, sampling and supply to programme, through the Warrington project office.' },
   { q: 'Which is better, porcelain or natural stone?', a: 'Porcelain for anything wet or hard-worn; it does not stain or need sealing, and the best marble effects now hold up at arm\'s length. Natural stone where the variation is the point and the room is dry enough to look after it.' },
 ];
@@ -70,6 +71,8 @@ const faqs = [
   </div></section>
 
   <Gallery images={gallery} max={6} eyebrow="From the library" title="Colour, texture, scale." />
+
+  <SampleCta />
 
   <section class="section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Questions</span><h2 class="choose__title" style="color:var(--on-panel)">Tiles, answered.</h2></div><FAQ items={faqs} /></div></section>
 </Page>

@@ -1,0 +1,37 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getCollection } from 'astro:content';
+import { sections } from '../../data/site';
+const houses = (await getCollection('brands', (b) => b.data.category === 'Tiles & surfaces')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<Page sections={sections.bathrooms} title="Request Tile Samples" description="Request tile and slab samples from Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola — collect them in the Chester showroom with a designer." accent="bathrooms" eyebrow="Bathrooms — tile samples" heading="Request samples." lead="Tell us which houses and colours you are drawn to. We will pull the samples together, and the best place to see them is beside the brassware and furniture in the showroom.">
+  <section class="wrap section" style="padding-top:0">
+    <form class="stack" name="tile-samples" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=samples" style="max-width:640px">
+      <input type="hidden" name="form-name" value="tile-samples" />
+      <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
+      <div class="grid grid--2"><div class="field"><label for="t-name">Your name</label><input id="t-name" name="name" required autocomplete="name" /></div><div class="field"><label for="t-email">Email</label><input id="t-email" name="email" type="email" required autocomplete="email" /></div></div>
+      <div class="grid grid--2"><div class="field"><label for="t-phone">Phone</label><input id="t-phone" name="phone" type="tel" autocomplete="tel" /></div><div class="field"><label for="t-postcode">Postcode</label><input id="t-postcode" name="postcode" autocomplete="postal-code" /></div></div>
+      <fieldset class="field" style="border:0;padding:0;margin:0"><legend class="legend">Which houses?</legend><div class="ticks">{houses.map((h) => <label class="tick"><input type="checkbox" name="houses" value={h.data.title} data-slug={h.id} /> {h.data.title}</label>)}<label class="tick"><input type="checkbox" name="houses" value="Not sure yet" /> Not sure yet</label></div></fieldset>
+      <div class="field"><label for="t-room">The room</label><select id="t-room" name="room"><option>Bathroom</option><option>Shower room or wet room</option><option>Kitchen</option><option>Floor through the house</option><option>Something else</option></select></div>
+      <div class="field"><label for="t-looking">What are you looking for?</label><textarea id="t-looking" name="looking" rows="4" placeholder="Collections or colours you have seen, the finish (matt, polished, textured), sizes, or a photo of the room you can describe"></textarea></div>
+      <fieldset class="field" style="border:0;padding:0;margin:0"><legend class="legend">How would you like them?</legend>
+        <label class="tick"><input type="radio" name="delivery" value="Collect in the showroom with a designer" checked /> Collect them in the Chester showroom, with a designer</label>
+        <label class="tick"><input type="radio" name="delivery" value="Post them to me" /> Post them to me</label>
+      </fieldset>
+      <div><button class="z-btn z-btn--primary" type="submit">Request the samples</button></div>
+      <p class="caption">We use your details only to arrange your samples. <a href="/privacy">Privacy</a>.</p>
+    </form>
+  </section>
+</Page>
+<script>
+  // ?brand=slug ticks that house, so the CTA on a brand page arrives pre-filled
+  const slug = new URLSearchParams(location.search).get('brand');
+  if (slug) document.querySelectorAll<HTMLInputElement>(`input[data-slug="${CSS.escape(slug)}"]`).forEach((i) => (i.checked = true));
+</script>
+<style>
+  .legend { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+  .ticks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  @media (max-width: 600px) { .ticks { grid-template-columns: 1fr; } }
+  .tick { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-weight: 400; font-size: 16px; cursor: pointer; }
+  .tick input { flex: 0 0 auto; width: 20px !important; height: 20px; min-height: 0 !important; margin: 0; padding: 0; accent-color: var(--accent); }
+</style>

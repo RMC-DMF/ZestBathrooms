@@ -1,0 +1,19 @@
+---
+/** Request-a-sample band for tile pages. Pass the brand slug to pre-tick that house on the form. */
+interface Props { brand?: string; title?: string; text?: string }
+const { brand, title = 'See it in your hand, in our light.', text = 'Request samples and we will have them ready in the Chester showroom beside the brassware and furniture, or post them to you.' } = Astro.props;
+const href = `/bathrooms/tile-samples${brand ? `?brand=${brand}` : ''}`;
+---
+<section class="scta z-on-dark"><div class="wrap scta__in">
+  <div class="z-heading scta__copy"><span class="z-eyebrow">Samples</span><h2 class="scta__t">{title}</h2><p class="scta__p">{text}</p></div>
+  <div class="cluster scta__act"><a class="z-btn z-btn--primary z-btn--on-dark" href={href}>Request samples</a><a class="scta__link" href="/about/showroom">Visit the tile studio</a></div>
+</div></section>
+<style>
+  .scta { background: var(--panel-dark); color: var(--on-panel); border-block: 1px solid #1b1f26; padding-block: clamp(56px, 7vw, 96px); }
+  .scta__in { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; }
+  .scta__copy { max-width: 620px; }
+  .scta__t { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.05; font-weight: 300; letter-spacing: -0.015em; color: var(--on-panel); }
+  .scta__p { margin-top: var(--space-3); color: #cfd3d9; font-size: 17px; line-height: 1.6; }
+  .scta__act { gap: 24px; align-items: center; }
+  .scta__link { color: #cfd3d9; font-size: 15px; }
+</style>

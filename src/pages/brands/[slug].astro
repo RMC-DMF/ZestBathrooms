@@ -2,6 +2,7 @@
 import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
 import Feature from '../../components/Feature.astro';
+import SampleCta from '../../components/SampleCta.astro';
 import Gallery from '../../components/Gallery.astro';
 import KnownFor from '../../components/KnownFor.astro';
 import OnlineBand from '../../components/OnlineBand.astro';
@@ -51,6 +52,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
   </section>
 
   <div id="gallery"><Gallery images={topGallery} max={5} context={entry.data.title} /></div>
+  {b.category === 'Tiles & surfaces' && <SampleCta brand={entry.id} title={`${b.title} samples, in your hand.`} />}
 
   <KnownFor items={b.knownFor} title={`What ${b.title} is known for.`} />
 
