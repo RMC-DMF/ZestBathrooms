@@ -5,26 +5,26 @@ country: Italy
 summary: 'Oasis is Italian bathroom furniture: vanities, mirrors and storage in lacquer, wood and stone, made to order in the sizes and finishes a specific room needs.'
 hero:
   src: /images/brands/oasis-sage-green-fluted-vanity-with-a-round-mirror-and-brass-trim.webp
-  alt: "Oasis sage green fluted vanity with a round mirror and brass trim"
+  alt: Oasis sage green fluted vanity with a round mirror and brass trim
 gallery:
-- src: /images/brands/gessi-tap-in-powder-pink-on-a-terracotta-basin-among-moss-and-glass.webp
-  alt: "Gessi tap in powder pink on a terracotta basin among moss and glass"
+- src: /images/brands/press/oasis-green-fluted-vanity-with-round-mirror-cabinet.jpg
+  alt: Oasis green fluted vanity with brass trim and a round mirror cabinet
 - src: /images/brands/oasis-sage-green-vanity-with-a-brass-basin-rim-in-a-bathroom-with-a.webp
-  alt: "Oasis sage green vanity with a brass basin rim in a bathroom with a stone column"
+  alt: Oasis sage green vanity with a brass basin rim in a bathroom with a stone column
 - src: /images/brands/oasis-double-vanity-in-grey-with-a-lit-mirror-timber-wall-panels-and-a.webp
-  alt: "Oasis double vanity in grey with a lit mirror, timber wall panels and a freestanding bath"
+  alt: Oasis double vanity in grey with a lit mirror, timber wall panels and a freestanding bath
 - src: /images/brands/oasis-bathroom-with-a-floating-grey-vanity-between-slatted-timber.webp
-  alt: "Oasis bathroom with a floating grey vanity between slatted timber screens"
+  alt: Oasis bathroom with a floating grey vanity between slatted timber screens
 - src: /images/brands/oasis-grey-vanity-and-tall-timber-storage-in-a-dark-ceilinged-bathroom.webp
-  alt: "Oasis grey vanity and tall timber storage in a dark-ceilinged bathroom"
+  alt: Oasis grey vanity and tall timber storage in a dark-ceilinged bathroom
 - src: /images/brands/oasis-bathroom-suite-with-backlit-mirror-timber-wardrobes-and-a-rug.webp
-  alt: "Oasis bathroom suite with backlit mirror, timber wardrobes and a rug"
+  alt: Oasis bathroom suite with backlit mirror, timber wardrobes and a rug
 - src: /images/pages/oasis-green-fluted-double-vanity-with-round-backlit-mirrors.webp
-  alt: "Oasis green fluted double vanity with round backlit mirrors"
+  alt: Oasis green fluted double vanity with round backlit mirrors
 - src: /images/pages/oasis-grey-vanity-with-backlit-mirror-and-tall-oak-storage.webp
-  alt: "Oasis grey vanity with backlit mirror and tall oak storage"
+  alt: Oasis grey vanity with backlit mirror and tall oak storage
 - src: /images/pages/oasis-vanity-with-a-terracotta-panel-and-tall-black-storage-unit.jpg
-  alt: "Oasis vanity with a terracotta panel and tall black storage unit"
+  alt: Oasis vanity with a terracotta panel and tall black storage unit
 legacyUrl: /about/oasis-at-zest-bathrooms-kitchens
 heritage: Oasis gives a bathroom a piece of furniture that leads the room. We use it where the brief wants presence rather than restraint.
 tagline: Italian bathroom furniture with a decorative streak.

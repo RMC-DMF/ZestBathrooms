@@ -15,28 +15,32 @@ gallery:
   alt: Dark timber SieMatic kitchen with a taupe island, designed by Zest
 - src: /images/case-studies/kitchens/walnut-porcelain-kitchen-07.webp
   alt: Open SieMatic drawer in a walnut island
+- src: /images/brands/press/siematic-milan-2026-dark-timber-kitchen-with-pocket-door-pantry.jpg
+  alt: SieMatic 2026 Milan kitchen in dark timber with a pocket-door pantry and planted tops
+- src: /images/brands/press/siematic-pure-stepped-island-with-dark-oak-tall-wall.jpg
+  alt: SieMatic Pure stepped island in metallic and stone fronts before a dark oak tall wall
 - src: /images/journal/backlit-onyx-behind-bronze-framed-siematic-shelving-and-drawers.webp
-  alt: "Backlit onyx behind bronze-framed SieMatic shelving and drawers"
+  alt: Backlit onyx behind bronze-framed SieMatic shelving and drawers
 - src: /images/journal/siematic-bronze-shelving-unit-lit-against-a-veined-onyx-wall.webp
-  alt: "SieMatic bronze shelving unit lit against a veined onyx wall"
+  alt: SieMatic bronze shelving unit lit against a veined onyx wall
 - src: /images/journal/thin-white-stone-worktop-over-a-recessed-handle-and-timber-tall-unit.webp
-  alt: "Thin white stone worktop over a recessed handle and timber tall unit, close up"
+  alt: Thin white stone worktop over a recessed handle and timber tall unit, close up
 - src: /images/journal/handleless-siematic-fronts-with-a-shadow-gap-grip-close-up.webp
-  alt: "Handleless SieMatic fronts with a shadow-gap grip, close up"
+  alt: Handleless SieMatic fronts with a shadow-gap grip, close up
 - src: /images/journal/bevelled-edge-of-a-dark-marble-worktop-close-up.webp
-  alt: "Bevelled edge of a dark marble worktop, close up"
+  alt: Bevelled edge of a dark marble worktop, close up
 - src: /images/journal/green-marble-worktop-edge-over-light-oak-with-a-bronze-pull-handle.webp
-  alt: "Green marble worktop edge over light oak with a bronze pull handle, close up"
+  alt: Green marble worktop edge over light oak with a bronze pull handle, close up
 - src: /images/journal/white-siematic-island-with-bronze-open-shelving-in-a-room-with-dark.webp
-  alt: "White SieMatic island with bronze open shelving in a room with dark stone floors"
+  alt: White SieMatic island with bronze open shelving in a room with dark stone floors
 - src: /images/journal/bronze-handle-on-a-smoked-glass-siematic-cabinet-door-close-up.webp
-  alt: "Bronze handle on a smoked glass SieMatic cabinet door, close up"
+  alt: Bronze handle on a smoked glass SieMatic cabinet door, close up
 - src: /images/journal/siematic-island-in-bronze-with-tall-timber-units-and-trailing-plants.webp
-  alt: "SieMatic island in bronze with tall timber units and trailing plants above"
+  alt: SieMatic island in bronze with tall timber units and trailing plants above
 - src: /images/journal/walk-in-pantry-in-dark-siematic-units-with-a-marble-splashback-and-lit.jpg
-  alt: "Walk-in pantry in dark SieMatic units with a marble splashback and lit shelves"
+  alt: Walk-in pantry in dark SieMatic units with a marble splashback and lit shelves
 - src: /images/journal/siematic-tall-units-in-walnut-with-an-integrated-desk-and-open-shelves.jpg
-  alt: "SieMatic tall units in walnut with an integrated desk and open shelves"
+  alt: SieMatic tall units in walnut with an integrated desk and open shelves
 heritage: 'We became a SieMatic studio because it is the kitchen we would want ourselves: the original handleless system, still family-made in Löhne, and engineered so that a design drawn in Chester arrives on site exactly as drawn. We have designed and supplied SieMatic from Chester since 2008.'
 tagline: The handleless original, since 1960.
 founded: '1929'

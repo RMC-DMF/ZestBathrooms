@@ -1,6 +1,7 @@
 ---
 import Page from '../../layouts/Page.astro';
 import PersonCard from '../../components/PersonCard.astro';
+import Pic from '../../components/Pic.astro';
 import { getCollection } from 'astro:content';
 import { site } from '../../data/site';
 const team = (await getCollection('team', ({ data }) => data.published)).sort((a, b) => a.data.order - b.data.order);
@@ -8,6 +9,7 @@ const chester = team.filter((t) => t.data.office === 'chester');
 const warrington = team.filter((t) => t.data.office === 'warrington');
 ---
 <Page title="The Team" description="The designers and project team at Zest Bathrooms & Kitchens, Chester — who to ask about kitchens, bathrooms, Haute Culture and developments." eyebrow="About — the team" heading="The people you will deal with." lead="Named and attached to the work they did: a design studio in Chester and a projects office in Warrington.">
+  <figure class="wrap teamshot"><Pic src="/images/showroom/the-zest-team-outside-the-chester-showroom.webp" alt="The Zest team outside the showroom on Brookdale Place, Chester" sizes="(max-width: 800px) 100vw, 744px" widths={[480, 744]} /><figcaption class="caption">The Chester and Warrington teams, outside the showroom on Brookdale Place.</figcaption></figure>
   <section class="wrap section" style="padding-top:0">
     <div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Chester showroom</span><h2>The design studio.</h2><p class="z-heading__lead">Two kitchen designers and three bathroom designers on Brookdale Place. There are no direct lines — call the showroom and ask for them by name.</p></div>
     <div class="grid grid--2">{chester.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={site.phoneHref} contactLabel={`Chester ${site.phone}`} />)}</div>
@@ -17,3 +19,9 @@ const warrington = team.filter((t) => t.data.office === 'warrington');
     <div class="grid grid--2">{warrington.map((t) => <PersonCard name={t.data.name} role={t.data.role} photo={t.data.photo} ask={t.data.ask} contactHref={site.projectsPhoneHref} contactLabel={`Warrington ${site.projectsPhone}`} />)}</div>
   </section>
 </Page>
+
+<style>
+  .teamshot { max-width: 744px; margin-block: 0 var(--space-8); }
+  .teamshot :global(img) { width: 100%; height: auto; display: block; }
+  .teamshot figcaption { margin-top: 10px; color: var(--slate-muted); }
+</style>

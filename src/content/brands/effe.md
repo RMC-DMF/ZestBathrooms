@@ -2,18 +2,20 @@
 title: Effe
 category: Wellness
 country: Italy
-summary: 'Effe makes steam rooms, saunas and hammams in Italy — from a steam generator behind a shower wall to a complete room — and is the wellness system Zest specifies most often.'
+summary: Effe makes steam rooms, saunas and hammams in Italy — from a steam generator behind a shower wall to a complete room — and is the wellness system Zest specifies most often.
 legacyUrl: /about/effe-at-zest-bathrooms-kitchens-2
 hero:
-  src: /images/pages/effe-sauna-in-light-timber-with-planting-around-it.jpg
-  alt: Italian steam, sauna and spa, built into the home.
+  src: /images/brands/press/effe-combined-sauna-and-steam-room-in-light-timber.jpg
+  alt: Effe combined sauna and steam room in light timber with coloured light
 gallery:
+- src: /images/brands/press/effe-sauna-and-steam-cabin-in-timber-among-planting.jpg
+  alt: Effe sauna and steam cabin in timber, seen through planting
 - src: /images/pages/effe-steam-shower-with-glass-doors-and-teak-trim.jpg
-  alt: "Effe steam shower with glass doors and teak trim"
+  alt: Effe steam shower with glass doors and teak trim
 - src: /images/pages/effe-steam-room-with-frosted-glass-doors-in-a-minimal-stone-coloured.jpg
-  alt: "Effe steam room with frosted glass doors in a minimal stone-coloured room"
+  alt: Effe steam room with frosted glass doors in a minimal stone-coloured room
 - src: /images/pages/effe-steam-room-with-frosted-glass-doors-and-minimal-steel-frame.webp
-  alt: "Effe steam room with frosted glass doors and minimal steel frame"
+  alt: Effe steam room with frosted glass doors and minimal steel frame
 heritage: Effe is how we bring steam and sauna into a home without a wellness centre's footprint — engineered systems from Vicenza that we have learnt to integrate with the drainage, ventilation and power a British bathroom actually has.
 tagline: Italian steam, sauna and spa, built into the home.
 founded: '1986'

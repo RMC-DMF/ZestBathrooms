@@ -20,6 +20,9 @@ const choose = [
 ];
 
 const gallery = [
+  { src: '/images/showroom/pink-and-white-marble-mosaic-close-up.webp', alt: 'Pink and white marble mosaic, close up, Zest tile studio' },
+  { src: '/images/showroom/blue-and-bronze-quartzite-effect-porcelain-close-up.webp', alt: 'Blue and bronze quartzite-effect porcelain, close up, Zest tile studio' },
+  { src: '/images/showroom/banded-onyx-slab-close-up.webp', alt: 'Banded onyx slab, close up, Zest showroom' },
   { src: '/images/brands/press/museum-savage-green-marble.jpg', alt: 'Museum Savage Green marble-effect slabs' },
   { src: '/images/brands/press/imola-pink-tiled-kitchen.jpg', alt: 'Imola Ceramica glossy pink wall tiles' },
   { src: '/images/brands/press/mirage-jewels-statuario-venato.jpg', alt: 'Mirage Jewels Statuario Venato slabs' },
@@ -37,7 +40,7 @@ const faqs = [
 ---
 <Page sections={sections.bathrooms} title="Luxury Tiles & Surfaces Chester — Porcelain, Slabs, Stone" description="Large-format porcelain, slabs and glazed wall tiles from eight European houses — Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola — in the Zest showroom in Chester." accent="bathrooms" eyebrow="Bathrooms — tiles and surfaces" heading="The surface is the room." lead="Porcelain slabs to 160×320, glazed wall tiles with real colour, stone and wood that pass at arm's length — from eight European houses, chosen with the room rather than after it." hero={{ src: '/images/brands/press/benadresa-icaro-blue-marble.jpg', alt: 'Blue marble-effect porcelain behind a freestanding bath' }}>
 
-  <Texture image="/images/home/material-agate.webp" alt="Agate slab — bands of amber, smoke and white crystal, close up" line="Start with the slab." caption="Agate — book-matched, backlit if you like" position="50% 40%" />
+  <Texture image="/images/showroom/green-marble-with-white-veining-close-up.webp" alt="Green marble with white veining, close up" line="Start with the slab." caption="Green marble — in the Chester showroom" position="50% 50%" />
 
   <Editorial overlap tone="light" accent="bathrooms" image="/images/brands/press/imola-sea-blue-bathroom.jpg" alt="Glossy sea-blue wall tiles with a freestanding bath, Imola Ceramica" detail="/images/brands/press/peronda-cluny-sand-vanity.jpg" detailAlt="Ribbed, textured wall tile behind a vanity, Peronda Cluny" eyebrow="How we choose" title="Chosen with the room, not after it." text="Our designers plan the surfaces alongside the brassware, furniture and lighting, so a slab, a mosaic and a floor read as one scheme rather than three decisions. The sample goes home with you; the layout is drawn before anything is cut." href="/design-service" linkLabel="How the design service works" position="50% 50%" />
 
@@ -70,7 +73,7 @@ const faqs = [
     <ol class="choose__list">{choose.map((c, i) => <li class="choose__item z-heading"><span class="ch-num">{String(i + 1).padStart(2, '0')}</span><h3 class="choose__h">{c.title}</h3><p class="choose__t">{c.text}</p></li>)}</ol>
   </div></section>
 
-  <Gallery images={gallery} max={6} eyebrow="From the library" title="Colour, texture, scale." />
+  <Gallery images={gallery} max={9} eyebrow="From the library" title="Colour, texture, scale." />
 
   <SampleCta />
 
