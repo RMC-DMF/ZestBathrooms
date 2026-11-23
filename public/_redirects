@@ -71,6 +71,30 @@ https://www.zestbathroomsandkitchens.co.uk/* https://zestbathroomsandkitchens.co
 /kitchen_showroom /kitchens 301
 /siematic-kitchens /kitchens/siematic 301
 /inspiration /journal 301
+# Missing from the October map (found in the live sitemap, 23 Nov)
+/blog/how-to-choose-the-right-tiles-for-your-home /bathrooms/tiles 301
+/about/villeroy-boch-at-zest-bathrooms-kitchens /brands/villeroy-boch 301
+/about/jtp-at-zest-bathrooms-kitchens-copy /brands 301
+
+# WordPress archives with a natural new home (the rest stay 410 below)
+/category/kitchens /kitchens 301
+/category/bathrooms /bathrooms 301
+/category/projects /projects 301
+/category/hospitailty /projects 301
+/category/blog /journal 301
+/tag/kitchens /kitchens 301
+/tag/bathrooms /bathrooms 301
+/tag/projects /projects 301
+/tag/project-business /projects 301
+/tag/siematic /kitchens/siematic 301
+/tag/gessi /brands/gessi 301
+/tag/sunshower /brands/sunshower 301
+/tag/wellness /bathrooms/wellness 301
+/tag/showers /bathrooms 301
+/tag/brassware /bathrooms 301
+/tag/design-trends /journal 301
+/room/bathrooms /bathrooms 301
+
 /tag/* /404 410
 /author/* /404 410
 /category/* /404 410
