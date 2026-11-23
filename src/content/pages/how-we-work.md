@@ -56,7 +56,7 @@ Whether you are working on a single property or a large-scale development, we pr
 
 We understand that professional projects require accuracy, responsiveness and consistency. Our experienced team works around your existing processes, providing the specialist bathroom and kitchen knowledge you need without taking over your project.
 
-Whether you’re specifying a single luxury property or multiple units within a larger development, we provide a dependable supply partner for [premium kitchens](/kitchens/siematic-kitchens) and [bathrooms](/bathrooms).
+Whether you’re specifying a single luxury property or multiple units within a larger development, we provide a dependable supply partner for [premium kitchens](/kitchens/siematic) and [bathrooms](/bathrooms).
 
 
 ## Built Around Your Project

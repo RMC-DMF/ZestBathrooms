@@ -11,7 +11,7 @@ Kitchen & Bathroom Showroom in Chester
 
 Visit Zest Bathrooms & Kitchens in Chester to explore a carefully curated collection of kitchen and bathroom displays, premium materials, finishes and leading European brands.
 
-Our showroom brings kitchen and bathroom design to life, giving you the opportunity to experience products, materials and details in person before making decisions for your project. From [contemporary kitchens](/kitchens/siematic-kitchens) and [bespoke bathroom furniture](/bathrooms) to statement brassware, baths, showers, tiles and finishing touches, our displays showcase a range of design possibilities.
+Our showroom brings kitchen and bathroom design to life, giving you the opportunity to experience products, materials and details in person before making decisions for your project. From [contemporary kitchens](/kitchens/siematic) and [bespoke bathroom furniture](/bathrooms) to statement brassware, baths, showers, tiles and finishing touches, our displays showcase a range of design possibilities.
 
 Located in Chester, our showroom welcomes homeowners, architects, interior designers and developers looking for inspiration, product expertise and considered design solutions.
 
@@ -29,7 +29,7 @@ Whether you are planning a new bathroom, renovating an ensuite or working on a l
 
 Our Chester Kitchen Showroom
 
-## [Experience SieMatic kitchen design](/kitchen_showroom)
+## [Experience SieMatic kitchen design](/kitchens)
 
 Our kitchen showroom in Chester is home to a curated selection of SieMatic kitchen displays, showcasing contemporary German kitchen design, premium materials, refined finishes and intelligent storage solutions.
 
@@ -43,7 +43,7 @@ Our brands
 
 Our Chester showroom brings together a carefully selected range of leading European kitchen and bathroom brands.
 
-For kitchens, we are proud to work with [**SieMatic**](/kitchens/siematic-kitchens), renowned for its precision German engineering, considered design and exceptional functionality.
+For kitchens, we are proud to work with [**SieMatic**](/kitchens/siematic), renowned for its precision German engineering, considered design and exceptional functionality.
 
 Our [bathroom collection](/bathrooms) includes leading names such as Gessi, AXOR, Oasis, Novello and Cielo, alongside carefully selected products across bathroom furniture, brassware, sanitaryware, baths, showers and wellness.
 

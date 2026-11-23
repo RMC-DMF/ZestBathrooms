@@ -40,7 +40,7 @@ These elements work together to create a bathroom that feels restorative, intuit
 
 Steam has been part of wellness rituals for centuries. Traditionally associated with luxury spas and wellness retreats, it is now becoming increasingly desirable within residential bathroom design.
 
-Italian wellness specialist [**Effe**](/about/effe-at-zest-bathrooms-kitchens-2) has spent more than thirty years dedicated exclusively to creating wellness environments and is internationally recognised for its expertise in steam baths, saunas and integrated wellness solutions.
+Italian wellness specialist [**Effe**](/brands/effe) has spent more than thirty years dedicated exclusively to creating wellness environments and is internationally recognised for its expertise in steam baths, saunas and integrated wellness solutions.
 
 Its steam systems allow designers to incorporate authentic steam experiences directly into contemporary shower spaces, without compromising on aesthetics.
 
@@ -60,7 +60,7 @@ Our relationship with natural light has changed dramatically.
 
 Modern lifestyles often mean we spend significant amounts of time indoors, particularly during the winter months. This has influenced growing interest in technologies that help create a more uplifting and restorative environment within the home.
 
-[**Sunshower**](/about/sunshower-at-zest-bathrooms-kitchens) takes a unique approach by integrating wellness technology directly within the shower enclosure.
+[**Sunshower**](/brands/sunshower) takes a unique approach by integrating wellness technology directly within the shower enclosure.
 
 Its slim architectural panels combine carefully controlled low-dose UV light with infrared warmth to create a showering experience that feels both energising and restorative.
 
@@ -82,7 +82,7 @@ From beautifully crafted sanitaryware and brassware to integrated wellness solut
 
 Rather than simply supplying products, we work collaboratively with our clients to create bathrooms that enhance how people live and experience their homes.
 
-[Explore luxury bathrooms](/inspiration?filter=2)
+[Explore luxury bathrooms](/journal?filter=2)
 
 Recent Blog Posts
 

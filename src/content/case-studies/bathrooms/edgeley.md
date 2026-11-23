@@ -17,4 +17,4 @@ featured: true
 
 For the Edgeley project, Zest Bathrooms & Kitchens collaborated with [ōH Studio](https://www.ohstudio.uk/) to deliver two contemporary bathroom spaces designed around refined simplicity, clean architectural detailing, and modern living.
 
-A carefully curated specification featuring [Gessi](/about/gessi-at-zest-bathrooms-kitchens) brassware, [Novello furniture](/about/novello-at-zest-bathrooms-kitchens), and bathing solutions by [Bette](/about/betteat-zest-bathrooms-kitchens) was selected to complement the project’s warm, minimalist aesthetic while ensuring lasting quality and performance. The completed scheme reflects a considered, specification-led approach that balances timeless design with everyday functionality.
+A carefully curated specification featuring [Gessi](/brands/gessi) brassware, [Novello furniture](/brands/novello), and bathing solutions by [Bette](/brands/bette) was selected to complement the project’s warm, minimalist aesthetic while ensuring lasting quality and performance. The completed scheme reflects a considered, specification-led approach that balances timeless design with everyday functionality.

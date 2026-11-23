@@ -19,9 +19,9 @@ For discerning homeowners, architects, and developers, this means a kitchen that
 
 [See how timeless design translates into real homes](/kitchens/case-studies)
 
-[Discover more about SieMatic’s Award-Winning SG6 design](/blog/award-winning-design-from-siematic-meet-the-sg6)
+[Discover more about SieMatic’s Award-Winning SG6 design](/journal/award-winning-design-from-siematic-meet-the-sg6)
 
-[Book a design review and let us reimagine your space](/contact-us)
+[Book a design review and let us reimagine your space](/contact)
 
 [Download the SieMatic Lookbook and collection brochures](/kitchens/brochures#kitchen_downloads)
 

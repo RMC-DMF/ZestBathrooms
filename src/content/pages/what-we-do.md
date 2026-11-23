@@ -19,7 +19,7 @@ At Zest, every project begins with you. Our bespoke bathroom and kitchen design 
 
 ## Luxury Brands & Partnerships
 
-We partner with the world’s leading luxury bathroom and kitchen brands to bring unparalleled quality into your home. From the precision of SieMatic kitchens to the elegance of Bette baths, the innovation of [Gessi brassware](/about/gessi-at-zest-bathrooms-kitchens), and the timeless style of Oasis, Zest curates collections that set new standards in design. Our exclusive access ensures every product we recommend has been carefully chosen for its beauty, performance, and lasting craftsmanship.
+We partner with the world’s leading luxury bathroom and kitchen brands to bring unparalleled quality into your home. From the precision of SieMatic kitchens to the elegance of Bette baths, the innovation of [Gessi brassware](/brands/gessi), and the timeless style of Oasis, Zest curates collections that set new standards in design. Our exclusive access ensures every product we recommend has been carefully chosen for its beauty, performance, and lasting craftsmanship.
 
 ## Innovative Wellness & Design
 

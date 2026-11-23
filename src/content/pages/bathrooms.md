@@ -23,7 +23,7 @@ BATHROOM DESIGN SERVICE
 
 A successful bathroom is about more than choosing beautiful products. Layout, proportion, lighting, storage, materials and functionality all need to work together.
 
-Our bathroom [design service in Chester](/about/design-service) brings these elements together to create a space that feels effortless, refined and made for the way you live.
+Our bathroom [design service in Chester](/design-service) brings these elements together to create a space that feels effortless, refined and made for the way you live.
 
 From statement freestanding baths and sculptural basins to walk-in showers, bespoke bathroom furniture and beautifully detailed brassware, we help you select every element with confidence.
 

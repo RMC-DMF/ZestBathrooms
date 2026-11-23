@@ -13,7 +13,7 @@ Every exceptional kitchen and bathroom begins with a conversation.
 
 Whether you’re renovating your home, building a new property or specifying for a residential development, our experienced design team is here to help bring your vision to life.
 
-Visit our luxury [**Chester showroom**](/about/our-showroom) to explore beautifully curated luxury kitchens, luxury bathrooms and premium interior brands. When you’re ready to discuss your project, book a private one-to-one design consultation and enjoy dedicated time with one of our experienced designers.
+Visit our luxury [**Chester showroom**](/about/showroom) to explore beautifully curated luxury kitchens, luxury bathrooms and premium interior brands. When you’re ready to discuss your project, book a private one-to-one design consultation and enjoy dedicated time with one of our experienced designers.
 
 We proudly work with homeowners, architects, interior designers and developers throughout Chester, Cheshire, Wirral, North Wales, Knutsford, Wilmslow, Tarporley and Nantwich, delivering bespoke design solutions tailored to every project.
 
@@ -33,7 +33,7 @@ You’re welcome to browse our showroom without an appointment. When you’re re
 
 Explore Our projects
 
-## [Designed Around Your Lifestyle](/kitchen_showroom)
+## [Designed Around Your Lifestyle](/kitchens)
 
 Every project begins with understanding how you live.
 
@@ -43,7 +43,7 @@ Our personalised design service combines creativity, technical expertise and car
 
 We regularly design projects throughout Chester, Cheshire, Wirral, North Wales, Knutsford, Wilmslow, Tarporley and Nantwich, working with homeowners, architects, interior designers, developers and self-build clients.
 
-## [Discover the Brands Behind Every Beautiful Project](/kitchen_showroom)
+## [Discover the Brands Behind Every Beautiful Project](/kitchens)
 
 Exceptional design deserves exceptional products.
 
@@ -53,7 +53,7 @@ Explore premium brands including:
 
 Whether your project is large or small, our experienced team will provide expert guidance from your first ideas through to final specification.
 
-## [Who We Work With](/kitchen_showroom)
+## [Who We Work With](/kitchens)
 
 Every project is unique, which is why our private design consultations are tailored to your individual requirements. Whether you’re creating your forever home, renovating a period property or delivering a high-end residential development, our experienced team will provide expert guidance from concept to completion.
 
@@ -77,7 +77,7 @@ Whether you’re renovating a home in Chester, planning a self-build in Cheshire
 
 Do I Need an appointment to visit the showroom?
 
-No. We warmly welcome you to browse our luxury Chester showroom for inspiration. If you’d like to discuss your project in more detail, [**private design consultations are available by appointment**](/contact-us), giving you dedicated time with one of our experienced designers to explore ideas, products and tailored design solutions.
+No. We warmly welcome you to browse our luxury Chester showroom for inspiration. If you’d like to discuss your project in more detail, [**private design consultations are available by appointment**](/contact), giving you dedicated time with one of our experienced designers to explore ideas, products and tailored design solutions.
 
 How long does a design consultation take?
 

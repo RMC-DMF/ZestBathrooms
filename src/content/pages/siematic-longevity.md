@@ -23,6 +23,6 @@ Our role is to ensure the experience is as seamless as the finished space.
 
 [Download SieMatic Brochures](/kitchens/brochures)
 
-[Request a bespoke kitchen proposal](/contact-us)
+[Request a bespoke kitchen proposal](/contact)
 
 ## Discover SieMatic Luxury Kitchens at Zest

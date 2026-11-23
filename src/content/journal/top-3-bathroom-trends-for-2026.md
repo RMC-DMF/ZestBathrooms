@@ -102,7 +102,7 @@ The result is bathrooms that feel fresh, luxurious and effortlessly modern.
 
 Whether you are planning a new bathroom or designing for a high end residential project these 2026 trends offer a powerful direction for creating calming, modern and luxurious spaces.
 
-Explore more ideas and see the [latest bathroom inspiration](/inspiration?filter=2).
+Explore more ideas and see the [latest bathroom inspiration](/journal?filter=2).
 
 Recent Blog Posts
 

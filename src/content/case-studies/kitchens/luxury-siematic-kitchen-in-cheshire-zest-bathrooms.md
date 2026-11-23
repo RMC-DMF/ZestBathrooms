@@ -16,10 +16,10 @@ collaborators: ["Fiona Watkins"]
 featured: false
 ---
 
-For this contemporary home, Zest Bathrooms & Kitchens designed and supplied a sophisticated [SieMatic kitchen](/kitchens/siematic-kitchens), combining SLX H Graphite Oak Veneer and SC45 Pebble Grey Semi-Lacquer furniture with carefully considered detailing throughout.
+For this contemporary home, Zest Bathrooms & Kitchens designed and supplied a sophisticated [SieMatic kitchen](/kitchens/siematic), combining SLX H Graphite Oak Veneer and SC45 Pebble Grey Semi-Lacquer furniture with carefully considered detailing throughout.
 
 The kitchen features 12mm Ceralsio Storm Negro porcelain worktops, a bespoke Spekva Elm River Washed breakfast bar and dark grey mirrored Deco Glaze, complemented by black aluminium glass cabinets with Obsidian glass doors.
 
-A comprehensive [Gaggenau](/about/gaggenau-zest-bathrooms-kitchens) appliance specification includes twin single ovens, steam oven, coffee machine, warming drawers, induction hob with table ventilation, Vario fridge, freezer and wine fridge. The cooking appliances are concealed behind pocket doors, maintaining the kitchen’s clean, minimalist lines.
+A comprehensive [Gaggenau](/brands/gaggenau) appliance specification includes twin single ovens, steam oven, coffee machine, warming drawers, induction hob with table ventilation, Vario fridge, freezer and wine fridge. The cooking appliances are concealed behind pocket doors, maintaining the kitchen’s clean, minimalist lines.
 
 Blanco sinks, a Quooker Fusion hot tap with Cube chiller and Kaelo Plus wine chiller complete the specification. A matching bespoke pantry was also designed and supplied, creating a cohesive finish throughout the home.

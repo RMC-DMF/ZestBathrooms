@@ -21,6 +21,6 @@ For this contemporary home in Chester, a sophisticated LEICHT ALURO kitchen was 
 
 The kitchen features substantial 60mm Opus Borghini porcelain worktops, providing a luxurious and durable surface that contrasts beautifully with the Oxide Bronze cabinetry. A suite of Miele appliances completes the specification, combining seamless integration with high-performance functionality.
 
-As a specialist in [luxury kitchens](/kitchens/siematic-kitchens) in Chester, this project showcases the quality and versatility of a LEICHT kitchen, combining premium materials with contemporary German design. The carefully considered combination of cabinetry, porcelain worktops and integrated Miele appliances creates a sophisticated contemporary kitchen in Chester, tailored to both the space and the way it is used.
+As a specialist in [luxury kitchens](/kitchens/siematic) in Chester, this project showcases the quality and versatility of a LEICHT kitchen, combining premium materials with contemporary German design. The carefully considered combination of cabinetry, porcelain worktops and integrated Miele appliances creates a sophisticated contemporary kitchen in Chester, tailored to both the space and the way it is used.
 
 The result is a refined, contemporary kitchen that balances striking materials with practical design, creating an elegant space designed for modern living.

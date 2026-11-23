@@ -9,7 +9,7 @@ gallery: [{"src":"/images/pages/rounded-siematic-island-end-in-taupe-with-a-towe
 
 About Zest Bathrooms & Kitchensr
 
-For more than three decades, Zest Bathrooms & Kitchens has been creating beautifully considered interiors from our showroom in Chester. Established in 1992, we have grown from a specialist bathroom showroom into an independent destination for luxury bathrooms, contemporary interiors and [premium SieMatic kitchens](/kitchens/siematic-kitchens).
+For more than three decades, Zest Bathrooms & Kitchens has been creating beautifully considered interiors from our showroom in Chester. Established in 1992, we have grown from a specialist bathroom showroom into an independent destination for luxury bathrooms, contemporary interiors and [premium SieMatic kitchens](/kitchens/siematic).
 
 Our approach is rooted in a simple belief: exceptional design should feel personal. Rather than following passing trends, we bring together considered design, exceptional materials and some of the world’s leading bathroom and kitchen brands to create spaces that are made to be lived in.
 

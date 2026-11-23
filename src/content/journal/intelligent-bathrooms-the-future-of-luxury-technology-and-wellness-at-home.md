@@ -85,7 +85,7 @@ This balance between technology and design is what allows intelligent bathrooms 
 
 Whether you are planning a new intelligent bathroom or specifying for a high-end residential project, these design trends offer a clear direction for creating calming and beautifully integrated spaces where technology enhances modern luxury rather than overpowering it.
 
-Explore more ideas and see the [latest bathroom inspiration](/inspiration?filter=2).
+Explore more ideas and see the [latest bathroom inspiration](/journal?filter=2).
 
 Recent Blog Posts
 

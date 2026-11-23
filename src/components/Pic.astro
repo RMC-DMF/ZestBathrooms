@@ -7,9 +7,11 @@
  */
 import { Picture, getImage } from 'astro:assets';
 import { resolveImage, getLqip } from '../lib/images';
+import altRegistry from '../data/alts.json';
 interface Props { src?: string; alt: string; widths?: number[]; sizes?: string; priority?: boolean; class?: string; style?: string; aspect?: string; position?: string; mobile?: string; mobileWidths?: number[] }
 const { src, alt: altIn, widths = [480, 768, 1024, 1440, 1920], sizes = '100vw', priority = false, class: cls = '', style = '', aspect, position, mobile, mobileWidths = [480, 640, 860, 1080, 1320] } = Astro.props;
-const alt = altIn ?? '';
+// An empty alt falls back to the image's registered description; pass decorative explicitly via data-decorative if ever needed
+const alt = altIn || (typeof src === 'string' ? (altRegistry as Record<string, string>)[src] : '') || '';
 const meta = await resolveImage(src);
 const mobileMeta = mobile ? await resolveImage(mobile) : null;
 const lqip = priority ? null : await getLqip(src);

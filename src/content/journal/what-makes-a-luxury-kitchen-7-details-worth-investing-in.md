@@ -10,7 +10,7 @@ legacyUrl: "/blog/what-makes-a-luxury-kitchen-7-details-worth-investing-in"
 decision: "review"
 ---
 
-A truly luxurious kitchen is about more than beautiful cabinetry or the latest appliances. The best [luxury kitchens](/kitchens/siematic-kitchens) are carefully considered from the beginning, bringing together architecture, materials, functionality and craftsmanship to create a space that feels effortless to live with.
+A truly luxurious kitchen is about more than beautiful cabinetry or the latest appliances. The best [luxury kitchens](/kitchens/siematic) are carefully considered from the beginning, bringing together architecture, materials, functionality and craftsmanship to create a space that feels effortless to live with.
 
 Whether you are planning a new kitchen for a contemporary home, renovating a period property or creating a large open-plan living space, the details matter. From intelligent storage and integrated appliances to considered lighting and beautifully crafted cabinetry, it is the combination of individual elements that gives a kitchen its sense of quality.
 
@@ -120,7 +120,7 @@ This is particularly important when creating a bespoke kitchen. Bespoke does not
 
 For homeowners considering a new kitchen in Chester or across Cheshire, the starting point should be the design rather than the individual products.
 
-At Zest Bathrooms & Kitchens, [our Chester kitchen showroom](/about/our-showroom) provides an opportunity to explore luxury kitchen design in person, including SieMatic kitchens, premium materials, integrated appliances and considered storage solutions.
+At Zest Bathrooms & Kitchens, [our Chester kitchen showroom](/about/showroom) provides an opportunity to explore luxury kitchen design in person, including SieMatic kitchens, premium materials, integrated appliances and considered storage solutions.
 
 As an experienced SieMatic partner, we combine precision German kitchen engineering with a highly considered design approach, creating kitchens tailored to the architecture of your home and the way you live.
 
@@ -128,7 +128,7 @@ From contemporary handleless kitchens to more individual, characterful schemes, 
 
 Whether you are renovating an existing property, planning a new-build home or creating an open-plan kitchen and living space, our design team can help you explore the possibilities.
 
-[Book a private Kitchen Design Consultation](/contact-us) in Chester and discover how thoughtful design can transform the way your kitchen looks, feels and functions.
+[Book a private Kitchen Design Consultation](/contact) in Chester and discover how thoughtful design can transform the way your kitchen looks, feels and functions.
 
 Recent Blog Posts
 

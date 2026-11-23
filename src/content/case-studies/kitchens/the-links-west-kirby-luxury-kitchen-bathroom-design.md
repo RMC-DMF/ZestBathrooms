@@ -18,6 +18,6 @@ featured: false
 
 For The Links, an exclusive collection of ten bespoke three-bedroom apartments overlooking the Royal Liverpool Golf Course, Zest Bathrooms & Kitchens provided the kitchen design and specification for this high-end residential development.
 
-A carefully considered specification featuring [SieMatic kitchens,](/kitchens/siematic-kitchens) premium appliances and quality finishes was selected to complement the contemporary architecture and generous open-plan living spaces. The kitchens were designed to combine refined aesthetics, practical functionality and lasting quality, creating sophisticated interiors suited to modern coastal living.
+A carefully considered specification featuring [SieMatic kitchens,](/kitchens/siematic) premium appliances and quality finishes was selected to complement the contemporary architecture and generous open-plan living spaces. The kitchens were designed to combine refined aesthetics, practical functionality and lasting quality, creating sophisticated interiors suited to modern coastal living.
 
 The Links reflects a considered approach to luxury residential development, with high-quality materials, contemporary design and carefully selected kitchen specification working together to create distinctive homes in one of the Wirral’s most sought-after locations.
