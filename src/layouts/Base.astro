@@ -129,5 +129,18 @@ const breadcrumbs = (() => {
       }
     </script>
     <!-- Analytics: GA4 via a delayed loader, only after consent. See src/components/Analytics.astro once the consent tool is chosen. -->
+    <script>
+      // Form guard: drop submissions sent within 3s of page load (scripts, not people), and flag likely sales pitches in the email subject. Nothing genuine is blocked.
+      const loaded = Date.now();
+      const pitch = /(https?:\/\/|www\.|\.(com|io|net|ai)\b|promo ?code|\bUSD\b|\$\d|backlink|\bSEO\b|guest post|free trial|no charge|sign ?up at|our (agency|plugin|platform|software)|wordpress)/i;
+      document.querySelectorAll<HTMLFormElement>('form[data-netlify]').forEach((form) => {
+        form.addEventListener('submit', (e) => {
+          if (Date.now() - loaded < 3000) { e.preventDefault(); location.href = form.getAttribute('action') || '/thank-you'; return; }
+          const subject = form.querySelector<HTMLInputElement>('[data-subject]');
+          const text = [...form.querySelectorAll<HTMLTextAreaElement>('textarea')].map((t) => t.value).join(' ');
+          if (subject && pitch.test(text) && !subject.value.startsWith('[Check')) subject.value = `[Check: possible sales pitch] ${subject.value}`;
+        });
+      });
+    </script>
   </body>
 </html>

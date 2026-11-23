@@ -7,7 +7,7 @@ const houses = (await getCollection('brands', (b) => b.data.category === 'Tiles 
 <Page sections={sections.bathrooms} title="Request Tile Samples" description="Request tile and slab samples from Mirage, Peronda, Emilgroup, Novabell, Benadresa, Museum, Energieker and Imola — collect them in the Chester showroom with a designer." accent="bathrooms" eyebrow="Bathrooms — tile samples" heading="Request samples." lead="Tell us which houses and colours you are drawn to. We will pull the samples together, and the best place to see them is beside the brassware and furniture in the showroom.">
   <section class="wrap section" style="padding-top:0">
     <form class="stack" name="tile-samples" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=samples" style="max-width:640px">
-      <input type="hidden" name="form-name" value="tile-samples" />
+      <input type="hidden" name="form-name" value="tile-samples" /><input type="hidden" name="subject" value="New website enquiry: Tile sample request" data-subject />
       <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
       <div class="grid grid--2"><div class="field"><label for="t-name">Your name</label><input id="t-name" name="name" required autocomplete="name" /></div><div class="field"><label for="t-email">Email</label><input id="t-email" name="email" type="email" required autocomplete="email" /></div></div>
       <div class="grid grid--2"><div class="field"><label for="t-phone">Phone</label><input id="t-phone" name="phone" type="tel" autocomplete="tel" /></div><div class="field"><label for="t-postcode">Postcode</label><input id="t-postcode" name="postcode" autocomplete="postal-code" /></div></div>

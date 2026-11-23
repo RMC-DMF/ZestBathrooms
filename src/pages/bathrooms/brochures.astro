@@ -4,7 +4,7 @@ import Page from '../../layouts/Page.astro';
 <Page title="Bathroom Brochures" description="Request the Gessi, Bette, Novello, AXOR and Effe brochures from Zest, Chester." accent="bathrooms" eyebrow="Bathrooms — brochures" heading="The bathroom brochures." lead="Tell us which you would like and we will send the digital editions straight away." cta={false}>
   <section class="wrap section" style="padding-top:0">
     <form class="stack" name="bathroom-brochures" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you" style="max-width:560px">
-      <input type="hidden" name="form-name" value="bathroom-brochures" />
+      <input type="hidden" name="form-name" value="bathroom-brochures" /><input type="hidden" name="subject" value="New website enquiry: Bathroom brochure request" data-subject />
       <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
       <div class="field"><label for="b-name">Your name</label><input id="b-name" name="name" required autocomplete="name" /></div>
       <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email" /></div>
