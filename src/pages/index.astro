@@ -18,7 +18,7 @@ const allProjects = await getCollection('projects', ({ data }) => !data.draft);
 const projects = allProjects.filter((p) => p.data.featured).sort(byCompletion).slice(0, 3);
 const unitCount = allProjects.reduce((n, p) => n + (p.data.units ?? 0), 0);
 const steps = [
-  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples.', image: '/images/pages/our-showroom-65.jpg', alt: 'Marble shower with a brass frame between striped tiled walls, Zest showroom' },
+  { title: 'Showroom visit', text: 'An hour with a designer among real displays, not samples.', image: '/images/showroom/stone-double-vanity-and-onyx-walk-in-shower-zest-showroom.webp', alt: 'Stone double vanity beside a black onyx walk-in shower, Zest showroom' },
   { title: 'Survey and brief', text: 'We measure the room and agree what it has to do for you.', image: '/images/pages/design-service-18.jpg', alt: 'A kitchen photographed in black and white before the design begins' },
   { title: 'Design and specification', text: 'Layouts, 3D visuals and a specification with every product named.', image: '/images/pages/kitchen-half-drawn-as-a-line-sketch-and-half-rendered-in-oak-and.jpg', alt: 'A kitchen half-drawn as a line sketch, half-rendered' },
   { title: 'Supply and installation support', text: 'Your installer or one of ours; we stay until it is finished.', image: '/images/pages/gold-pull-out-tap-over-a-marble-effect-sink-with-a-lit-edge-close-up.webp', alt: 'Brushed-brass tap on a marble worktop, fitted' },

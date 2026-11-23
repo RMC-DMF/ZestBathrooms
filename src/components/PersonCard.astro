@@ -3,9 +3,16 @@ import Pic from './Pic.astro';
 interface Props { name: string; role: string; photo?: string; ask?: string; contactHref?: string; contactLabel?: string }
 const { name, role, photo, ask, contactHref, contactLabel } = Astro.props;
 const first = name.split(' ')[0];
+// No portrait: a monogram tile in one of three brand tones, chosen from the name so it never changes between builds
+const parts = name.trim().split(/\s+/);
+const initials = (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase();
+const tones = ['rose', 'cream', 'sand'];
+const tone = tones[[...name].reduce((n, c) => n + c.charCodeAt(0), 0) % tones.length];
 ---
 <div class="z-person">
-  <Pic src={photo} alt={name} class="z-person__photo" sizes="96px" widths={[96, 192, 288]} />
+  {photo
+    ? <Pic src={photo} alt={name} class="z-person__photo" sizes="96px" widths={[96, 192, 288]} />
+    : <span class:list={['mono', `mono--${tone}`]} aria-hidden="true">{initials}</span>}
   <div>
     <p class="z-person__name">{name}</p>
     <p class="z-person__role">{role}</p>
@@ -13,3 +20,9 @@ const first = name.split(' ')[0];
     {contactHref && <a class="z-person__contact" href={contactHref}>{contactLabel ?? contactHref.replace(/^(mailto:|tel:)/, '')}</a>}
   </div>
 </div>
+<style>
+  .mono { flex: 0 0 auto; display: grid; place-items: center; width: 96px; height: 96px; border-radius: 10px; font-family: var(--font-display); font-weight: 300; font-size: 44px; line-height: 1; letter-spacing: -0.04em; font-variation-settings: 'opsz' 144; }
+  .mono--rose { background: #c4a99a; color: #f7f2ec; }
+  .mono--cream { background: #f5f1ea; color: #15181d; box-shadow: inset 0 0 0 1px rgba(21,24,29,.08); }
+  .mono--sand { background: #d6cfbf; color: #3d4236; }
+</style>
