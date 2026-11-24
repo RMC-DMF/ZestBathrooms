@@ -32,8 +32,8 @@ import { site } from '../data/site';
         <p class="caption">Or call the showroom on <a href={site.phoneHref}>{site.phone}</a>. <a href="/privacy">Privacy</a>.</p>
       </form>
 
-      <form class="stack" id="form-trade" name="project-enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=project" hidden>
-        <input type="hidden" name="form-name" value="project-enquiry" /><input type="hidden" name="subject" value="New website enquiry: Project enquiry" data-subject />
+      <form class="stack" id="form-trade" name="trade-enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/thank-you?type=project" hidden>
+        <input type="hidden" name="form-name" value="trade-enquiry" /><input type="hidden" name="subject" value="New website enquiry: Trade enquiry (from the booking page)" data-subject />
         <p class="honey"><label>Leave this empty <input name="company-website" /></label></p>
         <div class="grid grid--2" style="gap:var(--space-4)">
           <div class="field"><label for="t-name">Your name</label><input id="t-name" name="name" required autocomplete="name" /></div>
