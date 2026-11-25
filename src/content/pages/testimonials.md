@@ -4,7 +4,7 @@ legacyUrl: "/testimonials"
 hero:
   src: "/images/pages/victoria-and-albert-back-to-wall-bath-in-front-of-a-dark-panelled-wall.jpg"
   alt: "Victoria & Albert Bathtub"
-gallery: [{"src":"/images/pages/victoria-and-albert-bath-in-black-by-tall-doors-onto-a-planted.jpg","alt":"Bathtub in bathroom with a large glass window leading to garden."}, {"src":"/images/pages/testimonials-03.jpg","alt":"Light grey SieMatic Kitchen"}, {"src":"/images/pages/gessi-nickel-bath-filler-beside-a-marble-bath-close-up.jpg","alt":"Gessi Brassware standing tap"}, {"src":"/images/pages/testimonials-05.jpg","alt":"Victoria & Albert Bathtub"}, {"src":"/images/pages/siematic-classic-white-dresser-with-glass-fronted-wall-cabinets.webp","alt":"SieMatic Classic white dresser with glass-fronted wall cabinets"}, {"src":"/images/pages/testimonials-07.jpg","alt":"Light grey SieMatic Kitchen"}]
+gallery: [{"src": "/images/pages/victoria-and-albert-bath-in-black-by-tall-doors-onto-a-planted.jpg", "alt": "Bathtub in bathroom with a large glass window leading to garden."}, {"src": "/images/pages/testimonials-03.jpg", "alt": "Light grey SieMatic Kitchen"}, {"src": "/images/pages/gessi-nickel-bath-filler-beside-a-marble-bath-close-up.jpg", "alt": "Gessi Brassware standing tap"}, {"src": "/images/pages/testimonials-05.jpg", "alt": "Victoria & Albert Bathtub"}, {"src": "/images/pages/siematic-classic-white-dresser-with-glass-fronted-wall-cabinets.webp", "alt": "SieMatic Classic white dresser with glass-fronted wall cabinets"}]
 ---
 
 TESTIMONIALS

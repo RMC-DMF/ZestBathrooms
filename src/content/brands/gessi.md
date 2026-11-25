@@ -4,35 +4,29 @@ category: Brassware
 country: Italy
 featured: true
 order: 1
-summary: 'Gessi makes brassware, showers and bathroom furniture in one factory in Piedmont — expressive forms, its own finishes, and the Haute Culture collections that Zest is one of ten UK showrooms to carry.'
+summary: Gessi makes brassware, showers and bathroom furniture in one factory in Piedmont — expressive forms, its own finishes, and the Haute Culture collections that Zest is one of ten UK showrooms to carry.
 hero:
   src: /images/brands/gessi-haute-culture-brass-tap-with-material-samples-finishes-and.webp
-  alt: "Gessi Haute Culture brass tap with material samples, finishes and timber swatches"
+  alt: Gessi Haute Culture brass tap with material samples, finishes and timber swatches
 gallery:
 - src: /images/brands/gessi-brushed-brass-bath-shower-mixer-against-fluted-glass-and-green.webp
-  alt: "Gessi brushed brass bath shower mixer against fluted glass and green marble"
+  alt: Gessi brushed brass bath shower mixer against fluted glass and green marble
 - src: /images/brands/gessi-symmetrical-bathroom-with-twin-vanities-marble-floor-and-a.webp
-  alt: "Gessi symmetrical bathroom with twin vanities, marble floor and a garden view"
+  alt: Gessi symmetrical bathroom with twin vanities, marble floor and a garden view
 - src: /images/journal/gessi-tap-in-powder-pink-on-a-terracotta-basin-among-moss-and-glass.webp
-  alt: "Gessi tap in powder pink on a terracotta basin among moss and glass"
-- src: /images/journal/gessi-brushed-brass-bath-shower-mixer-by-fluted-glass-and-green-marble.jpg
-  alt: "Gessi brushed brass bath shower mixer by fluted glass and green marble"
-- src: /images/brands/gessi-tap-in-powder-pink-on-a-terracotta-basin-among-moss-and-glass.webp
-  alt: "Gessi tap in powder pink on a terracotta basin among moss and glass"
+  alt: Gessi tap in powder pink on a terracotta basin among moss and glass
 - src: /images/pages/gessi-nickel-bath-filler-beside-a-marble-bath-close-up.jpg
-  alt: "Gessi nickel bath filler beside a marble bath, close up"
+  alt: Gessi nickel bath filler beside a marble bath, close up
 - src: /images/pages/terrazzo-wall-with-a-round-illuminated-mirror-over-an-oak-vanity-zest.jpg
-  alt: "Terrazzo wall with a round illuminated mirror over an oak vanity, Zest showroom"
-- src: /images/pages/oak-vanity-and-round-lit-mirror-against-terrazzo-zest-showroom-chester.jpg
-  alt: "Oak vanity and round lit mirror against terrazzo, Zest showroom, Chester"
+  alt: Terrazzo wall with a round illuminated mirror over an oak vanity, Zest showroom
 - src: /images/pages/gessi-shower-with-black-controls-between-tree-print-panels-and-white.jpg
-  alt: "Gessi shower with black controls between tree-print panels and white marble"
+  alt: Gessi shower with black controls between tree-print panels and white marble
 - src: /images/pages/gessi-copper-shower-heads-under-a-brick-vaulted-ceiling.webp
-  alt: "Gessi copper shower heads under a brick vaulted ceiling"
+  alt: Gessi copper shower heads under a brick vaulted ceiling
 - src: /images/pages/freestanding-bath-under-hanging-plants-in-a-dark-green-bathroom.webp
-  alt: "Freestanding bath under hanging plants in a dark green bathroom"
+  alt: Freestanding bath under hanging plants in a dark green bathroom
 - src: /images/pages/gessi-bronze-basin-taps-on-a-black-marble-vanity-with-a-fluted-front.jpg
-  alt: "Gessi bronze basin taps on a black marble vanity with a fluted front"
+  alt: Gessi bronze basin taps on a black marble vanity with a fluted front
 legacyUrl: /about/gessi-at-zest-bathrooms-kitchens
 heritage: 'We have specified Gessi for many years, first for the finishes and then for the way the company works: one factory in Piedmont, one standard, and a willingness to make the unusual. When Gessi chose ten UK showrooms for Haute Culture, we were one of them.'
 tagline: Italian brassware that treats water as design.

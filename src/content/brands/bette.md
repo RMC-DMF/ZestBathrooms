@@ -2,21 +2,19 @@
 title: Bette
 category: Baths
 country: Germany
-summary: 'Bette makes baths, shower trays and basins from glazed titanium-steel in Delbrück, Germany — thin, hard, colour-fast, and guaranteed for thirty years.'
+summary: Bette makes baths, shower trays and basins from glazed titanium-steel in Delbrück, Germany — thin, hard, colour-fast, and guaranteed for thirty years.
 hero:
   src: /images/brands/bette-round-freestanding-bath-in-white-glazed-steel-by-a-lakeside.webp
-  alt: "Bette round freestanding bath in white glazed steel by a lakeside window"
+  alt: Bette round freestanding bath in white glazed steel by a lakeside window
 gallery:
 - src: /images/brands/bette-bath-in-a-black-steel-frame-in-a-glass-walled-bathroom.webp
-  alt: "Bette bath in a black steel frame in a glass-walled bathroom"
+  alt: Bette bath in a black steel frame in a glass-walled bathroom
 - src: /images/journal/bette-steel-bath-on-a-black-frame-in-an-autumn-forest.webp
-  alt: "Bette steel bath on a black frame in an autumn forest"
+  alt: Bette steel bath on a black frame in an autumn forest
 - src: /images/pages/bette-walk-in-shower-in-terracotta-red-with-a-terrazzo-floor-and-sheer.jpg
-  alt: "Bette walk-in shower in terracotta red with a terrazzo floor and sheer curtains"
-- src: /images/pages/bette-bath-in-a-black-frame-in-a-glass-bathroom-open-to-the-trees.webp
-  alt: "Bette bath in a black frame in a glass bathroom open to the trees"
+  alt: Bette walk-in shower in terracotta red with a terrazzo floor and sheer curtains
 - src: /images/pages/bette-bath-and-basin-in-a-pale-bathroom-with-a-stone-shower-wall.webp
-  alt: "Bette bath and basin in a pale bathroom with a stone shower wall"
+  alt: Bette bath and basin in a pale bathroom with a stone shower wall
 legacyUrl: /about/betteat-zest-bathrooms-kitchens
 heritage: 'Bette is the brand we reach for when a bathroom has to last: a glazed steel bath or tray that looks the same in thirty years, from a factory that guarantees exactly that. We have put thousands into developer schemes for the same reason.'
 tagline: Baths, shower trays and basins in glazed titanium-steel.

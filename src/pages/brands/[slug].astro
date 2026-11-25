@@ -22,9 +22,14 @@ const isKitchen = b.category === 'Kitchens' || b.category === 'Appliances';
 const accent = isKitchen ? 'kitchens' : 'bathrooms';
 const studies = (await getCollection('caseStudies', ({ data }) => data.brands.includes(entry.id) && !data.draft)).sort((x, y) => y.data.date.valueOf() - x.data.date.valueOf()).slice(0, 3);
 const projects = (await getCollection('projects', ({ data }) => data.brands.includes(entry.id) && !data.draft)).sort((x, y) => (y.data.units ?? 0) - (x.data.units ?? 0)).slice(0, 3);
-const gallery = b.gallery;
-const topGallery = gallery.slice(0, 5);
-const restGallery = gallery.slice(5, 10);
+// Every picture appears once per page: drop gallery entries that repeat the hero or each other,
+// then share the rest between the top gallery, the 'Why from Zest' panel and the lower gallery.
+const seen = new Set<string>(b.hero ? [b.hero.src] : []);
+const pool = b.gallery.filter((g) => !seen.has(g.src) && seen.add(g.src));
+const featureImg = pool.length >= 6 ? pool[5] : pool.length >= 2 ? pool[pool.length - 1] : undefined;
+const rest = pool.filter((g) => g !== featureImg);
+const topGallery = rest.slice(0, 5);
+const restGallery = rest.slice(5, 9);
 const universalFaqs = [
   { q: `Can I buy ${b.title} from Zest without the design service?`, a: `Yes — if you know exactly what you want we'll quote it. Most people find the design appointment pays for itself, because it's where the mistakes get caught.` },
   { q: `How does your ${b.title} pricing compare?`, a: `We are competitive on a like-for-like specification and happy to compare any quote in the showroom. Ours includes the design, the survey, the checks before ordering and the support afterwards, so we compare the whole job rather than one line.` },
@@ -58,7 +63,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
 
   {b.collections.length > 0 && <section class="wrap section"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">Collections</span><h2>Where to start.</h2></div><div class="grid grid--3">{b.collections.map((c, i) => <div class="coll">{c.image ? <div class="coll__img fill"><Pic src={c.image} alt={c.name} sizes="(max-width: 900px) 100vw, 33vw" widths={[400, 640, 900]} /></div> : <span class="coll__idx">{String(i + 1).padStart(2, '0')}</span>}<h3>{c.name}</h3>{c.text && <p class="small" style="color:var(--slate)">{c.text}</p>}</div>)}</div></section>}
 
-  {b.whyZest.length > 0 && <Feature image={restGallery[0]?.src ?? b.hero?.src} alt={restGallery[0]?.alt ?? ''} eyebrow={`Why ${b.title} from Zest`} title="The product is the same. The result isn't." tone="light" flip>
+  {b.whyZest.length > 0 && <Feature image={featureImg?.src ?? b.hero?.src} alt={featureImg?.alt ?? b.hero?.alt ?? ''} eyebrow={`Why ${b.title} from Zest`} title="The product is the same. The result isn't." tone="light" flip>
     {b.whyZest.map((p) => <p>{p}</p>)}
     {b.onDisplay && <p><strong>In Chester:</strong> {b.onDisplay}</p>}
     <div class="cluster"><a class="z-btn z-btn--secondary" href="/about/showroom">Plan a visit</a><a class="z-btn z-btn--link" href="/design-service">How the design service works <svg class="z-btn__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" /></svg></a></div>
@@ -66,7 +71,7 @@ const facts = [b.founded && { k: 'Founded', v: b.founded }, b.hometown && { k: '
 
   {(studies.length > 0 || projects.length > 0) && <section class="stone section"><div class="wrap"><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">In our work</span><h2>{b.title}, as we've used it.</h2></div><div class="grid grid--3">{studies.map((s) => <CaseStudyCard title={s.data.title} href={`/${s.data.room}/case-studies/${s.id.split('/').pop()}`} image={s.data.hero?.src} summary={s.data.summary} tags={[{ label: s.data.room === 'kitchens' ? 'Kitchen' : 'Bathroom', accent: true }, ...(s.data.location ? [{ label: s.data.location.split(',')[0] }] : [])]} designer={s.data.designer} />)}{projects.map((p) => <CaseStudyCard title={p.data.title} href={`/projects/${p.id}`} image={p.data.hero?.src} summary={p.data.summary} tags={[{ label: p.data.sector ?? 'Project', accent: true }, ...(p.data.units ? [{ label: `${p.data.units.toLocaleString()} units` }] : [])]} />)}</div></div></section>}
 
-  {restGallery.length > 1 && <Gallery images={restGallery.slice(1)} max={4} context={entry.data.title} />}
+  {restGallery.length > 0 && <Gallery images={restGallery} max={4} context={entry.data.title} />}
 
   <OnlineBand brand={b.title} room={isKitchen ? 'kitchen' : b.category === 'Tiles & surfaces' ? 'surfaces' : 'bathroom'} />
 

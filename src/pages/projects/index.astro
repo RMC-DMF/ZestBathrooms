@@ -37,7 +37,7 @@ const steps = [
       <span class="pidx__title">{p.data.title}</span>
       <span class="pidx__meta">{[p.data.sector, p.data.location?.split(',')[0], completedYear(p)].filter(Boolean).join(' · ')}</span>
       <span class="pidx__units">{scaleLabel(p) ?? ''}</span>
-      <span class="pidx__thumb fill">{p.data.hero && <Pic src={p.data.hero.src} alt="" sizes="200px" widths={[240, 480]} />}</span>
+      <span class="pidx__thumb fill">{p.data.gallery?.[0] && <Pic src={p.data.gallery[0].src} alt="" sizes="200px" widths={[240, 480]} />}</span>
     </a></li>)}</ol>
   </section>
   <section class="section--loose stone light-section" data-theme="light"><div class="wrap grid grid--2" style="gap:96px;align-items:start"><div><div class="z-heading" style="margin-bottom:var(--space-6)"><span class="z-eyebrow">How we work with professionals</span><h2>Specification to handover.</h2></div><ProcessList steps={steps} /></div><div class="stack"><PersonCard name="Eddie Lever" role="National Sales Manager — Warrington project office" ask="developer, retirement-living, hotel and commercial specification anywhere in the UK" contactHref={site.projectsPhoneHref} contactLabel={`Warrington ${site.projectsPhone}`} /><p class="small" style="color:var(--slate)">Clients include {clients.slice(0, 8).join(', ')}.</p><div><a class="z-btn z-btn--primary" href={site.tradeCta.href}>{site.tradeCta.label}</a></div></div></div></section>

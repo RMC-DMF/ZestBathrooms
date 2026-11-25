@@ -8,9 +8,12 @@ import PersonCard from '../components/PersonCard.astro';
 import type { Accent } from '../data/site';
 import { getEntry } from 'astro:content';
 interface Props { title: string; metaTitle?: string; description: string; accent: Accent; eyebrow: string; hero?: { src: string; alt: string }; gallery?: { src: string; alt: string }[]; facts: { label: string; value?: string | number }[]; quote?: { text: string; by: string }; designer?: string; brands?: string[]; cta?: { label?: string; href?: string; title?: string; text?: string }; related?: { title: string; href: string; image?: string; meta?: string }[] }
-const { title, metaTitle, description, accent, eyebrow, hero, gallery = [], facts, quote, designer, brands = [], cta = {}, related = [] } = Astro.props;
+const { title, metaTitle, description, accent, eyebrow, hero, gallery: galleryIn = [], facts, quote, designer, brands = [], cta = {}, related = [] } = Astro.props;
 const person = designer ? await getEntry('team', designer) : undefined;
 const brandEntries = (await Promise.all(brands.map((b) => getEntry('brands', b)))).filter(Boolean);
+// Each picture once per page: drop gallery entries that repeat the hero or an earlier entry
+const seenSrc = new Set<string>(hero ? [hero.src] : []);
+const gallery = galleryIn.filter((g) => !seenSrc.has(g.src) && seenSrc.add(g.src));
 ---
 <Base title={metaTitle ?? title} description={description} accent={accent} ogImage={hero?.src}>
   <article>

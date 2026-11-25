@@ -26,7 +26,6 @@ const gallery = [
   { src: '/images/brands/press/museum-savage-green-marble.jpg', alt: 'Museum Savage Green marble-effect slabs' },
   { src: '/images/brands/press/imola-pink-tiled-kitchen.jpg', alt: 'Imola Ceramica glossy pink wall tiles' },
   { src: '/images/brands/press/mirage-jewels-statuario-venato.jpg', alt: 'Mirage Jewels Statuario Venato slabs' },
-  { src: '/images/brands/press/energieker-oxide-bath.jpg', alt: 'Energieker oxidised-metal effect behind a bath' },
   { src: '/images/brands/press/peronda-alchemy-iron-bathroom.jpg', alt: 'Peronda Alchemy textured wall tiles' },
   { src: '/images/brands/press/novabell-smeraldo-green.jpg', alt: 'Novabell Smeraldo green wall tiles' },
 ];
@@ -54,7 +53,7 @@ const faqs = [
       <ul class="houses__grid">
         {houses.map((h) => <li class="house z-heading">
           <a class="house__link" href={`/brands/${h.id}`}>
-            <div class="house__img fill">{h.data.hero && <Pic src={h.data.hero.src} alt={h.data.hero.alt} sizes="(max-width: 900px) 100vw, 25vw" widths={[480, 720, 960]} />}</div>
+            <div class="house__img fill">{(h.data.gallery?.[0] ?? h.data.hero) && <Pic src={(h.data.gallery?.[0] ?? h.data.hero)!.src} alt={(h.data.gallery?.[0] ?? h.data.hero)!.alt} sizes="(max-width: 900px) 100vw, 25vw" widths={[480, 720, 960]} />}</div>
             <div class="house__body">
               <span class="house__meta">{h.data.hometown}{h.data.founded && ` · since ${h.data.founded}`}</span>
               <h3 class="house__name">{h.data.title}</h3>
