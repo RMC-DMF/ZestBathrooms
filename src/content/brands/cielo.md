@@ -2,16 +2,32 @@
 title: Cielo
 category: Sanitaryware
 country: Italy
-summary: 'Ceramica Cielo makes basins, WCs and bathroom ceramics near Rome, famous for its Terre di Cielo colours — sixteen matt glazes that put real colour into a bathroom.'
+summary: Ceramica Cielo makes basins, WCs and bathroom ceramics near Rome, famous for its Terre di Cielo colours — sixteen matt glazes that put real colour into a bathroom.
 hero:
   src: /images/brands/cielo-washbasins-on-black-and-brass-stands-in-mustard-and-green-with.jpg
-  alt: "Cielo washbasins on black and brass stands in mustard and green, with tall mirrors"
+  alt: Cielo washbasins on black and brass stands in mustard and green, with tall mirrors
 legacyUrl: /about/cielo-at-zest-bathrooms-kitchens
 gallery:
 - src: /images/pages/cielo-basins-on-white-vanities-against-an-ochre-wall-with-oval-mirrors.webp
-  alt: "Cielo basins on white vanities against an ochre wall with oval mirrors"
+  alt: Cielo basins on white vanities against an ochre wall with oval mirrors
 - src: /images/pages/cielo-double-vanity-in-oxblood-red-with-round-mirrors.webp
-  alt: "Cielo double vanity in oxblood red with round mirrors"
+  alt: Cielo double vanity in oxblood red with round mirrors
+- src: /images/brands/press/cielo-teal-pedestal-basin-and-wc-in-a-dark-green-bathroom.jpg
+  alt: Cielo teal pedestal basin and WC in a dark green bathroom
+- src: /images/brands/press/cielo-navy-washbasin-on-a-timber-vanity-in-a-panelled-room.jpg
+  alt: Cielo navy washbasin on a timber vanity in a panelled room
+- src: /images/brands/press/cielo-cream-pedestal-basin-under-a-round-backlit-mirror.jpg
+  alt: Cielo cream pedestal basin under a round backlit mirror
+- src: /images/brands/press/cielo-sage-green-basin-and-cabinet-against-a-ribbed-wall.jpg
+  alt: Cielo sage green basin and cabinet against a ribbed wall
+- src: /images/brands/press/cielo-cream-freestanding-bath-with-a-bronze-tap.jpg
+  alt: Cielo cream freestanding bath with a bronze tap
+- src: /images/brands/press/cielo-burgundy-basins-on-a-wall-hung-console-with-oval-mirrors.jpg
+  alt: Cielo burgundy basins on a wall-hung console with oval mirrors
+- src: /images/brands/press/cielo-bronze-pedestal-basin-in-a-brown-bathroom.jpg
+  alt: Cielo bronze pedestal basin in a brown bathroom
+- src: /images/brands/press/cielo-ochre-washbasins-and-bidet-in-a-yellow-bathroom.jpg
+  alt: Cielo ochre washbasins and bidet in a yellow bathroom
 heritage: Cielo is where colour in ceramics began for us. When a scheme calls for a basin in clay, sage or terracotta that will still look right in fifteen years, this is the house.
 tagline: Italian ceramics in colour.
 founded: '1962'

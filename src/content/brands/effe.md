@@ -16,6 +16,12 @@ gallery:
   alt: Effe steam room with frosted glass doors in a minimal stone-coloured room
 - src: /images/pages/effe-steam-room-with-frosted-glass-doors-and-minimal-steel-frame.webp
   alt: Effe steam room with frosted glass doors and minimal steel frame
+- src: /images/brands/press/effe-aladdin-sauna-in-dark-wood-against-a-terracotta-wall.jpg
+  alt: Effe Aladdin sauna in dark wood against a terracotta wall
+- src: /images/brands/press/effe-steam-room-touch-control-on-gold-veined-marble.jpg
+  alt: Effe steam room touch control on gold-veined marble walls
+- src: /images/brands/press/effe-marble-steam-room-seen-through-a-timber-screen.jpg
+  alt: Effe marble steam room seen through a timber screen
 heritage: Effe is how we bring steam and sauna into a home without a wellness centre's footprint — engineered systems from Vicenza that we have learnt to integrate with the drainage, ventilation and power a British bathroom actually has.
 tagline: Italian steam, sauna and spa, built into the home.
 founded: '1986'

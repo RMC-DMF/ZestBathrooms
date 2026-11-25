@@ -16,6 +16,12 @@ gallery:
   alt: Novello Elle fluted walnut vanity with a black marble top and vessel basin
 - src: /images/pages/novello-timber-vanity-with-backlit-mirror-and-glass-fronted-wall.webp
   alt: Novello timber vanity with backlit mirror and glass-fronted wall cabinet
+- src: /images/brands/press/novello-elle-curved-walnut-vanity-under-a-round-backlit-mirror.jpg
+  alt: Novello Elle curved walnut vanity under a round backlit mirror
+- src: /images/brands/press/novello-elle-coral-integrated-basin-top-from-above.jpg
+  alt: Novello Elle coral vanity with an integrated basin top and bronze tap, from above
+- src: /images/brands/press/novello-elle-walnut-vanity-with-stone-vessel-basin-and-twin-mirrors.jpg
+  alt: Novello Elle long walnut vanity with a stone vessel basin and twin backlit mirrors
 heritage: 'Novello makes the furniture we specify when the room is tight and the millimetres matter: made to our survey, in finishes that sit quietly beside Italian brassware.'
 tagline: Italian bathroom furniture, made to measure.
 hometown: Treviso, Veneto
